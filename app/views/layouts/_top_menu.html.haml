@@ -1,0 +1,43 @@
+#topmenu
+
+  -#- if current_user
+  -#  .inner
+  -#    -if !current_user.avatar_remote_url.nil?
+  -#      = image_tag current_user.avatar_remote_url, :class => 'small-avatar', :width => 25
+  -#    Hi
+  -#    = link_to current_user.name, profiles_path
+  -#    &#8226;
+  -#    = link_to "Sign out", signout_path
+  -#    - if can? :use, :dashboard
+  -#      &#8226;
+  -#      = render "/layouts/admin_menu"
+  -#  - if AUTH_LI == 1 && current_user.authentications.where(:provider => "linked_in") == []
+  -#    = link_to("/login/linked_in", :class => "nodec") do
+  -#      .signin_linkedin_small.connect
+  -#  - if AUTH_FB == 1 && current_user.authentications.where(:provider => "facebook") == []
+  -#    = link_to("/login/facebook", :class => "nodec") do
+  -#      .signin_facebook_small.connect
+  -#  - if AUTH_TW == 1 && current_user.authentications.where(:provider => "twitter") == []
+  -#    = link_to("/login/twitter", :class => "nodec") do
+  -#      .signin_twitter_small.connect
+  -#  - if AUTH_EM == 1 && current_user.authentications.where(:provider => "email") == []
+  -#    = link_to("/login/email", :class => "nodec") do
+  -#      .connect_email_small.connect
+
+  -#- else
+  -#  = render "/layouts/must_login"
+  -#
+  -#  .inner
+  -#    Sign In
+  -#  - if AUTH_LI == 1
+  -#    = link_to("/login/linked_in", :class => "nodec") do
+  -#      .signin_linkedin_small.connect
+  -#  - if AUTH_FB == 1
+  -#    = link_to("/login/facebook", :class => "nodec") do
+  -#      .signin_facebook_small.connect
+  -#  - if AUTH_TW == 1
+  -#    = link_to("/login/twitter", :class => "nodec") do
+  -#      .signin_twitter_small.connect
+  -#  - if AUTH_EM == 1
+  -#    = link_to("/login/email", :class => "nodec") do
+  -#      .signin_email_small.connect
