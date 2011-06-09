@@ -20,3 +20,8 @@ ActionMailer::Base.smtp_settings = {
   :authentication       => "plain",
   :enable_starttls_auto => true
 }
+
+# Constants
+COMPANY_NAME = "Rapid Software Development LLC"
+SITE_NAME = "SuggestedEdit.com"
+SITE_TITLE = "SuggestedEdit"
