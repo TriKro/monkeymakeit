@@ -1,4 +1,8 @@
 .bundle
+.DS_Store
+.idea
+capybara-*
+db/backup
 db/*.sqlite3
 log/*.log
 tmp/
