@@ -3,7 +3,12 @@ Suggestedit::Application.routes.draw do
   root :to => 'static#home'
 
   resources :activities
-  resources :suggestions
+  resources :suggestions, :only => [:new, :create]
+
+  # Contact message routes
+  resources :contact_messages
+  match "/contact" => "contact_messages#new", :as => :contact
+  match "/thanks_for_your_message" => "contact_messages#thanks", :as => :contact_thanks
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
