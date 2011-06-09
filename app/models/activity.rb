@@ -18,16 +18,4 @@ class Activity < ActiveRecord::Base
     activity
   end
 
-  def self.recent_reviews
-    results = []
-    Activity.where(:target_model => "Review", :activity_type => "Created").each do |activity|
-      if !activity.user.nil? && !activity.target.nil?
-        if !activity.target.body.nil?
-          results += [activity]
-        end
-      end
-    end
-    results
-  end
-
 end
