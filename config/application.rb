@@ -37,6 +37,15 @@ module Suggestedit
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
+
+    config.generators do |g|
+      g.orm             :active_record
+      g.template_engine :haml
+      g.fallbacks[:haml] = :erb
+      g.stylesheets     false
+      # g.fixture_replacement :factory_girl, :dir => "spec/factories"
+    end
+
     config.filter_parameters += [:password]
   end
 end

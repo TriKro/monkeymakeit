@@ -4,6 +4,8 @@ gem 'awesome_print'
 gem "hoptoad_notifier",    "~> 2.4"
 gem 'mysql2'
 gem 'rails',               '= 3.0.4'
+gem "haml"
+gem "haml-rails"
 
 group :development, :test do
   gem 'rspec-rails',       '= 2.5.0'
