@@ -1,0 +1,11 @@
+.content.subscribed_activity
+  = render :partial => "profiles/avatar", :locals => { :user => activity.user }
+
+  .summary
+    = render :partial => "activities/actor", :locals => { :activity => activity }
+
+    = activity.activity_type.downcase
+    to
+    = activity.target_model
+
+  .complete

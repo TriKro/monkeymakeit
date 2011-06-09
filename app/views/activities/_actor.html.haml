@@ -1,0 +1,8 @@
+- if !activity.user.nil?
+  = link_to activity.user.name, profiles_show_path(activity.user)
+- else
+  Unknown
+  - if !activity.session_id.nil?
+    (#{ activity.session_id })
+  - else
+    (no session recorded)

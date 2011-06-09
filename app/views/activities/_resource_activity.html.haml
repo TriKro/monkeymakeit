@@ -1,0 +1,29 @@
+.content.resource_activity
+  = render :partial => "profiles/avatar", :locals => { :user => activity.user }
+
+  .summary
+    = render :partial => "activities/actor", :locals => { :activity => activity }
+
+    = activity.activity_type.downcase
+
+    - if activity.activity_type == "Added"
+      the tag
+      = link_to activity.subtarget.name, activity.subtarget
+      to
+
+    - elsif activity.activity_type == "Removed"
+      the tag
+      = link_to activity.subtarget.name, activity.subtarget
+      from
+
+    the resource
+    - if !activity.target.nil?
+      = link_to activity.target.title, activity.target
+    - else
+      index
+    \.
+
+  .complete
+    -# Insert complete description here?
+    -#- if !activity.target.nil?
+    -#  = link_to activity.target.title, activity.target

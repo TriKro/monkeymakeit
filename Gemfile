@@ -6,6 +6,7 @@ gem 'mysql2'
 gem 'rails',               '= 3.0.4'
 gem "haml"
 gem "haml-rails"
+gem "will_paginate", "~> 3.0.pre2"
 
 group :development, :test do
   gem 'rspec-rails',       '= 2.5.0'

@@ -1,0 +1,13 @@
+.content.user_activity
+  = render :partial => "profiles/avatar", :locals => { :user => activity.user }
+
+  .summary
+    = render :partial => "activities/actor", :locals => { :activity => activity }
+
+    = activity.activity_type.downcase
+
+    - if !activity.target.nil?
+      = link_to activity.target.name, profiles_show_path(activity.target)
+    's profile
+
+  .complete

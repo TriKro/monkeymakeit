@@ -1,0 +1,20 @@
+.content.misc_activity
+  = render :partial => "profiles/avatar", :locals => { :user => activity.user }
+
+  .summary
+    = render :partial => "activities/actor", :locals => { :activity => activity }
+
+    performed an activity with an undefined view.
+
+  .complete
+    %p
+      Activity type:
+      = activity.activity_type.downcase
+
+    %p
+      - if activity.url.include? ' '
+        Action: 
+        = activity.url
+      - else
+        Link:
+        = link_to "link", activity.url

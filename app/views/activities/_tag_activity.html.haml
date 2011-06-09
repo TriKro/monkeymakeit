@@ -1,0 +1,20 @@
+.content.tag_activity
+  = render :partial => "profiles/avatar", :locals => { :user => activity.user }
+
+  .summary
+    = render :partial => "activities/actor", :locals => { :activity => activity }
+
+    = activity.activity_type.downcase
+
+    the tag
+    - if !activity.target.nil?
+      = link_to activity.target.name, activity.target
+    - else
+      index
+
+    - if activity.activity_type == "Moved"
+      to become the child of
+      = link_to activity.subtarget.name, activity.subtarget
+    \.
+
+  .complete

@@ -1,0 +1,18 @@
+.content.search_activity
+  = render :partial => "profiles/avatar", :locals => { :user => activity.user }
+
+  .summary
+    = render :partial => "activities/actor", :locals => { :activity => activity }
+
+    = activity.activity_type.downcase
+    for
+
+    - if activity.target.nil?
+      "
+      = activity.target_model
+      "
+    - else
+      = link_to activity.target.name, activity.target
+      \.
+
+  .complete

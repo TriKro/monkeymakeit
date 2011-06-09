@@ -1,0 +1,20 @@
+.content.review_activity
+  = render :partial => "profiles/avatar", :locals => { :user => activity.user }
+
+  .summary
+    = render :partial => "activities/actor", :locals => { :activity => activity }
+
+    - if activity.activity_type == "Created"
+      gave
+
+    - else
+      = activity.activity_type.downcase
+      their
+      = link_to "review", resource_review_path(activity.target.resource, activity.target)
+      of
+
+    = link_to activity.target.resource.title, activity.target.resource
+    = rating_small_html(activity.target.rating, activity.target.resource, is_editable?(activity.target))
+
+  .complete
+    = activity.target.body

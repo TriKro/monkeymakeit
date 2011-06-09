@@ -1,0 +1,85 @@
+- @activities.each do |activity|
+  .activity
+    - if activity.activity_type == "Subscribed"
+      = render :partial => "subscribed_activity", :locals => { :activity => activity }
+
+    - elsif activity.activity_type == "Searched"
+      = render :partial => "search_activity", :locals => { :activity => activity }
+
+    - elsif activity.activity_type == "Access Denied" || activity.activity_type == "Record not Found" || activity.activity_type == "404"
+      = render :partial => "misc_activity", :locals => { :activity => activity }
+
+    - elsif activity.activity_type == "Access Denied" || activity.activity_type == "Record not Found" || activity.activity_type == "404"
+      = render :partial => "misc_activity", :locals => { :activity => activity }
+
+    - elsif activity.target_model == "Page"
+      = render :partial => "misc_activity", :locals => { :activity => activity }
+
+    - elsif activity.target_model == "Review"
+      = render :partial => "review_activity", :locals => { :activity => activity }
+
+    - elsif activity.target_model == "User"
+      = render :partial => "user_activity", :locals => { :activity => activity }
+
+    - elsif activity.target_model == "Tag"
+      = render :partial => "tag_activity", :locals => { :activity => activity }
+
+    - elsif activity.target_model == "Resource"
+      = render :partial => "resource_activity", :locals => { :activity => activity }
+
+    - elsif activity.target_model == "ContactMessage"
+      = render :partial => "contact_message_activity", :locals => { :activity => activity }
+
+    - elsif activity.target_model == "Email"
+      = render :partial => "email_activity", :locals => { :activity => activity }
+
+    - else
+      = render :partial => "undefined_activity", :locals => { :activity => activity }
+
+    .activity_menu
+      = link_to 'Destroy', activity, :confirm => 'Are you sure?', :method => :delete
+    -#%tr
+    -#  %td
+    -#    - if !activity.user.nil?
+    -#      = link_to activity.user.name, profiles_show_path(activity.user)
+    -#    - else
+    -#      = activity.session_id
+    -#  %td= activity.activity_type
+    -#  %td
+    -#    - if !activity.target.nil?
+    -#      - if activity.target_model == "Review"
+    -#        = link_to resource_review_path(activity.target.resource, activity.target) do
+    -#          Review of
+    -#          = activity.target.resource.title
+    -#      - elsif activity.target_model == "User"
+    -#        = link_to activity.target.name, profiles_show_path(activity.target)
+    -#      - elsif activity.target_model == "Tag"
+    -#        = link_to activity.target.name, resources_path(:category => activity.target.id)
+    -#      - elsif activity.target_model == "Resource"
+    -#        = link_to activity.target.title, activity.target
+    -#      - else
+    -#        = link_to activity.target_model, activity.target
+    -#    - else
+    -#      = activity.target_model
+    -#  %td
+    -#    - if !activity.subtarget.nil?
+    -#      - if activity.subtarget_model == "Review"
+    -#        = link_to resource_review_path(activity.subtarget.resource, activity.subtarget) do
+    -#          Review of
+    -#          = activity.subtarget.resource.title
+    -#      - elsif activity.subtarget_model == "User"
+    -#        = link_to activity.subtarget.name, profiles_show_path(activity.subtarget)
+    -#      - elsif activity.subtarget_model == "Tag"
+    -#        = link_to activity.subtarget.name, resources_path(:tag => activity.subtarget.id)
+    -#      - elsif activity.subtarget_model == "Resource"
+    -#        = link_to activity.subtarget.title, activity.subtarget
+    -#      - else
+    -#        = link_to activity.subtarget_model, activity.subtarget
+    -#    - else
+    -#      = activity.subtarget_model
+    -#  %td= link_to "link", activity.url if !activity.url.nil?
+    -#  %td= link_to 'Destroy', activity, :confirm => 'Are you sure?', :method => :delete
+= will_paginate @activities
+#search_result_loading
+  .spinner
+    = image_tag("spinner.gif")
