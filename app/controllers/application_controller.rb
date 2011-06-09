@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   # returns a unique identifier for the currently active user,
   # regardless if they have an account or not
   def current_actor
-    current_user || session[:session_id]
+    session[:session_id]
   end
 
 end
