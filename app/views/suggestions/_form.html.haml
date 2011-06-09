@@ -1,0 +1,20 @@
+= form_for(@suggestion) do |f|
+  - if @suggestion.errors.any?
+    #error_explanation
+      %h4
+        = pluralize(@suggestion.errors.count, "error")
+        prohibited this tag from being saved:
+      %ul
+        - @suggestion.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :suggestion, "Suggest your edit"
+    = f.text_field :suggestion
+
+  .field
+    = f.label :email, "Email (required)"
+    = f.text_field :email
+  .actions
+    = f.submit
+    %span
+      = link_to 'Back', :back if :back
