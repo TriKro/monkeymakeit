@@ -6,8 +6,9 @@ gem 'mysql2'
 gem 'rails',               '= 3.0.4'
 gem "haml"
 gem "haml-rails"
-gem "will_paginate", "~> 3.0.pre2"
+gem "rake", "0.8.7"
 gem "recaptcha", :require => 'recaptcha/rails'
+gem "will_paginate", "~> 3.0.pre2"
 
 group :development, :test do
   gem 'rspec-rails',       '= 2.5.0'
@@ -25,8 +26,6 @@ group :test do
   gem 'factory_girl',        '= 1.3.3'
   gem 'factory_girl_rails',  '= 1.0.1'
   gem 'faker',               '= 0.9.5'
-  gem 'remarkable',              '= 4.0.0.alpha4'
-  gem 'remarkable_activerecord', '= 4.0.0.alpha4'
   gem 'rspec',               '= 2.5.0'
   gem 'webrat',              '~> 0.7.3'
 end
