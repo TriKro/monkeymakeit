@@ -10,9 +10,7 @@ module ApplicationHelper
       <script type="text/javascript">
       //<![CDATA[
 
-        document.write(
-          '#{suggest_edit_link}'
-        );
+        document.write('#{suggest_edit_link}');
 
       //]]>
       </script>
@@ -21,7 +19,7 @@ module ApplicationHelper
 
   def suggest_edit_link
     %{
-      <a href="javascript:void(showBox('#{new_suggestion_url}'))">Suggest an edit</a>
+      <a href=\\'javascript:void(showBox("#{new_suggestion_url}"))\\';>Suggest an edit</a>
     }
   end
 
