@@ -4,7 +4,7 @@ class ContactMessage
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :sender_name, :sender_email, :subject, :content
+  attr_accessor :sender_name, :sender_email, :subject, :content, :recipient_name, :recipient_email
 
   validates_presence_of :sender_name
   validates_format_of :sender_email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i
@@ -23,6 +23,10 @@ class ContactMessage
 
   def sender
     sender_name + " <" + sender_email + ">"
+  end
+
+  def recipient
+    recipient_name + " <" + recipient_email + ">"
   end
 
 end

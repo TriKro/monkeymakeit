@@ -4,7 +4,7 @@ Suggestedit::Application.routes.draw do
   match "/test" => "static#test"
 
   resources :activities
-  resources :suggestions, :only => [:new, :create]
+  resources :suggestions
 
   # Contact message routes
   resources :contact_messages

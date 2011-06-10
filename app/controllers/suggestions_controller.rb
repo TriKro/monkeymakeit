@@ -10,15 +10,16 @@ class SuggestionsController < ApplicationController
 
     if @suggestion.save
       Activity.add(current_actor, request.request_uri, "Created", "Suggestion", @suggestion) # log the Activity
-      redirect_to(root_url, :notice => 'Suggestion was successfully created.')
     else
       render :action => "new"
     end
 
     @suggestion_message = ContactMessage.new
     @suggestion_message.content = params[:suggestion][:content]
-    @suggestion_message.sender = params[:suggestion][:email]
-    @suggestion_message.recipient = "TK@TristanKromer.com"
+    @suggestion_message.sender_name = "No name"
+    @suggestion_message.sender_email = params[:suggestion][:email]
+    @suggestion_message.recipient_name = "Tristan"
+    @suggestion_message.recipient_email = "TK@TristanKromer.com"
 
     if @suggestion_message.valid?
       UserMailer.send_suggestion(@suggestion_message).deliver
