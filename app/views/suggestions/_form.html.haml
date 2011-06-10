@@ -8,11 +8,11 @@
         - @suggestion.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label :suggestion, "Suggest your edit"
-    = f.text_field :suggestion
+    = f.label :content, "Suggest your edit"
+    = f.text_area :content
 
   .field
-    = f.label :email, "Email (required)"
+    = f.label :email, "Email"
     = f.text_field :email
   .actions
     = f.submit

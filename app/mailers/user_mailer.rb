@@ -10,4 +10,12 @@ class UserMailer < ActionMailer::Base
          :subject => @contact_message.subject
   end
 
+  def send_suggestion(suggestion)
+    @suggestion_message = suggestion
+    mail :to => @suggestion_message.recipient,
+         :from => "no-reply@suggestedit.com",
+         :reply_to => @contact_message.sender,
+         :subject => "You have a new suggested edit!"
+  end
+
 end
