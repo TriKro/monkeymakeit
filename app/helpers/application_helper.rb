@@ -18,9 +18,7 @@ module ApplicationHelper
   end
 
   def suggest_edit_link
-    %{
-      <a href=\\'javascript:void(showBox("#{new_suggestion_url}"))\\';>Suggest an edit</a>
-    }
+    %{<a href=\\'javascript:void(showBox("#{new_suggestion_url}"))\\';>Suggest an edit</a>}
   end
 
   def lightbox_js
