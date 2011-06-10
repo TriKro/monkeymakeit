@@ -1,7 +1,7 @@
 Suggestedit::Application.routes.draw do
 
   root :to => 'static#home'
-  match "/test" => "static#test"
+  match "/sample" => "static#sample", :as => :sample
 
   resources :activities
   resources :suggestions
