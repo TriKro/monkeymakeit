@@ -1,5 +1,7 @@
 class SuggestionsController < ApplicationController
 
+  layout false
+
   def new
     @suggestion = Suggestion.new
     Activity.add(current_actor, request.request_uri, "Began Creating", "Suggestion") # log the Activity
@@ -11,7 +13,7 @@ class SuggestionsController < ApplicationController
     if @suggestion.save
       Activity.add(current_actor, request.request_uri, "Created", "Suggestion", @suggestion) # log the Activity
     else
-      render :action => "new"
+      render :action => "new" and return
     end
 
     @suggestion_message = ContactMessage.new
@@ -20,6 +22,7 @@ class SuggestionsController < ApplicationController
     @suggestion_message.sender_email = params[:suggestion][:email]
     @suggestion_message.recipient_name = "Tristan"
     @suggestion_message.recipient_email = "TK@TristanKromer.com"
+    @suggestion_message.subject = "Suggested edit to #{params[:url]}"
 
     if @suggestion_message.valid?
       UserMailer.send_suggestion(@suggestion_message).deliver
@@ -27,7 +30,8 @@ class SuggestionsController < ApplicationController
       flash[:success] = 'Your suggestion has been sent!'
       redirect_to(contact_thanks_url)
     else
-      render :action => 'new' # error shown in view
+      flash[:error] = @suggestion_message.errors.full_messages.to_sentence
+      render :action => 'new'
     end
 
   end
