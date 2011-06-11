@@ -4,17 +4,18 @@ module ApplicationHelper
     content_for(:title) { page_title }
   end
 
+  def suggest_edit_lightbox_js
+    lightbox_js + "\n" + suggest_edit_js
+  end
+
   def suggest_edit_js
-    lightbox_js +
     %{
       <script type="text/javascript">
       //<![CDATA[
-
         document.write('#{suggest_edit_link}');
-
       //]]>
       </script>
-    }
+    }.strip_lines!
   end
 
   def suggest_edit_link
@@ -22,63 +23,64 @@ module ApplicationHelper
   end
 
   def lightbox_js
+    javascript = %~
+      function showBox(iframe_source)
+      {
+        var width = document.documentElement.clientWidth + document.documentElement.scrollLeft;
+
+        var layer = document.createElement('div');
+        layer.style.zIndex = 2;
+        layer.id = 'layer';
+        layer.style.position = 'absolute';
+        layer.style.top = '0px';
+        layer.style.left = '0px';
+        layer.style.height = document.documentElement.scrollHeight + 'px';
+        layer.style.width = width + 'px';
+        layer.style.backgroundColor = 'black';
+        layer.style.opacity = '.6';
+        layer.style.filter += ("progid:DXImageTransform.Microsoft.Alpha(opacity=60)");
+        document.body.appendChild(layer);
+
+        var div = document.createElement('div');
+        div.style.zIndex = 3;
+        div.id = 'box';
+        div.style.position = (navigator.userAgent.indexOf('MSIE 6') > -1) ? 'absolute' : 'fixed';
+        div.style.top = '200px';
+        div.style.left = (width / 2) - (700 / 2) + 'px';
+        div.style.height = '400px';
+        div.style.width = '700px';
+        div.style.backgroundColor = 'white';
+        div.style.border = '2px solid silver';
+        div.style.padding = '20px';
+        document.body.appendChild(div);
+
+        var p = document.createElement('p');
+        var iframe = '<iframe src="' + iframe_source + '?url=#{ Rails.env.development? ? 'http://en.blog.wordpress.com/2009/04/02/march-wrap-up-2/' : "' + window.location + '" }" ' +
+                'bordercolor="#000000" vspace="0" hspace="0" marginheight="0" marginwidth="0" style="padding: 0pt; margin: 0pt;" ' +
+                'allowtransparency="true" id="zozi_partner_iframe" frameborder="0" width="100%" height="100%" scrolling="no" ></iframe>';
+        console.debug( iframe );
+        p.innerHTML = iframe;
+        div.appendChild(p);
+
+        var a = document.createElement('a');
+        a.innerHTML = 'Close window';
+        a.href = 'javascript:void(0)';
+        a.onclick = function()
+        {
+          document.body.removeChild(document.getElementById('layer'));
+          document.body.removeChild(document.getElementById('box'));
+        };
+
+        div.appendChild(a);
+      }
+    ~.compact_whitespace
+
     %~
       <script type="text/javascript">
       //<![CDATA[
-
-        function showBox(iframe_source)
-        {
-          var width = document.documentElement.clientWidth + document.documentElement.scrollLeft;
-
-          var layer = document.createElement('div');
-          layer.style.zIndex = 2;
-          layer.id = 'layer';
-          layer.style.position = 'absolute';
-          layer.style.top = '0px';
-          layer.style.left = '0px';
-          layer.style.height = document.documentElement.scrollHeight + 'px';
-          layer.style.width = width + 'px';
-          layer.style.backgroundColor = 'black';
-          layer.style.opacity = '.6';
-          layer.style.filter += ("progid:DXImageTransform.Microsoft.Alpha(opacity=60)");
-          document.body.appendChild(layer);
-
-          var div = document.createElement('div');
-          div.style.zIndex = 3;
-          div.id = 'box';
-          div.style.position = (navigator.userAgent.indexOf('MSIE 6') > -1) ? 'absolute' : 'fixed';
-          div.style.top = '200px';
-          div.style.left = (width / 2) - (700 / 2) + 'px';
-          div.style.height = '400px';
-          div.style.width = '700px';
-          div.style.backgroundColor = 'white';
-          div.style.border = '2px solid silver';
-          div.style.padding = '20px';
-          document.body.appendChild(div);
-
-          var p = document.createElement('p');
-        //  var iframe = '<iframe src="' + iframe_source + '"></iframe>';
-          var iframe = '<iframe src="' + iframe_source + '?url=' + window.location + '" ' +
-                  'bordercolor="#000000" vspace="0" hspace="0" marginheight="0" marginwidth="0" style="padding: 0pt; margin: 0pt;" ' +
-                  'allowtransparency="true" id="zozi_partner_iframe" frameborder="0" width="100%" height="100%" scrolling="no" ></iframe>';
-          console.debug( iframe );
-          p.innerHTML = iframe;
-          div.appendChild(p);
-
-          var a = document.createElement('a');
-          a.innerHTML = 'Close window';
-          a.href = 'javascript:void(0)';
-          a.onclick = function()
-          {
-            document.body.removeChild(document.getElementById('layer'));
-            document.body.removeChild(document.getElementById('box'));
-          };
-
-          div.appendChild(a);
-        }
-
+        #{javascript}
       //]]>
       </script>
-    ~
+    ~.strip_lines!
   end
 end

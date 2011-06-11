@@ -19,6 +19,10 @@ class String
     replace( processed )
   end
 
+  def compact_whitespace
+    self.gsub( /\s+/, ' ' ).strip!
+  end
+
   def truncate( max_length )
     max_length = max_length - ELLIPSES.size
     result = match( chunk_pattern( max_length ) ) && $1
