@@ -1,5 +1,5 @@
 #new_suggestion
-  %h1 New Suggestion
-  #flash_messages
-    = render :partial => '/layouts/flash', :locals => { :flash => flash }
+  -#%pre= params[:url]
+  %h2 Edit this content to submit your suggestion
+  #flash_messages= render :partial => '/layouts/flash', :locals => { :flash => flash }
   = render 'form'

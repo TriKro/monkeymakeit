@@ -8,13 +8,10 @@
         - @suggestion.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label :content, "Suggest your edit"
     = f.text_area :content
 
   .field
-    = f.label :email, "Email"
+    = f.label :email, "Your Email: "
     = f.text_field :email
   .actions
-    = f.submit
-    %span
-      = link_to 'Back', :back if :back
+    = f.submit 'Send Suggestion'
