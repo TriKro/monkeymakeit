@@ -1,21 +1,21 @@
 class UserMailer < ActionMailer::Base
 
-  default :from => "no-reply@suggestedit.com"
+  default :from => "no-reply@suggestedit.org"
 
   def contact_us(contact_message)
     @contact_message = contact_message
     mail :to => "TK@TristanKromer.com",
-         :from => "no-reply@suggestedit.com",
+         :from => "no-reply@suggestedit.org",
          :reply_to => @contact_message.sender,
          :subject => @contact_message.subject
   end
 
   def send_suggestion(suggestion)
-    @suggestion_message = suggestion
-    mail :to => @suggestion_message.recipient,
-         :from => "no-reply@suggestedit.com",
-         :reply_to => @suggestion_message.sender,
-         :subject => "You have a new suggested edit!"
+    @content = suggestion.content
+    mail :to => suggestion.recipient,
+          :from => suggestion.sender,
+          :reply_to => suggestion.sender,
+          :subject => suggestion.subject
   end
 
 end

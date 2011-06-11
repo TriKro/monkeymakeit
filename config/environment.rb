@@ -14,7 +14,7 @@ Suggestedit::Application.initialize!
 ActionMailer::Base.smtp_settings = {
   :address              => "smtp.sendgrid.net",
   :port                 => 587,
-  :domain               => "SuggestEdit.com",
+  :domain               => "suggestedit.org",
   :user_name            => "no-reply@TooManyNinjas.com",
   :password             => "4rgfdBVC.,m",
   :authentication       => "plain",

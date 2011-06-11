@@ -39,12 +39,12 @@ class SuggestionsController < ApplicationController
 
   def send_suggestion_email
     @suggestion_message = ContactMessage.new
+    @suggestion_message.subject = "Suggested edit" + ( @suggestion.email.present? ? " from #{@suggestion.email.inspect}" : '' )
     @suggestion_message.content = @suggestion.content
     @suggestion_message.sender_name = "SuggestEdit.org"
-    @suggestion_message.sender_email = params[:suggestion][:email]
+    @suggestion_message.sender_email =  "team@suggestedit.org"
     @suggestion_message.recipient_name = "SuggestEdit Team"
     @suggestion_message.recipient_email = "team@suggestedit.org"
-    @suggestion_message.subject = "Suggested edit to #{params[:url]}"
     UserMailer.send_suggestion(@suggestion_message).deliver
   end
 
