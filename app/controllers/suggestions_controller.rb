@@ -1,9 +1,24 @@
+require 'open-uri'
+require_dependency 'html_page'
+
 class SuggestionsController < ApplicationController
 
   layout false
 
   def new
-    @suggestion = Suggestion.new
+    raise 'Expected params[:url]' unless params[ :url ]
+    begin
+      html = open( params[ :url ] ).read
+    rescue Errno::ENOENT => e
+      if params[ :url ] && e.to_s.match( /No such file or directory|403 Forbidden/ )
+        flash[ :error ] = "Sorry, we had trouble when trying to retrieve #{ params[ :url ].inspect }"
+        redirect_to root_path and return
+      else
+        raise e
+      end
+    end
+    content = HtmlPage.new( html, params[ :url ] ).to_text
+    @suggestion = Suggestion.new( :content => content )
     Activity.add(current_actor, request.request_uri, "Began Creating", "Suggestion") # log the Activity
   end
 
@@ -12,28 +27,25 @@ class SuggestionsController < ApplicationController
 
     if @suggestion.save
       Activity.add(current_actor, request.request_uri, "Created", "Suggestion", @suggestion) # log the Activity
-    else
-      render :action => "new" and return
-    end
-
-    @suggestion_message = ContactMessage.new
-    @suggestion_message.content = params[:suggestion][:content]
-    @suggestion_message.sender_name = "No name"
-    @suggestion_message.sender_email = params[:suggestion][:email]
-    @suggestion_message.recipient_name = "Tristan"
-    @suggestion_message.recipient_email = "TK@TristanKromer.com"
-    @suggestion_message.subject = "Suggested edit to #{params[:url]}"
-
-    if @suggestion_message.valid?
-      UserMailer.send_suggestion(@suggestion_message).deliver
+      send_suggestion_email
       Activity.add(current_actor, request.request_uri, "Created", "SuggestionMessage") # log the Activity
       flash[:success] = 'Your suggestion has been sent!'
       redirect_to(contact_thanks_url)
     else
-      flash[:error] = @suggestion_message.errors.full_messages.to_sentence
-      render :action => 'new'
+      render :action => "new"
     end
 
+  end
+
+  def send_suggestion_email
+    @suggestion_message = ContactMessage.new
+    @suggestion_message.content = @suggestion.content
+    @suggestion_message.sender_name = "SuggestEdit.org"
+    @suggestion_message.sender_email = params[:suggestion][:email]
+    @suggestion_message.recipient_name = "SuggestEdit Team"
+    @suggestion_message.recipient_email = "team@suggestedit.org"
+    @suggestion_message.subject = "Suggested edit to #{params[:url]}"
+    UserMailer.send_suggestion(@suggestion_message).deliver
   end
 
 end
