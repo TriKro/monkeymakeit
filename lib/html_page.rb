@@ -147,15 +147,17 @@ class HtmlPage
 
     # nbsp => ' '
     text.gsub!(/&nbsp;/, ' ')
-    text.gsub!( /\302\240/, ' ' )  # UTF8 for nbsp
-    text.gsub!( /\240/, ' ' )      # ascii for nbsp
+    # TODO: figure out how to do these in ruby 1.9.2:
+    # They now throw 'incompatible encoding -- ascii regexp for utf8 string'
+    #    text.gsub!( /\302\240/, ' ' )  # UTF8 for nbsp
+    #    text.gsub!( /\240/, ' ' )      # ascii for nbsp
 
     text.gsub!(/\s+/, ' ')   # all whitespace, including newlines, becomes a single space
 
     # replace some tags with newlines
     text.gsub!(%r{<br(\s[^>]*)?/?>}i, "\n")
     text.gsub!(%r{<p(\s[^>]*)?/?>}i, "\n\n")
-    text.gsub!(%r{</(h\d|p|div)[^>]*>}i, "\n\n")
+    text.gsub!(%r{</(h\d|p|div|ol|ul)[^>]*>}i, "\n\n")
 
     # replace some tags with meaningful text markup
     text.gsub!(/<hr[^>]*>/i, "\n\n-------------------------\n\n")
