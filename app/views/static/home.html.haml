@@ -1,10 +1,8 @@
 %h2.instructions Copy/paste this code into your site to get started:
 
 %code
-  %pre= suggest_edit_js
+  %pre
+    %textarea{:rows => 20, :cols => 100}= suggest_edit_js
 
-%h2.instructions
-  Or, check out the
-  = link_to 'sample page', sample_path
-
-
+%h2 Sample link
+= suggest_edit_js.html_safe
