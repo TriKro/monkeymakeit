@@ -1,3 +1,4 @@
+require_dependency File.dirname( __FILE__ ) + '/../../config/initializers/diff_lcs'
 require_dependency File.dirname( __FILE__ ) + '/../../config/initializers/string'
 require_dependency 'html_page'
 
@@ -17,12 +18,7 @@ class Suggestion < ActiveRecord::Base
   end
 
   def html_diff_with_original
-    html_formatted_diff = ''
-    html_diff_callback = Diff::LCS::HtmlDiffCallbacks.new(html_formatted_diff)
-#    IO.write( "[before] #{url.dehumanize}.txt", before_text )
-#    IO.write( "[after] #{url.dehumanize}.txt", after_text )
-    Diff::LCS.traverse_sequences(before_chunks, after_chunks, html_diff_callback)
-    html_formatted_diff.html_safe
+    Diff::LCS::HtmlDiff.html_diff_from_plain_text_versions(before_text, after_text, :inline_style => true)
   end
 
 end
