@@ -1,6 +1,6 @@
 %p
   You've received a suggested edit
-  = "from #{@suggestion.email}" if @suggestion.email
+  = "from #{@suggestion.email}" if @suggestion.email.present?
   = '--'
 
 = @suggestion.html_diff_with_original

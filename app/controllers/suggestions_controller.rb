@@ -22,7 +22,7 @@ class SuggestionsController < ApplicationController
 
   def update
     @suggestion = Suggestion.find(params[:id])
-    @suggestion.after_text = params[:suggestion][:after_text]
+    @suggestion.update_attributes( params[:suggestion] )
 
     if @suggestion.save
       Activity.add(current_actor, request.request_uri, "Created", "Suggestion", @suggestion) # log the Activity
