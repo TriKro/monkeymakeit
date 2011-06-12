@@ -1,13 +1,29 @@
 require 'diff/lcs'
 
 class Diff::LCS::HtmlDiff
+
   def self.html_diff_from_plain_text_versions(before_text, after_text, options)
+    defaults = {
+            :granularity => :sentence,
+            :inline_style => false,
+            }
+    options = defaults.merge( options )
+
     html_formatted_diff = ''
     html_diff_callback = Diff::LCS::HtmlDiffCallbacks.new(html_formatted_diff, options)
-    #    IO.write( "[before] #{url.dehumanize}.txt", before_text )
-    #    IO.write( "[after] #{url.dehumanize}.txt", after_text )
-    before_chunks = before_text.sentences
-    after_chunks = after_text.sentences
+
+#    IO.write( "[before].txt", before_text )
+#    IO.write( "[after].txt", after_text )
+
+    before_chunks, after_chunks = case options[ :granularity ]
+      when :sentence
+        [ before_text.sentences, after_text.sentences ]
+      when :word
+        [ before_text.words, after_text.words ]
+      else
+        raise "Unexpected granularity #{options[ :granularity ].inspect}"
+    end
+
     Diff::LCS.traverse_sequences(before_chunks, after_chunks, html_diff_callback)
     html_formatted_diff.html_safe
   end

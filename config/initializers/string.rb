@@ -36,7 +36,6 @@ class String
   end
 
   def sentences
-    with_unix_line_endings = self.gsub( "\r\n", "\n" )  # attempts to handle this directly in the regexp failed, eg: putting (?:\r\n)+ first does not make it the highest priority capture
     with_unix_line_endings.scan(
       %r{
         (?:
@@ -52,6 +51,14 @@ class String
         )
       }x
     )
+  end
+
+  def words
+    with_unix_line_endings.split( /\b|(?=\s)|(?<=\s)/ )
+  end
+
+  def with_unix_line_endings
+    self.gsub( "\r\n", "\n" )
   end
 
   def chunk_pattern( max_length )
