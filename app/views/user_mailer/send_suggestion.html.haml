@@ -1,4 +1,6 @@
 %p
-  You've received a suggested edit:
+  You've received a suggested edit
+  = "from #{@suggestion.email}" if @suggestion.email
+  = '--'
 
-= @content
+= @suggestion.html_diff_with_original

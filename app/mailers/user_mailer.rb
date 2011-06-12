@@ -11,11 +11,17 @@ class UserMailer < ActionMailer::Base
   end
 
   def send_suggestion(suggestion)
-    @content = suggestion.content
-    mail :to => suggestion.recipient,
-          :from => suggestion.sender,
-          :reply_to => suggestion.sender,
-          :subject => suggestion.subject
+    @suggestion = suggestion
+    suggestion_message = ContactMessage.new
+    suggestion_message.subject = "Suggested edit to #{@suggestion.url}"
+    suggestion_message.sender_name = "SuggestEdit.org"
+    suggestion_message.sender_email =  "team@suggestedit.org"
+    suggestion_message.recipient_name = "SuggestEdit Team"
+    suggestion_message.recipient_email = "team@suggestedit.org"
+    mail :to => suggestion_message.recipient,
+          :from => suggestion_message.sender,
+          :reply_to => suggestion_message.sender,
+          :subject => suggestion_message.subject
   end
 
 end
