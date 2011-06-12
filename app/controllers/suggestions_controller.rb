@@ -1,5 +1,4 @@
 require 'open-uri'
-require_dependency 'html_page'
 
 class SuggestionsController < ApplicationController
 
@@ -8,7 +7,7 @@ class SuggestionsController < ApplicationController
   def new
     raise 'Expected params[:url]' unless params[ :url ]
     begin
-      html = open( params[ :url ] ).read
+      before_html = open( params[ :url ] ).read
     rescue Errno::ENOENT => e
       if params[ :url ] && e.to_s.match( /No such file or directory|403 Forbidden/ )
         flash[ :error ] = "Sorry, we had trouble when trying to retrieve #{ params[ :url ].inspect }"
@@ -17,13 +16,13 @@ class SuggestionsController < ApplicationController
         raise e
       end
     end
-    content = HtmlPage.new( html, params[ :url ] ).to_text
-    @suggestion = Suggestion.new( :content => content )
+    @suggestion = Suggestion.create!( :url => params[ :url ], :before_html => before_html )
     Activity.add(current_actor, request.request_uri, "Began Creating", "Suggestion") # log the Activity
   end
 
-  def create
-    @suggestion = Suggestion.new(params[:suggestion])
+  def update
+    @suggestion = Suggestion.find(params[:id])
+    @suggestion.after_text = params[:suggestion][:after_text]
 
     if @suggestion.save
       Activity.add(current_actor, request.request_uri, "Created", "Suggestion", @suggestion) # log the Activity
@@ -34,17 +33,16 @@ class SuggestionsController < ApplicationController
     else
       render :action => "new"
     end
-
   end
 
   def send_suggestion_email
     @suggestion_message = ContactMessage.new
+    @suggestion_message.content = @suggestion.html_diff_with_original
     @suggestion_message.subject = "Suggested edit" + ( @suggestion.email.present? ? " from #{@suggestion.email.inspect}" : '' )
-    @suggestion_message.content = @suggestion.content
     @suggestion_message.sender_name = "SuggestEdit.org"
-    @suggestion_message.sender_email =  "team@suggestedit.org"
+    @suggestion_message.sender_email =  "team@hkw7.org"
     @suggestion_message.recipient_name = "SuggestEdit Team"
-    @suggestion_message.recipient_email = "team@suggestedit.org"
+    @suggestion_message.recipient_email = "team@hkw7.org"
     UserMailer.send_suggestion(@suggestion_message).deliver
   end
 

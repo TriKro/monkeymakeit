@@ -3,6 +3,10 @@ class String
   LINE_ENDING = "\n"
   ELLIPSES = '...'
 
+  def dehumanize
+    self.gsub(/\W+/, '_').downcase
+  end
+
   def sha1
     Digest::SHA1.hexdigest( self )
   end
@@ -31,6 +35,25 @@ class String
     result
   end
 
+  def sentences
+    with_unix_line_endings = self.gsub( "\r\n", "\n" )  # attempts to handle this directly in the regexp failed, eg: putting (?:\r\n)+ first does not make it the highest priority capture
+    with_unix_line_endings.scan(
+      %r{
+        (?:
+          \n+
+          |
+          \S[^.\n]+[.]+
+          |
+          \s+
+          |
+          \S[^.\n]+
+          |
+          .+
+        )
+      }x
+    )
+  end
+
   def chunk_pattern( max_length )
     %r{
       (?:
@@ -41,6 +64,10 @@ class String
         [^\s]{#{max_length+1},}   # lines longer than max_length, but with no whitespace, so they should not be broken
       )
     }x
+  end
+
+  def whitespace?
+    !!self.match( /\A\s+\Z/ )
   end
 
   # creates regexp to match any similar string,
