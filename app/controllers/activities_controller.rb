@@ -4,11 +4,6 @@ class ActivitiesController < ApplicationController
     @activities = Activity.all.paginate(:page => params[:page], :per_page => 20)
   end
 
-  def create
-    Activity.add(current_actor, params[:url], params[:activity_type])
-    render :nothing => true
-  end
-
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy

@@ -5,7 +5,7 @@ gem 'diff-lcs',            '= 1.1.2'
 gem "hoptoad_notifier",    "~> 2.4"
 gem "haml"
 gem "haml-rails"
-gem 'mysql2'
+gem 'mysql2',              '< 0.3'
 gem 'nokogiri',            '= 1.4.4'
 gem 'rails',               '= 3.0.4'
 gem "rake", "0.8.7"
