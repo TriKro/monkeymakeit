@@ -2,17 +2,17 @@ source 'http://rubygems.org'
 
 gem 'awesome_print'
 gem 'diff-lcs',            '= 1.1.2'
-gem "hoptoad_notifier",    "~> 2.4"
-gem "haml"
-gem "haml-rails"
-gem 'sass'
+gem 'hoptoad_notifier',    '~> 2.4'
+gem 'haml'
+gem 'haml-rails'
 gem 'mysql2',              '< 0.3'
 gem 'nokogiri',            '= 1.4.4'
 gem 'rails',               '= 3.0.4'
-gem "rake", "0.8.7"
-gem "recaptcha", :require => 'recaptcha/rails'
+gem 'rake', '0.8.7'
+gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'sanitize',            '= 2.0.0'
-gem "will_paginate",       "~> 3.0.pre2"
+gem 'sass'
+gem 'will_paginate',       '~> 3.0.pre2'
 
 group :development, :test do
   gem 'rspec-rails',       '= 2.5.0'
