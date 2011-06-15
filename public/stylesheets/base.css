@@ -99,6 +99,108 @@ input, select {
 #suggestion_submit:hover {
   background: url(/images/button-tweakit_overdown.png) no-repeat 0px 0px; }
 
+.tweakthis {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  background: url(/images/button-tweakthis_up.png) no-repeat 0px 0px;
+  height: 51px;
+  width: 185px; }
+
+.tweakthis:hover {
+  background: url(/images/button-tweakthis_overdown.png) no-repeat 0px 0px; }
+
+header {
+  padding: 0 20px;
+  margin-bottom: 25px;
+  min-height: 90px; }
+  header #header_inner {
+    position: relative;
+    padding-top: 5px;
+    max-width: 960px;
+    margin: 0 auto;
+    height: 55px;
+    min-width: 400px; }
+    header #header_inner #newlogo {
+      position: absolute;
+      top: 35px;
+      z-index: 1001; }
+      header #header_inner #newlogo a {
+        color: #cccccc; }
+        header #header_inner #newlogo a span {
+          position: absolute;
+          width: 300px;
+          left: 60px; }
+    header #header_inner #topmenu {
+      float: right;
+      position: absolute;
+      height: 35px;
+      right: 0px;
+      top: 10px;
+      padding: 0; }
+      header #header_inner #topmenu .inner {
+        font-size: 18px;
+        height: 30px;
+        line-height: 30px;
+        color: #d0d0c9;
+        font-family: "Yanone Kaffeesatz", arial, serif;
+        display: inline-block;
+        margin-right: 10px; }
+        header #header_inner #topmenu .inner img.small-avatar {
+          vertical-align: -28%;
+          margin-right: 8px;
+          border: 2px solid #505571;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px; }
+        header #header_inner #topmenu .inner a {
+          color: white;
+          border: 0; }
+          header #header_inner #topmenu .inner a:hover {
+            text-decoration: underline; }
+    header #header_inner #logo_container {
+      position: absolute;
+      top: -10px;
+      left: -70px; }
+
+footer {
+  padding: 20px 20px;
+  display: block;
+  bottom: 0;
+  position: relative;
+  font-size: 0.9em;
+  color: black;
+  background: none;
+  clear: both; }
+  footer #footer_inner {
+    margin: 0 auto;
+    padding: 10px 0; }
+    footer #footer_inner #footermenu {
+      text-align: center;
+      margin-bottom: 15px;
+      font-weight: bold; }
+    footer #footer_inner #copyright {
+      text-align: center; }
+    footer #footer_inner a {
+      color: black; }
+
+body {
+  position: relative;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  background: #efefea; }
+
+body_container {
+  position: relative;
+  margin: 0 auto; }
+
+#main_content {
+  width: 900px;
+  text-align: center; }
+  #main_content #main_content_inner {
+    width: 90%;
+    display: inline-block; }
+
 #new_suggestion {
   border: 7px solid #00b7fb;
   background: #e6e6e6;
