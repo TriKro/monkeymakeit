@@ -3,7 +3,7 @@ require 'open-uri'
 class SuggestionsController < ApplicationController
 
   def new
-    params[:url] = "http://grasshopperherder.com" #uncomment this if you want to load up /suggestions/new for local testing
+#    params[:url] = "http://grasshopperherder.com" #uncomment this if you want to load up /suggestions/new for local testing
     raise 'Expected params[:url]' unless params[ :url ]
     begin
       before_html = open( params[ :url ] ).read
