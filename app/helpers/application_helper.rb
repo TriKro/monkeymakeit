@@ -4,22 +4,26 @@ module ApplicationHelper
     content_for(:title) { page_title }
   end
 
-  def suggest_edit_lightbox_js
-    lightbox_js + "\n" + suggest_edit_js
-  end
-
-  def suggest_edit_js
+  def lightbox_link( link_text )
+    the_link = %{<a href=\\'javascript:void(showBox("#{new_suggestion_url}"))\\';>#{ link_text }</a>}
     %{
       <script type="text/javascript">
       //<![CDATA[
-        document.write('#{suggest_edit_link}');
+        document.write('#{ the_link }');
       //]]>
       </script>
     }.strip_lines!
   end
 
-  def suggest_edit_link
-    %{<a href=\\'javascript:void(showBox("#{new_suggestion_url}"))\\';>Suggest an edit</a>}
+  def lightbox_button( button_image )
+    button = %{<a href=\\'javascript:void(showBox("#{new_suggestion_url}"))\\';><img src="#{root_url}images/#{button_image}" /></a>}
+     %{
+      <script type="text/javascript">
+      //<![CDATA[
+        document.write('#{button}');
+      //]]>
+      </script>
+    }.strip_lines!
   end
 
   def lightbox_js

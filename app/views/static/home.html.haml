@@ -1,12 +1,31 @@
-%h2.instructions Copy/paste this code into your site to get started:
+= lightbox_js.html_safe
+
+%h2.instructions To put this button on your site:
+
+= lightbox_button('button-tweakthis_up.png').html_safe
+
+%br
+%br
+
+%h2.instructions Copy/paste this code:
 
 %code
   %pre
-    %textarea{:rows => 20, :cols => 100}= suggest_edit_lightbox_js
+    %textarea{:rows => 7, :cols => 40}= lightbox_js + "\n" + lightbox_button('button-tweakthis_up.png')
 
-%h2.Sample buttons / links:
+%br
+%br
+%br
+%h2.instructions To put this link on your site:
 
-.tweakthis
+= lightbox_link('Suggest an Edit').html_safe
 
-= lightbox_js.html_safe
-= suggest_edit_js.html_safe
+%br
+%br
+
+%h2.instructions Copy/paste this code:
+
+%code
+  %pre
+    %textarea{:rows => 7, :cols => 40}= lightbox_js + "\n" + lightbox_link('Suggest an Edit')
+
