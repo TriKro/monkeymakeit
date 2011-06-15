@@ -2,9 +2,10 @@ require 'open-uri'
 
 class SuggestionsController < ApplicationController
 
-  layout false
+#  layout false
 
   def new
+    params[:url] = "http://grasshopperherder.com" #workaround for dev testing REMOVE BEFORE DEPLOY!!!
     raise 'Expected params[:url]' unless params[ :url ]
     begin
       before_html = open( params[ :url ] ).read

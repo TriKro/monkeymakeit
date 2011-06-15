@@ -78,3 +78,86 @@ hr {
 
 input, select {
   vertical-align: middle; }
+
+.blue {
+  color: #00b7fb; }
+
+.darkblue {
+  color: #0088ba; }
+
+.clear {
+  clear: both; }
+
+#suggestion_submit {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  background: url(/images/button-tweakit_up.png) no-repeat 0px 0px;
+  height: 51px;
+  width: 166px; }
+
+#suggestion_submit:hover {
+  background: url(/images/button-tweakit_overdown.png) no-repeat 0px 0px; }
+
+#new_suggestion {
+  border: 7px solid #00b7fb;
+  background: #e6e6e6;
+  min-width: 640px;
+  text-align: center;
+  padding: 20px; }
+  #new_suggestion #new_suggestion_inner {
+    display: inline-block;
+    width: 100%; }
+    #new_suggestion #new_suggestion_inner h2 {
+      font-family: "Helvetica";
+      font-size: 2em;
+      font-weight: 100;
+      letter-spacing: -1px;
+      margin-bottom: 30px;
+      text-align: left; }
+    #new_suggestion #new_suggestion_inner .edit_suggestion {
+      width: 100%; }
+      #new_suggestion #new_suggestion_inner .edit_suggestion #suggestion_field_content {
+        width: 100%; }
+        #new_suggestion #new_suggestion_inner .edit_suggestion #suggestion_field_content #suggestion_after_text {
+          font-family: "Arial";
+          padding: 10px;
+          width: 97%;
+          line-height: 1.6em;
+          font-size: 0.9em; }
+      #new_suggestion #new_suggestion_inner .edit_suggestion h3 {
+        font-family: "Helvetica";
+        font-size: 1.5em;
+        font-weight: 100;
+        letter-spacing: -1px;
+        margin: 20px 0 0 0;
+        text-align: left; }
+      #new_suggestion #new_suggestion_inner .edit_suggestion .credit {
+        float: left; }
+        #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_name label {
+          display: none; }
+        #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_name #suggestion_name {
+          font-family: "Arial";
+          margin: 10px 0;
+          width: 100px;
+          font-size: 1.1em; }
+        #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_email label {
+          display: none; }
+        #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_email #suggestion_email {
+          font-family: "Arial";
+          margin: 10px 0;
+          width: 250px;
+          font-size: 1.1em; }
+      #new_suggestion #new_suggestion_inner .edit_suggestion .actions {
+        margin: 8px 0 0 0;
+        float: right; }
+        #new_suggestion #new_suggestion_inner .edit_suggestion .actions .company_id {
+          font-family: "Helvetica";
+          margin: 10px 0 0 0; }
+          #new_suggestion #new_suggestion_inner .edit_suggestion .actions .company_id .powered_by {
+            color: #666666;
+            font-style: italic;
+            font-size: 0.7em; }
+          #new_suggestion #new_suggestion_inner .edit_suggestion .actions .company_id .company_name {
+            color: black;
+            font-size: 0.9em; }

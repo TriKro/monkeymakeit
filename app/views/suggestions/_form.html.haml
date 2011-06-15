@@ -7,11 +7,31 @@
       %ul
         - @suggestion.errors.full_messages.each do |msg|
           %li= msg
-  .field
+  #suggestion_field_content.field
     = f.text_area :after_text
 
-  .field
-    = f.label :email, "Your Email: "
-    = f.text_field :email
+
+  %h3.blue
+    And get
+    %span.darkblue
+      credit:
+  .credit
+
+    -##suggestion_field_name.field
+    -#  = f.label :name, "Your Name: "
+    -#  = f.text_field :name
+
+    #suggestion_field_email.field
+      = f.label :email, "Your Email: "
+      = f.text_field :email
+
   .actions
-    = f.submit 'Send Suggestion'
+    = f.submit ''
+    %br
+    .company_id
+      %span.powered_by
+        powered by
+      %span.company_name
+        suggestedit.org
+
+  .clear

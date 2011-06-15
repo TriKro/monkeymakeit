@@ -1,22 +1,19 @@
 /*
 Syntax error: Undefined variable: "$blue".
-        on line 2 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/suggestions.sass
+        on line 3 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/basics.sass
 
-1: #new_suggestion
-2:   border: 7px solid $blue
-3:   background: $grey
-4:   min-width: 640px
-5:   text-align: center
-6:   padding: 20px
-7:   #new_suggestion_inner
+1: 
+2: .blue
+3:   color: $blue
+4: 
+5: .darkblue
+6:   color: $darkblue
+7: 
+8: .clear
 
 Backtrace:
-/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/suggestions.sass:2
+/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/basics.sass:3
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/variable.rb:45:in `_perform'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/node.rb:40:in `perform'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/list.rb:62:in `block in _perform'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/list.rb:62:in `map'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/list.rb:62:in `_perform'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/node.rb:40:in `perform'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:215:in `visit_prop'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:37:in `visit'
@@ -94,4 +91,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$blue\".\A         on line 2 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/suggestions.sass\A \A 1: #new_suggestion\A 2:   border: 7px solid $blue\A 3:   background: $grey\A 4:   min-width: 640px\A 5:   text-align: center\A 6:   padding: 20px\A 7:   #new_suggestion_inner"; }
+  content: "Syntax error: Undefined variable: \"$blue\".\A         on line 3 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/basics.sass\A \A 1: \A 2: .blue\A 3:   color: $blue\A 4: \A 5: .darkblue\A 6:   color: $darkblue\A 7: \A 8: .clear"; }
