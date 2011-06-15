@@ -18,7 +18,7 @@ class SuggestionsController < ApplicationController
       end
     end
     @suggestion = Suggestion.create!( :url => params[ :url ], :before_html => before_html )
-    Activity.add(current_actor, request.request_uri, "Began Creating", "Suggestion") # log the Activity
+    log_activity(request.request_uri, "Began Creating", "Suggestion")
   end
 
   def update
@@ -26,9 +26,9 @@ class SuggestionsController < ApplicationController
     @suggestion.update_attributes( params[:suggestion] )
 
     if @suggestion.save
-      Activity.add(current_actor, request.request_uri, "Created", "Suggestion", @suggestion) # log the Activity
+      log_activity(request.request_uri, "Created", "Suggestion", @suggestion)
       send_suggestion_email
-      Activity.add(current_actor, request.request_uri, "Created", "SuggestionMessage") # log the Activity
+      log_activity(request.request_uri, "Created", "SuggestionMessage")
       flash[:success] = 'Your suggestion has been sent!'
       redirect_to(contact_thanks_url)
     else

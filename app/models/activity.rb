@@ -7,10 +7,4 @@ class Activity < ActiveRecord::Base
 
   default_scope :order => "created_at DESC"
 
-  def self.add(actor, url, activity_type, target_model = nil, target = nil, subtarget_model = nil, subtarget = nil)
-    activity = Activity.new(:session_id => actor, :url => url, :activity_type => activity_type, :target_model => target_model, :target => target, :subtarget_model => subtarget_model, :subtarget => subtarget)
-    activity.save!
-    activity
-  end
-
 end
