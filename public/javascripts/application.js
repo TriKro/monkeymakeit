@@ -1,2 +1,14 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(document).ready(function() {
+  $('#suggestion_email').focus(function() {
+    if ($('#suggestion_email').val() == "What's your email address?") {
+      $('#suggestion_email').css('color', 'black');
+      $('#suggestion_email').val('');
+    }
+  });
+  $('#suggestion_email').blur(function() {
+    if ($('#suggestion_email').val() == '') {
+      $('#suggestion_email').css('color', 'grey');
+      $('#suggestion_email').val("What's your email address?");
+    }
+  });
+});
