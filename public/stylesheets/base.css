@@ -1,0 +1,163 @@
+/* Base Template by TK
+ * Author: Tristan Kromer - http://GrasshopperHerder.com
+ * Twitter: @TriKro
+ */
+/*html5doctor.com Reset Stylesheet
+ *v1.6.1
+ *Last Updated: 2010-09-17
+ *Author: Richard Clark - http://richclarkdesign.com
+ *Twitter: @rich_clark */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ffff99;
+  color: black;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ffff99;
+  color: black;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+.blue {
+  color: #00b7fb; }
+
+.darkblue {
+  color: #0088ba; }
+
+.clear {
+  clear: both; }
+
+#suggestion_submit {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  background: url(/images/button-tweakit_up.png) no-repeat 0px 0px;
+  height: 51px;
+  width: 166px; }
+
+#suggestion_submit:hover {
+  background: url(/images/button-tweakit_overdown.png) no-repeat 0px 0px; }
+
+#new_suggestion {
+  border: 7px solid #00b7fb;
+  background: #e6e6e6;
+  min-width: 640px;
+  text-align: center;
+  padding: 20px; }
+  #new_suggestion #new_suggestion_inner {
+    display: inline-block;
+    width: 100%; }
+    #new_suggestion #new_suggestion_inner h2 {
+      font-family: "Helvetica";
+      font-size: 2em;
+      font-weight: 100;
+      letter-spacing: -1px;
+      margin-bottom: 30px;
+      text-align: left; }
+    #new_suggestion #new_suggestion_inner .edit_suggestion {
+      width: 100%; }
+      #new_suggestion #new_suggestion_inner .edit_suggestion #suggestion_field_content {
+        width: 100%; }
+        #new_suggestion #new_suggestion_inner .edit_suggestion #suggestion_field_content #suggestion_after_text {
+          font-family: "Arial";
+          padding: 10px;
+          width: 97%;
+          line-height: 1.6em;
+          font-size: 0.9em; }
+      #new_suggestion #new_suggestion_inner .edit_suggestion h3 {
+        font-family: "Helvetica";
+        font-size: 1.5em;
+        font-weight: 100;
+        letter-spacing: -1px;
+        margin: 20px 0 0 0;
+        text-align: left; }
+      #new_suggestion #new_suggestion_inner .edit_suggestion .credit {
+        float: left; }
+        #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_name label {
+          display: none; }
+        #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_name #suggestion_name {
+          font-family: "Arial";
+          margin: 10px 0;
+          width: 100px;
+          font-size: 1.1em; }
+        #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_email label {
+          display: none; }
+        #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_email #suggestion_email {
+          font-family: "Arial";
+          margin: 10px 0;
+          width: 250px;
+          font-size: 1.1em; }
+      #new_suggestion #new_suggestion_inner .edit_suggestion .actions {
+        margin: 8px 0 0 0;
+        float: right; }
+        #new_suggestion #new_suggestion_inner .edit_suggestion .actions .company_id {
+          font-family: "Helvetica";
+          margin: 10px 0 0 0; }
+          #new_suggestion #new_suggestion_inner .edit_suggestion .actions .company_id .powered_by {
+            color: #666666;
+            font-style: italic;
+            font-size: 0.7em; }
+          #new_suggestion #new_suggestion_inner .edit_suggestion .actions .company_id .company_name {
+            color: black;
+            font-size: 0.9em; }
