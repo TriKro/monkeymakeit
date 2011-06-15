@@ -26,7 +26,7 @@ module ApplicationHelper
     }.strip_lines!
   end
 
-  def lightbox_js
+  def lightbox_js( options = {} )
     javascript = %~
       function showBox(iframe_source)
       {
@@ -59,7 +59,7 @@ module ApplicationHelper
         document.body.appendChild(div);
 
         var p = document.createElement('p');
-        var iframe = '<iframe src="' + iframe_source + '?url=#{ Rails.env.development? ? 'http://grasshopperherder.com/' : "' + window.location + '" }" ' +
+        var iframe = '<iframe src="' + iframe_source + '?url=#{ options[ :demo ] ? 'http://grasshopperherder.com/' : "' + window.location + '" }" ' +
                 'bordercolor="#000000" vspace="0" hspace="0" marginheight="0" marginwidth="0" style="padding: 0pt; margin: 0pt;" ' +
                 'allowtransparency="true" id="zozi_partner_iframe" frameborder="0" width="100%" height="100%" scrolling="no" ></iframe>';
         console.debug( iframe );
