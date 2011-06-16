@@ -19,3 +19,14 @@
 
 .tweakthis:hover {
   background: url(/images/button-tweakthis_overdown.png) no-repeat 0px 0px; }
+
+#demo_sprite {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  background: url(/images/button-tweakthis-example-sprite.png) no-repeat 0px 0px;
+  height: 350px;
+  width: 339px; }
+
+#demo_sprite:hover {
+  background-position: 0px -355px; }

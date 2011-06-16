@@ -14,6 +14,7 @@ Suggestedit::Application.routes.draw do
 
 
   # Static page routes
+  match "/get_the_code" => "static#code", :as => :code
   match "/privacy_policy" => "static#privacy_policy", :as => :privacy_policy
   match "/terms_of_service" => "static#terms_of_service", :as => :terms_of_service
   match "/about_us" => "static#about", :as => :about

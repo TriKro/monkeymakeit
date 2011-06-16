@@ -110,6 +110,17 @@ input, select {
 .tweakthis:hover {
   background: url(/images/button-tweakthis_overdown.png) no-repeat 0px 0px; }
 
+#demo_sprite {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  background: url(/images/button-tweakthis-example-sprite.png) no-repeat 0px 0px;
+  height: 350px;
+  width: 339px; }
+
+#demo_sprite:hover {
+  background-position: 0px -355px; }
+
 header {
   padding: 0 20px;
   margin-bottom: 25px;
@@ -164,25 +175,22 @@ header {
       left: -70px; }
 
 footer {
-  padding: 20px 20px;
+  padding: 0 20px;
   display: block;
   bottom: 0;
   position: relative;
   font-size: 0.9em;
-  color: black;
+  color: #666666;
   background: none;
-  clear: both; }
+  clear: both;
+  text-align: center; }
   footer #footer_inner {
-    margin: 0 auto;
+    margin: 0 auto 15px auto;
     padding: 10px 0; }
     footer #footer_inner #footermenu {
-      text-align: center;
-      margin-bottom: 15px;
-      font-weight: bold; }
-    footer #footer_inner #copyright {
-      text-align: center; }
+      padding: 0 0 0 20px; }
     footer #footer_inner a {
-      color: black; }
+      color: #666666; }
 
 body {
   position: relative;
@@ -290,3 +298,37 @@ body_container {
         padding: 0;
         position: relative;
         top: -2px; }
+
+#landing_page {
+  text-align: left;
+  background-color: white;
+  padding: 50px;
+  -moz-box-shadow: 5px 5px 5px #cccccc;
+  -webkit-box-shadow: 5px 5px 5px #cccccc;
+  box-shadow: 5px 5px 5px #cccccc; }
+  #landing_page h1 {
+    font-family: "Helvetica";
+    font-size: 6em;
+    font-weight: 100;
+    letter-spacing: -1px;
+    margin: 0 0 20px 5px; }
+  #landing_page #left_column {
+    float: left; }
+  #landing_page #right_column {
+    float: left;
+    margin: 0 0 0 50px; }
+    #landing_page #right_column ul {
+      margin: 50px 0 0 50px; }
+      #landing_page #right_column ul li {
+        font-family: "Helvetica";
+        list-style-image: url(/images/check-green.png);
+        font-size: 1.6em;
+        font-weight: 100;
+        letter-spacing: -1px;
+        margin: 5px 0 0 0; }
+    #landing_page #right_column #signup_box {
+      border: 7px solid #00b7fb;
+      width: 400px;
+      height: 70px;
+      margin: 90px 0 0 0;
+      background: #e6e6e6; }

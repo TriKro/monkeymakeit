@@ -1,31 +1,28 @@
 = lightbox_js( :demo => true ).html_safe
 
-%h2.instructions To put this button on your site:
+#landing_page
+  %h1#headline.blue
+    Do you
+    %span.darkblue blog?
 
-= lightbox_button('button-tweakthis-tall.png').html_safe
+  #left_column
+    #demo_sprite
+    -#= lightbox_button('button-tweakthis-example-sprite.png').html_safe
 
-%br
-%br
+  #right_column
+    %ul#value_prop
+      %li.blue
+        Make your readers
+        %span.darkblue happier
+      %li.blue
+        Happier readers
+        %span.darkblue subscribe
+        more
+      %li.blue
+        Let your readers suggest
+        %span.darkblue edits
 
-%h2.instructions Copy/paste this code:
+    #signup_box
+      This is the signup form area
 
-%code
-  %pre
-    %textarea{:rows => 7, :cols => 40}= lightbox_js + "\n" + lightbox_button('button-tweakthis-tall.png')
-
-%br
-%br
-%br
-%h2.instructions To put this link on your site:
-
-= lightbox_link('Suggest an Edit').html_safe
-
-%br
-%br
-
-%h2.instructions Copy/paste this code:
-
-%code
-  %pre
-    %textarea{:rows => 7, :cols => 40}= lightbox_js + "\n" + lightbox_link('Suggest an Edit')
-
+  .clear

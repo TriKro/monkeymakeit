@@ -1,0 +1,31 @@
+= lightbox_js( :demo => true ).html_safe
+
+%h2.instructions To put this button on your site:
+
+= lightbox_button('button-tweakthis-tall.png').html_safe
+
+%br
+%br
+
+%h2.instructions Copy/paste this code:
+
+%code
+  %pre
+    %textarea{:rows => 7, :cols => 40}= lightbox_js + "\n" + lightbox_button('button-tweakthis-tall.png')
+
+%br
+%br
+%br
+%h2.instructions To put this link on your site:
+
+= lightbox_link('Suggest an Edit').html_safe
+
+%br
+%br
+
+%h2.instructions Copy/paste this code:
+
+%code
+  %pre
+    %textarea{:rows => 7, :cols => 40}= lightbox_js + "\n" + lightbox_link('Suggest an Edit')
+

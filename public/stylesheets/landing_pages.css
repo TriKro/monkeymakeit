@@ -1,21 +1,18 @@
 /*
-Syntax error: Undefined variable: "$darkgrey".
-        on line 7 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/footer.sass
+Syntax error: Undefined variable: "$white".
+        on line 3 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/landing_pages.sass
 
-2:   padding: 0 20px
-3:   display: block
-4:   bottom: 0
-5:   position: relative
-6:   font-size: .9em
-7:   color: $darkgrey
-8:   background: none
-9:   clear: both
-10:   text-align: center
-11:   #footer_inner
-12:     margin: 0 auto 15px auto
+1: #landing_page
+2:   text-align: left
+3:   background-color: $white
+4:   padding: 50px
+5:   -moz-box-shadow: 5px 5px 5px #ccc
+6:   -webkit-box-shadow: 5px 5px 5px #ccc
+7:   box-shadow: 5px 5px 5px #ccc
+8:   h1
 
 Backtrace:
-/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/footer.sass:7
+/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/landing_pages.sass:3
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/variable.rb:45:in `_perform'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/node.rb:40:in `perform'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:215:in `visit_prop'
@@ -94,4 +91,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$darkgrey\".\A         on line 7 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/footer.sass\A \A 2:   padding: 0 20px\A 3:   display: block\A 4:   bottom: 0\A 5:   position: relative\A 6:   font-size: .9em\A 7:   color: $darkgrey\A 8:   background: none\A 9:   clear: both\A 10:   text-align: center\A 11:   #footer_inner\A 12:     margin: 0 auto 15px auto"; }
+  content: "Syntax error: Undefined variable: \"$white\".\A         on line 3 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/landing_pages.sass\A \A 1: #landing_page\A 2:   text-align: left\A 3:   background-color: $white\A 4:   padding: 50px\A 5:   -moz-box-shadow: 5px 5px 5px #ccc\A 6:   -webkit-box-shadow: 5px 5px 5px #ccc\A 7:   box-shadow: 5px 5px 5px #ccc\A 8:   h1"; }
