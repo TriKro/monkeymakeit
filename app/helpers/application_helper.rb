@@ -45,41 +45,51 @@ module ApplicationHelper
         layer.style.filter += ("progid:DXImageTransform.Microsoft.Alpha(opacity=60)");
         document.body.appendChild(layer);
 
-        var div = document.createElement('div');
-        div.style.zIndex = 3;
-        div.id = 'box';
-        div.style.position = 'absolute';
-        div.style.top = '100px';
-        div.style.left = (width / 2) - (600 / 2) + 'px';
-        div.style.height = '500px';
-        div.style.width = '600px';
-        div.style.margin = '0 auto';
-        div.style.border = '7px solid #00b7fb';
-        div.style.backgroundColor = '#e6e6e6';
-        document.body.appendChild(div);
+        var box = document.createElement('div');
+        box.style.zIndex = 3;
+        box.id = 'box';
+        box.style.position = 'absolute';
+        box.style.top = '100px';
+        box.style.left = (width / 2) - (600 / 2) + 'px';
+        box.style.height = '500px';
+        box.style.width = '600px';
+        box.style.margin = '0 auto';
+        box.style.border = '7px solid #00b7fb';
+        box.style.backgroundColor = '#e6e6e6';
+        document.body.appendChild(box);
 
-        var p = document.createElement('p');
+        var spinner = document.createElement('img');
+        spinner.id = 'spinner';
+        spinner.src = '#{root_url}images/spinner.gif';
+        spinner.style.position = 'absolute';
+        spinner.style.top = '220px';
+        spinner.style.left = '260px';
+        spinner.style.zIndex = -1;
+        box.appendChild(spinner);
+
+        var iframe_span = document.createElement('span');
         var iframe = '<iframe src="' + iframe_source + '?url=#{ options[ :demo ] ? 'http://grasshopperherder.com/' : "' + window.location + '" }" ' +
                 'bordercolor="#000000" vspace="0" hspace="0" marginheight="0" marginwidth="0" style="padding: 0pt; margin: 0pt;" ' +
                 'allowtransparency="true" id="zozi_partner_iframe" frameborder="0" width="100%" height="500px" scrolling="no" ></iframe>';
         console.debug( iframe );
-        p.innerHTML = iframe;
-        div.appendChild(p);
+        iframe_span.innerHTML = iframe;
+        box.appendChild(iframe_span);
 
-        var a = document.createElement('a');
-        a.id = 'close_button';
-        a.innerHTML = '<img src="#{root_url}images/button-closethisoverlay_overdown.png"/>';
-        a.style.position = 'absolute';
-        a.style.top = '2px';
-        a.style.right = '2px';
-        a.href = 'javascript:void(0)';
-        a.onclick = function()
+
+        var close = document.createElement('a');
+        close.id = 'close_button';
+        close.innerHTML = '<img src="#{root_url}images/button-closethisoverlay_overdown.png"/>';
+        close.style.position = 'absolute';
+        close.style.top = '2px';
+        close.style.right = '2px';
+        close.href = 'javascript:void(0)';
+        close.onclick = function()
         {
           document.body.removeChild(document.getElementById('layer'));
           document.body.removeChild(document.getElementById('box'));
         };
 
-        div.appendChild(a);
+        div.appendChild(close);
 
       }
     ~.compact_whitespace
