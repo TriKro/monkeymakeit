@@ -67,7 +67,11 @@ module ApplicationHelper
         div.appendChild(p);
 
         var a = document.createElement('a');
-        a.innerHTML = 'Close window';
+        a.id = 'close_button';
+        a.innerHTML = '<img src="#{root_url}images/button-closethisoverlay_overdown.png"/>';
+        a.style.position = 'absolute';
+        a.style.top = '2px';
+        a.style.right = '2px';
         a.href = 'javascript:void(0)';
         a.onclick = function()
         {
@@ -76,6 +80,7 @@ module ApplicationHelper
         };
 
         div.appendChild(a);
+
       }
     ~.compact_whitespace
 
