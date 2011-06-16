@@ -19,6 +19,7 @@ class HtmlPage
         # general:
         'div#header',
         'div.header',
+        '#footer',
         'div#navigation',
         'div.navigation',
         'div#sidebar',
@@ -30,6 +31,14 @@ class HtmlPage
         'div#comments',
         'div#comment-section',
         'div#respond',
+
+        # Posterous blog
+        'div.editbox',
+        'div.postmeta',
+        'div.tag-listing',
+        'div.posterous_tweet_button',
+        'div.comment-count',
+        'div.col#secondary',
 
         # wikipedia "message boxes" -- metadata such as "requires cleanup":
         # http://en.wikipedia.org/wiki/Template:Ambox
