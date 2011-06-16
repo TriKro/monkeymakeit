@@ -89,7 +89,7 @@ module ApplicationHelper
           document.body.removeChild(document.getElementById('box'));
         };
 
-        div.appendChild(close);
+        box.appendChild(close);
 
       }
     ~.compact_whitespace
