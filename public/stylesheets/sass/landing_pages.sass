@@ -1,10 +1,11 @@
 #landing_page
   text-align: left
   background-color: $white
-  padding: 50px
+  padding: 20px
   -moz-box-shadow: 5px 5px 5px #ccc
   -webkit-box-shadow: 5px 5px 5px #ccc
   box-shadow: 5px 5px 5px #ccc
+  width: 900px
   h1
     font-family: 'Helvetica'
     font-size: 6em
@@ -13,10 +14,9 @@
     margin: 0 0 20px 5px
   #left_column
     float: left
-    #demo_sprite
   #right_column
     float: left
-    margin: 0 0 0 50px
+    margin: 0
     ul
       margin: 50px 0 0 50px
       li
@@ -28,7 +28,20 @@
         margin: 5px 0 0 0
     #signup_box
       border: 7px solid $blue
-      width: 400px
+      width: 545px
       height: 70px
       margin: 90px 0 0 0
       background: $grey
+      .field
+        margin: 20px
+        float: left
+        label
+          display: none
+        input
+          padding: 3px
+          font-size: $largest
+          font-family: 'Arial'
+          width: 270px
+      .actions
+        margin: 10px 0 0 0
+        float: left

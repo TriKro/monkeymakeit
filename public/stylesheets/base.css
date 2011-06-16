@@ -99,6 +99,17 @@ input, select {
 #suggestion_submit:hover {
   background: url(/images/button-tweakit_overdown.png) no-repeat 0px 0px; }
 
+#code_submit {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  background: url(/images/button-getthecode-sprite.png) no-repeat 0px 0px;
+  height: 52px;
+  width: 206px; }
+
+#code_submit:hover {
+  background-position: 0 -52px; }
+
 .tweakthis {
   display: inline-block;
   vertical-align: middle;
@@ -302,10 +313,11 @@ body_container {
 #landing_page {
   text-align: left;
   background-color: white;
-  padding: 50px;
+  padding: 20px;
   -moz-box-shadow: 5px 5px 5px #cccccc;
   -webkit-box-shadow: 5px 5px 5px #cccccc;
-  box-shadow: 5px 5px 5px #cccccc; }
+  box-shadow: 5px 5px 5px #cccccc;
+  width: 900px; }
   #landing_page h1 {
     font-family: "Helvetica";
     font-size: 6em;
@@ -316,7 +328,7 @@ body_container {
     float: left; }
   #landing_page #right_column {
     float: left;
-    margin: 0 0 0 50px; }
+    margin: 0; }
     #landing_page #right_column ul {
       margin: 50px 0 0 50px; }
       #landing_page #right_column ul li {
@@ -328,7 +340,20 @@ body_container {
         margin: 5px 0 0 0; }
     #landing_page #right_column #signup_box {
       border: 7px solid #00b7fb;
-      width: 400px;
+      width: 545px;
       height: 70px;
       margin: 90px 0 0 0;
       background: #e6e6e6; }
+      #landing_page #right_column #signup_box .field {
+        margin: 20px;
+        float: left; }
+        #landing_page #right_column #signup_box .field label {
+          display: none; }
+        #landing_page #right_column #signup_box .field input {
+          padding: 3px;
+          font-size: 1.3em;
+          font-family: "Arial";
+          width: 270px; }
+      #landing_page #right_column #signup_box .actions {
+        margin: 10px 0 0 0;
+        float: left; }

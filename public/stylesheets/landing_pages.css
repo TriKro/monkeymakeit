@@ -5,11 +5,11 @@ Syntax error: Undefined variable: "$white".
 1: #landing_page
 2:   text-align: left
 3:   background-color: $white
-4:   padding: 50px
+4:   padding: 20px
 5:   -moz-box-shadow: 5px 5px 5px #ccc
 6:   -webkit-box-shadow: 5px 5px 5px #ccc
 7:   box-shadow: 5px 5px 5px #ccc
-8:   h1
+8:   width: 900px
 
 Backtrace:
 /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/landing_pages.sass:3
@@ -91,4 +91,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$white\".\A         on line 3 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/landing_pages.sass\A \A 1: #landing_page\A 2:   text-align: left\A 3:   background-color: $white\A 4:   padding: 50px\A 5:   -moz-box-shadow: 5px 5px 5px #ccc\A 6:   -webkit-box-shadow: 5px 5px 5px #ccc\A 7:   box-shadow: 5px 5px 5px #ccc\A 8:   h1"; }
+  content: "Syntax error: Undefined variable: \"$white\".\A         on line 3 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/landing_pages.sass\A \A 1: #landing_page\A 2:   text-align: left\A 3:   background-color: $white\A 4:   padding: 20px\A 5:   -moz-box-shadow: 5px 5px 5px #ccc\A 6:   -webkit-box-shadow: 5px 5px 5px #ccc\A 7:   box-shadow: 5px 5px 5px #ccc\A 8:   width: 900px"; }
