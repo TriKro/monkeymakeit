@@ -16,7 +16,7 @@ module ApplicationHelper
   end
 
   def lightbox_button( button_image )
-    button = %{<a href=\\'javascript:void(showBox("#{new_suggestion_url}"))\\';><img src="#{root_url}images/#{button_image}" /></a>}
+    button = %{<a href=\\'javascript:void(showBox("#{new_suggestion_url}"))\\'; style="border-bottom: none !important; text-decoration: none;"><img src="#{root_url}images/#{button_image}" /></a>}
      %{
       <script type="text/javascript">
       //<![CDATA[
