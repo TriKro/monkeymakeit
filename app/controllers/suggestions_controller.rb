@@ -5,6 +5,7 @@ class SuggestionsController < ApplicationController
   def new
 #    params[:url] = "http://grasshopperherder.com" #uncomment this if you want to load up /suggestions/new for local testing
     raise 'Expected params[:url]' unless params[ :url ]
+    cookies[:url] = params[:url]
     begin
       before_html = open( params[ :url ] ).read
     rescue Errno::ENOENT => e
@@ -28,10 +29,14 @@ class SuggestionsController < ApplicationController
       send_suggestion_email
       log_activity(request.request_uri, "Created", "SuggestionMessage")
       flash[:success] = 'Your suggestion has been sent!'
-      redirect_to(contact_thanks_url)
+      redirect_to(suggestion_thanks_url)
     else
       render :action => "new"
     end
+  end
+
+  def thanks
+
   end
 
   def send_suggestion_email

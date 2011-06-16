@@ -3,7 +3,9 @@ Suggestedit::Application.routes.draw do
   root :to => 'static#home'
 
   resources :activities
-  resources :suggestions
+  resources :suggestions, :only => [:new, :update]
+  match "/thanks_for_your_tweak" => "suggestions#thanks", :as => :suggestion_thanks
+
 
   # Contact message routes
   resources :contact_messages

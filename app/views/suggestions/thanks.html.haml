@@ -1,0 +1,15 @@
+#suggestion_thanks
+  #suggestion_thanks_inner
+    %h1.blue
+      Thanks!
+
+
+    %p.darkblue
+      Your tweak will now be sent to the blog owner
+      %br/
+      and they will contact you directly.
+
+    %p.darkblue
+      Now share your awesomeness!
+
+    = render "layouts/sharing", :url => "#{cookies[:url]}", :content => "I just tweaked a blog post with http://suggestededit.org at"
