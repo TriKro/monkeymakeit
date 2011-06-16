@@ -1,11 +1,12 @@
+= collaborate_js_tag( :demo => true, :document_write => false ).html_safe
+
 #landing_page
   %h1#headline.blue
     Do you
     %span.darkblue blog?
 
   #left_column
-    #demo_sprite
-    -#= lightbox_button('button-tweakthis-example-sprite.png').html_safe
+    #demo_sprite{:onclick => 'collaborate_ligthbox_d601085();'}
 
   #right_column
     %ul#value_prop
