@@ -48,20 +48,20 @@ module ApplicationHelper
         var div = document.createElement('div');
         div.style.zIndex = 3;
         div.id = 'box';
-        div.style.position = (navigator.userAgent.indexOf('MSIE 6') > -1) ? 'absolute' : 'fixed';
-        div.style.top = '200px';
-        div.style.left = (width / 2) - (700 / 2) + 'px';
-        div.style.height = '400px';
-        div.style.width = '700px';
-        div.style.backgroundColor = 'white';
-        div.style.border = '2px solid silver';
-        div.style.padding = '20px';
+        div.style.position = 'absolute';
+        div.style.top = '100px';
+        div.style.left = (width / 2) - (600 / 2) + 'px';
+        div.style.height = '500px';
+        div.style.width = '600px';
+        div.style.margin = '0 auto';
+        div.style.border = '7px solid #00b7fb';
+        div.style.backgroundColor = '#e6e6e6';
         document.body.appendChild(div);
 
         var p = document.createElement('p');
         var iframe = '<iframe src="' + iframe_source + '?url=#{ options[ :demo ] ? 'http://grasshopperherder.com/' : "' + window.location + '" }" ' +
                 'bordercolor="#000000" vspace="0" hspace="0" marginheight="0" marginwidth="0" style="padding: 0pt; margin: 0pt;" ' +
-                'allowtransparency="true" id="zozi_partner_iframe" frameborder="0" width="100%" height="100%" scrolling="no" ></iframe>';
+                'allowtransparency="true" id="zozi_partner_iframe" frameborder="0" width="100%" height="500px" scrolling="no" ></iframe>';
         console.debug( iframe );
         p.innerHTML = iframe;
         div.appendChild(p);

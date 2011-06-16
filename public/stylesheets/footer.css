@@ -1,44 +1,24 @@
 /*
-Syntax error: Undefined variable: "$ginormous".
-        on line 12 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/suggestions.sass
+Syntax error: Undefined variable: "$black".
+        on line 7 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/footer.sass
 
-7:   #new_suggestion_inner
-8:     display: inline-block
-9:     width: 100%
-10:     h2
-11:       font-family: 'Helvetica'
-12:       font-size: $ginormous
-13:       font-weight: 100
-14:       letter-spacing: -1px
-15:       margin-bottom: 10px
-16:       text-align: left
-17: 
+2:   padding: 20px 20px
+3:   display: block
+4:   bottom: 0
+5:   position: relative
+6:   font-size: .9em
+7:   color: $black
+8:   background: none
+9:   clear: both
+10:   #footer_inner
+11:     margin: 0 auto
+12:     padding: 10px 0
 
 Backtrace:
-/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/suggestions.sass:12
+/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/footer.sass:7
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/variable.rb:45:in `_perform'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/node.rb:40:in `perform'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:215:in `visit_prop'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:18:in `visit'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:230:in `visit_rule'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:18:in `visit'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:230:in `visit_rule'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:37:in `visit'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:18:in `visit'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
@@ -114,4 +94,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$ginormous\".\A         on line 12 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/suggestions.sass\A \A 7:   #new_suggestion_inner\A 8:     display: inline-block\A 9:     width: 100%\A 10:     h2\A 11:       font-family: 'Helvetica'\A 12:       font-size: $ginormous\A 13:       font-weight: 100\A 14:       letter-spacing: -1px\A 15:       margin-bottom: 10px\A 16:       text-align: left\A 17: "; }
+  content: "Syntax error: Undefined variable: \"$black\".\A         on line 7 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/footer.sass\A \A 2:   padding: 20px 20px\A 3:   display: block\A 4:   bottom: 0\A 5:   position: relative\A 6:   font-size: .9em\A 7:   color: $black\A 8:   background: none\A 9:   clear: both\A 10:   #footer_inner\A 11:     margin: 0 auto\A 12:     padding: 10px 0"; }
