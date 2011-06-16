@@ -10,11 +10,15 @@ Suggestedit::Application.routes.draw do
   match "/contact" => "contact_messages#new", :as => :contact
   match "/thanks_for_your_message" => "contact_messages#thanks", :as => :contact_thanks
 
-
   # Static page routes
   match "/privacy_policy" => "static#privacy_policy", :as => :privacy_policy
   match "/terms_of_service" => "static#terms_of_service", :as => :terms_of_service
   match "/about_us" => "static#about", :as => :about
+
+  # Javascript
+  get "/scripts/collaborate" => "scripts#collaborate"
+end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -72,4 +76,3 @@ Suggestedit::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-end
