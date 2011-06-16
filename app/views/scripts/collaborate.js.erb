@@ -38,7 +38,10 @@ function collaborate_ligthbox_d601085()
   box.appendChild(spinner);
 
   var iframe_span = document.createElement('span');
-  var iframe = '<iframe src="<%= new_suggestion_url %>?url=<%= params[ :demo ] ? 'http://grasshopperherder.com/' : "' + window.location + '" %>" ' +
+
+  <% page_to_tweak = params[ :demo ] ? 'http://grasshopperherder.com/' : "' + window.location + '" %>
+  <% iframe_source = new_suggestion_url( { :url => page_to_tweak }.merge( params.slice( :demo ) ) ) %>
+  var iframe = '<iframe src="<%= iframe_source %>" ' +
           'bordercolor="#000000" vspace="0" hspace="0" marginheight="0" marginwidth="0" style="padding: 0pt; margin: 0pt;" ' +
           'allowtransparency="true" id="zozi_partner_iframe" frameborder="0" width="100%" height="500px" scrolling="no" ></iframe>';
   iframe_span.innerHTML = iframe;
@@ -62,7 +65,9 @@ function collaborate_ligthbox_d601085()
 }
 
 
-<% button_image = 'button-tweakthis-tall.png' %>
-
-document.write('<a href="javascript:void(collaborate_ligthbox_d601085());" style="border-bottom: none !important; text-decoration: none;">' +
-        '<img src="<%= root_url %>images/<%= button_image %>" /></a>');
+<% document_write = !( params[:document_write] == 'false' ) %>
+<% if document_write %>
+  <% button_image = 'button-tweakthis-tall.png' %>
+  document.write('<a href="javascript:void(collaborate_ligthbox_d601085());" style="border-bottom: none !important; text-decoration: none;">' +
+          '<img src="<%= root_url %>images/<%= button_image %>" /></a>');
+<% end %>
