@@ -23,10 +23,13 @@ class HtmlPage
         'div.navigation',
         'div#sidebar',
         'div.sidebar',
+        '#breadcrumbs',
+        '.backfornav',
 
         # wordpress:
         'div#comments',
         'div#comment-section',
+        'div#respond',
 
         # wikipedia "message boxes" -- metadata such as "requires cleanup":
         # http://en.wikipedia.org/wiki/Template:Ambox
@@ -37,6 +40,13 @@ class HtmlPage
         'table.ombox',
         'table.fmbox',
         'table.dmbox',
+
+        # social media sharing:
+        'ul#sharebar',
+        'ul#sharebarx',
+
+        # signup:
+        '#mailchimp_signup_bottom',
 
         # wikinodes:
         '.jedi_bar_wikinodes',
