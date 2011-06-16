@@ -1,0 +1,12 @@
+#sharing-show
+  -# Twitter share button
+  .twitter
+    %a.twitter-share-button{"data-count" => "horizontal", "data-text" => content, "data-url" => url, "data-via" => "", :href => "http://twitter.com/share"} Tweet
+    %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
+
+  -# FB share button
+  .facebook
+    %a{:href => "http://www.facebook.com/sharer.php", :name => "fb_share", :share_url => url, :type => "button_count"}
+    %script{:src => "http://static.ak.fbcdn.net/connect.php/js/FB.Share", :type => "text/javascript"}
+    -#TODO: Figure out how to suggest text for sharing if possible.
+  .clear

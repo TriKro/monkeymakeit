@@ -261,3 +261,32 @@ body_container {
           #new_suggestion #new_suggestion_inner .edit_suggestion .actions .company_id .company_name {
             color: black;
             font-size: 0.9em; }
+
+#suggestion_thanks {
+  text-align: center; }
+  #suggestion_thanks #suggestion_thanks_inner {
+    display: inline-block;
+    text-align: left; }
+    #suggestion_thanks #suggestion_thanks_inner h1 {
+      font-family: "Helvetica";
+      font-size: 2em;
+      font-weight: 100;
+      letter-spacing: -1px;
+      margin: 80px 0 30px 0; }
+    #suggestion_thanks #suggestion_thanks_inner p {
+      font-family: "Arial";
+      font-size: 1.1em;
+      margin: 40px 0 0 0; }
+    #suggestion_thanks #suggestion_thanks_inner #sharing-show {
+      margin: 20px 0 0 0;
+      float: left;
+      height: 0; }
+      #suggestion_thanks #suggestion_thanks_inner #sharing-show .twitter {
+        float: left;
+        position: relative;
+        top: -3px; }
+      #suggestion_thanks #suggestion_thanks_inner #sharing-show .facebook {
+        float: left;
+        padding: 0;
+        position: relative;
+        top: -2px; }
