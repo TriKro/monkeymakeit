@@ -10,6 +10,9 @@ class StaticController < ApplicationController
   end
 
   def code
-    @user = User.where( params[:user] ).first || User.create!( params[:user] )
+    @user = User.where( params[:user] ).first || User.new( params[:user] )
+    if !@user.save
+      render :home, :layout => "landing_page"
+    end
   end
 end
