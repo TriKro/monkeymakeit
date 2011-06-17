@@ -1,44 +1,45 @@
 $(document).ready(function() {
 
-  var default_text = "What's your email address?";
-
-  function clear_default_text(email_field) {
-    if ($(email_field).val() == default_text ) {
-      $(email_field).css('color', 'black');
-      $(email_field).val('');
-    }
-  }
-
   $('#suggestion_email').focus(function() {
-    clear_default_text('#suggestion_email');
+    if ($('#suggestion_email').val() == "What's your email address?" ) {
+      $('#suggestion_email').css('color', 'black');
+      $('#suggestion_email').val('');
+    }
   });
 
   $('#suggestion_submit').click(function() {
-    clear_default_text('#suggestion_email');
+    if ($('#suggestion_email').val() == "What's your email address?" ) {
+      $('#suggestion_email').css('color', 'black');
+      $('#suggestion_email').val('');
+    }
   });
 
   $('#suggestion_email').blur(function() {
     if ($('#suggestion_email').val() == '') {
       $('#suggestion_email').css('color', 'grey');
-      $('#suggestion_email').val(default_text);
+      $('#suggestion_email').val("What's your email address?");
     }
   });
 
 
-  default_text = "Enter your email for custom code";
-
   $('#user_email').focus(function() {
-    clear_default_text('#user_email');
+    if ($('#user_email').val() == "Enter your email for custom code" ) {
+      $('#user_email').css('color', 'black');
+      $('#user_email').val('');
+    }
   });
 
   $('#user_submit').click(function() {
-    clear_default_text('#user_email');
+    if ($('#user_email').val() == "Enter your email for custom code" ) {
+      $('#user_email').css('color', 'black');
+      $('#user_email').val('');
+    }
   });
 
   $('#user_email').blur(function() {
     if ($('#user_email').val() == '') {
       $('#user_email').css('color', 'grey');
-      $('#user_email').val(default_text);
+      $('#user_email').val("Enter your email for custom code");
     }
   });
 
