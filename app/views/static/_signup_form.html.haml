@@ -1,5 +1,5 @@
 #signup_box
-  = form_for(:code, @user) do |f|
+  = form_for(@user, :url => code_path) do |f|
     - if @user.errors.any?
       #error_explanation
         %h4

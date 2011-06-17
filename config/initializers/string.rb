@@ -7,6 +7,10 @@ class String
     self.gsub(/\W+/, '_').downcase
   end
 
+  def md5
+    Digest::MD5.hexdigest( self )
+  end
+
   def sha1
     Digest::SHA1.hexdigest( self )
   end

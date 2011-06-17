@@ -99,7 +99,7 @@ input, select {
 #suggestion_submit:hover {
   background: url(/images/button-tweakit_overdown.png) no-repeat 0px 0px; }
 
-#code_submit {
+#signup_box input[type="submit"] {
   display: inline-block;
   vertical-align: middle;
   border: none;

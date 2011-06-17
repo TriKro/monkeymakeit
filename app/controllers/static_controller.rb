@@ -9,4 +9,7 @@ class StaticController < ApplicationController
     render :layout => "landing_page"
   end
 
+  def code
+    user = User.where( "email = ?", params[:user][:email] ) || User.create!( params[:user][:email] )
+  end
 end
