@@ -26,7 +26,11 @@ class ContactMessage
   end
 
   def recipient
-    recipient_name + " <" + recipient_email + ">"
+    if recipient_name
+      recipient_name + " <" + recipient_email + ">"
+    else
+      recipient_email
+    end
   end
 
 end

@@ -10,6 +10,6 @@ class StaticController < ApplicationController
   end
 
   def code
-    user = User.where( "email = ?", params[:user][:email] ) || User.create!( params[:user][:email] )
+    @user = User.where( params[:user] ).first || User.create!( params[:user] )
   end
 end

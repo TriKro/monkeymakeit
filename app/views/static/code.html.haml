@@ -15,4 +15,4 @@
 
 %code
   %pre
-    %textarea{:rows => 2, :cols => 70}= collaborate_js_tag.html_safe
+    %textarea{:rows => 2, :cols => 70}= collaborate_js_tag( :code => @user.code ).html_safe

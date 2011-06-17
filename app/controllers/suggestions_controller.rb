@@ -3,9 +3,9 @@ require 'open-uri'
 class SuggestionsController < ApplicationController
 
   def new
-#    params[:url] = "http://grasshopperherder.com" #uncomment this if you want to load up /suggestions/new for local testing
     raise 'Expected params[:url]' unless params[ :url ]
     cookies[:url] = params[:url]
+    cookies[:code] = params[:code]
     begin
       before_html = open( params[ :url ] ).read
     rescue Errno::ENOENT => e
@@ -26,7 +26,7 @@ class SuggestionsController < ApplicationController
 
     if @suggestion.save
       log_activity(request.request_uri, "Created", "Suggestion", @suggestion)
-      send_suggestion_email
+      UserMailer.send_suggestion(@suggestion, cookies[:code]).deliver
       log_activity(request.request_uri, "Created", "SuggestionMessage")
       flash[:success] = 'Your suggestion has been sent!'
       redirect_to(suggestion_thanks_url)
@@ -36,11 +36,6 @@ class SuggestionsController < ApplicationController
   end
 
   def thanks
-
-  end
-
-  def send_suggestion_email
-    UserMailer.send_suggestion(@suggestion).deliver
   end
 
 end
