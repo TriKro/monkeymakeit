@@ -1,21 +1,21 @@
 /*
 Syntax error: Undefined variable: "$ginormous".
-        on line 12 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/suggestions.sass
+        on line 19 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/suggestions.sass
 
-7:   #new_suggestion_inner
-8:     display: inline-block
-9:     width: 100%
-10:     h2
-11:       font-family: 'Helvetica'
-12:       font-size: $ginormous
-13:       font-weight: 100
-14:       letter-spacing: -1px
-15:       margin-bottom: 10px
-16:       text-align: left
-17: 
+14:   #new_suggestion_inner
+15:     display: inline-block
+16:     width: 100%
+17:     h2
+18:       font-family: 'Helvetica'
+19:       font-size: $ginormous
+20:       font-weight: 100
+21:       letter-spacing: -1px
+22:       margin-bottom: 10px
+23:       text-align: left
+24: 
 
 Backtrace:
-/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/suggestions.sass:12
+/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/suggestions.sass:19
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/variable.rb:45:in `_perform'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/node.rb:40:in `perform'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:215:in `visit_prop'
@@ -114,4 +114,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$ginormous\".\A         on line 12 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/suggestions.sass\A \A 7:   #new_suggestion_inner\A 8:     display: inline-block\A 9:     width: 100%\A 10:     h2\A 11:       font-family: 'Helvetica'\A 12:       font-size: $ginormous\A 13:       font-weight: 100\A 14:       letter-spacing: -1px\A 15:       margin-bottom: 10px\A 16:       text-align: left\A 17: "; }
+  content: "Syntax error: Undefined variable: \"$ginormous\".\A         on line 19 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/suggestions.sass\A \A 14:   #new_suggestion_inner\A 15:     display: inline-block\A 16:     width: 100%\A 17:     h2\A 18:       font-family: 'Helvetica'\A 19:       font-size: $ginormous\A 20:       font-weight: 100\A 21:       letter-spacing: -1px\A 22:       margin-bottom: 10px\A 23:       text-align: left\A 24: "; }

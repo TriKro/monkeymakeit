@@ -223,6 +223,13 @@ body_container {
   width: 90%;
   text-align: center;
   padding: 20px; }
+  #new_suggestion #demo {
+    position: absolute;
+    top: 150px;
+    left: 25px;
+    font-size: 4em;
+    font-weight: 600;
+    color: red; }
   #new_suggestion #new_suggestion_inner {
     display: inline-block;
     width: 100%; }
@@ -277,7 +284,7 @@ body_container {
             left: -10px; }
           #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_subscribed label {
             position: relative;
-            left: 0px; }
+            left: -10px; }
       #new_suggestion #new_suggestion_inner .edit_suggestion .actions {
         margin: 8px 0 0 0;
         float: right; }
