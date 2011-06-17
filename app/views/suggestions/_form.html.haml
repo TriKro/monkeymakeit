@@ -27,6 +27,10 @@
       = f.label :email, "Your Email: "
       = f.text_field :email, :value => "What's your email address?"
 
+    #suggestion_field_subscribed.field
+      = f.check_box :subscribed, :checked => true
+      = f.label :subscribed, "Subscribe to #{cookies[:url]}?"
+
   .actions
     = f.submit ''
     %br

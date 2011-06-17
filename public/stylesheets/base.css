@@ -252,7 +252,8 @@ body_container {
         margin: 10px 0 0 0;
         text-align: left; }
       #new_suggestion #new_suggestion_inner .edit_suggestion .credit {
-        float: left; }
+        float: left;
+        text-algin: left; }
         #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_name label {
           display: none; }
         #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_name #suggestion_name {
@@ -267,6 +268,16 @@ body_container {
           margin: 10px 0;
           width: 250px;
           font-size: 1.1em; }
+        #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_subscribed {
+          font-size: 0.8em;
+          font-family: "Arial"; }
+          #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_subscribed input {
+            margin: 0;
+            position: relative;
+            left: -10px; }
+          #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_subscribed label {
+            position: relative;
+            left: 0px; }
       #new_suggestion #new_suggestion_inner .edit_suggestion .actions {
         margin: 8px 0 0 0;
         float: right; }
@@ -288,13 +299,13 @@ body_container {
     text-align: left; }
     #suggestion_thanks #suggestion_thanks_inner h1 {
       font-family: "Helvetica";
-      font-size: 2em;
+      font-size: 5em;
       font-weight: 100;
       letter-spacing: -1px;
       margin: 80px 0 30px 0; }
     #suggestion_thanks #suggestion_thanks_inner p {
       font-family: "Arial";
-      font-size: 1.1em;
+      font-size: 1.3em;
       margin: 40px 0 0 0; }
     #suggestion_thanks #suggestion_thanks_inner #sharing-show {
       margin: 20px 0 0 0;
