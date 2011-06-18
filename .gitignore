@@ -6,3 +6,4 @@ db/backup
 db/*.sqlite3
 log/*.log
 tmp/
+*.css
