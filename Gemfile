@@ -20,14 +20,14 @@ group :development do
 end
 
 #group :test do
-#  gem 'capybara',            '= 0.4.1.2'
-#  gem 'cucumber',            '= 0.10.0'
-#  gem 'cucumber-rails',      '= 0.3.2'
-#  gem 'factory_girl',        '= 1.3.3'
-#  gem 'factory_girl_rails',  '= 1.0.1'
-#  gem 'faker',               '= 0.9.5'
-#  gem 'rspec',               '= 2.5.0'
-#  gem 'rspec-rails',         '= 2.5.0'
+#  gem 'capybara',            '0.4.1.2'
+#  gem 'cucumber',            '0.10.0'
+#  gem 'cucumber-rails',      '0.3.2'
+#  gem 'factory_girl',        '1.3.3'
+#  gem 'factory_girl_rails',  '1.0.1'
+#  gem 'faker',               '0.9.5'
+#  gem 'rspec',               '2.5.0'
+#  gem 'rspec-rails',         '2.5.0'
 #  gem 'webrat',              '~> 0.7.3'
 #end
 
