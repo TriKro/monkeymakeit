@@ -274,7 +274,8 @@ body_container {
           font-family: "Arial";
           margin: 10px 0;
           width: 250px;
-          font-size: 1.1em; }
+          font-size: 1.1em;
+          color: #666666; }
         #new_suggestion #new_suggestion_inner .edit_suggestion .credit #suggestion_field_subscribed {
           font-size: 0.8em;
           font-family: "Arial"; }
@@ -371,7 +372,8 @@ body_container {
           padding: 3px;
           font-size: 1.3em;
           font-family: "Arial";
-          width: 270px; }
+          width: 270px;
+          color: #666666; }
       #landing_page #right_column #signup_box .actions {
         margin: 10px 0 0 0;
         float: left; }
