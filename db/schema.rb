@@ -10,22 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110617001626) do
+ActiveRecord::Schema.define(:version => 20110620035941) do
 
   create_table "activities", :force => true do |t|
-    t.integer   "user_id"
-    t.string    "activity_type"
-    t.string    "data"
-    t.integer   "target_id"
-    t.string    "target_type"
-    t.integer   "subtarget_id"
-    t.string    "subtarget_type"
-    t.string    "url"
-    t.string    "target_model"
-    t.string    "subtarget_model"
-    t.string    "session_id"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.integer  "user_id"
+    t.string   "activity_type"
+    t.string   "data"
+    t.integer  "target_id"
+    t.string   "target_type"
+    t.integer  "subtarget_id"
+    t.string   "subtarget_type"
+    t.string   "url"
+    t.string   "target_model"
+    t.string   "subtarget_model"
+    t.string   "session_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "activities", ["subtarget_id", "subtarget_type"], :name => "index_activities_on_subtarget_id_and_subtarget_type"
@@ -33,14 +33,15 @@ ActiveRecord::Schema.define(:version => 20110617001626) do
   add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
 
   create_table "suggestions", :force => true do |t|
-    t.string    "email"
-    t.string    "data"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.text      "before_text"
-    t.text      "after_text"
-    t.text      "before_html"
-    t.string    "url"
+    t.string   "email"
+    t.string   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "before_text"
+    t.text     "after_text"
+    t.text     "before_html"
+    t.string   "url"
+    t.boolean  "subscribed"
   end
 
   create_table "users", :force => true do |t|
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20110617001626) do
     t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "inviter_id"
   end
 
 end

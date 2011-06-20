@@ -10,6 +10,14 @@
       and they will contact you directly.
 
     %p.darkblue
-      Now share your awesomeness!
+      %div.darkblue(id='invite')
+        Would one of your friends like this?
+        = form_for(@new_user, :url => invitations_path) do |f|
+          .field
+            = f.text_field :email, :value => "Enter their email!"
+          .actions
+            = f.submit 'invite'
+          .clear
 
-    = render "layouts/sharing", :url => "#{cookies[:url]}", :content => "I just tweaked a blog post with http://suggestededit.org at"
+    %div(style="margin-top:3em")
+      = render "layouts/sharing", :url => "#{cookies[:url]}", :content => "I just tweaked a blog post with http://suggestededit.org at"

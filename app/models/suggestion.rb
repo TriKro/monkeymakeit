@@ -1,6 +1,5 @@
 require_dependency File.dirname(__FILE__) + '/../../config/initializers/diff_lcs'
 require_dependency File.dirname(__FILE__) + '/../../config/initializers/string'
-require_dependency 'html_page'
 
 class Suggestion < ActiveRecord::Base
 

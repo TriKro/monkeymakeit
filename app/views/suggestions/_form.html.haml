@@ -25,7 +25,7 @@
 
     #suggestion_field_email.field
       = f.label :email, "Your Email: "
-      = f.text_field :email, :value => "What's your email address?"
+      = f.text_field :email, :value => "#{session[:user].email rescue "What's your email address?"}"
 
     #suggestion_field_subscribed.field
       = f.check_box :subscribed, :checked => true
