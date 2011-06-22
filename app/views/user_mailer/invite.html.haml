@@ -1,1 +1,22 @@
-= @url
+%p
+  Hi!
+
+%p
+  = @user.firstname
+  wants to read
+  = @crout.title
+  and needs another person to join him to get early access to this unpublished work.
+
+%p
+  If you
+  %a{ :href => @crout.url}
+    sign up
+  you'll get to read early drafts from
+  = @crout.author
+  and help support art!
+
+%p
+  You can sign up
+  %a{ :href => @crout.url}
+    here
+  \.
