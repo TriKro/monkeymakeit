@@ -2,21 +2,26 @@
   Hi!
 
 %p
-  = @user.firstname
-  wants to read
-  = @crout.title
-  and needs another person to join him to get early access to this unpublished work.
+  I want to share
+  %b
+    Scott Lambridis' story
+  %b
+    Doris
+  with you.
 
 %p
-  If you
-  %a{ :href => @crout.url}
+  You can read it
+  %a{ :href => @url}
+    here.
+
+%p
+  You can also
+  %a{ :href => @url}
     sign up
-  you'll get to read early drafts from
-  = @crout.author
-  and help support art!
+  with two friends and you'll get to read early drafts from Scott's new book and help support art!
 
 %p
   You can sign up
-  %a{ :href => @crout.url}
+  %a{ :href => @url}
     here
   \.
