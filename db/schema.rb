@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110620035941) do
+ActiveRecord::Schema.define(:version => 20110623104157) do
 
   create_table "activities", :force => true do |t|
     t.integer  "user_id"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(:version => 20110620035941) do
   add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
   add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
 
+  create_table "invitations", :force => true do |t|
+    t.integer  "widget_id"
+    t.string   "button_name"
+    t.text     "call_to_action"
+    t.text     "confirmation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "suggestions", :force => true do |t|
     t.string   "email"
     t.string   "data"
@@ -46,10 +55,17 @@ ActiveRecord::Schema.define(:version => 20110620035941) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.string   "code"
+    t.string   "random_key"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "inviter_id"
+  end
+
+  create_table "widgets", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "random_key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
