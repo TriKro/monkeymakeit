@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'awesome_print'
 gem 'diff-lcs',            '1.1.2'
-gem 'hoptoad_notifier',    '~> 2.4'
+gem 'hoptoad_notifier'
 gem 'haml'
 gem 'haml-rails'
 gem 'html_massage',        '~> 0.0.2'
