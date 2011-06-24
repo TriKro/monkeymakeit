@@ -1,10 +1,13 @@
 #new_signup
   #new_signup_inner
     %h2.blue
-      Signup for early access to
+      Want to
       %span.darkblue
-        Scott's
-      story!
+        read more?
+
+    %h3
+      We'll let you know when it's released.
+
     #flash_messages= render :partial => '/layouts/flash', :locals => { :flash => flash }
 
     = render 'form'

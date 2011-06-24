@@ -23,5 +23,5 @@ ActionMailer::Base.smtp_settings = {
 
 # Constants
 COMPANY_NAME = "Rapid Software Development LLC"
-SITE_NAME = "SuggestedEdit.com"
-SITE_TITLE = "SuggestedEdit"
+SITE_NAME = "MonkeyMake.it"
+SITE_TITLE = "MonkeyMakeIt"

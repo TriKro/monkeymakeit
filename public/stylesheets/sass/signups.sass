@@ -3,57 +3,48 @@
   text-align: center
   padding: 20px
   #new_signup_inner
+    text-align: left
     display: inline-block
-    width: 100%
     h2
       font-family: 'Helvetica'
-      font-size: $ginormous
+      font-size: 3em
       font-weight: 100
       letter-spacing: -1px
-      margin-bottom: 10px
+      margin: 40px 0 10px 0
       text-align: left
 
-      h3
-        font-family: 'Helvetica'
-        font-size: $huge
-        font-weight: 100
-        letter-spacing: -1px
-        margin: 10px 0 0 0
-        text-align: left
+    h3
+      font-family: 'Helvetica'
+      font-size: $huge
+      font-weight: 100
+      color: $darkgrey
+      margin: 40px 0 0 0
+      text-align: left
 
     #signup_form
-      #signup_field_name
-        label
-          display: none
-        #signup_name
-          font-family: 'Arial'
-          margin: 10px 0
-          width: 100px
-          font-size: $large
+      #fields
+        #signup_field_name
+          label
+            display: none
+          #signup_name
+            font-family: 'Arial'
+            margin: 40px 0 0 0
+            width: 250px
+            font-size: $huge
+            color: $darkgrey
 
-      #signup_field_email
-        label
-          display: none
-        #signup_email
-          font-family: 'Arial'
-          margin: 10px 0
-          width: 250px
-          font-size: $huge
-          color: $darkgrey
-      #signup_field_subscribed
-        font-size: $smaller
-        font-family: 'Arial'
-        input
-          margin: 0
-          position: relative
-          left: -10px
-        label
-          position: relative
-          left: -10px
+        #signup_field_email
+          label
+            display: none
+          #signup_email
+            font-family: 'Arial'
+            margin: 10px 0 0 0
+            width: 250px
+            font-size: $huge
+            color: $darkgrey
 
       .actions
-        margin: 8px 0 0 0
-        float: right
+        margin: 20px 0 0 0
         input
         .company_id
           font-family: 'Helvetica'
