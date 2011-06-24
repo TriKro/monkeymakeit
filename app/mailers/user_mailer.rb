@@ -24,8 +24,10 @@ class UserMailer < ActionMailer::Base
           :subject => suggestion_message.subject
   end
 
-  def invite(from, to, url)
-    mail(:from => from, :to => to, :subject => 'check this out', :url => url)
+  def invite(sender, recipient, subject, url)
+    @recipient = recipient
+    @sender = sender
+    mail :from => sender.email_header, :to => recipient.email, :subject => subject, :url => url
   end
 
 end

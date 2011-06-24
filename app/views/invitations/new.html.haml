@@ -1,17 +1,20 @@
 #new_invitation
   #new_invitation_inner
     %h2.blue
-      invite some
+      Know someone who would enjoy this?
       %span.darkblue
-        others!
+        Invite them!
 
-    %h3
-      You have invited
-      - session[:user].reload
-      = User.where( :inviter_id => session[:user].id ).count
-      friends.
+    %div(style='margin-top:2em')
+    - if session[:user]
+      %div(style='margin-bottom:2em')
+      %h3
+        You have invited
+        - session[:user].reload
+        = User.where( :inviter_id => session[:user].id ).count
+        friends.
 
-    %h3 Invite some more!
+      %h3 Invite some more!
 
     #flash_messages= render :partial => '/layouts/flash', :locals => { :flash => flash }
 

@@ -447,3 +447,6 @@ body_container {
         #new_signup #new_signup_inner #signup_form .actions .company_id .company_name {
           color: black;
           font-size: 0.9em; }
+
+#invitation input[type="text"] {
+  color: #666666; }
