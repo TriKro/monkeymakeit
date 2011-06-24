@@ -3,6 +3,7 @@ require 'open-uri'
 class SuggestionsController < ApplicationController
 
   def new
+    render :layout => 'modal'
     raise 'Expected params[:url]' unless params[ :url ]
     cookies[:url] = params[:url]
     cookies[:code] = params[:code]
@@ -37,6 +38,7 @@ class SuggestionsController < ApplicationController
   end
 
   def thanks
+    render :layout => 'modal'
     @new_user = User.new
   end
 

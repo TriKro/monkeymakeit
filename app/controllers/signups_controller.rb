@@ -2,6 +2,7 @@ class SignupsController < ApplicationController
 
   def new
     @signup = User.new
+    render :layout => 'modal'
     log_activity(request.request_uri, "Began Creating", "User")
   end
 
