@@ -1,18 +1,24 @@
 #new_invitation
   #new_invitation_inner
-    %h2.blue
-      invite some
-      %span.darkblue
-        others!
-
     %h3
-      You have invited
-      - session[:user].reload
-      = User.where( :inviter_id => session[:user].id ).count
-      friends.
-
-    %h3 Invite some more!
+      Thanks!
+    %h2.blue
+      You've now invited
+      %span.darkblue
+        = @friends
+        - if @friends == 1
+          friend.
+        - else
+          friends.
 
     #flash_messages= render :partial => '/layouts/flash', :locals => { :flash => flash }
 
+    %h4.darkblue Invite another:
+
     = render 'form'
+
+    %p
+      The more friends you invite, the sooner you'll get access to
+      %b
+        Doris,
+      plus early drafts from my new book, all while supporting art and creativity!

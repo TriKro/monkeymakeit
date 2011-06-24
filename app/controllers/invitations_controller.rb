@@ -2,6 +2,8 @@ class InvitationsController < ApplicationController
 
   def new
     @invite = User.new
+    session[:user].reload
+    @friends = User.where( :inviter_id => session[:user].id ).count
     render :layout => 'modal'
     log_activity(request.request_uri, "Began Creating", "Invitation")
   end
