@@ -15,10 +15,15 @@ Suggestedit::Application.routes.draw do
   match "/thanks_for_your_message" => "contact_messages#thanks", :as => :contact_thanks
 
   # Static page routes
-  match "/get_the_code" => "static#code", :as => :code
-  match "/privacy_policy" => "static#privacy_policy", :as => :privacy_policy
-  match "/terms_of_service" => "static#terms_of_service", :as => :terms_of_service
-  match "/about_us" => "static#about", :as => :about
+  [
+          :demo,
+          :code,
+          :privacy_policy,
+          :terms_of_service,
+          :about
+  ].each do |static_page|
+    match "/#{static_page}" => "static##{static_page}", :as => static_page
+  end
 
   # Javascript
   get "/scripts/collaborate" => "scripts#collaborate"
