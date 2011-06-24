@@ -13,9 +13,9 @@ class InvitationsController < ApplicationController
     @invite.inviter = session[:user] rescue nil
     @invite.save
     log_activity(request.request_uri, "Created", "User", @invite)
-    UserMailer.invite(session[:user].email, params[:user][:email], cookies[:url]).deliver
+    UserMailer.invite(session[:user], @invite, 'RE: "Doris", by Scott Lambridis', cookies[:url]).deliver
     log_activity(request.request_uri, "Sent", "Invitation", User.find_by_email(params[:user][:email]))
-    redirect_to(new_invitation_path, :flash => 'Invite sent to ' + @invite.name + '.')
+    redirect_to new_invitation_path, :html => {:flash => "Invite sent to #{@invite.full_name}."}
   end
 
 end
