@@ -42,7 +42,7 @@ try {
     var iframe_span = document.createElement('span');
 
     <% page_to_tweak = params[ :demo ] ? 'http://grasshopperherder.com/' : "' + window.location + '" %>
-    <% iframe_source = new_suggestion_url( params.slice( :demo, :code ) ) %>
+    <% iframe_source = new_signup_url( params.slice( :demo, :code ) ) %>
     <% iframe_source += "&url=#{page_to_tweak}" %>
     var iframe = '<iframe src="<%= iframe_source %>" ' +
             'bordercolor="#000000" vspace="0" hspace="0" marginheight="0" marginwidth="0" style="padding: 0pt; margin: 0pt;" ' +
