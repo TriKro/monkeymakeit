@@ -1,4 +1,4 @@
-#invitations_form
+#invitation_form
   = form_for(@invite, :url => invitations_path) do |f|
     - if @invite.errors.any?
       #error_explanation
@@ -10,13 +10,13 @@
             %li= msg
 
     #fields
-      #invite_field_name.field
+      #invitation_field_name.field
         = f.label :full_name, "Name"
-        = f.text_field :full_name, :value => "Name", :id => "signup_name"
+        = f.text_field :full_name, :value => "Name", :id => "invitation_name"
 
-      #invite_field_email.field
+      #invitation_field_email.field
         = f.label :email, "Email:"
-        = f.text_field :email, :value => "Email", :id => "signup_email"
+        = f.text_field :email, :value => "Email", :id => "invitation_email"
 
     .actions
       = f.submit ''
