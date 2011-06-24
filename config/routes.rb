@@ -6,7 +6,8 @@ Suggestedit::Application.routes.draw do
   resources :suggestions, :only => [:new, :update]
   match "/thanks_for_your_tweak" => "suggestions#thanks", :as => :suggestion_thanks
 
-  resources :invitations
+  resources :invitations, :only => [:new, :create]
+  resources :signups, :only => [:new, :create]
 
   # Contact message routes
   resources :contact_messages

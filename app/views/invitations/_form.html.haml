@@ -1,0 +1,6 @@
+= form_for(@invite, :url => invitations_path) do |f|
+  .field
+    = f.text_field :email, :value => "Enter their email!"
+  .actions
+    = f.submit 'invite'
+  .clear

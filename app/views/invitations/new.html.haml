@@ -1,0 +1,9 @@
+#new_invitation
+  #new_invitation_inner
+    %h2.blue
+      invite some others!
+      %span.darkblue
+        blog post!
+    #flash_messages= render :partial => '/layouts/flash', :locals => { :flash => flash }
+
+    = render 'form'
