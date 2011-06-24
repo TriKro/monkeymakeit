@@ -9,14 +9,21 @@
           - @signup.errors.full_messages.each do |msg|
             %li= msg
 
-    #signup_field_name.field
-      = f.label :full_name, "Name"
-      = f.text_field :full_name, :value => "Enter your Name"
+    #fields
+      #signup_field_name.field
+        = f.label :full_name, "Name"
+        = f.text_field :full_name, :value => "Name", :id => "signup_name"
 
-    #signup_field_email.field
-      = f.label :email, "Email:"
-      = f.text_field :email, :value => "Enter your email"
+      #signup_field_email.field
+        = f.label :email, "Email:"
+        = f.text_field :email, :value => "Email", :id => "signup_email"
 
     .actions
-      = f.submit 'Signup'
+      = f.submit ''
+      %br
+      .company_id
+        %span.powered_by
+          brought to you by
+        %span.company_name
+          MonkeyMake.it
     .clear

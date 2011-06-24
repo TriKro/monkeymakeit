@@ -1,21 +1,21 @@
 /*
-Syntax error: Undefined variable: "$ginormous".
-        on line 10 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/signups.sass
+Syntax error: Undefined variable: "$huge".
+        on line 18 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/signups.sass
 
-5:   #new_signup_inner
-6:     display: inline-block
-7:     width: 100%
-8:     h2
-9:       font-family: 'Helvetica'
-10:       font-size: $ginormous
-11:       font-weight: 100
-12:       letter-spacing: -1px
-13:       margin-bottom: 10px
+13:       margin: 40px 0 10px 0
 14:       text-align: left
 15: 
+16:     h3
+17:       font-family: 'Helvetica'
+18:       font-size: $huge
+19:       font-weight: 100
+20:       color: $darkgrey
+21:       margin: 40px 0 0 0
+22:       text-align: left
+23: 
 
 Backtrace:
-/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/signups.sass:10
+/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/signups.sass:18
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/variable.rb:45:in `_perform'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/node.rb:40:in `perform'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:215:in `visit_prop'
@@ -114,4 +114,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$ginormous\".\A         on line 10 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/signups.sass\A \A 5:   #new_signup_inner\A 6:     display: inline-block\A 7:     width: 100%\A 8:     h2\A 9:       font-family: 'Helvetica'\A 10:       font-size: $ginormous\A 11:       font-weight: 100\A 12:       letter-spacing: -1px\A 13:       margin-bottom: 10px\A 14:       text-align: left\A 15: "; }
+  content: "Syntax error: Undefined variable: \"$huge\".\A         on line 18 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/signups.sass\A \A 13:       margin: 40px 0 10px 0\A 14:       text-align: left\A 15: \A 16:     h3\A 17:       font-family: 'Helvetica'\A 18:       font-size: $huge\A 19:       font-weight: 100\A 20:       color: $darkgrey\A 21:       margin: 40px 0 0 0\A 22:       text-align: left\A 23: "; }

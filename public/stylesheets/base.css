@@ -110,6 +110,28 @@ input, select {
 #signup_box input[type="submit"]:hover {
   background-position: 0 -52px; }
 
+#signup_form input[type="submit"] {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  background: url(/images/button-yes-sprite.png) no-repeat 0px 0px;
+  height: 52px;
+  width: 206px; }
+
+#signup_form input[type="submit"]:hover {
+  background-position: 0 -52px; }
+
+#invitation_form input[type="submit"] {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  background: url(/images/button-invite-sprite.png) no-repeat 0px 0px;
+  height: 52px;
+  width: 206px; }
+
+#invitation_form input[type="submit"]:hover {
+  background-position: 0 -52px; }
+
 #suggestion_thanks input[type="submit"] {
   display: inline-block;
   vertical-align: middle;
@@ -393,50 +415,40 @@ body_container {
   text-align: center;
   padding: 20px; }
   #new_signup #new_signup_inner {
-    display: inline-block;
-    width: 100%; }
+    text-align: left;
+    display: inline-block; }
     #new_signup #new_signup_inner h2 {
       font-family: "Helvetica";
-      font-size: 2em;
+      font-size: 3em;
       font-weight: 100;
       letter-spacing: -1px;
-      margin-bottom: 10px;
+      margin: 40px 0 10px 0;
       text-align: left; }
-      #new_signup #new_signup_inner h2 h3 {
-        font-family: "Helvetica";
-        font-size: 1.5em;
-        font-weight: 100;
-        letter-spacing: -1px;
-        margin: 10px 0 0 0;
-        text-align: left; }
-    #new_signup #new_signup_inner #signup_form #signup_field_name label {
+    #new_signup #new_signup_inner h3 {
+      font-family: "Helvetica";
+      font-size: 1.5em;
+      font-weight: 100;
+      color: #666666;
+      margin: 40px 0 0 0;
+      text-align: left; }
+    #new_signup #new_signup_inner #signup_form #fields #signup_field_name label {
       display: none; }
-    #new_signup #new_signup_inner #signup_form #signup_field_name #signup_name {
+    #new_signup #new_signup_inner #signup_form #fields #signup_field_name #signup_name {
       font-family: "Arial";
-      margin: 10px 0;
-      width: 100px;
-      font-size: 1.1em; }
-    #new_signup #new_signup_inner #signup_form #signup_field_email label {
-      display: none; }
-    #new_signup #new_signup_inner #signup_form #signup_field_email #signup_email {
-      font-family: "Arial";
-      margin: 10px 0;
+      margin: 40px 0 0 0;
       width: 250px;
       font-size: 1.5em;
       color: #666666; }
-    #new_signup #new_signup_inner #signup_form #signup_field_subscribed {
-      font-size: 0.8em;
-      font-family: "Arial"; }
-      #new_signup #new_signup_inner #signup_form #signup_field_subscribed input {
-        margin: 0;
-        position: relative;
-        left: -10px; }
-      #new_signup #new_signup_inner #signup_form #signup_field_subscribed label {
-        position: relative;
-        left: -10px; }
+    #new_signup #new_signup_inner #signup_form #fields #signup_field_email label {
+      display: none; }
+    #new_signup #new_signup_inner #signup_form #fields #signup_field_email #signup_email {
+      font-family: "Arial";
+      margin: 10px 0 0 0;
+      width: 250px;
+      font-size: 1.5em;
+      color: #666666; }
     #new_signup #new_signup_inner #signup_form .actions {
-      margin: 8px 0 0 0;
-      float: right; }
+      margin: 20px 0 0 0; }
       #new_signup #new_signup_inner #signup_form .actions .company_id {
         font-family: "Helvetica";
         margin: 10px 0 0 0; }
@@ -448,5 +460,70 @@ body_container {
           color: black;
           font-size: 0.9em; }
 
-#invitation input[type="text"] {
-  color: #666666; }
+#new_invitation {
+  width: 90%;
+  text-align: center;
+  padding: 20px; }
+  #new_invitation #new_invitation_inner {
+    text-align: left;
+    display: inline-block; }
+    #new_invitation #new_invitation_inner h2 {
+      font-family: "Helvetica";
+      font-size: 2em;
+      font-weight: 100;
+      letter-spacing: -1px;
+      margin: 10px 0 10px 0;
+      text-align: left; }
+    #new_invitation #new_invitation_inner h3 {
+      font-family: "Helvetica";
+      font-size: 1.8em;
+      font-weight: 100;
+      color: #666666;
+      margin: 40px 0 0 0;
+      text-align: left; }
+    #new_invitation #new_invitation_inner h4 {
+      font-family: "Helvetica";
+      font-size: 1.6em;
+      font-weight: 100;
+      margin: 40px 0 0 0;
+      text-align: left; }
+    #new_invitation #new_invitation_inner p {
+      font-family: "Helvetica";
+      font-size: 1.3em;
+      font-weight: 100;
+      margin: 30px 0 0 0;
+      color: #666666;
+      text-align: left;
+      border-top: 1px solid #999999;
+      padding-top: 20px; }
+    #new_invitation #new_invitation_inner #invitation_form #fields {
+      float: left; }
+      #new_invitation #new_invitation_inner #invitation_form #fields #invitation_field_name label {
+        display: none; }
+      #new_invitation #new_invitation_inner #invitation_form #fields #invitation_field_name #invitation_name {
+        font-family: "Arial";
+        margin: 10px 0 0 0;
+        width: 250px;
+        font-size: 1.5em;
+        color: #666666; }
+      #new_invitation #new_invitation_inner #invitation_form #fields #invitation_field_email label {
+        display: none; }
+      #new_invitation #new_invitation_inner #invitation_form #fields #invitation_field_email #invitation_email {
+        font-family: "Arial";
+        margin: 10px 0 0 0;
+        width: 250px;
+        font-size: 1.5em;
+        color: #666666; }
+    #new_invitation #new_invitation_inner #invitation_form .actions {
+      float: right;
+      margin: 20px 0 0 0; }
+      #new_invitation #new_invitation_inner #invitation_form .actions .company_id {
+        font-family: "Helvetica";
+        margin: 5px 0 0 0; }
+        #new_invitation #new_invitation_inner #invitation_form .actions .company_id .powered_by {
+          color: #666666;
+          font-style: italic;
+          font-size: 0.7em; }
+        #new_invitation #new_invitation_inner #invitation_form .actions .company_id .company_name {
+          color: black;
+          font-size: 0.9em; }
