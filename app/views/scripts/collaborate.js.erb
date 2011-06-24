@@ -5,7 +5,7 @@ try {
     var width = document.documentElement.clientWidth + document.documentElement.scrollLeft;
 
     var layer = document.createElement('div');
-    layer.style.zIndex = 2;
+    layer.style.zIndex = 1000;
     layer.id = 'layer';
     layer.style.position = 'absolute';
     layer.style.top = '0px';
@@ -18,7 +18,7 @@ try {
     document.body.appendChild(layer);
 
     var box = document.createElement('div');
-    box.style.zIndex = 3;
+    box.style.zIndex = 1001;
     box.id = 'box';
     box.style.position = 'absolute';
     box.style.top = '100px';
