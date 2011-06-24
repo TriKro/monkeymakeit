@@ -10,7 +10,7 @@ class SignupsController < ApplicationController
     @signup = User.new(params[:user])
     if @signup.save
       log_activity(request.request_uri, "Created", "User", @signup)
-      redirect_to(new_invitation_url, :notice => 'User was successfully created.')
+      redirect_to(new_invitation_url)
     else
       render :action => "new"
     end
