@@ -3,7 +3,6 @@ require 'open-uri'
 class SuggestionsController < ApplicationController
 
   def new
-    render :layout => 'modal'
     raise 'Expected params[:url]' unless params[ :url ]
     cookies[:url] = params[:url]
     cookies[:code] = params[:code]
@@ -19,6 +18,7 @@ class SuggestionsController < ApplicationController
     end
     @suggestion = Suggestion.create!( :url => params[ :url ], :before_html => before_html )
     log_activity(request.request_uri, "Began Creating", "Suggestion")
+    render :layout => 'modal'
   end
 
   def update

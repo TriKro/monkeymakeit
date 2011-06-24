@@ -42,7 +42,11 @@ try {
     var iframe_span = document.createElement('span');
 
     <% page_to_tweak = params[ :demo ] ? 'http://grasshopperherder.com/' : "' + window.location + '" %>
-    <% iframe_source = new_signup_url( params.slice( :demo, :code ) ) %>
+    <% if page_to_tweak == "http://scottlambridis.com" %>
+      <% iframe_source = new_signup_url( params.slice( :demo, :code ) ) %>
+    <% else %>
+      <% iframe_source = new_suggestion_url( params.slice( :demo, :code ) ) %>
+    <% end %>
     <% iframe_source += "&url=#{page_to_tweak}" %>
     var iframe = '<iframe src="<%= iframe_source %>" ' +
             'bordercolor="#000000" vspace="0" hspace="0" marginheight="0" marginwidth="0" style="padding: 0pt; margin: 0pt;" ' +
@@ -70,7 +74,11 @@ try {
 
   <% document_write = !( params[:document_write] == 'false' ) %>
   <% if document_write %>
-    <% button_image = 'button-tweakthis-tall.png' %>
+    <% if page_to_tweak == "http://scottlambridis.com" %>
+      <% button_image = 'button-readmore-sprite.png' %>
+    <% else %>
+      <% button_image = 'button-tweakthis-tall.png' %>
+    <% end %>
     document.write('<a href="javascript:void(collaborate_lightbox_d601085());" style="border-bottom: none !important; text-decoration: none;">' +
             '<img src="<%= root_url %>images/<%= button_image %>" /></a>');
   <% end %>
