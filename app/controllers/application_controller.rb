@@ -22,9 +22,10 @@ class ApplicationController < ActionController::Base
   end
 
   def maybe_commit_activity_log
-    return unless @activity_to_log
-    @activity_to_log.session_id = request.session_options[:id]
-    @activity_to_log.save!
+    if @activity_to_log && !session[:admin] # don't log our team's clicks
+      @activity_to_log.session_id = request.session_options[:id]
+      @activity_to_log.save!
+    end
     @activity_to_log = nil
   end
 
