@@ -7,7 +7,8 @@ try {
       var width = document.documentElement.clientWidth + document.documentElement.scrollLeft;
 
       var layer = document.createElement('div');
-      layer.style.zIndex = 1000;
+      var maxCroosBrowserZIndex = 2147483647;         /* from http://softwareas.com/whats-the-maximum-z-index */
+      layer.style.zIndex = maxCroosBrowserZIndex - 1;
       layer.id = 'layer';
       layer.style.position = 'absolute';
       layer.style.top = '0px';
@@ -20,7 +21,7 @@ try {
       document.body.appendChild(layer);
 
       var box = document.createElement('div');
-      box.style.zIndex = 1001;
+      box.style.zIndex = maxCroosBrowserZIndex;
       box.id = 'box';
       box.style.position = 'fixed';
       box.style.top = '100px';
