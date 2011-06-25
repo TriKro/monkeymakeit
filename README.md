@@ -40,3 +40,4 @@ to add an "Invitation" that uses this button.
 
 Note that buttons must be in our usual sprite format, with normal state above, rollover state below.
 
+*Note that removing buttons from this directory will delete the corresponding Invitation model, including any text etc!*
