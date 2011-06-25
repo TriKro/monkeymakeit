@@ -12,11 +12,17 @@
     #fields
       #invitation_field_name.field
         = f.label :full_name, "Name"
-        = f.text_field :full_name, :value => "Name", :id => "invitation_name"
+        - if @invite.name.blank?
+          = f.text_field :full_name, :value => "Name", :id => "invitation_name"
+        - else
+          = f.text_field :full_name, :value => "Name", :id => "invitation_name"
 
       #invitation_field_email.field
         = f.label :email, "Email:"
-        = f.text_field :email, :value => "Email", :id => "invitation_email"
+        - if @invite.email.blank?
+          = f.text_field :email, :value => "Email", :id => "invitation_email"
+        - else
+          = f.text_field :email, :id => "invitation_email"
 
     .actions
       = f.submit ''
