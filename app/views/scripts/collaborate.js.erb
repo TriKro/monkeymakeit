@@ -3,12 +3,12 @@ try {
   function collaborate_lightbox_<%= @unique_code %>() {
 
     try {
+      var maxCrossBrowserZIndex = 2147483647;         /* from http://softwareas.com/whats-the-maximum-z-index */
 
       var width = document.documentElement.clientWidth + document.documentElement.scrollLeft;
 
       var layer = document.createElement('div');
-      var maxCroosBrowserZIndex = 2147483647;         /* from http://softwareas.com/whats-the-maximum-z-index */
-      layer.style.zIndex = maxCroosBrowserZIndex - 1;
+      layer.style.zIndex = maxCrossBrowserZIndex - 1;
       layer.id = 'layer';
       layer.style.position = 'absolute';
       layer.style.top = '0px';
@@ -21,7 +21,7 @@ try {
       document.body.appendChild(layer);
 
       var box = document.createElement('div');
-      box.style.zIndex = maxCroosBrowserZIndex;
+      box.style.zIndex = maxCrossBrowserZIndex;
       box.id = 'box';
       box.style.position = 'fixed';
       box.style.top = '100px';
@@ -50,7 +50,7 @@ try {
 
       var iframe = '<iframe src="<%= iframe_source %>" ' +
               'bordercolor="#000000" vspace="0" hspace="0" marginheight="0" marginwidth="0" style="padding: 0pt; margin: 0pt;" ' +
-              'allowtransparency="true" id="zozi_partner_iframe" frameborder="0" width="100%" height="500px" scrolling="no" ></iframe>';
+              'allowtransparency="true" id="lightbox_iframe_<%= @unique_code %>" frameborder="0" width="100%" height="500px" scrolling="no" ></iframe>';
       iframe_span.innerHTML = iframe;
       box.appendChild(iframe_span);
 
@@ -83,11 +83,11 @@ try {
             '#monkeymakeit_button {' +
             '  background: url(<%= root_url %>images/widget_buttons/<%= @invitation.button_name %>) no-repeat 0px 0px;' +
             '  display: inline-block;' +
-            '  height:52px;' +
-            '  width:185px;' +
+            '  width: <%= @invitation.button_width %>px;' +
+            '  height: <%= @invitation.button_height %>px;' +
             '}' +
             '#monkeymakeit_button:hover {' +
-            '  background-position: 0 -52px;' +
+            '  background-position: 0 -<%= @invitation.button_height %>px;' +
             '}' +
             '</style>' +
             '<a href="javascript:void(collaborate_lightbox_<%= @unique_code %>());"' +

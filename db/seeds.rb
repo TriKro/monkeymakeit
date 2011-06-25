@@ -1,7 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
+require 'image_size'
+
+button_paths = Dir[ Rails.root.join( *%w[ public images widget_buttons * ] ) ]
+button_paths.each do |button_path|
+  button_name = button_path.split('/').last
+  invitation = Invitation.where(:button_name => button_name).first || Invitation.new(:button_name => button_name)
+  image_width, image_height = open(button_path, 'rb') { |button_file| ImageSize.new(button_file.read).get_size }
+  invitation.button_width  = image_width
+  invitation.button_height = image_height / 2   # rollover image is stacked below the normal state
+  invitation.save!
+end
