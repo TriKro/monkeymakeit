@@ -18,6 +18,12 @@ Expects Ruby 1.9.2
 
     be heroku console --app suggestedit-production
 
+## Copy db from production
+
+    heroku db:pull --confirm suggestedit-production
+
+    NOTE: this will clobber your local db files
+
 ## When pulling
 
     git pull --rebase origin master
@@ -38,6 +44,6 @@ directory, then run
 
 to add an "Invitation" that uses this button.
 
-Note that buttons must be in our usual sprite format, with normal state above, rollover state below.
+Buttons must be in our usual sprite format, with normal state above, rollover state below.
 
-*Note that removing buttons from this directory will delete the corresponding Invitation model, including any text etc!*
+NOTE: Removing buttons from this directory will delete the corresponding Invitation model, including any text etc!
