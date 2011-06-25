@@ -1,8 +1,10 @@
 module RandomKey
   def self.included(base)
-    base.class_eval do
-      validates :random_key, :presence => true, :uniqueness => true
-      before_validation(:create_random_key, :on => :create)
+    if base < ActiveRecord::Base
+      base.class_eval do
+        validates :random_key, :presence => true, :uniqueness => true
+        before_validation(:create_random_key, :on => :create)
+      end
     end
   end
 

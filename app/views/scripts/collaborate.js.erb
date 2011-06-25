@@ -1,6 +1,6 @@
 try {
 
-  function collaborate_lightbox_d601085() {
+  function collaborate_lightbox_<%= @unique_code %>() {
 
     try {
 
@@ -77,11 +77,22 @@ try {
 
   <% document_write = !( params[:document_write] == 'false' ) %>
   <% if document_write %>
-    <% button_image = 'button-readmore-sprite.png' %>
-    document.write('<style type="text/css">#monkeymakeit_button {background: url(<%=root_url%>images/<%=button_image%>) no-repeat 0px 0px;display: inline-block;height:52px;width:185px;}' +
-            '#monkeymakeit_button:hover{background-position: 0 -52px;}</style>' +
-            '<a href="javascript:void(collaborate_lightbox_d601085());" style="border-bottom: none !important; text-decoration: none;">' +
-            '<span id="monkeymakeit_button"></span></a>');
+    document.write(
+            '<style type="text/css">' +
+            '#monkeymakeit_button {' +
+            '  background: url(<%= root_url %>images/widget_buttons/<%= @invitation.button_name %>) no-repeat 0px 0px;' +
+            '  display: inline-block;' +
+            '  height:52px;' +
+            '  width:185px;' +
+            '}' +
+            '#monkeymakeit_button:hover {' +
+            '  background-position: 0 -52px;' +
+            '}' +
+            '</style>' +
+            '<a href="javascript:void(collaborate_lightbox_<%= @unique_code %>());"' +
+            '  style="border-bottom: none !important; text-decoration: none;">' +
+            '    <span id="monkeymakeit_button"></span>' +
+            '</a>');
   <% end %>
 
 } catch(e) {

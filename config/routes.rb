@@ -26,7 +26,7 @@ Suggestedit::Application.routes.draw do
   end
 
   # Javascript
-  get "/scripts/collaborate" => "scripts#collaborate"
+  get "/scripts/collaborate" => "scripts#collaborate", :as => 'collaborate_js'
 end
 
 
