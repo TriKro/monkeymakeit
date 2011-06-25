@@ -2,8 +2,8 @@ class SignupsController < ApplicationController
 
   def new
     @signup = User.new
-    @invitation = Invitation.find(params[ :invitation_id ])
-    log_activity(request.request_uri, "Clicked Button", 'Invitation', @invitation)
+    log_activity(request.request_uri, "Clicked Button", 'Invitation',
+                 Invitation.find(params[:invitation_id])) rescue nil
     log_activity(request.request_uri, "Began Creating", "User")
     render :layout => 'modal'
   end
