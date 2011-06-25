@@ -5,11 +5,7 @@
     %h2.blue
       You've now invited
       %span.darkblue
-        = @friends
-        - if @friends == 1
-          friend.
-        - else
-          friends.
+        #{pluralize @friends, 'friend'}.
 
     #flash_messages
       = render :partial => '/layouts/flash', :locals => { :flash => flash }

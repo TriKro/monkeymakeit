@@ -89,31 +89,15 @@ input, select {
   clear: both; }
 
 .field_with_errors input, .field_with_errors textarea {
-  border: 3px red solid !important; }
+  border: 2px red solid !important; }
   .field_with_errors input label, .field_with_errors textarea label {
     color: red; }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
   padding: 7px;
-  padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: white; }
-  #error_explanation h4 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    margin: -7px;
-    margin-bottom: 10px;
-    background-color: white;
-    color: white; }
-  #error_explanation ul {
-    padding: 5px 0; }
-    #error_explanation ul li {
-      padding: 5px 0;
-      color: red;
-      list-style: square; }
+  background-color: #cccc00; }
 
 .error, .alert, .notice, .success, .info {
   padding: 0.8em;
@@ -513,22 +497,23 @@ body_container {
       color: #666666;
       margin: 40px 0 0 0;
       text-align: left; }
-    #new_signup #new_signup_inner #signup_form #fields #signup_field_name label {
-      display: none; }
-    #new_signup #new_signup_inner #signup_form #fields #signup_field_name #signup_name {
-      font-family: "Arial";
-      margin: 40px 0 0 0;
-      width: 250px;
-      font-size: 1.5em;
-      color: #666666; }
-    #new_signup #new_signup_inner #signup_form #fields #signup_field_email label {
-      display: none; }
-    #new_signup #new_signup_inner #signup_form #fields #signup_field_email #signup_email {
-      font-family: "Arial";
-      margin: 10px 0 0 0;
-      width: 250px;
-      font-size: 1.5em;
-      color: #666666; }
+    #new_signup #new_signup_inner #signup_form #fields {
+      margin: 40px 0 0 0; }
+      #new_signup #new_signup_inner #signup_form #fields #signup_field_name label {
+        display: none; }
+      #new_signup #new_signup_inner #signup_form #fields #signup_field_name #signup_name {
+        font-family: "Arial";
+        width: 250px;
+        font-size: 1.5em;
+        color: #666666; }
+      #new_signup #new_signup_inner #signup_form #fields #signup_field_email label {
+        display: none; }
+      #new_signup #new_signup_inner #signup_form #fields #signup_field_email #signup_email {
+        font-family: "Arial";
+        margin: 10px 0 0 0;
+        width: 250px;
+        font-size: 1.5em;
+        color: #666666; }
     #new_signup #new_signup_inner #signup_form .actions {
       margin: 20px 0 0 0; }
       #new_signup #new_signup_inner #signup_form .actions .company_id {

@@ -1,15 +1,10 @@
 #signup_form
   = form_for(@signup, :url => { :action => "create" }) do |f|
-    - if @signup.errors.any?
-      #error_explanation
-        %h4
-          = pluralize(@signup.errors.count, "error")
-          prohibited this tag from being saved:
-        %ul
-          - @signup.errors.full_messages.each do |msg|
-            %li= msg
-
     #fields
+      - if @signup.errors.any?
+        #error_explanation
+          = @signup.errors.full_messages.first
+
       #signup_field_name.field
         = f.label :full_name, "Name"
         - if @signup.full_name.blank?

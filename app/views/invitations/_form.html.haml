@@ -1,15 +1,10 @@
 #invitation_form
   = form_for(@invite, :url => invitations_path) do |f|
-    - if @invite.errors.any?
-      #error_explanation
-        %h4
-          = pluralize(@invite.errors.count, "error")
-          prohibited this tag from being saved:
-        %ul
-          - @invite.errors.full_messages.each do |msg|
-            %li= msg
-
     #fields
+      - if @invite.errors.any?
+        #error_explanation
+          = @invite.errors.full_messages.first
+
       #invitation_field_name.field
         = f.label :full_name, "Name"
         - if @invite.full_name.blank?

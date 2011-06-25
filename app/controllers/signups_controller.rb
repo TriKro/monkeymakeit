@@ -9,13 +9,13 @@ class SignupsController < ApplicationController
   end
 
   def create
-    @signup = User.new(params[:user])
-    if @signup.save
+    @signup = User.find_by_email(params[:user][:email]) || User.create(params[:user])
+    if @signup.new_record?
+      render :action => "new"
+    else
       session[:user] = @signup
       log_activity(request.request_uri, "Created", "User", @signup)
       redirect_to(new_invitation_url)
-    else
-      render :action => "new"
     end
   end
 
