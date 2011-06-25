@@ -2,6 +2,10 @@
   #new_invitation_inner
     %h3
       Thanks!
+
+    #flash_messages
+      = render :partial => '/layouts/flash', :locals => { :flash => flash }
+
     %h2.blue
       You've now invited
       %span.darkblue
@@ -10,9 +14,6 @@
           friend.
         - else
           friends.
-
-    #flash_messages
-      = render :partial => '/layouts/flash', :locals => { :flash => flash }
 
     %h4.darkblue Invite another:
 
