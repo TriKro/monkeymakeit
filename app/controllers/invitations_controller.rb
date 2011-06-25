@@ -11,16 +11,19 @@ class InvitationsController < ApplicationController
   def create
     @invite = User.where( params[:user] ).first || User.new( params[:user] )
     @invite.inviter = session[:user] rescue nil
-    @invite.save
-    log_activity(request.request_uri, "Created", "User", @invite)
-    UserMailer.invite(session[:user], @invite, 'RE: "Doris", by Scott Lambridis', cookies[:url]).deliver
-    log_activity(request.request_uri, "Sent", "Invitation", User.find_by_email(params[:user][:email]))
-    if @invite.full_name == ""
-      flash[:success] = "Invite sent to "+ @invite.email + "."
+    if @invite.save
+      log_activity(request.request_uri, "Created", "User", @invite)
+      UserMailer.invite(session[:user], @invite, 'RE: "Doris", by Scott Lambridis', cookies[:url]).deliver
+      log_activity(request.request_uri, "Sent", "Invitation", User.find_by_email(params[:user][:email]))
+      if @invite.full_name == ""
+        flash[:success] = "Invite sent to "+ @invite.email + "."
+      else
+        flash[:success] = "Invite sent to "+ @invite.full_name + "."
+      end
+      redirect_to new_invitation_path
     else
-      flash[:success] = "Invite sent to "+ @invite.full_name + "."
+      render :action => "new"
     end
-    redirect_to new_invitation_path
   end
 
 end
