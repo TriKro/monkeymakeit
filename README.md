@@ -14,6 +14,10 @@ Expects Ruby 1.9.2
 
     bundle exec heroku domains:add MonkeyMake.it --app suggestedit-production
 
+## Script console on production
+
+    be heroku console --app suggestedit-production
+
 ## When pulling
 
     git pull --rebase origin master
