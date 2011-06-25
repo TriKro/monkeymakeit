@@ -1,0 +1,85 @@
+// errors
+
+.field_with_errors
+  input, textarea
+    border: 3px $error_color solid !important
+    label
+      color: $error_color
+
+#error_explanation
+  width: 450px
+  border: 2px solid red
+  padding: 7px
+  padding-bottom: 0
+  margin-bottom: 20px
+  background-color: $white
+  h4
+    text-align: left
+    font-weight: bold
+    padding: 5px 5px 5px 15px
+    margin: -7px
+    margin-bottom: 10px
+    background-color: $white
+    color: #fff
+  ul
+    padding: 5px 0
+    li
+      padding: 5px 0
+      color: $error_color
+      list-style: square
+
+.error, .alert, .notice, .success, .info
+  padding: 0.8em
+  border: 2px solid #ddd
+  margin: 0 auto
+  width: 100%
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+  border-radius: 5px
+
+.error, .alert
+  background: #fbe3e4
+  color: #8a1f11
+  border-color: #fbc2c4
+
+.notice
+  background: #e6efc2
+  color: #264409
+  border-color: #c6d880
+
+.success
+  background: #e6efc2
+  color: #264409
+  border-color: #c6d880
+
+.info
+  background: #d5edf8
+  color: #205791
+  border-color: #92cae4
+
+.error a, .alert a
+  color: #8a1f11
+
+.notice a
+  //color: #514721
+  color: #264409
+
+.success a
+  color: #264409
+
+.info a
+  color: #205791
+
+.notice, .alert, .success
+  position: relative
+  p
+    float: left
+  .close
+    background: url("/images/close_icon.png") no-repeat 0 0
+    height: 34px
+    width: 34px
+    cursor: pointer
+    position: absolute
+    right: 0
+    top: 2px
+    opacity: .3

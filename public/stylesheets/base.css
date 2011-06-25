@@ -88,6 +88,88 @@ input, select {
 .clear {
   clear: both; }
 
+.field_with_errors input, .field_with_errors textarea {
+  border: 3px red solid !important; }
+  .field_with_errors input label, .field_with_errors textarea label {
+    color: red; }
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: white; }
+  #error_explanation h4 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    margin: -7px;
+    margin-bottom: 10px;
+    background-color: white;
+    color: white; }
+  #error_explanation ul {
+    padding: 5px 0; }
+    #error_explanation ul li {
+      padding: 5px 0;
+      color: red;
+      list-style: square; }
+
+.error, .alert, .notice, .success, .info {
+  padding: 0.8em;
+  border: 2px solid #dddddd;
+  margin: 0 auto;
+  width: 100%;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
+
+.error, .alert {
+  background: #fbe3e4;
+  color: #8a1f11;
+  border-color: #fbc2c4; }
+
+.notice {
+  background: #e6efc2;
+  color: #264409;
+  border-color: #c6d880; }
+
+.success {
+  background: #e6efc2;
+  color: #264409;
+  border-color: #c6d880; }
+
+.info {
+  background: #d5edf8;
+  color: #205791;
+  border-color: #92cae4; }
+
+.error a, .alert a {
+  color: #8a1f11; }
+
+.notice a {
+  color: #264409; }
+
+.success a {
+  color: #264409; }
+
+.info a {
+  color: #205791; }
+
+.notice, .alert, .success {
+  position: relative; }
+  .notice p, .alert p, .success p {
+    float: left; }
+  .notice .close, .alert .close, .success .close {
+    background: url("/images/close_icon.png") no-repeat 0 0;
+    height: 34px;
+    width: 34px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 2px;
+    opacity: 0.3; }
+
 #suggestion_submit {
   display: inline-block;
   vertical-align: middle;
@@ -487,7 +569,7 @@ body_container {
       font-weight: 100;
       margin: 40px 0 0 0;
       text-align: left; }
-    #new_invitation #new_invitation_inner p {
+    #new_invitation #new_invitation_inner p.addiontal_info {
       font-family: "Helvetica";
       font-size: 1.3em;
       font-weight: 100;
@@ -527,4 +609,3 @@ body_container {
         #new_invitation #new_invitation_inner #invitation_form .actions .company_id .company_name {
           color: black;
           font-size: 0.9em; }
-
