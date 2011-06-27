@@ -1,4 +1,4 @@
-- if !@recipient.first_name.nil?
+- if !@recipient.first_name.nil? || @recipient.first_name != ""
   = @recipient.first_name + ','
 %p
   Check out this strange story about an albino duck:
@@ -7,9 +7,12 @@
   %br
   Thought you'd like it.
 
-- if !@recipient.first_name.nil?
+- if !@recipient.first_name.nil? || @recipient.first_name != ""
   = @recipient.first_name
   %br
 
 \--
-(sent from http://monkeymake.it at the request of #{@sender.email})
+(sent from
+%a{ :href => "http://monkeymake.it/" }
+  MonkeyMake.it
+at the request of #{@sender.email})

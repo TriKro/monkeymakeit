@@ -1,9 +1,6 @@
-#{ @recipient.first_name + ',\r\n' unless !@recipient.first_name.nil? }
-\r\n
+#{ @recipient.first_name + ',' unless !@recipient.first_name.nil? }
 Check out this strange story about an albino duck: http://scottlambridis.com
 Thought you'd like it.
-\r\n
-#{ @recipient.first_name + '\r\n' unless !@recipient.first_name.nil? }
-\r\n
+#{ @recipient.first_name unless !@recipient.first_name.nil? }
 \--
 (sent from http://monkeymake.it at the request of #{@sender.email})
