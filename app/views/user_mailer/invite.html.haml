@@ -1,0 +1,15 @@
+- if @recipient.first_name.exists?
+  = @recipient.first_name + ','
+%p
+  Check out this strange story about an albino duck:
+  %a{ :href => "http://scottlambridis.com/" }
+    ScottLambridis.com
+  %br
+  Thought you'd like it.
+
+- if @recipient.first_name.exists?
+  = @recipient.first_name
+  %br
+
+\--
+(sent from http://monkeymake.it at the request of #{@sender.email})
