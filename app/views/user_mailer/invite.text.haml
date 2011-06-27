@@ -1,10 +1,10 @@
-#{ if @recipient.first_name.exists?
+#{ if !@recipient.first_name.nil?
 @recipient.first_name + ','}
 \r\n
 Check out this strange story about an albino duck: http://scottlambridis.com
 Thought you'd like it.
 \r\n
-#{ if @recipient.first_name.exists?
+#{ if !@recipient.first_name.nil?
 @recipient.first_name + '\r\n'}
 \r\n
 \r\n
