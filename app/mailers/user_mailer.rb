@@ -1,11 +1,11 @@
 class UserMailer < ActionMailer::Base
 
-  default :from => "no-reply@suggestedit.org"
+  default :from => "no-reply@monkeymake.it"
 
   def contact_us(contact_message)
     @contact_message = contact_message
     mail :to => "TK@TristanKromer.com",
-         :from => "no-reply@suggestedit.org",
+         :from => "no-reply@monkeymake.it",
          :reply_to => @contact_message.sender,
          :subject => @contact_message.subject
   end

@@ -6,6 +6,14 @@ Expects Ruby 1.9.2
 
     rvm use 1.9.2-head
 
+## Demo page
+
+http://monkeymake.it/demo
+
+## Cookie page (to eliminate admin logging)
+
+http://monkeymake.it/admin
+
 ## Deploying to MonkeyMake.it
 
     rake heroku:deploy
@@ -27,10 +35,6 @@ Expects Ruby 1.9.2
 ## When pulling
 
     git pull --rebase origin master
-
-## Demo page
-
-http://monkeymake.it/demo
 
 ## Button Rotation
 

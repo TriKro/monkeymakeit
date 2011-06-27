@@ -13,7 +13,7 @@ class InvitationsController < ApplicationController
     @invite.inviter = session[:user] rescue nil
     if @invite.save
       log_activity(request.request_uri, "Created", "User", @invite)
-      UserMailer.invite(session[:user], @invite, 'RE: "Doris", by Scott Lambridis', cookies[:url]).deliver
+      UserMailer.invite(session[:user], @invite, 'RE: "Doris," by Scott Lambridis', cookies[:url]).deliver
       log_activity(request.request_uri, "Sent", "Invitation", User.find_by_email(params[:user][:email]))
       if @invite.full_name.blank?
         flash[:success] = "Invite sent to "+ @invite.email + "."
