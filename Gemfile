@@ -14,6 +14,7 @@ gem 'rake',                '0.9.2'
 gem 'recaptcha',           :require => 'recaptcha/rails'
 gem 'sass'
 gem 'will_paginate',       '~> 3.0.pre2'
+gem 'cancan'
 
 group :development do
   gem 'heroku'

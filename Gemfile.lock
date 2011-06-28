@@ -31,6 +31,7 @@ GEM
     arel (2.0.10)
     awesome_print (0.4.0)
     builder (2.1.2)
+    cancan (1.6.4)
     configuration (1.2.0)
     diff-lcs (1.1.2)
     erubis (2.6.6)
@@ -117,6 +118,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  cancan
   diff-lcs (= 1.1.2)
   haml
   haml-rails
