@@ -2,7 +2,7 @@
 
 ## Ruby version
 
-Expects Ruby 1.9.2
+Expects Ruby 1.9.2, eg:
 
     rvm use 1.9.2-head
 
@@ -18,13 +18,15 @@ http://monkeymake.it/admin
 
     rake heroku:deploy
 
-## Adding a domain to Heroku (one time operation for each domain)
+## Adding & removing Heroku domains (one time operation for each domain)
 
-    bundle exec heroku domains:add MonkeyMake.it --app suggestedit-production
+    bundle exec heroku domains:add MonkeyMake.it          --app suggestedit-production
+    bundle exec heroku domains:remove www.suggestedit.org --app suggestedit-production
+    bundle exec heroku domains                            --app suggestedit-production  # list domains
 
 ## Script console on production
 
-    be heroku console --app suggestedit-production
+    bundle exec heroku console --app suggestedit-production
 
 ## Copy db from production
 
