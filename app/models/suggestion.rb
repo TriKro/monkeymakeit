@@ -3,6 +3,9 @@ require_dependency File.dirname(__FILE__) + '/../../config/initializers/string'
 
 class Suggestion < ActiveRecord::Base
 
+  has_many :activities, :as => :target
+  has_many :activities, :as => :subtarget
+
   validates :before_html, :presence => true
 
   validates_format_of :email, :allow_blank => true, :with => /^[-a-z0-9_+\.]+@([-a-z0-9]+\.)+[a-z0-9]{2,}$/i

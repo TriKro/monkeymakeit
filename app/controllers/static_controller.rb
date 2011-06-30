@@ -16,8 +16,4 @@ class StaticController < ApplicationController
     end
   end
 
-  def admin
-    session[:admin] = true
-    redirect_to '/'
-  end
 end

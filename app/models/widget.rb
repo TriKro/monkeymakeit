@@ -6,5 +6,7 @@ class Widget < ActiveRecord::Base
 
   belongs_to :user
   has_many :invitations
+  has_many :activities, :as => :target
+  has_many :activities, :as => :subtarget
 
 end

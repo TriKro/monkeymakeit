@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   include RandomKey
 
   has_many :widgets
+  has_many :activities, :as => :target
+  has_many :activities, :as => :subtarget
 
   belongs_to :inviter, :class_name => 'User'
 

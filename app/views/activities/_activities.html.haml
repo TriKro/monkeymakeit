@@ -1,25 +1,40 @@
 - @activities.each do |activity|
   .activity
-    - if activity.activity_type == "Subscribed"
-      = render :partial => "subscribed_activity", :locals => { :activity => activity }
 
-    - elsif activity.activity_type == "Access Denied" || activity.activity_type == "Record not Found" || activity.activity_type == "404"
-      = render :partial => "misc_activity", :locals => { :activity => activity }
-
-    - elsif activity.activity_type == "Access Denied" || activity.activity_type == "Record not Found" || activity.activity_type == "404"
-      = render :partial => "misc_activity", :locals => { :activity => activity }
-
-    - elsif activity.target_model == "Page"
-      = render :partial => "misc_activity", :locals => { :activity => activity }
-
-    - elsif activity.target_model == "User"
-      = render :partial => "user_activity", :locals => { :activity => activity }
-
-    - elsif activity.target_model == "ContactMessage"
-      = render :partial => "contact_message_activity", :locals => { :activity => activity }
-
+    - if activity.session_id.nil?
+      (no session)
     - else
-      = render :partial => "undefined_activity", :locals => { :activity => activity }
+      = activity.session_id
+
+    = activity.activity_type
+
+    - if activity.target_type == "Page"
+      = link_to activity.target_type, activity.url
+    - elsif activity.target_type == "Invitation" && !activity.target_id.nil?
+      = Invitation.find(activity.target_id).button_name
+    - elsif activity.target_type.nil?
+      NIL
+    - else
+      = activity.target_type
+
+    - if activity.subtarget_type.nil?
+      NIL
+    - else
+      = activity.subtarget_type
+
+    - if activity.url.include?("code=")
+      - code = activity.url.split('?')[1]
+      - code = code[5,32]
+      - owner = User.find_by_random_key(code)
+      - if !owner.nil?
+        - if owner.full_name.nil?
+          = owner.email
+        - else
+          =owner.full_name
+    - elsif activity.url.include?("demo=true")
+      DEMO
+    - else
+      = activity.url
 
     .activity_menu
       = link_to 'Destroy', activity, :confirm => 'Are you sure?', :method => :delete

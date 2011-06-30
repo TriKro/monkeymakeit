@@ -12,6 +12,7 @@ class SignupsController < ApplicationController
     @signup = User.find_by_email(params[:user][:email]) || User.create(params[:user])
     return render(:action => 'new', :layout => 'modal') if @signup.new_record? # error
     session[:user] = @signup
+    log_activity(request.request_uri, "Signed Up", "User", @signup)
     log_activity(request.request_uri, "Created", "User", @signup)
     redirect_to(new_invitation_url)
   end

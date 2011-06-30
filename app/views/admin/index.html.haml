@@ -1,0 +1,64 @@
+#white_background
+  .funnel
+    %h1
+      Scott's Test
+
+    %table
+      %tr
+        %th
+          Start Date
+        %th
+          End Date
+        %th
+          Button Views
+        %th
+          Button Clicks
+        %th
+          Signed Up
+        %th
+          Invites Sent
+
+      - i = 0
+      - until i > 7
+        -# Take only activities in 1 day
+        - activities = Activity.where(:created_at => (Time.now.midnight - (i + 1).day)..(Time.now.midnight - i.day))
+
+        - button_views = activities.where(:activity_type => "Viewed Button")
+        - button_clicks = activities.where(:activity_type => "Clicked Button")
+        - signups = activities.where(:activity_type => "Signed Up")
+        - invitations_sent = activities.where(:activity_type => "Sent", :target_type => "Invitation")
+
+        %tr
+          %td
+            = (Time.now.midnight - (i + 1).day).month
+            \/
+            = (Time.now.midnight - (i + 1).day).day
+          %td
+            = (Time.now.midnight - i.day).month
+            \/
+            = (Time.now.midnight - i.day).day
+
+          %td
+            = scott_button_views = parse_scott(button_views)
+
+          %td
+            = scott_button_clicks = parse_scott(button_clicks)
+            %b
+              (
+              = number_to_percentage(scott_button_clicks.to_f / scott_button_views.to_f * 100)
+              )
+
+          %td
+            = scott_signups = parse_scott(signups)
+            %b
+              (
+              = number_to_percentage(scott_button_clicks.to_f / scott_signups.to_f * 100)
+              )
+
+          %td
+            = scott_invitations_sent = parse_scott(invitations_sent)
+            %b
+              (
+              = number_to_percentage(scott_invitations_sent.to_f / scott_signups.to_f * 100)
+              )
+        - i = i + 1

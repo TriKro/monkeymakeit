@@ -30,5 +30,5 @@ Suggestedit::Application.routes.draw do
 
   # Team members, bookmark the admin page. Visit it first to be excluded from
   # logging.
-  match '/admin' => 'static#admin'
+  match '/admin' => 'admin#index'
 end

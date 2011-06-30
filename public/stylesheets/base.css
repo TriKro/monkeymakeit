@@ -599,7 +599,8 @@ body_container {
   position: relative;
   height: 60px;
   padding: 5px;
-  border-bottom: 1px solid #edecec; }
+  border-bottom: 1px solid #edecec;
+  text-align: left; }
   #activities .activity .avatar {
     float: left;
     padding: 5px; }
@@ -633,3 +634,13 @@ body_container {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px; }
+
+.funnel {
+  text-align: left; }
+  .funnel table {
+    border: 1px solid black; }
+    .funnel table tr {
+      border: 1px solid black; }
+      .funnel table tr td, .funnel table tr th {
+        border: 1px solid black;
+        padding: 5px; }
