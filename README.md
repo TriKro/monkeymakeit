@@ -53,3 +53,11 @@ to add an "Invitation" that uses this button.
 Buttons must be in our usual sprite format, with normal state above, rollover state below.
 
 NOTE: Removing buttons from this directory will delete the corresponding Invitation model, including any text etc!
+
+## Analytics
+
+Here are some sample queries to look at the analytics:
+
+    Activity.where(:target_model => "Collaborate Button", :activity_type => "Viewed", :created_at => (Time.now.midnight - 7.day)..Time.now.midnight, :url => "/scripts/collaborate.js?code=6e387c5e42a187edab38c7962f7f5a5a").count
+
+    Activity.where(:target_model => "Suggestion", :activity_type => "Began Creating", :created_at => (Time.now.midnight - 7.day)..Time.now.midnight, :url => "/suggestions/new?code=6e387c5e42a187edab38c7962f7f5a5a&url=http://grasshopperherder.com/").count

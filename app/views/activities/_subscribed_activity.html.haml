@@ -1,5 +1,5 @@
 .content.subscribed_activity
-  = render :partial => "profiles/avatar", :locals => { :user => activity.user }
+  = render :partial => "activities/avatar", :locals => { :user => activity.user }
 
   .summary
     = render :partial => "activities/actor", :locals => { :activity => activity }

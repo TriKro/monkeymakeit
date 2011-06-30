@@ -594,3 +594,42 @@ body_container {
         #new_invitation #new_invitation_inner #invitation_form .actions .company_id .company_name {
           color: black;
           font-size: 0.9em; }
+
+#activities .activity {
+  position: relative;
+  height: 60px;
+  padding: 5px;
+  border-bottom: 1px solid #edecec; }
+  #activities .activity .avatar {
+    float: left;
+    padding: 5px; }
+  #activities .activity .content {
+    padding: 5px;
+    float: left; }
+    #activities .activity .content .summary .rating-wrapper {
+      float: right; }
+    #activities .activity .content .complete {
+      padding: 5px 0 0 0; }
+  #activities .activity .activity_menu {
+    position: absolute;
+    display: none;
+    top: 5px;
+    right: 5px; }
+  #activities .activity:hover {
+    background: #f6f5f5; }
+    #activities .activity:hover .activity_menu {
+      display: inline; }
+
+#white_background {
+  margin: 10px 0 0 0;
+  width: 910px;
+  min-height: 400px;
+  padding: 15px 25px;
+  float: left;
+  background: white;
+  -moz-box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }

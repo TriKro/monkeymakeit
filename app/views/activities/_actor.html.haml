@@ -1,5 +1,5 @@
 - if !activity.user.nil?
-  = link_to activity.user.name, profiles_show_path(activity.user)
+  = activity.user.full_name
 - else
   Unknown
   - if !activity.session_id.nil?
