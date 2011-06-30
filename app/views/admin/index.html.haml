@@ -1,7 +1,7 @@
 #white_background
   .funnel
     %h1
-      Scott's Test
+      Scott's Conversion Funnel
 
     %table
       %tr
@@ -18,11 +18,23 @@
         %th
           Invites Sent
 
-      - i = 0
-      - until i > 7
-        -# Take only activities in 1 day
-        - activities = Activity.where(:created_at => (Time.now.midnight - (i + 1).day)..(Time.now.midnight - i.day))
 
+      -# Take only activities in what range?
+      - range = 1
+      -# Display how many ranges?
+      - rows = 7
+
+      -# Start counter at -1 due to strange issue with getting start_date to include today.
+      - i = -1
+      - until i >= (rows - 1)
+        - start_date = Time.now.midnight - (i + range).day
+        - end_date = Time.now.midnight - i.day
+        - end_date_display = Time.now.midnight - (i + 1).day
+
+        -# Get all activities in date range
+        - activities = Activity.where(:created_at => start_date..end_date)
+
+        -# Separate out activities in funnel
         - button_views = activities.where(:activity_type => "Viewed Button")
         - button_clicks = activities.where(:activity_type => "Clicked Button")
         - signups = activities.where(:activity_type => "Signed Up")
@@ -30,35 +42,44 @@
 
         %tr
           %td
-            = (Time.now.midnight - (i + 1).day).month
+            = start_date.month
             \/
-            = (Time.now.midnight - (i + 1).day).day
+            = start_date.day
           %td
-            = (Time.now.midnight - i.day).month
+            = end_date_display.month
             \/
-            = (Time.now.midnight - i.day).day
+            = end_date_display.day
 
           %td
+            -# Display raw number
             = scott_button_views = parse_scott(button_views)
 
           %td
+            -# Display raw number
             = scott_button_clicks = parse_scott(button_clicks)
             %b
               (
+              -# Display conversion %
               = number_to_percentage(scott_button_clicks.to_f / scott_button_views.to_f * 100)
               )
 
           %td
-            = scott_signups = parse_scott(signups)
+            -# Display raw number
+            -# TODO: There is no way to differenciate signups on a different page!!!
+            = scott_signups = signups.count
             %b
               (
-              = number_to_percentage(scott_button_clicks.to_f / scott_signups.to_f * 100)
+              -# Display conversion %
+              = number_to_percentage(scott_signups.to_f / scott_button_clicks.to_f * 100)
               )
 
           %td
+            -# Display raw number
             = scott_invitations_sent = parse_scott(invitations_sent)
             %b
               (
+              -# Display conversion %
               = number_to_percentage(scott_invitations_sent.to_f / scott_signups.to_f * 100)
               )
+        -# Increment counter
         - i = i + 1
