@@ -110,6 +110,6 @@
             = button_clicks
             %b
               (
-              = button_clicks.to_f / button_views.to_f * 100
+              = number_to_percentage(button_clicks.to_f / button_views.to_f * 100)
               )
 
