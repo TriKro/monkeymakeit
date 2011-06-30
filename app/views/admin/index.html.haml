@@ -83,3 +83,33 @@
               )
         -# Increment counter
         - i = i + 1
+
+  .funnel
+    %h1
+      Button test
+
+    %table
+      %tr
+        %th
+          Button Type
+        %th
+          Button Views
+        %th
+          Button Clicks
+
+      - Invitation.all.each do |button|
+
+        - button_views = Activity.where(:activity_type => "Viewed Button", :target_type => "Invitation", :target_id => button.id).count
+        - button_clicks = Activity.where(:activity_type => "Clicked Button", :target_type => "Invitation", :target_id => button.id).count
+        %tr
+          %td
+            = button.button_name
+          %td
+            = button_views
+          %td
+            = button_clicks
+            %b
+              (
+              = button_clicks.to_f / button_views.to_f * 100
+              )
+
