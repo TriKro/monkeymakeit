@@ -22,7 +22,7 @@ class SuggestionsController < ApplicationController
   end
 
   def update
-    session[:user] = User.find_or_create_by_email(params[:suggestion][:email])
+    session[:user] = User.find_by_email(params[:suggestion][:email]) || User.create!(:email => params[:suggestion][:email])
     @suggestion = Suggestion.find(params[:id])
     @suggestion.update_attributes( params[:suggestion] )
 
