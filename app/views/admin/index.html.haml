@@ -56,31 +56,26 @@
 
           %td
             -# Display raw number
-            = scott_button_clicks = parse_scott(button_clicks)
-            %b
-              (
-              -# Display conversion %
-              = number_to_percentage(scott_button_clicks.to_f / scott_button_views.to_f * 100)
-              )
+            - scott_button_clicks = parse_scott(button_clicks)
+
+            -# Display conversion %
+            = number_to_percentage(scott_button_clicks.to_f / scott_button_views.to_f * 100)
 
           %td
             -# Display raw number
             -# TODO: There is no way to differenciate signups on a different page!!!
-            = scott_signups = signups.count
-            %b
-              (
-              -# Display conversion %
-              = number_to_percentage(scott_signups.to_f / scott_button_clicks.to_f * 100)
-              )
+            - scott_signups = signups.count
+
+            -# Display conversion %
+            = number_to_percentage(scott_signups.to_f / scott_button_views.to_f * 100)
 
           %td
             -# Display raw number
-            = scott_invitations_sent = parse_scott(invitations_sent)
-            %b
-              (
-              -# Display conversion %
-              = number_to_percentage(scott_invitations_sent.to_f / scott_signups.to_f * 100)
-              )
+            - scott_invitations_sent = parse_scott(invitations_sent)
+
+            -# Display conversion %
+            = number_to_percentage(scott_invitations_sent.to_f / scott_button_views.to_f * 100)
+
         -# Increment counter
         - i = i + 1
 
@@ -110,6 +105,6 @@
             = button_clicks
             %b
               (
-              = button_clicks.to_f / button_views.to_f * 100
+              = number_to_percentage(button_clicks.to_f / button_views.to_f * 100)
               )
 
