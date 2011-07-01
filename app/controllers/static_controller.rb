@@ -5,15 +5,8 @@ class StaticController < ApplicationController
   }
 
   def home
-    @user = User.new
+    @registration = User.new
     render :layout => "landing_page"
-  end
-
-  def code
-    @user = User.where( params[:user] ).first || User.new( params[:user] )
-    if !@user.save
-      render :home, :layout => "landing_page"
-    end
   end
 
 end

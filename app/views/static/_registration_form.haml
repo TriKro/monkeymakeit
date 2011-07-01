@@ -1,12 +1,12 @@
 #registration
-  = form_for(@user, :url => registrations_path) do |f|
-    - if @user.errors.any?
+  = form_for(@registration, :url => registrations_path) do |f|
+    - if @registration.errors.any?
       #error_explanation
         %h4
-          = pluralize(@user.errors.count, "error")
+          = pluralize(@registration.errors.count, "error")
           prohibited this tag from being saved:
         %ul
-          - @user.errors.full_messages.each do |msg|
+          - @registration.errors.full_messages.each do |msg|
             %li= msg
 
 
