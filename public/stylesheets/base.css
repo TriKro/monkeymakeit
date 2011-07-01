@@ -460,24 +460,24 @@ body_container {
         #landing_page #center_container #logo_container h1 .first_letter {
           font-family: "Helvetica, serif";
           font-size: 168px; }
-    #landing_page #center_container #signup_box {
+    #landing_page #center_container #registration {
       border: 7px solid #00b7fb;
       width: 545px;
-      height: 70px;
-      margin: 90px 0 0 0;
+      height: 100px;
+      margin: 90px auto 0 auto;
       background: #e6e6e6; }
-      #landing_page #center_container #signup_box .field {
-        margin: 20px;
+      #landing_page #center_container #registration .field {
+        margin: 10px 20px 0 20px;
         float: left; }
-        #landing_page #center_container #signup_box .field label {
+        #landing_page #center_container #registration .field label {
           display: none; }
-        #landing_page #center_container #signup_box .field input {
+        #landing_page #center_container #registration .field input {
           padding: 3px;
           font-size: 1.3em;
           font-family: "Arial";
           width: 270px;
           color: #666666; }
-      #landing_page #center_container #signup_box .actions {
+      #landing_page #center_container #registration .actions {
         margin: 10px 0 0 0;
         float: left; }
 

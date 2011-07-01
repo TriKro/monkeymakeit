@@ -8,6 +8,8 @@ Suggestedit::Application.routes.draw do
 
   resources :invitations, :only => [:new, :create]
   resources :signups, :only => [:new, :create]
+  resources :registrations, :only => [:create]
+  match "/thanks_for_registering" => "registrations#thanks", :as => :registration_thanks
 
   # Contact message routes
   resources :contact_messages
