@@ -1,3 +1,9 @@
+#logo {
+@inclue sprite;
+  background: url(/images/monkeysilhouette.png) no-repeat 0px 0px;
+  height: 445px;
+  width: 430px; }
+
 #suggestion_submit {
   display: inline-block;
   vertical-align: middle;

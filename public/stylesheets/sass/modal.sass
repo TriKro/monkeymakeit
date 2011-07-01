@@ -1,0 +1,65 @@
+/* Base Template by TK
+ * Author: Tristan Kromer - http://GrasshopperHerder.com
+ * Twitter: @TriKro
+ */
+
+// base.sass contains all the variables and imports. Nothing else included.
+
+// Global variables
+
+// Colors
+$darkblue: #0088ba
+$blue: #00b7fb
+$grey: #e6e6e6
+$darkgrey: #666
+$black: #000
+$white: #fff
+
+$error_color: red
+
+// Sizes
+
+$ginormous: 2em
+$giant: 1.6em
+$huge: 1.5em
+$largest: 1.3em
+$larger: 1.2em
+$large: 1.1em
+$justright: 1em
+$small: .9em
+$smaller: .8em
+$smallest: .7em
+$tiny: .6em
+$miniature: .5em
+
+// Corners
+
+$radius: 10px
+
+// mixins
+
+@mixin radius
+  border-radius: $radius
+  -moz-border-radius: $radius
+  -webkit-border-radius: $radius
+
+@mixin pointer
+  cursor: pointer
+
+// Imports, make sure all files are included
+
+//html5doctor.com Reset Stylesheet v1.6.1
+@import 'html5reset-1.6.1'
+
+@import 'basics'
+@import 'errors'
+@import 'sprites'
+@import 'header'
+@import 'footer'
+@import 'static'
+@import 'suggestions'
+@import 'landing_pages'
+@import 'signups'
+@import 'invitations'
+@import 'activities'
+@import 'admin'
