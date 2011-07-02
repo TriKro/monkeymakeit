@@ -75,14 +75,15 @@ hr {
 input, select {
   vertical-align: middle; }
 
-.blue {
-  color: #00b7fb; }
+body {
+  position: relative;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  background: #efefea; }
 
-.darkblue {
-  color: #0088ba; }
-
-.clear {
-  clear: both; }
+body_container {
+  position: relative;
+  margin: 0 auto; }
 
 #white_background {
   margin: 10px 0 0 0;
@@ -97,6 +98,15 @@ input, select {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px; }
+
+.blue {
+  color: #00b7fb; }
+
+.darkblue {
+  color: #0088ba; }
+
+.clear {
+  clear: both; }
 
 .field_with_errors input, .field_with_errors textarea {
   border: 2px red solid !important; }
@@ -181,16 +191,6 @@ footer {
       padding: 0 0 0 20px; }
     footer #footer_inner a {
       color: #666666; }
-
-body {
-  position: relative;
-  font-size: 14px;
-  font-family: Arial, sans-serif;
-  background: #efefea; }
-
-body_container {
-  position: relative;
-  margin: 0 auto; }
 
 #main_content {
   text-align: center; }

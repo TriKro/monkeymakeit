@@ -1,18 +1,21 @@
 /*
-Syntax error: Undefined variable: "$blue".
-        on line 3 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/basics.sass
+Syntax error: Undefined variable: "$white".
+        on line 17 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/basics.sass
 
-1: 
-2: .blue
-3:   color: $blue
-4: 
-5: .darkblue
-6:   color: $darkblue
-7: 
-8: .clear
+12:   margin: 10px 0 0 0
+13:   width: 910px
+14:   min-height: 400px
+15:   padding: 15px 25px
+16:   float: left
+17:   background: $white
+18:   -moz-box-shadow: -10px 10px 50px 0px rgba(0,0,0,0.1)
+19:   -webkit-box-shadow: -10px 10px 50px 0px rgba(0,0,0,0.1)
+20:   box-shadow: -10px 10px 50px 0px rgba(0,0,0,0.1)
+21:   -webkit-border-radius: 5px
+22:   -moz-border-radius: 5px
 
 Backtrace:
-/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/basics.sass:3
+/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/basics.sass:17
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/variable.rb:45:in `_perform'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/node.rb:40:in `perform'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:215:in `visit_prop'
@@ -91,4 +94,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$blue\".\A         on line 3 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/basics.sass\A \A 1: \A 2: .blue\A 3:   color: $blue\A 4: \A 5: .darkblue\A 6:   color: $darkblue\A 7: \A 8: .clear"; }
+  content: "Syntax error: Undefined variable: \"$white\".\A         on line 17 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/basics.sass\A \A 12:   margin: 10px 0 0 0\A 13:   width: 910px\A 14:   min-height: 400px\A 15:   padding: 15px 25px\A 16:   float: left\A 17:   background: $white\A 18:   -moz-box-shadow: -10px 10px 50px 0px rgba(0,0,0,0.1)\A 19:   -webkit-box-shadow: -10px 10px 50px 0px rgba(0,0,0,0.1)\A 20:   box-shadow: -10px 10px 50px 0px rgba(0,0,0,0.1)\A 21:   -webkit-border-radius: 5px\A 22:   -moz-border-radius: 5px"; }
