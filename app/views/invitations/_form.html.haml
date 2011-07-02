@@ -6,7 +6,7 @@
         - if @invite.full_name.blank?
           = f.text_field :full_name, :value => "Name", :id => "invitation_name"
         - else
-          = f.text_field :full_name, :value => "Name", :id => "invitation_name"
+          = f.text_field :full_name, :id => "invitation_name"
 
       #invitation_field_email.field
         = f.label :email, "Email:"
@@ -16,7 +16,7 @@
           = f.text_field :email, :id => "invitation_email"
 
     .actions
-      = f.submit ''
+      = f.submit '', :id => "invitation_submit"
       %br
       .company_id
         %span.powered_by
