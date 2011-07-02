@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'awesome_print'
+gem 'cancan'
 gem 'diff-lcs',            '1.1.2'
 gem 'hoptoad_notifier'
 gem 'haml'
@@ -14,7 +15,6 @@ gem 'rake',                '0.9.2'
 gem 'recaptcha',           :require => 'recaptcha/rails'
 gem 'sass'
 gem 'will_paginate',       '~> 3.0.pre2'
-gem 'cancan'
 
 group :development do
   gem 'heroku'

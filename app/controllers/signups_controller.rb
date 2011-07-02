@@ -9,7 +9,7 @@ class SignupsController < ApplicationController
   end
 
   def create
-    @signup = User.find_by_email(params[:user][:email]) || User.create!(params[:user])
+    @signup = User.find_by_email(params[:user][:email]) || User.create(params[:user])
     return render(:action => 'new', :layout => 'modal') if @signup.new_record? # error
     session[:user] = @signup
     log_activity(request.request_uri, "Signed Up", "User", @signup)

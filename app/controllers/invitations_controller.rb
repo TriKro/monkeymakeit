@@ -9,7 +9,7 @@ class InvitationsController < ApplicationController
   end
 
   def create
-    @invite = User.find_by_email(params[:user][:email]) || User.create!(params[:user])
+    @invite = User.find_by_email(params[:user][:email]) || User.create(params[:user])
     @invite.inviter = session[:user] rescue nil
     if @invite.save
       log_activity(request.request_uri, "Created", "User", @invite)
