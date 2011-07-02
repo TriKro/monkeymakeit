@@ -1,17 +1,12 @@
 class RegistrationsController < ApplicationController
 
   def create
-    @signup = User.find_by_email(params[:user][:email])
-    unless @signup
-      @user = @signup = User.new(params[:user])
-      unless @signup.save
-        redirect_to root_path
-        return
-      end
-    end
+    @user = User.find_by_email(params[:user][:email]) || User.create(params[:user])
+    return redirect_to(root_path) if @user.new_record? # error
+    log_activity(request.request_uri, "Created", "User", @signup)
+
     session[:user] = @signup
     log_activity(request.request_uri, "Registered", "User", @signup)
-    log_activity(request.request_uri, "Created", "User", @signup)
     redirect_to(registration_thanks_url)
   end
 

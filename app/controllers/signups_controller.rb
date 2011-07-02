@@ -1,7 +1,7 @@
 class SignupsController < ApplicationController
 
   def new
-    @signup = User.new
+    @user = User.new
     log_activity(request.request_uri, "Clicked Button", 'Invitation',
                  Invitation.find(params[:invitation_id])) rescue nil
     log_activity(request.request_uri, "Began Creating", "User")
@@ -9,11 +9,12 @@ class SignupsController < ApplicationController
   end
 
   def create
-    @signup = User.find_by_email(params[:user][:email]) || User.create(params[:user])
-    return render(:action => 'new', :layout => 'modal') if @signup.new_record? # error
-    session[:user] = @signup
-    log_activity(request.request_uri, "Signed Up", "User", @signup)
-    log_activity(request.request_uri, "Created", "User", @signup)
+    @user = User.find_by_email(params[:user][:email]) || User.create(params[:user])
+    return render(:action => 'new', :layout => 'modal') if @user.new_record? # error
+    log_activity(request.request_uri, "Created", "User", @user)
+
+    session[:user] = @user
+    log_activity(request.request_uri, "Signed Up", "User", @user)
     redirect_to(new_invitation_url)
   end
 

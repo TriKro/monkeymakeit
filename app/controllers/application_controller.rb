@@ -10,12 +10,6 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # returns a unique identifier for the currently active user,
-  # regardless if they have an account or not
-  def current_actor
-    session[:session_id]
-  end
-
   def log_activity(url, activity_type, target_model = nil, target = nil, subtarget_model = nil, subtarget = nil)
     maybe_commit_activity_log # We may not have a session id if log_activity is called multiple times. Oh well.
     @activity_to_log = Activity.new(:url => url, :activity_type => activity_type, :target_model => target_model, :target => target, :subtarget_model => subtarget_model, :subtarget => subtarget)
