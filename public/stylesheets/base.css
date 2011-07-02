@@ -465,10 +465,10 @@ body_container {
       width: 490px;
       height: 100px;
       margin: 90px auto 0 auto;
+      position: relative;
       background: #e6e6e6; }
       #landing_page #center_container #registration .field {
-        margin: 10px 20px 0 20px;
-        float: left; }
+        margin: 10px 20px 0 20px; }
         #landing_page #center_container #registration .field label {
           display: none; }
         #landing_page #center_container #registration .field input {
@@ -478,8 +478,9 @@ body_container {
           width: 270px;
           color: #666666; }
       #landing_page #center_container #registration .actions {
-        position: relative;
-        top: 25px; }
+        position: absolute;
+        top: 25px;
+        right: 15px; }
         #landing_page #center_container #registration .actions input[type="submit"] {
           display: inline-block;
           vertical-align: middle;

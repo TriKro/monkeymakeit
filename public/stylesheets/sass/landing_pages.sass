@@ -30,11 +30,10 @@
       width: 490px
       height: 100px
       margin: 90px auto 0 auto
+      position: relative
       background: $grey
-      #registration_inputs
       .field
         margin: 10px 20px 0 20px
-        float: left
         label
           display: none
         input
@@ -44,8 +43,9 @@
           width: 270px
           color: $darkgrey
       .actions
-        position: relative
+        position: absolute
         top: 25px
+        right: 15px
         input[type="submit"]
           @include sprite
           background: url(/images/button-signup-sprite.png) no-repeat 0px 0px

@@ -5,7 +5,7 @@ class RegistrationsController < ApplicationController
     unless @signup
       @user = @signup = User.new(params[:user])
       unless @signup.save
-        render :template => 'static/home'
+        redirect_to root_path
         return
       end
     end
