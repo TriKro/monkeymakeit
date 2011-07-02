@@ -1,5 +1,6 @@
 require File.dirname( __FILE__ ) + '/../../config/environment'
 require 'shell'
+
 include Shell
 
 if CONFIG.allow_heroku_commands
@@ -34,9 +35,6 @@ if CONFIG.allow_heroku_commands
       execute( "heroku rake --trace db:migrate                 --app #{app}-#{target}" )
       execute( "heroku restart                                 --app #{app}-#{target}" )
       execute( "heroku rake --trace db:seed                    --app #{app}-#{target}" )
-
-      ### THIS IS A FIX FOR A SASS ISSUE, SHOULD NOT BE USED FOR FUTURE SITES
-      execute( "heroku rake --trace sass:delete                --app #{app}-#{target}" )
     end
 
     def deploy( target, ref )
