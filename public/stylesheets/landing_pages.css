@@ -1,17 +1,21 @@
 /*
 Syntax error: Undefined variable: "$darkblue".
-        on line 2 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/landing_pages.sass
+        on line 8 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/landing_pages.sass
 
-1: #landing_page
-2:   background-color: $darkblue
-3:   -moz-box-shadow: 5px 5px 5px #ccc
-4:   -webkit-box-shadow: 5px 5px 5px #ccc
-5:   box-shadow: 5px 5px 5px #ccc
-6:   width: 100%
-7:   #center_container
+3:   background: url(/images/monkeysilhouette.png) no-repeat 0px 0px
+4:   height: 445px
+5:   width: 430px
+6: 
+7: #landing_page
+8:   background-color: $darkblue
+9:   -moz-box-shadow: 5px 5px 5px #ccc
+10:   -webkit-box-shadow: 5px 5px 5px #ccc
+11:   box-shadow: 5px 5px 5px #ccc
+12:   width: 100%
+13:   #center_container
 
 Backtrace:
-/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/landing_pages.sass:2
+/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/landing_pages.sass:8
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/variable.rb:45:in `_perform'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/script/node.rb:40:in `perform'
 /Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:215:in `visit_prop'
@@ -90,4 +94,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$darkblue\".\A         on line 2 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/landing_pages.sass\A \A 1: #landing_page\A 2:   background-color: $darkblue\A 3:   -moz-box-shadow: 5px 5px 5px #ccc\A 4:   -webkit-box-shadow: 5px 5px 5px #ccc\A 5:   box-shadow: 5px 5px 5px #ccc\A 6:   width: 100%\A 7:   #center_container"; }
+  content: "Syntax error: Undefined variable: \"$darkblue\".\A         on line 8 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/landing_pages.sass\A \A 3:   background: url(/images/monkeysilhouette.png) no-repeat 0px 0px\A 4:   height: 445px\A 5:   width: 430px\A 6: \A 7: #landing_page\A 8:   background-color: $darkblue\A 9:   -moz-box-shadow: 5px 5px 5px #ccc\A 10:   -webkit-box-shadow: 5px 5px 5px #ccc\A 11:   box-shadow: 5px 5px 5px #ccc\A 12:   width: 100%\A 13:   #center_container"; }

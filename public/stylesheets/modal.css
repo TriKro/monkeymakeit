@@ -1,90 +1,306 @@
-/*
-Syntax error: File to import not found or unreadable: header.
-              Load path: /Users/tristankromer/Code/suggestedit/public/stylesheets/sass
-        on line 63 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/modal.sass
+/*html5doctor.com Reset Stylesheet
+ *v1.6.1
+ *Last Updated: 2010-09-17
+ *Author: Richard Clark - http://richclarkdesign.com
+ *Twitter: @rich_clark */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
 
-58: @import 'html5reset-1.6.1'
-59: 
-60: @import 'basics'
-61: @import 'errors'
-62: @import 'sprites'
-63: @import 'header'
-64: @import 'footer'
-65: @import 'static'
-66: @import 'suggestions'
-67: @import 'landing_pages'
-68: @import 'signups'
+body {
+  line-height: 1; }
 
-Backtrace:
-/Users/tristankromer/Code/suggestedit/public/stylesheets/sass/modal.sass:63
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/import_node.rb:64:in `rescue in import'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/import_node.rb:42:in `import'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/import_node.rb:25:in `imported_file'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:148:in `rescue in visit_import'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:153:in `visit_import'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:18:in `visit'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:18:in `visit'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/tree/root_node.rb:20:in `render'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/engine.rb:291:in `_render'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/engine.rb:239:in `block in render'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/util.rb:298:in `silence_sass_warnings'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/engine.rb:239:in `render'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/plugin/compiler.rb:175:in `each'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/plugin/compiler.rb:173:in `each'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/plugin.rb:81:in `update_stylesheets'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/plugin.rb:54:in `check_for_updates'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/sass-3.1.2/lib/sass/plugin/rack.rb:51:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.4/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.4/lib/action_dispatch/middleware/head.rb:14:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.4/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.4/lib/action_dispatch/middleware/flash.rb:182:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.4/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.4/lib/action_dispatch/middleware/cookies.rb:302:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/activerecord-3.0.4/lib/active_record/query_cache.rb:32:in `block in call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/activerecord-3.0.4/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/activerecord-3.0.4/lib/active_record/query_cache.rb:12:in `cache'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/activerecord-3.0.4/lib/active_record/query_cache.rb:31:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/activerecord-3.0.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.4/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/activesupport-3.0.4/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.4/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.4/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.4/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/railties-3.0.4/lib/rails/rack/logger.rb:13:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/activesupport-3.0.4/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/rack-1.2.3/lib/rack/lock.rb:11:in `block in call'
-<internal:prelude>:10:in `synchronize'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.4/lib/action_dispatch/middleware/static.rb:30:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/hoptoad_notifier-2.4.11/lib/hoptoad_notifier/user_informer.rb:12:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/railties-3.0.4/lib/rails/application.rb:168:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/railties-3.0.4/lib/rails/application.rb:77:in `method_missing'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/railties-3.0.4/lib/rails/rack/log_tailer.rb:14:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
-/Users/tristankromer/.rvm/gems/ruby-1.9.2-head/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
-/Users/tristankromer/.rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
-/Users/tristankromer/.rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
-/Users/tristankromer/.rvm/rubies/ruby-1.9.2-head/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: header.\A               Load path: /Users/tristankromer/Code/suggestedit/public/stylesheets/sass\A         on line 63 of /Users/tristankromer/Code/suggestedit/public/stylesheets/sass/modal.sass\A \A 58: @import 'html5reset-1.6.1'\A 59: \A 60: @import 'basics'\A 61: @import 'errors'\A 62: @import 'sprites'\A 63: @import 'header'\A 64: @import 'footer'\A 65: @import 'static'\A 66: @import 'suggestions'\A 67: @import 'landing_pages'\A 68: @import 'signups'"; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ffff99;
+  color: black;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ffff99;
+  color: black;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+.blue {
+  color: #00b7fb; }
+
+.darkblue {
+  color: #0088ba; }
+
+.clear {
+  clear: both; }
+
+#white_background {
+  margin: 10px 0 0 0;
+  width: 910px;
+  min-height: 400px;
+  padding: 15px 25px;
+  float: left;
+  background: white;
+  -moz-box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+
+.field_with_errors input, .field_with_errors textarea {
+  border: 2px red solid !important; }
+  .field_with_errors input label, .field_with_errors textarea label {
+    color: red; }
+
+#error_explanation {
+  width: 100%;
+  padding: 7px;
+  margin-bottom: 20px;
+  background-color: #cccc00; }
+
+.error, .alert, .notice, .success, .info {
+  padding: 0.8em;
+  border: 2px solid #dddddd;
+  margin: 0 auto;
+  width: 100%;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
+
+.error, .alert {
+  background: #fbe3e4;
+  color: #8a1f11;
+  border-color: #fbc2c4; }
+
+.notice {
+  background: #e6efc2;
+  color: #264409;
+  border-color: #c6d880; }
+
+.success {
+  background: #e6efc2;
+  color: #264409;
+  border-color: #c6d880; }
+
+.info {
+  background: #d5edf8;
+  color: #205791;
+  border-color: #92cae4; }
+
+.error a, .alert a {
+  color: #8a1f11; }
+
+.notice a {
+  color: #264409; }
+
+.success a {
+  color: #264409; }
+
+.info a {
+  color: #205791; }
+
+.notice, .alert, .success {
+  position: relative; }
+  .notice p, .alert p, .success p {
+    float: left; }
+  .notice .close, .alert .close, .success .close {
+    background: url("/images/close_icon.png") no-repeat 0 0;
+    height: 34px;
+    width: 34px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 2px;
+    opacity: 0.3; }
+
+#signup_form input[type="submit"] {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  background: url(/images/button-yes-sprite.png) no-repeat 0px 0px;
+  height: 52px;
+  width: 206px; }
+
+#signup_form input[type="submit"]:hover {
+  background-position: 0 -52px; }
+
+#new_signup {
+  width: 90%;
+  text-align: center;
+  padding: 20px; }
+  #new_signup #new_signup_inner {
+    text-align: left;
+    display: inline-block; }
+    #new_signup #new_signup_inner h2 {
+      font-family: "Helvetica";
+      font-size: 3em;
+      font-weight: 100;
+      letter-spacing: -1px;
+      margin: 40px 0 10px 0;
+      text-align: left; }
+    #new_signup #new_signup_inner h3 {
+      font-family: "Helvetica";
+      font-size: 1.5em;
+      font-weight: 100;
+      color: #666666;
+      margin: 40px 0 0 0;
+      text-align: left; }
+    #new_signup #new_signup_inner #signup_form #fields {
+      margin: 40px 0 0 0; }
+      #new_signup #new_signup_inner #signup_form #fields #signup_field_name label {
+        display: none; }
+      #new_signup #new_signup_inner #signup_form #fields #signup_field_name #signup_name {
+        font-family: "Arial";
+        width: 250px;
+        font-size: 1.5em;
+        color: #666666; }
+      #new_signup #new_signup_inner #signup_form #fields #signup_field_email label {
+        display: none; }
+      #new_signup #new_signup_inner #signup_form #fields #signup_field_email #signup_email {
+        font-family: "Arial";
+        margin: 10px 0 0 0;
+        width: 250px;
+        font-size: 1.5em;
+        color: #666666; }
+    #new_signup #new_signup_inner #signup_form .actions {
+      margin: 20px 0 0 0; }
+      #new_signup #new_signup_inner #signup_form .actions .company_id {
+        font-family: "Helvetica";
+        margin: 10px 0 0 0; }
+        #new_signup #new_signup_inner #signup_form .actions .company_id .powered_by {
+          color: #666666;
+          font-style: italic;
+          font-size: 0.7em; }
+        #new_signup #new_signup_inner #signup_form .actions .company_id .company_name {
+          color: black;
+          font-size: 0.9em; }
+
+#invitation_form input[type="submit"] {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  background: url(/images/button-invite-sprite.png) no-repeat 0px 0px;
+  height: 52px;
+  width: 206px; }
+
+#invitation_form input[type="submit"]:hover {
+  background-position: 0 -52px; }
+
+#new_invitation {
+  width: 90%;
+  text-align: center;
+  padding: 20px; }
+  #new_invitation #new_invitation_inner {
+    text-align: left;
+    display: inline-block; }
+    #new_invitation #new_invitation_inner h2 {
+      font-family: "Helvetica";
+      font-size: 2em;
+      font-weight: 100;
+      letter-spacing: -1px;
+      margin: 10px 0 10px 0;
+      text-align: left; }
+    #new_invitation #new_invitation_inner h3 {
+      font-family: "Helvetica";
+      font-size: 1.8em;
+      font-weight: 100;
+      color: #666666;
+      margin: 40px 0 0 0;
+      text-align: left; }
+    #new_invitation #new_invitation_inner h4 {
+      font-family: "Helvetica";
+      font-size: 1.6em;
+      font-weight: 100;
+      margin: 40px 0 0 0;
+      text-align: left; }
+    #new_invitation #new_invitation_inner p.additional_info {
+      font-family: "Helvetica";
+      font-size: 1.3em;
+      font-weight: 100;
+      margin: 30px 0 0 0;
+      color: #666666;
+      text-align: left;
+      border-top: 1px solid #999999;
+      padding-top: 20px; }
+    #new_invitation #new_invitation_inner #invitation_form #fields {
+      float: left; }
+      #new_invitation #new_invitation_inner #invitation_form #fields #invitation_field_name label {
+        display: none; }
+      #new_invitation #new_invitation_inner #invitation_form #fields #invitation_field_name #invitation_name {
+        font-family: "Arial";
+        margin: 10px 0 0 0;
+        width: 250px;
+        font-size: 1.5em;
+        color: #666666; }
+      #new_invitation #new_invitation_inner #invitation_form #fields #invitation_field_email label {
+        display: none; }
+      #new_invitation #new_invitation_inner #invitation_form #fields #invitation_field_email #invitation_email {
+        font-family: "Arial";
+        margin: 10px 0 0 0;
+        width: 250px;
+        font-size: 1.5em;
+        color: #666666; }
+    #new_invitation #new_invitation_inner #invitation_form .actions {
+      float: right;
+      margin: 20px 0 0 0; }
+      #new_invitation #new_invitation_inner #invitation_form .actions .company_id {
+        font-family: "Helvetica";
+        margin: 5px 0 0 0; }
+        #new_invitation #new_invitation_inner #invitation_form .actions .company_id .powered_by {
+          color: #666666;
+          font-style: italic;
+          font-size: 0.7em; }
+        #new_invitation #new_invitation_inner #invitation_form .actions .company_id .company_name {
+          color: black;
+          font-size: 0.9em; }
