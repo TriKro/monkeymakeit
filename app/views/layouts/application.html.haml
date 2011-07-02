@@ -9,8 +9,6 @@
     #flash_messages
       = render :partial => '/layouts/flash', :locals => { :flash => flash }
 
-    #main_content
-      #main_content_inner
-        = yield
+    = yield
 
     = render "/layouts/footer"
