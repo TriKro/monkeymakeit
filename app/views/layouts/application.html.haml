@@ -6,12 +6,6 @@
     = render "/layouts/google_analytics"
 
   %body
-    %header
-      #header_inner
-        = render "layouts/logo"
-        = render "layouts/top_menu"
-
-    .clear
     #flash_messages
       = render :partial => '/layouts/flash', :locals => { :flash => flash }
 

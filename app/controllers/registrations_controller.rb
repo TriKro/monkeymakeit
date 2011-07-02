@@ -16,7 +16,6 @@ class RegistrationsController < ApplicationController
   end
 
   def thanks
-
   end
 
 end

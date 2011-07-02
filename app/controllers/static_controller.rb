@@ -6,7 +6,6 @@ class StaticController < ApplicationController
 
   def home
     @registration = User.new
-    render :layout => "landing_page"
   end
 
 end
