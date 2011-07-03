@@ -185,39 +185,3 @@ footer {
       padding: 0 0 0 20px; }
     footer #footer_inner a {
       color: #666666; }
-
-#activities .activity {
-  position: relative;
-  padding: 5px;
-  height: 60px;
-  border-bottom: 1px solid #efefea;
-  text-align: left; }
-  #activities .activity .avatar {
-    float: left;
-    padding: 5px; }
-  #activities .activity .content {
-    float: left;
-    padding: 5px; }
-    #activities .activity .content .summary .rating-wrapper {
-      float: right; }
-    #activities .activity .content .complete {
-      padding: 5px 0 0 0; }
-  #activities .activity .activity_menu {
-    display: none;
-    position: absolute;
-    top: 5px;
-    right: 5px; }
-  #activities .activity:hover {
-    background: #efefea; }
-    #activities .activity:hover .activity_menu {
-      display: inline; }
-
-.funnel {
-  text-align: left; }
-  .funnel table {
-    border: 1px solid black; }
-    .funnel table tr {
-      border: 1px solid black; }
-      .funnel table tr td, .funnel table tr th {
-        border: 1px solid black;
-        padding: 5px; }

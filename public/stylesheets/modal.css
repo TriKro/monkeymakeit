@@ -113,6 +113,17 @@ body_container {
 .clear {
   clear: both; }
 
+.field_with_errors input, .field_with_errors textarea {
+  border: 2px #8a1f11 solid !important; }
+  .field_with_errors input label, .field_with_errors textarea label {
+    color: #8a1f11; }
+
+#error_explanation {
+  width: 100%;
+  padding: 7px;
+  margin-bottom: 20px;
+  background-color: #cccc00; }
+
 .error, .alert, .notice, .success, .info {
   padding: 0.8em;
   margin: 0 auto;
@@ -156,17 +167,6 @@ body_container {
     background: url("/images/close_icon.png") no-repeat 0 0;
     cursor: pointer;
     opacity: 0.3; }
-
-.field_with_errors input, .field_with_errors textarea {
-  border: 2px #8a1f11 solid !important; }
-  .field_with_errors input label, .field_with_errors textarea label {
-    color: #8a1f11; }
-
-#error_explanation {
-  width: 100%;
-  padding: 7px;
-  margin-bottom: 20px;
-  background-color: #cccc00; }
 
 #new_signup {
   padding: 20px;
