@@ -1,0 +1,308 @@
+/*html5doctor.com Reset Stylesheet
+ *v1.6.1
+ *Last Updated: 2010-09-17
+ *Author: Richard Clark - http://richclarkdesign.com
+ *Twitter: @rich_clark */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ffff99;
+  color: black;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ffff99;
+  color: black;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+body {
+  position: relative;
+  background: #efefea;
+  font-size: 14px;
+  font-family: Arial, sans-serif; }
+
+body_container {
+  position: relative;
+  margin: 0 auto; }
+
+#white_background {
+  margin: 10px 0 0 0;
+  padding: 15px 25px;
+  width: 900px;
+  min-height: 400px;
+  background: white;
+  -moz-box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px; }
+
+.blue {
+  color: #00b7fb !important; }
+
+.darkblue {
+  color: #0088ba !important; }
+
+.black {
+  color: black !important; }
+
+.darkgrey {
+  color: #666666 !important; }
+
+.clear {
+  clear: both; }
+
+.field_with_errors input, .field_with_errors textarea {
+  border: 2px #8a1f11 solid !important; }
+  .field_with_errors input label, .field_with_errors textarea label {
+    color: #8a1f11; }
+
+#error_explanation {
+  width: 100%;
+  padding: 7px;
+  margin-bottom: 20px;
+  background-color: #cccc00; }
+
+.error, .alert, .notice, .success, .info {
+  padding: 0.8em;
+  margin: 0 auto;
+  width: 100%;
+  border: 2px solid #efefea;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px; }
+
+.error, .alert {
+  background: #fbe3e4;
+  border-color: #fbc2c4;
+  color: #8a1f11; }
+  .error a, .alert a {
+    color: #8a1f11; }
+
+.notice, .success {
+  background: #e6efc2;
+  border-color: #c6d880;
+  color: #264409; }
+  .notice a, .success a {
+    color: #264409; }
+
+.info {
+  background: #d5edf8;
+  border-color: #92cae4;
+  color: #205791; }
+  .info a {
+    color: #205791; }
+
+.notice, .alert, .success {
+  position: relative; }
+  .notice p, .alert p, .success p {
+    float: left; }
+  .notice .close, .alert .close, .success .close {
+    position: absolute;
+    right: 0;
+    top: 2px;
+    height: 34px;
+    width: 34px;
+    background: url("/images/close_icon.png") no-repeat 0 0;
+    cursor: pointer;
+    opacity: 0.3; }
+
+footer {
+  display: block;
+  position: relative;
+  clear: both;
+  bottom: 0;
+  padding: 0 20px;
+  background: none;
+  color: #666666;
+  text-align: center;
+  font-size: 0.9em; }
+  footer #footer_inner {
+    margin: 0 auto 15px auto;
+    padding: 10px 0; }
+    footer #footer_inner #footermenu {
+      padding: 0 0 0 20px; }
+    footer #footer_inner a {
+      color: #666666; }
+
+#main_content {
+  text-align: center; }
+  #main_content #main_content_inner {
+    width: 90%;
+    display: inline-block; }
+
+#demo_sprite {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  background: url(/images/button-tweakthis-example-sprite.png) no-repeat 0px 0px;
+  height: 350px;
+  width: 339px; }
+
+#demo_sprite:hover {
+  background-position: 0px -355px; }
+
+#landing_page {
+  background-color: #0088ba;
+  width: 100%;
+  -moz-box-shadow: 0 5px 5px 0 #cccccc;
+  -webkit-box-shadow: 0 5px 5px 0 #cccccc;
+  box-shadow: 0 5px 5px 0 #cccccc; }
+  #landing_page #center_container {
+    margin: 0 auto;
+    padding: 20px 20px 40px 20px;
+    width: 950px; }
+    #landing_page #center_container #logo_container {
+      position: relative;
+      margin: 0 auto;
+      text-align: left; }
+      #landing_page #center_container #logo_container #logo {
+        display: inline-block;
+        vertical-align: middle;
+        border: none;
+        height: 445px;
+        width: 430px;
+        background: url(/images/monkeysilhouette.png) no-repeat 0px 0px; }
+      #landing_page #center_container #logo_container h1 {
+        position: absolute;
+        bottom: -30px;
+        left: 211px;
+        margin: 0;
+        font-family: "Helvetica";
+        font-size: 84px;
+        font-weight: 500;
+        letter-spacing: -1px;
+        color: white; }
+        #landing_page #center_container #logo_container h1 .first_letter {
+          font-family: "Helvetica, serif";
+          font-size: 168px; }
+    #landing_page #center_container #registration {
+      position: relative;
+      margin: 90px auto 0 auto;
+      width: 490px;
+      height: 100px;
+      background: #e6e6e6;
+      border: 7px solid #00b7fb;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px; }
+      #landing_page #center_container #registration .field {
+        margin: 10px 20px 0 20px; }
+        #landing_page #center_container #registration .field label {
+          display: none; }
+        #landing_page #center_container #registration .field input {
+          padding: 3px;
+          width: 270px;
+          font-size: 1.3em;
+          font-family: "Arial";
+          color: #666666; }
+      #landing_page #center_container #registration .actions {
+        position: absolute;
+        top: 25px;
+        right: 15px; }
+        #landing_page #center_container #registration .actions input {
+          height: 52px;
+          width: 151px;
+          background: url(/images/button-signup-sprite.png) no-repeat 0px 0px;
+          display: inline-block;
+          vertical-align: middle;
+          border: none; }
+        #landing_page #center_container #registration .actions:hover {
+          background-position: 0 -52px; }
+
+#activities .activity {
+  position: relative;
+  padding: 5px;
+  height: 60px;
+  border-bottom: 1px solid #efefea;
+  text-align: left; }
+  #activities .activity .avatar {
+    float: left;
+    padding: 5px; }
+  #activities .activity .content {
+    float: left;
+    padding: 5px; }
+    #activities .activity .content .summary .rating-wrapper {
+      float: right; }
+    #activities .activity .content .complete {
+      padding: 5px 0 0 0; }
+  #activities .activity .activity_menu {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px; }
+  #activities .activity:hover {
+    background: #efefea; }
+    #activities .activity:hover .activity_menu {
+      display: inline; }
+
+.funnel {
+  text-align: left; }
+  .funnel table {
+    border: 1px solid black; }
+    .funnel table tr {
+      border: 1px solid black; }
+      .funnel table tr td, .funnel table tr th {
+        border: 1px solid black;
+        padding: 5px; }
