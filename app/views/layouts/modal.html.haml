@@ -2,10 +2,11 @@
 %html
 
   %head
-    = stylesheet_link_tag 'modal'
     = javascript_include_tag :defaults
     = javascript_include_tag 'notifications'
-    = render "/layouts/google_analytics"
+    = javascript_include_tag yield :scripts
+    = stylesheet_link_tag 'modal'
+    = render '/layouts/google_analytics'
 
   %body
     = yield
