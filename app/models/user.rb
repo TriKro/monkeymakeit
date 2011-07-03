@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
 
   def self.owning(url)
     return "DEMO" if url.include?("demo=true")
-    CGI.parse(url.split('?')[1])['code'][0] rescue url
+    User.find_by_random_key(CGI.parse(url.split('?')[1])['code'][0]).identifier rescue url
   end
 
 end

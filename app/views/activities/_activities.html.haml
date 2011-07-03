@@ -14,7 +14,7 @@
 
     = activity.subtarget_type || "NIL"
 
-    = User.owning(activity.url).identifier
+    = User.owning(activity.url)
 
     .activity_menu
       = link_to 'Destroy', activity, :confirm => 'Are you sure?', :method => :delete
