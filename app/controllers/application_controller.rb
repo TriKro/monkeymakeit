@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
 
   def maybe_commit_activity_log
     if @activity_to_log && !session[:admin] # don't log our team's clicks
+      puts "ERRORERRORERRORERRORERRORERRORERRORERRORERRORERROR: #{request.inspect}" if request.session_options[:id].blank?
       @activity_to_log.session_id = request.session_options[:id]
       @activity_to_log.save
     end
