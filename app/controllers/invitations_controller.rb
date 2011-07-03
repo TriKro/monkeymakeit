@@ -15,7 +15,7 @@ class InvitationsController < ApplicationController
     log_activity(request.request_uri, "Created", "User", invitee)
 
     log_activity(request.request_uri, "Sent", "Invitation", User.find_by_email(params[:user][:email]))
-    flash[:success] = "Invite sent to #{invitee.full_name.blank? ? invitee.email : invitee.full_name}."
+    flash[:success] = "Invite sent to #{invitee.identifier}."
     UserMailer.invite(session[:user], invitee, 'RE: "Doris," by Scott Lambridis', cookies[:url]).deliver
     redirect_to(new_invitation_path)
   end

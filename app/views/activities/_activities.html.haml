@@ -1,40 +1,20 @@
 - @activities.each do |activity|
   .activity
-
-    - if activity.session_id.nil?
-      (no session)
-    - else
-      = activity.session_id
-
+    = activity.session_id || "(no session)"
     = activity.activity_type
 
-    - if activity.target_type == "Page"
+    - if activity.target_type.nil?
+      = NIL
+    - elsif activity.target_type == "Page"
       = link_to activity.target_type, activity.url
-    - elsif activity.target_type == "Invitation" && !activity.target_id.nil?
+    - elsif activity.target_type == "Invitation"
       = Invitation.find(activity.target_id).button_name
-    - elsif activity.target_type.nil?
-      NIL
     - else
       = activity.target_type
 
-    - if activity.subtarget_type.nil?
-      NIL
-    - else
-      = activity.subtarget_type
+    = activity.subtarget_type || "NIL"
 
-    - if activity.url.include?("code=")
-      - code = activity.url.split('?')[1]
-      - code = code[5,32]
-      - owner = User.find_by_random_key(code)
-      - if !owner.nil?
-        - if owner.full_name.nil?
-          = owner.email
-        - else
-          =owner.full_name
-    - elsif activity.url.include?("demo=true")
-      DEMO
-    - else
-      = activity.url
+    = User.owning(activity.url).identifier
 
     .activity_menu
       = link_to 'Destroy', activity, :confirm => 'Are you sure?', :method => :delete

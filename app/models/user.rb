@@ -1,5 +1,7 @@
 require_dependency File.dirname(__FILE__) + '/../../lib/random_key'
 
+require 'cgi'
+
 class User < ActiveRecord::Base
 
   include RandomKey
@@ -20,6 +22,15 @@ class User < ActiveRecord::Base
 
   def email_header
     "\"#{full_name}\" <#{email}>"
+  end
+
+  def identifier
+    full_name.blank? ? email : full_name
+  end
+
+  def self.owning(url)
+    return "DEMO" if url.include?("demo=true")
+    CGI.parse(url.split('?')[1])['code'][0] rescue url
   end
 
 end
