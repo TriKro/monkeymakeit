@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def stylesheets(stylesheets_name)
-    content_for(:scripts) { stylesheets_name }
+    content_for(:stylesheets) { stylesheets_name }
   end
 
   def collaborate_js_tag(js_tag_params={})
