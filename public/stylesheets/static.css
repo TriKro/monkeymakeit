@@ -1,2 +1,5 @@
-#main_content { text-align: center; }
-#main_content #main_content_inner { width: 90%; display: inline-block; }
+#main_content {
+  text-align: center; }
+  #main_content #main_content_inner {
+    width: 90%;
+    display: inline-block; }

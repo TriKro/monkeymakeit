@@ -28,7 +28,5 @@ Suggestedit::Application.configure do
 
   config.allow_heroku_commands = true
 
-  Sass::Plugin.options[:template_location] = "./sass"
-
 end
 

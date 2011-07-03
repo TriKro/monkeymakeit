@@ -1,13 +1,67 @@
-#landing_page { background-color: #0088ba; width: 100%; -moz-box-shadow: 0 5px 5px 0 #cccccc; -webkit-box-shadow: 0 5px 5px 0 #cccccc; box-shadow: 0 5px 5px 0 #cccccc; }
-#landing_page #center_container { margin: 0 auto; padding: 20px 20px 40px 20px; width: 950px; }
-#landing_page #center_container #logo_container { position: relative; margin: 0 auto; text-align: left; }
-#landing_page #center_container #logo_container #logo { display: inline-block; vertical-align: middle; border: none; height: 445px; width: 430px; background: url(/images/monkeysilhouette.png) no-repeat 0px 0px; }
-#landing_page #center_container #logo_container h1 { position: absolute; bottom: -30px; left: 211px; margin: 0; font-family: "Helvetica"; font-size: 84px; font-weight: 500; letter-spacing: -1px; color: white; }
-#landing_page #center_container #logo_container h1 .first_letter { font-family: "Helvetica, serif"; font-size: 168px; }
-#landing_page #center_container #registration { position: relative; margin: 90px auto 0 auto; width: 490px; height: 100px; background: #e6e6e6; border: 7px solid #00b7fb; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; }
-#landing_page #center_container #registration .field { margin: 10px 20px 0 20px; }
-#landing_page #center_container #registration .field label { display: none; }
-#landing_page #center_container #registration .field input { padding: 3px; width: 270px; font-size: 1.3em; font-family: "Arial"; color: #666666; }
-#landing_page #center_container #registration .actions { position: absolute; top: 25px; right: 15px; }
-#landing_page #center_container #registration .actions input { height: 52px; width: 151px; background: url(/images/button-signup-sprite.png) no-repeat 0px 0px; display: inline-block; vertical-align: middle; border: none; }
-#landing_page #center_container #registration .actions:hover { background-position: 0 -52px; }
+#landing_page {
+  background-color: #0088ba;
+  width: 100%;
+  -moz-box-shadow: 0 5px 5px 0 #cccccc;
+  -webkit-box-shadow: 0 5px 5px 0 #cccccc;
+  box-shadow: 0 5px 5px 0 #cccccc; }
+  #landing_page #center_container {
+    margin: 0 auto;
+    padding: 20px 20px 40px 20px;
+    width: 950px; }
+    #landing_page #center_container #logo_container {
+      position: relative;
+      margin: 0 auto;
+      text-align: left; }
+      #landing_page #center_container #logo_container #logo {
+        display: inline-block;
+        vertical-align: middle;
+        border: none;
+        height: 445px;
+        width: 430px;
+        background: url(/images/monkeysilhouette.png) no-repeat 0px 0px; }
+      #landing_page #center_container #logo_container h1 {
+        position: absolute;
+        bottom: -30px;
+        left: 211px;
+        margin: 0;
+        font-family: "Helvetica";
+        font-size: 84px;
+        font-weight: 500;
+        letter-spacing: -1px;
+        color: white; }
+        #landing_page #center_container #logo_container h1 .first_letter {
+          font-family: "Helvetica, serif";
+          font-size: 168px; }
+    #landing_page #center_container #registration {
+      position: relative;
+      margin: 90px auto 0 auto;
+      width: 490px;
+      height: 100px;
+      background: #e6e6e6;
+      border: 7px solid #00b7fb;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px; }
+      #landing_page #center_container #registration .field {
+        margin: 10px 20px 0 20px; }
+        #landing_page #center_container #registration .field label {
+          display: none; }
+        #landing_page #center_container #registration .field input {
+          padding: 3px;
+          width: 270px;
+          font-size: 1.3em;
+          font-family: "Arial";
+          color: #666666; }
+      #landing_page #center_container #registration .actions {
+        position: absolute;
+        top: 25px;
+        right: 15px; }
+        #landing_page #center_container #registration .actions input {
+          height: 52px;
+          width: 151px;
+          background: url(/images/button-signup-sprite.png) no-repeat 0px 0px;
+          display: inline-block;
+          vertical-align: middle;
+          border: none; }
+        #landing_page #center_container #registration .actions:hover {
+          background-position: 0 -52px; }
