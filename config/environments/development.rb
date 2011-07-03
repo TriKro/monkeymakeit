@@ -27,5 +27,8 @@ Suggestedit::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   config.allow_heroku_commands = true
+
+  Sass::Plugin.options[:template_location] = "./sass"
+
 end
 

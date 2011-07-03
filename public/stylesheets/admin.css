@@ -1,9 +1,4 @@
-.funnel {
-  text-align: left; }
-  .funnel table {
-    border: 1px solid black; }
-    .funnel table tr {
-      border: 1px solid black; }
-      .funnel table tr td, .funnel table tr th {
-        border: 1px solid black;
-        padding: 5px; }
+.funnel { text-align: left; }
+.funnel table { border: 1px solid black; }
+.funnel table tr { border: 1px solid black; }
+.funnel table tr td, .funnel table tr th { border: 1px solid black; padding: 5px; }

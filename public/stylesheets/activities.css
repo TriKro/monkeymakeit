@@ -1,25 +1,8 @@
-#activities .activity {
-  position: relative;
-  padding: 5px;
-  height: 60px;
-  border-bottom: 1px solid #efefea;
-  text-align: left; }
-  #activities .activity .avatar {
-    float: left;
-    padding: 5px; }
-  #activities .activity .content {
-    float: left;
-    padding: 5px; }
-    #activities .activity .content .summary .rating-wrapper {
-      float: right; }
-    #activities .activity .content .complete {
-      padding: 5px 0 0 0; }
-  #activities .activity .activity_menu {
-    display: none;
-    position: absolute;
-    top: 5px;
-    right: 5px; }
-  #activities .activity:hover {
-    background: #efefea; }
-    #activities .activity:hover .activity_menu {
-      display: inline; }
+#activities .activity { position: relative; padding: 5px; height: 60px; border-bottom: 1px solid #efefea; text-align: left; }
+#activities .activity .avatar { float: left; padding: 5px; }
+#activities .activity .content { float: left; padding: 5px; }
+#activities .activity .content .summary .rating-wrapper { float: right; }
+#activities .activity .content .complete { padding: 5px 0 0 0; }
+#activities .activity .activity_menu { display: none; position: absolute; top: 5px; right: 5px; }
+#activities .activity:hover { background: #efefea; }
+#activities .activity:hover .activity_menu { display: inline; }
