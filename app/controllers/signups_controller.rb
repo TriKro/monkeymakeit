@@ -10,7 +10,7 @@ class SignupsController < ApplicationController
 
   def create
     @user = User.find_by_email(params[:user][:email]) || User.create(params[:user])
-    return render(:action => 'new', :layout => 'modal') if @user.new_record? # error
+    return redirect_to(:action => 'new', :layout => 'modal') if @user.new_record? # error
     log_activity(request.request_uri, "Created", "User", @user)
 
     session[:user] = @user
