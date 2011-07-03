@@ -16,15 +16,18 @@
       text-align: left
 
       #logo
+        position: relative
+        z-index: 1
         @include sprite
         height: 445px
         width: 430px
         background: url(/images/monkeysilhouette.png) no-repeat 0px 0px
+        @include rotate(8deg)
 
       h1
         position: absolute
-        bottom: -30px
-        left: 211px
+        bottom: -51px
+        left: 197px
         margin: 0
         font-family: 'Helvetica'
         font-size: 84px
