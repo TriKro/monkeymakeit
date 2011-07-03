@@ -1,0 +1,13 @@
+!!!
+%html
+
+  %head
+    = render "/layouts/head_loading"
+    = stylesheet_link_tag 'landing_pages'
+    = render "/layouts/google_analytics"
+
+  %body
+
+    = yield
+
+    = render "/layouts/footer"

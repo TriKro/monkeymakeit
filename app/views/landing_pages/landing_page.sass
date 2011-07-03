@@ -4,43 +4,52 @@
   background-color: $darkblue
   width: 100%
   @include box-shadow(0, 5px, 5px, 0, #ccc)
+  color: $white
 
   #center_container
+    position: relative
     margin: 0 auto
-    padding: 20px 20px 40px 20px
+    padding: 20px 0
     width: 950px
 
-    #logo_container
-      position: relative
-      margin: 0 auto
-      text-align: left
+    #big_logo
+      position: absolute
+      top: 0
+      left: -20px
+      z-index: 1
+      @include sprite
+      height: 445px
+      width: 430px
+      background: url(/images/monkeysilhouette.png) no-repeat 0px 0px
+      @include rotate(8deg)
 
-      #logo
-        position: relative
-        z-index: 1
-        @include sprite
-        height: 445px
-        width: 430px
-        background: url(/images/monkeysilhouette.png) no-repeat 0px 0px
-        @include rotate(8deg)
-
-      h1
-        position: absolute
-        bottom: -51px
-        left: 197px
-        margin: 0
-        font-family: 'Helvetica'
-        font-size: 84px
+    h1
+      margin: 309px 0 0 0
+      text-align: center
+      font-family: 'Helvetica'
+      font-size: 84px
+      font-weight: 100
+      letter-spacing: -1px
+      .first_letter
+        font-family: 'Helvetica, serif'
+        font-size: 168px
         font-weight: 500
-        letter-spacing: -1px
-        color: $white
-        .first_letter
-          font-family: 'Helvetica, serif'
-          font-size: 168px
+
+    #description
+      margin: 40px 0
+      text-align: center
+      h2
+        margin: 20px
+        font-family: 'Helvetica'
+        font-size: $giant
+        font-weight: 100
+        .bold
+          font-weight: 500
+
 
     #registration
       position: relative
-      margin: 90px auto 0 auto
+      margin: 60px auto 40px auto
       width: 490px
       height: 100px
       background: $grey

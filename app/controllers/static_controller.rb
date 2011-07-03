@@ -4,8 +4,4 @@ class StaticController < ApplicationController
     log_activity(request.request_uri, "Viewed", "Page")
   }
 
-  def home
-    @registration = User.new
-  end
-
 end

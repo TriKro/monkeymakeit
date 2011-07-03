@@ -76,27 +76,33 @@ input, select {
   vertical-align: middle; }
 
 body {
-  position: relative;
-  background: #efefea;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: white;
   font-size: 14px;
   font-family: Arial, sans-serif; }
 
-body_container {
+container {
   position: relative;
-  margin: 0 auto; }
+  min-height: 100%;
+  height: auto !important; }
 
-#white_background {
-  margin: 10px 0 0 0;
-  padding: 15px 25px;
-  width: 900px;
-  min-height: 400px;
+content {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 100px;
+  text-align: center;
   background: white;
-  -moz-box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px; }
+  -moz-box-shadow: 0 5px 5px 0 #cccccc;
+  -webkit-box-shadow: 0 5px 5px 0 #cccccc;
+  box-shadow: 0 5px 5px 0 #cccccc; }
+  content content_inner {
+    display: inline-block;
+    position: relative;
+    padding: 30px;
+    text-align: left;
+    min-width: 500px; }
 
 .blue {
   color: #00b7fb !important; }
@@ -168,22 +174,68 @@ body_container {
     cursor: pointer;
     opacity: 0.3; }
 
-footer {
-  display: block;
+header {
   position: relative;
-  clear: both;
+  display: inline-block;
+  z-index: 1;
+  padding: 0;
+  height: 80px;
+  width: 100%;
+  background-color: #0088ba;
+  text-align: center;
+  color: white;
+  -moz-box-shadow: 0 5px 5px 0 #cccccc;
+  -webkit-box-shadow: 0 5px 5px 0 #cccccc;
+  box-shadow: 0 5px 5px 0 #cccccc; }
+  header header_inner {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    min-width: 500px;
+    text-align: left; }
+    header header_inner a#home_link {
+      text-decoration: none;
+      color: white; }
+      header header_inner a#home_link logo {
+        position: absolute;
+        top: 10px;
+        display: inline-block;
+        vertical-align: middle;
+        border: none;
+        height: 80px;
+        width: 98px;
+        background: url(/images/logo_small.png) no-repeat 0px 0px; }
+      header header_inner a#home_link h1 {
+        position: absolute;
+        top: 40px;
+        left: 95px;
+        margin: 0 0 0 0;
+        font-family: "Helvetica";
+        font-size: 24px;
+        font-weight: 100;
+        letter-spacing: -1px; }
+        header header_inner a#home_link h1 .first_letter {
+          font-family: "Helvetica, serif";
+          font-size: 40px;
+          font-weight: 500; }
+
+footer {
+  display: inline-block;
+  position: absolute;
   bottom: 0;
-  padding: 0 20px;
-  max-width: 950px;
-  min-width: 400px;
-  background: none;
+  padding: 0;
+  width: 100%;
+  height: 100px;
+  background: #efefea;
   color: #666666;
   text-align: center;
   font-size: 0.9em; }
-  footer #footer_inner {
-    margin: 0 auto 15px auto;
-    padding: 10px 0; }
-    footer #footer_inner #footermenu {
+  footer footer_inner {
+    display: inline-block;
+    position: relative;
+    padding: 10px 0;
+    min-width: 500px; }
+    footer footer_inner #footermenu {
       padding: 0 0 0 20px; }
-    footer #footer_inner a {
+    footer footer_inner a {
       color: #666666; }

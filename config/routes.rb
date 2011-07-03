@@ -1,20 +1,13 @@
 Suggestedit::Application.routes.draw do
 
-  root :to => 'static#home'
+  root :to => 'landing_pages#home'
 
   resources :activities
-  resources :suggestions, :only => [:new, :update]
-  match "/thanks_for_your_tweak" => "suggestions#thanks", :as => :suggestion_thanks
 
   resources :invitations, :only => [:new, :create]
   resources :signups, :only => [:new, :create]
   resources :registrations, :only => [:create]
   match "/thanks_for_registering" => "registrations#thanks", :as => :registration_thanks
-
-  # Contact message routes
-  resources :contact_messages
-  match "/contact" => "contact_messages#new", :as => :contact
-  match "/thanks_for_your_message" => "contact_messages#thanks", :as => :contact_thanks
 
   # Static page routes
   [
@@ -27,10 +20,16 @@ Suggestedit::Application.routes.draw do
     match "/#{static_page}" => "static##{static_page}", :as => static_page
   end
 
+  # Contact message routes
+  resources :contact_messages, :only => [:new, :create]
+  match "/contact" => "contact_messages#new", :as => :contact
+  match "/thanks_for_your_message" => "contact_messages#thanks", :as => :contact_thanks
+
   # Javascript
   get "/scripts/collaborate" => "scripts#collaborate", :as => 'collaborate_js'
 
   # Team members, bookmark the admin page. Visit it first to be excluded from
   # logging.
   match '/admin' => 'admin#index'
+
 end

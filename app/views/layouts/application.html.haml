@@ -2,13 +2,20 @@
 %html
 
   %head
-    = render "/layouts/head_loading"
-    = render "/layouts/google_analytics"
+    = render '/layouts/head_loading'
+    = stylesheet_link_tag 'application'
+    = render '/layouts/google_analytics'
 
   %body
-    #flash_messages
+    %container
+
+      = render '/layouts/header'
+
       = render :partial => '/layouts/flash', :locals => { :flash => flash }
 
-    = yield
+      %content
+        %content_inner
 
-    = render "/layouts/footer"
+          = yield
+
+      = render '/layouts/footer'

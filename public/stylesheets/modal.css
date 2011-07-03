@@ -76,27 +76,33 @@ input, select {
   vertical-align: middle; }
 
 body {
-  position: relative;
-  background: #efefea;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: white;
   font-size: 14px;
   font-family: Arial, sans-serif; }
 
-body_container {
+container {
   position: relative;
-  margin: 0 auto; }
+  min-height: 100%;
+  height: auto !important; }
 
-#white_background {
-  margin: 10px 0 0 0;
-  padding: 15px 25px;
-  width: 900px;
-  min-height: 400px;
+content {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 100px;
+  text-align: center;
   background: white;
-  -moz-box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: -10px 10px 50px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px; }
+  -moz-box-shadow: 0 5px 5px 0 #cccccc;
+  -webkit-box-shadow: 0 5px 5px 0 #cccccc;
+  box-shadow: 0 5px 5px 0 #cccccc; }
+  content content_inner {
+    display: inline-block;
+    position: relative;
+    padding: 30px;
+    text-align: left;
+    min-width: 500px; }
 
 .blue {
   color: #00b7fb !important; }

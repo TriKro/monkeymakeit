@@ -33,6 +33,7 @@ Sass::Plugin.options[:template_location] = {
     "./app/views/admin" => "./public/stylesheets",
     "./app/views/invitations" => "./public/stylesheets",
     "./app/views/layouts" => "./public/stylesheets",
+    "./app/views/landing_pages" => "./public/stylesheets",
     "./app/views/registrations" => "./public/stylesheets",
     "./app/views/signups" => "./public/stylesheets",
     "./app/views/static" => "./public/stylesheets"

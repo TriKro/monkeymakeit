@@ -1,0 +1,44 @@
+@import 'variables'
+
+header
+  position: relative
+  display: inline-block
+  z-index: 1
+  padding: 0
+  height: 80px
+  width: 100%
+  background-color: $darkblue
+  text-align: center
+  color: $white
+  @include box-shadow(0, 5px, 5px, 0, #ccc)
+
+  header_inner
+    display: inline-block
+    position: relative
+    padding: 10px
+    min-width: 500px
+    text-align: left
+    a#home_link
+      text-decoration: none
+      color: $white
+      logo
+        position: absolute
+        top: 10px
+        @include sprite
+        height: 80px
+        width: 98px
+        background: url(/images/logo_small.png) no-repeat 0px 0px
+
+      h1
+        position: absolute
+        top: 40px
+        left: 95px
+        margin: 0 0 0 0
+        font-family: 'Helvetica'
+        font-size: 24px
+        font-weight: 100
+        letter-spacing: -1px
+        .first_letter
+          font-family: 'Helvetica, serif'
+          font-size: 40px
+          font-weight: 500

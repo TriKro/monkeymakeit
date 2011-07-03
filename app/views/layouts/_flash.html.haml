@@ -1,6 +1,7 @@
-- flash.each do |name, msg|
-  %div{:class => name, :style => "display: none;"}
-    %p
-      = msg
-    .close
-    .clear
+#flash_messages
+  - flash.each do |name, msg|
+    %div{:class => name, :style => "display: none;"}
+      %p
+        = msg
+      .close
+      .clear

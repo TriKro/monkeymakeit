@@ -1,0 +1,26 @@
+= title "- What type of monkey are you?"
+- scripts 'landing_pages'
+- stylesheets 'landing_page'
+
+#landing_page
+  #center_container
+    #big_logo
+    %h1
+      %span.first_letter<>
+        M
+      onkeyMake.it
+
+    #description
+      %h2
+        Publishing
+        %span.bold
+          sucks.
+
+      %h2
+        Join us and see what happens when 1,000,000 monkeys collaborate.
+
+    #flash_messages
+      = render :partial => '/layouts/flash', :locals => { :flash => flash }
+
+    = render :partial =>'registration_form'
+
