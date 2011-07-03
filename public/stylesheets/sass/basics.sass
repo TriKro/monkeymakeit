@@ -1,8 +1,10 @@
+@import 'variables'
+
 body
   position: relative
+  background: $lightgrey
   font-size: 14px
   font-family: Arial, sans-serif
-  background: #efefea
 
 body_container
   position: relative
@@ -10,23 +12,24 @@ body_container
 
 #white_background
   margin: 10px 0 0 0
-  width: 910px
-  min-height: 400px
   padding: 15px 25px
-  float: left
+  width: 900px
+  min-height: 400px
   background: $white
-  -moz-box-shadow: -10px 10px 50px 0px rgba(0,0,0,0.1)
-  -webkit-box-shadow: -10px 10px 50px 0px rgba(0,0,0,0.1)
-  box-shadow: -10px 10px 50px 0px rgba(0,0,0,0.1)
-  -webkit-border-radius: 5px
-  -moz-border-radius: 5px
-  border-radius: 5px
+  @include box-shadow
+  @include radius(5px)
 
 .blue
-  color: $blue
+  color: $blue !important
 
 .darkblue
-  color: $darkblue
+  color: $darkblue !important
+
+.black
+  color: $black !important
+
+.darkgrey
+  color: $darkgrey !important
 
 .clear
   clear: both

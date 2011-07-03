@@ -1,61 +1,70 @@
-#logo
-  @inclue sprite
-  background: url(/images/monkeysilhouette.png) no-repeat 0px 0px
-  height: 445px
-  width: 430px
+@import 'variables'
 
 #landing_page
   background-color: $darkblue
-  -moz-box-shadow: 5px 5px 5px #ccc
-  -webkit-box-shadow: 5px 5px 5px #ccc
-  box-shadow: 5px 5px 5px #ccc
   width: 100%
+  @include box-shadow(0, 5px, 5px, 0, #ccc)
+
   #center_container
     margin: 0 auto
-    width: 950px
     padding: 20px 20px 40px 20px
+    width: 950px
+
     #logo_container
-      text-align: left
-      margin: 0 auto
       position: relative
+      margin: 0 auto
+      text-align: left
+
+      #logo
+        @include sprite
+        height: 445px
+        width: 430px
+        background: url(/images/monkeysilhouette.png) no-repeat 0px 0px
+
       h1
-        .first_letter
-          font-family: 'Helvetica, serif'
-          font-size: 168px
+        position: absolute
+        bottom: -30px
+        left: 211px
+        margin: 0
         font-family: 'Helvetica'
         font-size: 84px
         font-weight: 500
         letter-spacing: -1px
-        margin: 0
         color: $white
-        position: absolute
-        bottom: -30px
-        left: 211px
+        .first_letter
+          font-family: 'Helvetica, serif'
+          font-size: 168px
+
     #registration
-      border: 7px solid $blue
+      position: relative
+      margin: 90px auto 0 auto
       width: 490px
       height: 100px
-      margin: 90px auto 0 auto
-      position: relative
       background: $grey
+      border: 7px solid $blue
+      @include radius
+
       .field
         margin: 10px 20px 0 20px
         label
           display: none
         input
           padding: 3px
+          width: 270px
           font-size: $largest
           font-family: 'Arial'
-          width: 270px
           color: $darkgrey
+
       .actions
         position: absolute
         top: 25px
         right: 15px
-        input[type="submit"]
-          @include sprite
-          background: url(/images/button-signup-sprite.png) no-repeat 0px 0px
+
+        input
           height: 52px
           width: 151px
-        input[type="submit"]:hover
+          background: url(/images/button-signup-sprite.png) no-repeat 0px 0px
+          @include sprite
+
+        &:hover
           background-position: 0 -52px

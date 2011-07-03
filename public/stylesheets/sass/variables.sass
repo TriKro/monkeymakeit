@@ -4,11 +4,29 @@
 $darkblue: #0088ba
 $blue: #00b7fb
 $grey: #e6e6e6
+$lightgrey: #efefea
 $darkgrey: #666
 $black: #000
 $white: #fff
 
-$error_color: red
+$field_with_error_color: red
+
+$warning-background: #cccc00
+
+$success-background: #e6efc2
+$success-border: #c6d880
+$success-color: #264409
+$success-link: #264409
+
+$error-background: #fbe3e4
+$error-border: #fbc2c4
+$error-color: #8a1f11
+$error-link: #8a1f11
+
+$info-background: #d5edf8
+$info-border: #92cae4
+$info-color: #205791
+$info-link: #205791
 
 // Sizes
 
@@ -25,16 +43,23 @@ $smallest: .7em
 $tiny: .6em
 $miniature: .5em
 
-// Corners
-
-$radius: 10px
-
 // mixins
 
-@mixin radius
-  border-radius: $radius
-  -moz-border-radius: $radius
-  -webkit-border-radius: $radius
+$global-radius: 10px
+@mixin radius($border-radius:$global-radius)
+  border-radius: $border-radius
+  -moz-border-radius: $border-radius
+  -webkit-border-radius: $border-radius
+
+$global-h-shadow: -10px
+$global-v-shadow: 10px
+$global-blur: 50px
+$global-spread: 0px
+$global-shadow-color: rgba(0,0,0,0.1)
+@mixin box-shadow($h-shadow:$global-h-shadow, $v-shadow:$global-v-shadow, $blur:$global-blur, $spread:$global-spread, $shadow-color:$global-shadow-color)
+  -moz-box-shadow: $h-shadow $v-shadow $blur $spread $shadow-color
+  -webkit-box-shadow: $h-shadow $v-shadow $blur $spread $shadow-color
+  box-shadow: $h-shadow $v-shadow $blur $spread $shadow-color
 
 @mixin pointer
   cursor: pointer
@@ -47,15 +72,3 @@ $radius: 10px
 @mixin bounds
   max-width: 960px
   min-width: 400px
-
-@mixin white-container
-  background: $white
-  -moz-box-shadow: -10px 10px 50px 0px rgba(0,0,0,0.1)
-  -webkit-box-shadow: -10px 10px 50px 0px rgba(0,0,0,0.1)
-  box-shadow: -10px 10px 50px 0px rgba(0,0,0,0.1)
-  //-moz-box-shadow: 0 0 50px 1px rgba(0,0,0,0.3)
-  //-webkit-box-shadow: 0 0px 50px 1px rgba(0,0,0,0.3)
-  //box-shadow: 0 0 50px 1px rgba(0,0,0,0.3)
-  -webkit-border-radius: 5px
-  -moz-border-radius: 5px
-  border-radius: 5px
