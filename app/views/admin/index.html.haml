@@ -46,11 +46,11 @@
 
           %td
             -# Display raw number
-            = scott_button_views = activities.where(:activity_type => "Viewed Button").where(["url like ?", '%'+@scott.random_key+'%']).count
+            = scott_button_views = activities.where(:activity_type => "Viewed Button").where(["url like ?", '%'+@scott.random_key+'%']).count(:session_id, :distinct => true)
 
           %td
             -# Display raw number
-            - scott_button_clicks = activities.where(:activity_type => "Clicked Button").where(["url like ?", '%'+@scott.random_key+'%']).count
+            - scott_button_clicks = activities.where(:activity_type => "Clicked Button").where(["url like ?", '%'+@scott.random_key+'%']).count(:session_id, :distinct => true)
 
             -# Display conversion %
             = number_to_percentage(scott_button_clicks.to_f / scott_button_views.to_f * 100)
@@ -58,14 +58,14 @@
           %td
             -# Display raw number
             -# TODO: There is no way to differenciate signups on a different page!!!
-            - scott_signups = activities.where(:activity_type => "Signed Up").count
+            - scott_signups = activities.where(:activity_type => "Signed Up").count(:session_id, :distinct => true)
 
             -# Display conversion %
             = number_to_percentage(scott_signups.to_f / scott_button_views.to_f * 100)
 
           %td
             -# Display raw number
-            - scott_invitations_sent = activities.where(:activity_type => "Sent", :target_type => "Invitation").where(["url like ?", '%'+@scott.random_key+'%']).count
+            - scott_invitations_sent = activities.where(:activity_type => "Sent", :target_type => "Invitation").where(["url like ?", '%'+@scott.random_key+'%']).count(:session_id, :distinct => true)
 
             -# Display conversion %
             = number_to_percentage(scott_invitations_sent.to_f / scott_button_views.to_f * 100)
