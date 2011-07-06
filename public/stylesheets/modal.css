@@ -10,10 +10,12 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent; }
+  background: transparent;
+  height: 100%; }
 
 body {
-  line-height: 1; }
+  line-height: 1;
+  height: 100%; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
@@ -84,19 +86,16 @@ body {
   font-family: Arial, sans-serif; }
 
 container {
+  display: block;
   position: relative;
-  min-height: 100%;
-  height: auto !important; }
+  min-height: 100%; }
 
 content {
   display: inline-block;
   width: 100%;
   padding-bottom: 76px;
   text-align: center;
-  background: white;
-  min-height: 100%;
-  height: auto !important;
-  height: 100%; }
+  background: white; }
   content content_inner {
     display: inline-block;
     position: relative;
