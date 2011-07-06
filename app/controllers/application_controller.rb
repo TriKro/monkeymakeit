@@ -10,6 +10,15 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def current_user
+    @current_user ||= User.find_by_id(session[:user_id])
+  end
+
+  def current_user=(user)
+    @current_user = user
+    session[:user_id] = user.id
+  end
+
   def log_activity(url, activity_type, target_model = nil, target = nil, subtarget_model = nil, subtarget = nil)
     maybe_commit_activity_log # We may not have a session id if log_activity is called multiple times. Oh well.
     @activity_to_log = Activity.new(:url => url, :activity_type => activity_type, :target_model => target_model, :target => target, :subtarget_model => subtarget_model, :subtarget => subtarget)
