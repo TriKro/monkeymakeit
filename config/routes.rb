@@ -20,6 +20,14 @@ Suggestedit::Application.routes.draw do
     match "/#{static_page}" => "static##{static_page}", :as => static_page
   end
 
+  # Crout page routes
+  [
+          :hiccup,
+          :doris
+  ].each do |crout_page|
+    match "/#{crout_page}" => "crouts##{crout_page}", :as => crout_page
+  end
+
   # Contact message routes
   resources :contact_messages, :only => [:new, :create]
   match "/contact" => "contact_messages#new", :as => :contact

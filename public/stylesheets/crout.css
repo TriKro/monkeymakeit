@@ -1,0 +1,82 @@
+#crout {
+  width: 950px; }
+  #crout h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4em;
+    font-weight: 100;
+    color: #666666; }
+  #crout h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    color: #666666; }
+  #crout #left_column {
+    float: left;
+    color: #111111;
+    width: 700px;
+    z-index: 3; }
+  #crout .story_pic {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    float: left;
+    z-index: 3;
+    padding: 20px 20px 40px 0; }
+    #crout .story_pic img {
+      width: 300px; }
+  #crout #art_credit {
+    position: absolute;
+    font-size: 0.9em;
+    bottom: 20px;
+    left: 90px; }
+  #crout #first_letter {
+    font-size: 48px;
+    font-weight: 100;
+    font-family: Georgia; }
+  #crout p {
+    margin: 20px 0;
+    padding: 0;
+    line-height: 26px;
+    text-align: justify; }
+    #crout p + p {
+      text-indent: 30px; }
+  #crout #first_p {
+    margin-top: 0px; }
+  #crout #right_column {
+    font-size: 14px;
+    float: right;
+    width: 200px;
+    margin: 10px 0 0 0;
+    z-index: 3; }
+  #crout #about_author {
+    font-size: 14px;
+    float: left;
+    width: 200px;
+    background: white;
+    padding: 25px 10px;
+    margin: 0px 0 0 0;
+    -moz-box-shadow: 0 0 5px #666666;
+    -webkit-box-shadow: 0 0 5px #666666;
+    box-shadow: 0 0 5px #666666;
+    z-index: 3; }
+    #crout #about_author h3 {
+      margin: 0 0 10px 0;
+      padding: 0;
+      font-size: 14px;
+      border-bottom: 1px solid #dddddd; }
+    #crout #about_author img {
+      width: 200px; }
+    #crout #about_author p {
+      color: #666666;
+      text-align: justify;
+      margin: 0;
+      padding: 0; }
+  #crout #doris {
+    height: 496px;
+    width: 430px;
+    margin: 0 0 20px 0;
+    background: url(../images/image-doris.jpg) no-repeat 0px 0px; }
+  #crout #first_letter {
+    color: white; }
