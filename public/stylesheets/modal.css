@@ -89,7 +89,9 @@ body {
 container {
   display: block;
   position: relative;
-  min-height: 100%; }
+  min-height: 100%;
+  width: 100%;
+  text-align: center; }
 
 content {
   display: inline-block;
@@ -102,7 +104,8 @@ content {
     position: relative;
     padding: 30px;
     text-align: left;
-    min-width: 500px; }
+    min-width: 500px;
+    max-width: 950px; }
 
 h1 {
   font-size: 2em;

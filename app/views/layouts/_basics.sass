@@ -12,6 +12,8 @@ container
   display: block
   position: relative
   min-height: 100%
+  width: 100%
+  text-align: center
 
 content
   display: inline-block
@@ -25,7 +27,7 @@ content
     position: relative
     padding: 30px
     text-align: left
-    min-width: 500px
+    @include min-max-width
 
 h1
   font-size: $ginormous
