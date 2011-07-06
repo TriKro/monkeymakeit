@@ -1,9 +1,11 @@
+container, content {
+  background-color: #0088ba; }
+  container content_inner, content content_inner {
+    padding: 0; }
+
 #landing_page {
   background-color: #0088ba;
   width: 100%;
-  -moz-box-shadow: 0 5px 5px 0 #cccccc;
-  -webkit-box-shadow: 0 5px 5px 0 #cccccc;
-  box-shadow: 0 5px 5px 0 #cccccc;
   color: white; }
   #landing_page #center_container {
     position: relative;

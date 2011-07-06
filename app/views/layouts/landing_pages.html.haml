@@ -2,12 +2,15 @@
 %html
 
   %head
-    = render "/layouts/head_loading"
     = stylesheet_link_tag 'landing_pages'
+    = render "/layouts/head_loading"
     = render "/layouts/google_analytics"
 
   %body
     %container
-      = yield
+
+      %content
+        %content_inner
+          = yield
 
       = render "/layouts/footer"
