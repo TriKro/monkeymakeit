@@ -2,6 +2,8 @@ container, content {
   background-color: #0088ba; }
   container content_inner, content content_inner {
     padding: 0; }
+  container footer, content footer {
+    text-align: center; }
 
 #landing_page {
   background-color: #0088ba;
