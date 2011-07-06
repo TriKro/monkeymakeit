@@ -7,7 +7,7 @@
     = render "/layouts/google_analytics"
 
   %body
+    %container
+      = yield
 
-    = yield
-
-    = render "/layouts/footer"
+      = render "/layouts/footer"

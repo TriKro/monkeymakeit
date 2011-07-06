@@ -10,12 +10,13 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent;
+  background: transparent; }
+
+html, body {
   height: 100%; }
 
 body {
-  line-height: 1;
-  height: 100%; }
+  line-height: 1; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
