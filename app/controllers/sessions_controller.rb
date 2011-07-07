@@ -10,8 +10,10 @@ class SessionsController < ApplicationController
     #render :text => request.env["rack.auth"].to_yaml
     auth = request.env['omniauth.auth']
     puts "**********"
-    puts auth
-    puts auth['user_info']['name']
+    ap auth
+    puts "**********"
+    ap auth['user_info']['name']
+    puts "**********"
     unless @auth = Authentication.find_from_hash(auth)
       # Create a new user or add an auth to existing user, depending on
       # whether there is already a user signed in.
@@ -23,7 +25,7 @@ class SessionsController < ApplicationController
     self.current_user = @auth.user
     #log_activity(request.request_uri, "Logged In", "User", current_user)
 
-    flash[:success => "You've signed in!"]
+    flash[:notice] = "Logged in as #{current_user.full_name}"
     redirect_to root_url
   end
 

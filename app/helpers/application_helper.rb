@@ -16,4 +16,12 @@ module ApplicationHelper
     %{<script type="text/javascript" src="#{collaborate_js_url(:format => :js)}?#{js_tag_params.to_query}"></script>}
   end
 
+  def auth_providers
+    ActiveSupport::OrderedHash[
+#            :facebook, 'Facebook',
+            :twitter,  'Twitter',
+#            :open_id,  'OpenID',
+    ]
+  end
+
 end

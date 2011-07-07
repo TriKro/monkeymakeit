@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   after_filter :maybe_commit_activity_log
+  helper_method :current_user
 
   rescue_from ActiveRecord::RecordNotFound do |e|
     flash[:error] = "That record does not exist!"
