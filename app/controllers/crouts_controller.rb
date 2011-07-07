@@ -117,7 +117,7 @@ class CroutsController < ApplicationController
         :author_avatar => "images/image-scott-lambridis.png",
         :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
         :content => "hiccup",
-        :artwork => "images/image-jester.jpg",
+        :artwork => "images/remix-hiccup/hiccup-image-campustree.png",
         :artwork_title => "Jester",
         :artist => "Tyler Landry"
     }
@@ -169,7 +169,7 @@ class CroutsController < ApplicationController
         :author_avatar => "images/image-scott-lambridis.png",
         :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
         :content => "hiccup",
-        :artwork => "images/image-jester.jpg",
+        :artwork => "images/remix-hiccup/hiccup-image-campustree.png",
         :artwork_title => "Jester",
         :artist => "Tyler Landry",
         :artist_avatar => "images/image-alok.jpg"

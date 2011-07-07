@@ -134,21 +134,39 @@ content
       .buttons
         text-align: center
         .join
-          margin: 10px 0
+          position: relative
+          margin: 20px 0 60px 0
           @include sprite
           height: 52px
           width: 219px
           background: url(/images/button-jointhetribe-sprite.png) no-repeat 0px 0px
           &:hover
             background-position: 0 -52px
+          .join_arrow
+            position: absolute
+            bottom: -45px
+            left: -35px
+            @include sprite
+            height: 75px
+            width: 272px
+            background: url(/images/remix-hiccup/sprite-arrowswithscript.png) no-repeat 0px 0px
         .watch
+          margin-bottom: 50px
+          position: relative
           @include sprite
           height: 52px
           width: 219px
           background: url(/images/button-keepwatch-sprite.png) no-repeat 0px 0px
           &:hover
             background-position: 0 -52px
-
+          .watch_arrow
+            position: absolute
+            bottom: -45px
+            left: -35px
+            @include sprite
+            height: 75px
+            width: 272px
+            background: url(/images/remix-hiccup/sprite-arrowswithscript.png) no-repeat 0px -75px
 
     #about_author
       font-size: 14px
@@ -192,19 +210,34 @@ content
         color: $blue
     #cta_left
       float: left
+      position: relative
+      @include sprite
+      height: 377px
+      width: 458px
+      background: url(/images/remix-hiccup/sprite-bigctas.png) no-repeat 0px 0px
       .join
+        position: absolute
+        bottom: 70px
+        left: 75px
         @include sprite
         height: 52px
-        width: 219px
-        background: url(/images/button-jointhetribe-sprite.png) no-repeat 0px 0px
+        width: 334px
+        background: url(/images/remix-hiccup/button-jointhetribe-wide-sprite.png) no-repeat 0px 0px
         &:hover
           background-position: 0 -52px
     #cta_right
       float: left
+      position: relative
+      height: 377px
+      width: 458px
+      background: url(/images/remix-hiccup/sprite-bigctas.png) no-repeat 0px -377px
       .watch
+        position: absolute
+        bottom: 70px
+        left: 75px
         @include sprite
         height: 52px
-        width: 219px
-        background: url(/images/button-keepwatch-sprite.png) no-repeat 0px 0px
+        width: 334px
+        background: url(/images/remix-hiccup/button-keepwatch-wide-sprite.png) no-repeat 0px 0px
         &:hover
           background-position: 0 -52px

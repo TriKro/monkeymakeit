@@ -121,7 +121,8 @@ content {
       #crout #right_column #remix .buttons {
         text-align: center; }
         #crout #right_column #remix .buttons .join {
-          margin: 10px 0;
+          position: relative;
+          margin: 20px 0 60px 0;
           display: inline-block;
           vertical-align: middle;
           border: none;
@@ -130,7 +131,19 @@ content {
           background: url(/images/button-jointhetribe-sprite.png) no-repeat 0px 0px; }
           #crout #right_column #remix .buttons .join:hover {
             background-position: 0 -52px; }
+          #crout #right_column #remix .buttons .join .join_arrow {
+            position: absolute;
+            bottom: -45px;
+            left: -35px;
+            display: inline-block;
+            vertical-align: middle;
+            border: none;
+            height: 75px;
+            width: 272px;
+            background: url(/images/remix-hiccup/sprite-arrowswithscript.png) no-repeat 0px 0px; }
         #crout #right_column #remix .buttons .watch {
+          margin-bottom: 50px;
+          position: relative;
           display: inline-block;
           vertical-align: middle;
           border: none;
@@ -139,6 +152,16 @@ content {
           background: url(/images/button-keepwatch-sprite.png) no-repeat 0px 0px; }
           #crout #right_column #remix .buttons .watch:hover {
             background-position: 0 -52px; }
+          #crout #right_column #remix .buttons .watch .watch_arrow {
+            position: absolute;
+            bottom: -45px;
+            left: -35px;
+            display: inline-block;
+            vertical-align: middle;
+            border: none;
+            height: 75px;
+            width: 272px;
+            background: url(/images/remix-hiccup/sprite-arrowswithscript.png) no-repeat 0px -75px; }
     #crout #right_column #about_author {
       font-size: 14px;
       float: left;
@@ -181,24 +204,41 @@ content {
       font-weight: 100;
       color: #00b7fb; }
   #crout #bottom_cta #cta_left {
-    float: left; }
+    float: left;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    height: 377px;
+    width: 458px;
+    background: url(/images/remix-hiccup/sprite-bigctas.png) no-repeat 0px 0px; }
     #crout #bottom_cta #cta_left .join {
+      position: absolute;
+      bottom: 70px;
+      left: 75px;
       display: inline-block;
       vertical-align: middle;
       border: none;
       height: 52px;
-      width: 219px;
-      background: url(/images/button-jointhetribe-sprite.png) no-repeat 0px 0px; }
+      width: 334px;
+      background: url(/images/remix-hiccup/button-jointhetribe-wide-sprite.png) no-repeat 0px 0px; }
       #crout #bottom_cta #cta_left .join:hover {
         background-position: 0 -52px; }
   #crout #bottom_cta #cta_right {
-    float: left; }
+    float: left;
+    position: relative;
+    height: 377px;
+    width: 458px;
+    background: url(/images/remix-hiccup/sprite-bigctas.png) no-repeat 0px -377px; }
     #crout #bottom_cta #cta_right .watch {
+      position: absolute;
+      bottom: 70px;
+      left: 75px;
       display: inline-block;
       vertical-align: middle;
       border: none;
       height: 52px;
-      width: 219px;
-      background: url(/images/button-keepwatch-sprite.png) no-repeat 0px 0px; }
+      width: 334px;
+      background: url(/images/remix-hiccup/button-keepwatch-wide-sprite.png) no-repeat 0px 0px; }
       #crout #bottom_cta #cta_right .watch:hover {
         background-position: 0 -52px; }
