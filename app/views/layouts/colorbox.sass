@@ -154,7 +154,7 @@
 
 #cboxClose
   position: absolute
-  top: 0
+  bottom: 0
   right: 0
   background: url(images/controls.png) no-repeat -25px 0
   width: 25px
@@ -164,8 +164,8 @@
     background-position: -25px -25px
 
 /*
- *The following fixes a problem where IE7+ replaces a PNG's alpha transparency with a black fill
- *when an alpha filter (opacity change) is set on the element or ancestor element.
+ *The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+ *when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to IE9.
 
 .cboxIE
   #cboxTopLeft, #cboxTopCenter, #cboxTopRight, #cboxBottomLeft, #cboxBottomCenter, #cboxBottomRight, #cboxMiddleLeft, #cboxMiddleRight

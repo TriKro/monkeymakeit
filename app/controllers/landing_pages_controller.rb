@@ -5,7 +5,6 @@ class LandingPagesController < ApplicationController
   }
 
   def home
-    @registration = User.new
     render 'landing_page_1'
   end
 

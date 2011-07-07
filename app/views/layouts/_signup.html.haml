@@ -1,7 +1,7 @@
 :javascript
   $(document).ready(function() {
     $('.access_denied').
-      colorbox({width:"450px", inline:true, href:"#must_login"}).
+      colorbox({width:"600px", inline:true, href:"#must_login"}).
       live('click', function() {
         $.post("#{activities_path}", {
           url : $(this).attr("data-denied"),
@@ -12,7 +12,24 @@
 .hide
   #must_login
     #must_login_inner
-      %h1
-        Please create an account first!
-      %p
-        (Or just login...)
+      %h1.blue
+        We’re hard at work
+        %span.darkblue
+          building
+        %br
+        this co-publishing workspace!
+
+      %ul
+        %li
+          Early drafts of new books from amazing authors
+        %li
+          Expand the story or create alternate versions
+        %li
+          Change the modern publishing paradigm
+
+      %h2.blue
+        Sign up, and
+        %span.darkblue
+          be the first to know:
+
+      = render :partial =>'layouts/registration_form'
