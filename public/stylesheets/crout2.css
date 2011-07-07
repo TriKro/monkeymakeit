@@ -26,19 +26,9 @@ content {
       border: none;
       float: left;
       z-index: 3;
-      padding: 20px 20px 40px 0; }
+      padding: 20px 20px 0px 0; }
       #crout #left_column2 .story_pic img {
         width: 300px; }
-    #crout #left_column2 #doris {
-      height: 496px;
-      width: 430px;
-      margin: 0 0 20px 0;
-      background: url(../images/image-doris.jpg) no-repeat 0px 0px; }
-    #crout #left_column2 #art_credit {
-      position: absolute;
-      font-size: 0.9em;
-      bottom: 20px;
-      left: 90px; }
     #crout #left_column2 #first_letter {
       font-size: 48px;
       font-weight: 100;

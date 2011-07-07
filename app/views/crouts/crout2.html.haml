@@ -16,12 +16,7 @@
   #left_column2
     .story_pic
       %img{ :src => "#{ @crout[:artwork] }"}
-      #art_credit
-        "
-        %b><
-          = @crout[:artwork_title]
-        " by
-        = @crout[:artist]
+
     %p#first_p
       %span#first_letter><
         = @crout[:first_letter]
