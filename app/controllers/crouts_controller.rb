@@ -320,4 +320,108 @@ class CroutsController < ApplicationController
     render 'crout2'
   end
 
+  def life_of_the_gallows
+    @crout = {
+        :title => "Life of the Gallows",
+        :subtitle => "a short story about a medieval jester-turned-executioner",
+        :author => "Scott Lambridis",
+        :author_avatar => "images/image-scott-lambridis.png",
+        :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
+        :content => "life_of_the_gallows",
+        :artwork => "images/image-jester.jpg",
+        :artwork_title => "Jester",
+        :artist => "Tyler Landry"
+    }
+    @activities = [
+        { :actor => 'Scott Lambridis',
+            :actor_avatar => 'images/image-scott-lambridis.png',
+            :verb => 'edited the ',
+            :object => 'text',
+            :details => '"Killed some bad scenes, did some general editing for cadence and flow.."',
+            :timestamp => '18 minutes ago'
+        },
+        { :actor => 'Savanah Rose',
+            :actor_avatar => 'images/image-maggie.jpg',
+            :verb => 'said',
+            :object => '',
+            :details => '"I love the new picture! It fits perfectly."',
+            :timestamp => '4 hours ago'
+        },
+        { :actor => 'Tyler Landry',
+          :actor_avatar => 'images/image-alok.jpg',
+          :verb => 'added a',
+          :object => 'picture',
+          :details => '"Rough sketch of the mourning crows. These really stick in my head."',
+          :timestamp => '12 hours ago'
+        },
+        { :actor => 'Alex Q Huffman',
+          :actor_avatar => 'images/image-edward.jpg',
+          :verb => 'updated a',
+          :object => 'song',
+          :details => '"Fixed the bassline."',
+          :timestamp => 'Yesterday at 8:12pm'
+        },
+        { :actor => 'Tristan Kromer',
+          :actor_avatar => 'images/image-tristan.jpg',
+          :verb => 'created a ',
+          :object => 'branch',
+          :details => '"Started a new story based on the Jane character."',
+          :timestamp => 'Yesterday at 1:01pm'
+        }
+    ]
+    render 'crout'
+  end
+
+  def life_of_the_gallows2
+        @crout = {
+        :title => "Life of the Gallows",
+        :subtitle => "a short story about a medieval jester-turned-executioner",
+        :author => "Scott Lambridis",
+        :author_avatar => "images/image-scott-lambridis.png",
+        :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
+        :content => "life_of_the_gallows",
+        :artwork => "images/image-jester.jpg",
+        :artwork_title => "Jester",
+        :artist => "Tyler Landry"
+    }
+    @activities = [
+        { :actor => 'Scott Lambridis',
+          :actor_avatar => 'images/image-scott-lambridis.png',
+          :verb => 'edited the ',
+          :object => 'text',
+          :details => 'Killed some bad scenes, did some general editing for cadence and flow...',
+          :timestamp => '18 minutes ago'
+        },
+        { :actor => 'Savanah Rose',
+          :actor_avatar => 'images/image-maggie.jpg',
+          :verb => 'said',
+          :object => '',
+          :details => 'I love the new picture! It fits perfectly.',
+          :timestamp => '4 hours ago'
+        },
+        { :actor => 'Tyler Landry',
+          :actor_avatar => 'images/image-adam.jpg',
+          :verb => 'added a',
+          :object => 'picture',
+          :details => 'Rough sketch of the mourning crows. These really stick in my head.',
+          :timestamp => '12 hours ago'
+        },
+        { :actor => 'Alex Q Huffman',
+          :actor_avatar => 'images/image-edward.jpg',
+          :verb => 'updated a',
+          :object => 'song',
+          :details => 'Fixed the bassline.',
+          :timestamp => 'Yesterday at 8:12pm'
+        },
+        { :actor => 'Tristan Kromer',
+          :actor_avatar => 'images/image-tristan.jpg',
+          :verb => 'created a ',
+          :object => 'branch',
+          :details => 'Started a new story based on the Jane character.',
+          :timestamp => 'Yesterday at 1:01pm'
+        }
+    ]
+    render 'crout2'
+  end
+
 end
