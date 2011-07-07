@@ -1,5 +1,5 @@
 - title "- " + @crout[:title] + " - " + @crout[:subtitle]
-- stylesheets 'crout2'
+- stylesheets 'crout-2'
 - scripts 'landing_pages'
 
 #crout
@@ -48,4 +48,4 @@
       %h4
         Recent remixing
       - @activities.each do |activity|
-        = render :partial => "activity_with_action_icon", :locals => { :activity => activity }
+        = render :partial => "activity_with_actor_avatar", :locals => { :activity => activity }

@@ -4,76 +4,76 @@ class CroutsController < ApplicationController
     log_activity(request.request_uri, "Viewed", "Page")
   }
 
-  def doris
+  def doris_1
     crout_doris
     activities_with_thumbnails
-    render 'crout'
+    render 'crout-1'
   end
 
-  def heart
+  def heart_1
     crout_heart_of_the_sun
     activities_with_thumbnails
-    render 'crout'
+    render 'crout-1'
   end
 
-  def hiccup
+  def hiccup_1
     crout_hiccup
     activities_with_thumbnails
-    render 'crout'
+    render 'crout-1'
   end
 
-  def life_of_the_gallows
+  def life_of_the_gallows_1
     crout_life_of_the_gallows
     activities_with_thumbnails
-    render 'crout'
+    render 'crout-1'
   end
 
-  def doris2
+  def doris_2
     crout_doris
     activities_with_thumbnails
-    render 'crout2'
+    render 'crout-2'
   end
 
-  def heart2
+  def heart_2
     crout_heart_of_the_sun
     activities_with_thumbnails
-    render 'crout2'
+    render 'crout-2'
   end
 
-  def hiccup2
+  def hiccup_2
     crout_hiccup
     activities_with_thumbnails
-    render 'crout2'
+    render 'crout-2'
   end
 
-  def life_of_the_gallows2
+  def life_of_the_gallows_2
     crout_life_of_the_gallows
     activities_with_thumbnails
-    render 'crout2'
+    render 'crout-2'
   end
 
-  def doris3
+  def doris_3
     crout_doris
     activities_with_thumbnails
-    render 'crout3'
+    render 'crout-3'
   end
 
-  def hiccup3
+  def hiccup_3
     crout_hiccup
     activities_with_thumbnails
-    render 'crout3'
+    render 'crout-3'
   end
 
-  def heart3
+  def heart_3
     crout_heart_of_the_sun
     activities_with_thumbnails
-    render 'crout3'
+    render 'crout-3'
   end
 
-  def life_of_the_gallows3
+  def life_of_the_gallows_3
     crout_life_of_the_gallows
     activities_with_thumbnails
-    render 'crout3'
+    render 'crout-3'
   end
 
   def crout_doris

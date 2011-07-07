@@ -22,18 +22,18 @@ Suggestedit::Application.routes.draw do
 
   # Crout page routes
   [
-          :hiccup,
-          :hiccup2,
-          :hiccup3,
-          :doris,
-          :doris2,
-          :doris3,
-          :heart,
-          :heart2,
-          :heart3,
-          :life_of_the_gallows,
-          :life_of_the_gallows2,
-          :life_of_the_gallows3
+          :doris_1,
+          :heart_1,
+          :hiccup_1,
+          :life_of_the_gallows_1,
+          :doris_2,
+          :heart_2,
+          :hiccup_2,
+          :life_of_the_gallows_2,
+          :doris_3,
+          :heart_3,
+          :hiccup_3,
+          :life_of_the_gallows_3
   ].each do |crout_page|
     match "/#{crout_page}" => "crouts##{crout_page}", :as => crout_page
   end
