@@ -16,19 +16,8 @@
           = @crout[:artwork_title]
         " by
         = @crout[:artist]
-    %p#first_p
-      %span#first_letter><
-        = @crout[:first_letter]
-      = @crout[:first_para]
-    - if !@crout[:second_para].nil?
-      %p
-        = @crout[:second_para]
-    - if !@crout[:third_para].nil?
-      %p
-        = @crout[:third_para]
-    - if !@crout[:fourth_para].nil?
-      %p
-        = @crout[:fourth_para]
+
+    = render "#{@crout[:content]}"
 
   #right_column
     #remix
