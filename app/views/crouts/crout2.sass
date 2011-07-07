@@ -81,7 +81,7 @@ content
       margin: 10px 0
       @include box-shadow(0, 0, 5px, 0, #666)
       #remix_header
-        #remix_logo
+        #logo
           margin: 0 10px 0 0
           float: left
           @include sprite
@@ -143,15 +143,15 @@ content
           margin: 10px 0
           @include sprite
           height: 52px
-          width: 219px
-          background: url(/images/button-jointhetribe-sprite.png) no-repeat 0px 0px
+          width: 206px
+          background: url(/images/button-remix--sprite.png) no-repeat 0px 0px
           &:hover
             background-position: 0 -52px
         .watch
           @include sprite
           height: 52px
-          width: 219px
-          background: url(/images/button-keepwatch-sprite.png) no-repeat 0px 0px
+          width: 206px
+          background: url(/images/button-signup-sprite.png) no-repeat 0px 0px
           &:hover
             background-position: 0 -52px
 
@@ -177,40 +177,3 @@ content
         margin: 0
         padding: 0
 
-  #bottom_cta
-    #cta_logo
-      margin: 0 10px 0 0
-      float: left
-      @include sprite
-      height: 80px
-      width: 98px
-      background: url(/images/logo_small.png) no-repeat 0px 0px
-    #cta_text
-      float: left
-      h4
-        font-size: $giant
-        font-weight: 100
-        line-height: 2em
-
-      h3
-        font-size: $ginormous
-        font-weight: 100
-        color: $blue
-    #cta_left
-      float: left
-      .join
-        @include sprite
-        height: 52px
-        width: 219px
-        background: url(/images/button-jointhetribe-sprite.png) no-repeat 0px 0px
-        &:hover
-          background-position: 0 -52px
-    #cta_right
-      float: left
-      .watch
-        @include sprite
-        height: 52px
-        width: 219px
-        background: url(/images/button-keepwatch-sprite.png) no-repeat 0px 0px
-        &:hover
-          background-position: 0 -52px
