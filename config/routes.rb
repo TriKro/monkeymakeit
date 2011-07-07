@@ -33,7 +33,15 @@ Suggestedit::Application.routes.draw do
           :doris_3,
           :heart_3,
           :hiccup_3,
-          :life_of_the_gallows_3
+          :life_of_the_gallows_3,
+          :doris_4,
+          :heart_4,
+          :hiccup_4,
+          :life_of_the_gallows_4,
+          :doris_5,
+          :heart_5,
+          :hiccup_5,
+          :life_of_the_gallows_5,
   ].each do |crout_page|
     match "/#{crout_page}" => "crouts##{crout_page}", :as => crout_page
   end

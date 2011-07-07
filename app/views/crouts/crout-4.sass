@@ -1,0 +1,167 @@
+@import 'variables'
+
+content
+  background: #f7f6ed
+
+#crout
+  width: 950px
+
+  h1
+    margin: 0
+    padding: 0
+    font-size: 4em
+    font-weight: 100
+    color: $black
+
+  h2
+    margin: 0
+    padding: 0
+    font-size: 2em
+    color: $darkgrey
+
+  #left_column2
+    float: left
+    color: #111
+    width: 600px
+    z-index: 3
+
+    .story_pic
+      position: relative
+      display: inline-block
+      vertical-align: middle
+      border: none
+      float: left
+      z-index: 3
+      padding: 20px 20px 00px 0
+      img
+        width: 300px
+
+    #first_letter
+      font-size: 48px
+      font-weight: 100
+      font-family: Georgia
+
+    p
+      margin: 20px 0
+      padding: 0
+      line-height: 26px
+      text-align: justify
+      + p
+        text-indent: 30px
+
+    #first_p
+      margin-top: 25px
+
+    .copyright
+      font-size: $small
+      color: $darkgrey
+
+  #right_column2
+    float: right
+    width: 320px
+    margin-bottom: 40px
+    z-index: 3
+
+    #contributors
+      background: #FFF
+      padding: 10px 10px
+      margin: 40px 0 10px 0
+      @include box-shadow(0, 0, 5px, 0, #666)
+      h4
+        font-size: 1em
+        color: $black
+        border-bottom: 2px solid $darkgrey
+        margin: 0 0 10px 0
+        padding: 0 0 5px 0
+      #artist, #author
+        margin: 0 0 20px 0
+        font-weight: 600
+        img
+          width: 35px
+          vertical-align: middle
+      .role
+        font-weight: 100
+        font-size: 13px
+      p
+        margin: 0
+        padding: 0
+      .contributor
+        float: left
+        margin: 0 0 10px 0
+        img
+          width: 35px
+          margin: 0 2px
+
+    #activities
+      background: #FFF
+      padding: 10px 10px
+      margin: 10px 0
+      @include box-shadow(0, 0, 5px, 0, #666)
+      h4
+        font-size: 1em
+        color: $black
+        border-bottom: 2px solid $darkgrey
+        margin: 0 0 10px 0
+        padding: 0 0 5px 0
+
+      .activity
+        font-size: 13px
+        margin: 5px 0 0 0
+        border-bottom: 1px solid $grey
+        .activity_pic
+          margin: 5px
+          float: left
+          img
+            width: 40px
+        .activity_content
+          float: right
+          width: 250px
+          p
+            line-height: 1.05em
+            margin: 9px 0
+            padding: 0
+          .summary
+            .actor
+              font-weight: 600
+            .verb
+              color: $darkgrey
+            .object
+              font-weight: 600
+          .details
+            color: $darkgrey
+          .timestamp
+            font-size: $smaller
+            color: $greyer
+        .actor_icon
+          img
+            width: 30px
+
+
+  #left_column1
+    float: left
+    color: #111
+    width: 600px
+    z-index: 3
+
+
+  #right_column1
+    float: right
+    color: #111
+    width: 300px
+    z-index: 3
+
+  .buttons
+    width: 250px
+    margin: 0 auto
+    position: relative
+    height: 108px
+    .join
+      @include sprite
+      height: 108px
+      width: 198px
+      background: url(/images/button-remix-pencil.png) no-repeat 0px 0px
+    .watch
+      @include sprite
+      height: 108px
+      width: 198px
+      background: url(/images/button-follow.png) no-repeat 0px 0px

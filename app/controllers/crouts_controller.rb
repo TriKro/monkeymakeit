@@ -76,6 +76,54 @@ class CroutsController < ApplicationController
     render 'crout-3'
   end
 
+    def doris_4
+    crout_doris
+    activities_with_thumbnails
+    render 'crout-4'
+  end
+
+  def hiccup_4
+    crout_hiccup
+    activities_with_thumbnails
+    render 'crout-4'
+  end
+
+  def heart_4
+    crout_heart_of_the_sun
+    activities_with_thumbnails
+    render 'crout-4'
+  end
+
+  def life_of_the_gallows_4
+    crout_life_of_the_gallows
+    activities_with_thumbnails
+    render 'crout-4'
+  end
+
+      def doris_5
+    crout_doris
+    activities_with_thumbnails
+    render 'crout-5'
+  end
+
+  def hiccup_5
+    crout_hiccup
+    activities_with_thumbnails
+    render 'crout-5'
+  end
+
+  def heart_5
+    crout_heart_of_the_sun
+    activities_with_thumbnails
+    render 'crout-5'
+  end
+
+  def life_of_the_gallows_5
+    crout_life_of_the_gallows
+    activities_with_thumbnails
+    render 'crout-5'
+  end
+
   def crout_doris
     @crout = {
         :title => "Doris",
