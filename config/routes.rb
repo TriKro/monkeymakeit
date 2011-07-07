@@ -24,12 +24,16 @@ Suggestedit::Application.routes.draw do
   [
           :hiccup,
           :hiccup2,
+          :hiccup3,
           :doris,
           :doris2,
+          :doris3,
           :heart,
           :heart2,
+          :heart3,
           :life_of_the_gallows,
-          :life_of_the_gallows2
+          :life_of_the_gallows2,
+          :life_of_the_gallows3
   ].each do |crout_page|
     match "/#{crout_page}" => "crouts##{crout_page}", :as => crout_page
   end
