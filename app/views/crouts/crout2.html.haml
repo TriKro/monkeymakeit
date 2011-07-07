@@ -3,12 +3,12 @@
 
 #crout
   %h1
-    Doris
+    = @crout[:title]
   %h2
-    a short story about an albino duck
+    = @crout[:subtitle]
   #left_column
     .story_pic
-      %img{ :src => "images/image-doris.jpg"}
+      %img{ :src => "#{ @crout[:artwork] }"}
       #art_credit
         "
         %b><
@@ -19,11 +19,15 @@
       %span#first_letter><
         = @crout[:first_letter]
       = @crout[:first_para]
-    %p
-      = @crout[:second_para]
-
-    .copyright
-      \©2010-2011 Scott Lambridis
+    - if !@crout[:second_para].nil?
+      %p
+        = @crout[:second_para]
+    - if !@crout[:third_para].nil?
+      %p
+        = @crout[:third_para]
+    - if !@crout[:fourth_para].nil?
+      %p
+        = @crout[:fourth_para]
 
   #right_column
     #remix
@@ -45,7 +49,7 @@
 
     #about_author
       %h3 About the author
-      %img{:src => "images/image-scott-lambridis.png"}
+      %img{:src => "#{ @crout[:author_avatar] }"}
         %p
-          My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual:
+          = @crout[:author_bio]
           %a.blue{:href => "mailto:scott@omnibucket.com"} Email me

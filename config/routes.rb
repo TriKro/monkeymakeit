@@ -23,7 +23,9 @@ Suggestedit::Application.routes.draw do
   # Crout page routes
   [
           :hiccup,
-          :doris
+          :hiccup2,
+          :doris,
+          :doris2
   ].each do |crout_page|
     match "/#{crout_page}" => "crouts##{crout_page}", :as => crout_page
   end

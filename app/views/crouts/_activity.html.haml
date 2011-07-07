@@ -1,6 +1,6 @@
 .activity
   .activity_pic
-    %img{:src => "#{activity[:image]}"}
+    %img{:src => "#{activity[:actor_avatar]}"}
   .activity_content
     %p.summary
       %span.actor
@@ -19,5 +19,3 @@
       = activity[:timestamp]
 
   .clear
-  -#.actor_icon
-  -#  %img{:src => "images/image-scott-lambridis.png"}

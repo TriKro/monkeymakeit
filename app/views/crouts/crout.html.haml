@@ -49,9 +49,9 @@
 
     #about_author
       %h3 About the author
-      %img{:src => "images/image-scott-lambridis.png"}
+      %img{:src => "#{ @crout[:author_avatar] }"}
         %p
-          My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual:
+          = @crout[:author_bio]
           %a.blue{:href => "mailto:scott@omnibucket.com"} Email me
 
   .clear
