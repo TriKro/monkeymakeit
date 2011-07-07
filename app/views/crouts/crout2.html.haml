@@ -1,12 +1,19 @@
-- title "- Doris by Scott Lambridis"
-- stylesheets 'crout'
+- title "- " + @crout[:title] + " - " + @crout[:subtitle]
+- stylesheets 'crout2'
 
 #crout
-  %h1
-    = @crout[:title]
-  %h2
-    = @crout[:subtitle]
-  #left_column
+  #left_column1
+    %h1
+      = @crout[:title]
+    %h2
+      = @crout[:subtitle]
+  #right_column1
+    .buttons
+      %span.join
+      %span.watch
+  .clear
+
+  #left_column2
     .story_pic
       %img{ :src => "#{ @crout[:artwork] }"}
       #art_credit
@@ -29,27 +36,33 @@
       %p
         = @crout[:fourth_para]
 
-  #right_column
-    #remix
-      #remix_header
-        #logo
-        #remix_header_text
-          %h4
-            Did you know?
-          %h3
-            Monkeys are remixing this story!
-        .clear
-      #activities
-        - @activities.each do |activity|
-          = render :partial => "activity", :locals => { :activity => activity }
 
-      .buttons
-        .join
-        .watch
+    .buttons{ :style => "margin-bottom: 40px;"}
+      %span.join
+      %span.watch
 
-    #about_author
-      %h3 About the author
-      %img{:src => "#{ @crout[:author_avatar] }"}
-        %p
-          = @crout[:author_bio]
-          %a.blue{:href => "mailto:scott@omnibucket.com"} Email me
+  #right_column2
+    #contributors
+      %h4
+        Contributors
+      #author
+        %img{:src => "#{ @crout[:author_avatar] }", :title => "#{ @crout[:author] }"}
+        = @crout[:author]
+        %span.role
+          \- author
+      #artist
+        %img{:src => "#{ @crout[:artist_avatar] }", :title => "#{ @crout[:artist] }"}
+        = @crout[:artist]
+        %span.role
+          \- artist
+      %p
+        Additional contributors:
+
+      - @activities.each do |activity|
+        = render :partial => "contributor", :locals => { :activity => activity }
+      .clear
+    #activities
+      %h4
+        Recent activities
+      - @activities.each do |activity|
+        = render :partial => "activity", :locals => { :activity => activity }

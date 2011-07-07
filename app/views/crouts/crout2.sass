@@ -19,7 +19,7 @@ content
     font-size: 2em
     color: $darkgrey
 
-  #left_column
+  #left_column2
     float: left
     color: #111
     width: 600px
@@ -68,112 +68,118 @@ content
       font-size: $small
       color: $darkgrey
 
-  #right_column
+  #right_column2
     float: right
-    width: 300px
-    margin: 10px 0 0 0
+    width: 320px
+    margin-bottom: 40px
     z-index: 3
 
-    #remix
-      float: left
+    #contributors
+      background: #FFF
+      padding: 10px 10px
+      margin: 40px 0 10px 0
+      @include box-shadow(0, 0, 5px, 0, #666)
+      h4
+        font-size: 1em
+        color: $black
+        border-bottom: 2px solid $darkgrey
+        margin: 0 0 10px 0
+        padding: 0 0 5px 0
+      #artist, #author
+        margin: 0 0 20px 0
+        font-weight: 600
+        img
+          width: 35px
+          vertical-align: middle
+      .role
+        font-weight: 100
+        font-size: 13px
+      p
+        margin: 0
+        padding: 0
+      .contributor
+        float: left
+        margin: 0 0 10px 0
+        img
+          width: 35px
+          margin: 0 2px
+
+    #activities
       background: #FFF
       padding: 10px 10px
       margin: 10px 0
       @include box-shadow(0, 0, 5px, 0, #666)
-      #remix_header
-        #logo
-          margin: 0 10px 0 0
-          float: left
-          @include sprite
-          height: 80px
-          width: 98px
-          background: url(/images/logo_small.png) no-repeat 0px 0px
-        #remix_header_text
-          float: right
-          width: 175px
-          h4
-            font-size: $largest
-            font-weight: 100
-            line-height: 2em
-
-          h3
-            font-size: $giant
-            font-weight: 100
-            color: $blue
-
-
-      #activities
-        .activity
-          font-size: 13px
-          margin: 5px 0 0 0
-          border: 1px solid $darkgrey
-          @include radius(5px)
-          @include linear-gradient ($white, $lightgrey)
-          .activity_pic
-            margin: 5px
-            float: left
-            img
-              width: 50px
-          .activity_content
-            float: right
-            width: 220px
-            p
-              line-height: 1.05em
-              margin: 5px 0
-              padding: 0
-            .summary
-              .actor
-                font-weight: 600
-              .verb
-                color: $darkgrey
-              .object
-                color: $blue
-            .details
-              color: $darkgrey
-            .timestamp
-              font-size: $smaller
-              color: $greyer
-          .actor_icon
-            img
-              width: 30px
-
-      .buttons
-        text-align: center
-        .join
-          margin: 10px 0
-          @include sprite
-          height: 52px
-          width: 206px
-          background: url(/images/button-remix--sprite.png) no-repeat 0px 0px
-          &:hover
-            background-position: 0 -52px
-        .watch
-          @include sprite
-          height: 52px
-          width: 206px
-          background: url(/images/button-signup-sprite.png) no-repeat 0px 0px
-          &:hover
-            background-position: 0 -52px
-
-
-    #about_author
-      font-size: 14px
-      float: left
-      background: #FFF
-      padding: 25px 10px
-      margin: 20px 0
-      @include box-shadow(0, 0, 5px, 0, #666)
-      z-index: 3
-      h3
+      h4
+        font-size: 1em
+        color: $black
+        border-bottom: 2px solid $darkgrey
         margin: 0 0 10px 0
-        padding: 0
-        font-size: 14px
-        border-bottom: 1px solid #ddd
-      img
-        width: 200px
-      p
-        color: #666
-        text-align: justify
-        margin: 0
-        padding: 0
+        padding: 0 0 5px 0
 
+      .activity
+        font-size: 13px
+        margin: 5px 0 0 0
+        border-bottom: 1px solid $grey
+        .activity_pic
+          margin: 5px
+          float: left
+          img
+            width: 40px
+        .activity_content
+          float: right
+          width: 250px
+          p
+            line-height: 1.05em
+            margin: 9px 0
+            padding: 0
+          .summary
+            .actor
+              font-weight: 600
+            .verb
+              color: $darkgrey
+            .object
+              font-weight: 600
+          .details
+            color: $darkgrey
+          .timestamp
+            font-size: $smaller
+            color: $greyer
+        .actor_icon
+          img
+            width: 30px
+
+
+  #left_column1
+    float: left
+    color: #111
+    width: 600px
+    z-index: 3
+
+
+  #right_column1
+    float: right
+    color: #111
+    width: 300px
+    z-index: 3
+
+  .buttons
+    width: 250px
+    margin: 0 auto
+    position: relative
+    height: 108px
+    .join
+      position: absolute
+      left: -55px
+      top: 0
+      @include sprite
+      height: 108px
+      width: 198px
+      background: url(/images/button-remix.png) no-repeat 0px 0px
+    .watch
+      position: absolute
+      right: -45px
+      top: 0
+      @include sprite
+      height: 108px
+      width: 198px
+      background: url(/images/button-watch.png) no-repeat 0px 0px

@@ -51,7 +51,7 @@ class CroutsController < ApplicationController
           :actor_avatar => 'images/image-scott-lambridis.png',
           :verb => 'created a ',
           :object => 'branch',
-          :details => '"Started a new story based on the Jane character.',
+          :details => '"Started a new story based on the Jane character."',
           :timestamp => 'Yesterday at 1:01pm'
         }
     ]
@@ -72,60 +72,6 @@ class CroutsController < ApplicationController
         :fourth_para => "Everyone's skin turned gray, and the camaraderie splintered. Musicians pushed acrobats, poets kicked and bit the magicians, and jugglers threw everything they could find. The gate opened as he approached and he walked through candle-lit corridors into a small, dark room. Egged on by shadows and whispers, he danced and sang for the phantom king hidden in a lightless corner of the room. I do not have one job for you, the king said, but two.",
         :artwork => "images/image-jester.jpg",
         :artwork_title => "Jester",
-        :artist => "Tyler Landry"
-    }
-    @activities = [
-        { :actor => 'Tyler Landry',
-          :actor_avatar => 'images/image-scott-lambridis.png',
-          :verb => 'added a',
-          :object => 'picture',
-          :details => '"Rough sketch of the mourning crows. These really stick in my head."',
-          :timestamp => 'Sept 3, 2011'
-      },
-      { :actor => 'Tyler Landry',
-          :actor_avatar => 'images/image-scott-lambridis.png',
-          :verb => 'added a',
-          :object => 'picture',
-          :details => '"Rough sketch of the mourning crows. These really stick in my head."',
-          :timestamp => 'Sept 3, 2011'
-      },
-      { :actor => 'Tyler Landry',
-          :actor_avatar => 'images/image-scott-lambridis.png',
-          :verb => 'added a',
-          :object => 'picture',
-          :details => '"Rough sketch of the mourning crows. These really stick in my head."',
-          :timestamp => 'Sept 3, 2011'
-      },
-      { :actor => 'Tyler Landry',
-          :actor_avatar => 'images/image-scott-lambridis.png',
-          :verb => 'added a',
-          :object => 'picture',
-          :details => '"Rough sketch of the mourning crows. These really stick in my head."',
-          :timestamp => 'Sept 3, 2011'
-      },
-      { :actor => 'Tyler Landry',
-          :actor_avatar => 'images/image-scott-lambridis.png',
-          :verb => 'added a',
-          :object => 'picture',
-          :details => '"Rough sketch of the mourning crows. These really stick in my head."',
-          :timestamp => 'Sept 3, 2011'
-      }
-    ]
-    render 'crout'
-  end
-
-    def doris2
-    @crout = {
-        :title => "Doris",
-        :subtitle => "a short story about an albino duck",
-        :author => "Scott Lambridis",
-        :author_avatar => "images/image-scott-lambridis.png",
-        :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
-        :first_letter => "W",
-        :first_para => "hat happened next was simple: O'Malley saw a duck, and the sight of that duck was accompanied by a sense of familiarity beyond the common familiarity with duck-like forms. He could not place why he had that feeling but, being trained in consumer awareness and acutely tuned to the intricacies of perception, O'Malley surmised the true cause of the accident. Moments ago, inside the trolley, in the periphery of his consciousness and beyond his recognition, an image had formed of this sort of duck, a model for automation from wings to webbings, a white sort of duck whose everything that should have been yellow was instead a pale pink like a young farm girl's arms in the wind, and had he been interviewed the following day for the morning edition, O'Malley would have sworn that he saw the duck right there on the tracks, begging calamity, even before he heard the trolley wheels squelch and the packed passengers scream and the head push through the glass, and now there was the duck again outside the trolley, sitting right on the tracks behind the trolley though the trolley had detached itself from its grooves, and O'Malley, rather than addressing the forms and noises and confusion behind him, scooped the duck up into his arms and walked away.",
-        :second_para => "Before I continue...",
-        :artwork => "images/image-doris.jpg",
-        :artwork_title => "Doris",
         :artist => "Tyler Landry"
     }
     @activities = [
@@ -161,7 +107,62 @@ class CroutsController < ApplicationController
           :actor_avatar => 'images/image-scott-lambridis.png',
           :verb => 'created a ',
           :object => 'branch',
-          :details => '"Started a new story based on the Jane character.',
+          :details => '"Started a new story based on the Jane character."',
+          :timestamp => 'Yesterday at 1:01pm'
+        }
+    ]
+    render 'crout'
+  end
+
+    def doris2
+    @crout = {
+        :title => "Doris",
+        :subtitle => "a short story about an albino duck",
+        :author => "Scott Lambridis",
+        :author_avatar => "images/image-scott-lambridis.png",
+        :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
+        :first_letter => "W",
+        :first_para => "hat happened next was simple: O'Malley saw a duck, and the sight of that duck was accompanied by a sense of familiarity beyond the common familiarity with duck-like forms. He could not place why he had that feeling but, being trained in consumer awareness and acutely tuned to the intricacies of perception, O'Malley surmised the true cause of the accident. Moments ago, inside the trolley, in the periphery of his consciousness and beyond his recognition, an image had formed of this sort of duck, a model for automation from wings to webbings, a white sort of duck whose everything that should have been yellow was instead a pale pink like a young farm girl's arms in the wind, and had he been interviewed the following day for the morning edition, O'Malley would have sworn that he saw the duck right there on the tracks, begging calamity, even before he heard the trolley wheels squelch and the packed passengers scream and the head push through the glass, and now there was the duck again outside the trolley, sitting right on the tracks behind the trolley though the trolley had detached itself from its grooves, and O'Malley, rather than addressing the forms and noises and confusion behind him, scooped the duck up into his arms and walked away.",
+        :second_para => "Before I continue...",
+        :artwork => "images/image-doris.jpg",
+        :artwork_title => "Doris",
+        :artist => "Tyler Landry",
+        :artist_avatar => "images/image-scott-lambridis.png"
+    }
+    @activities = [
+        { :actor => 'Scott Lambridis',
+            :actor_avatar => 'images/image-scott-lambridis.png',
+            :verb => 'edited the ',
+            :object => 'text',
+            :details => 'Killed some bad scenes, did some general editing for cadence and flow...',
+            :timestamp => '18 minutes ago'
+        },
+        { :actor => 'Savanah Rose',
+            :actor_avatar => 'images/image-scott-lambridis.png',
+            :verb => 'said',
+            :object => '',
+            :details => 'I love the new picture! It fits perfectly.',
+            :timestamp => '4 hours ago'
+        },
+        { :actor => 'Tyler Landry',
+          :actor_avatar => 'images/image-scott-lambridis.png',
+          :verb => 'added a',
+          :object => 'picture',
+          :details => 'Rough sketch of the mourning crows. These really stick in my head.',
+          :timestamp => '12 hours ago'
+        },
+        { :actor => 'Alex Q Huffman',
+          :actor_avatar => 'images/image-scott-lambridis.png',
+          :verb => 'updated a',
+          :object => 'song',
+          :details => 'Fixed the bassline.',
+          :timestamp => 'Yesterday at 8:12pm'
+        },
+        { :actor => 'Tristan Kromer',
+          :actor_avatar => 'images/image-scott-lambridis.png',
+          :verb => 'created a ',
+          :object => 'branch',
+          :details => 'Started a new story based on the Jane character.',
           :timestamp => 'Yesterday at 1:01pm'
         }
     ]
@@ -182,44 +183,45 @@ class CroutsController < ApplicationController
         :fourth_para => "Everyone's skin turned gray, and the camaraderie splintered. Musicians pushed acrobats, poets kicked and bit the magicians, and jugglers threw everything they could find. The gate opened as he approached and he walked through candle-lit corridors into a small, dark room. Egged on by shadows and whispers, he danced and sang for the phantom king hidden in a lightless corner of the room. I do not have one job for you, the king said, but two.",
         :artwork => "images/image-jester.jpg",
         :artwork_title => "Jester",
-        :artist => "Tyler Landry"
+        :artist => "Tyler Landry",
+        :artist_avatar => "images/image-scott-lambridis.png"
     }
     @activities = [
+        { :actor => 'Scott Lambridis',
+            :actor_avatar => 'images/image-scott-lambridis.png',
+            :verb => 'edited the ',
+            :object => 'text',
+            :details => 'Killed some bad scenes, did some general editing for cadence and flow...',
+            :timestamp => '18 minutes ago'
+        },
+        { :actor => 'Savanah Rose',
+            :actor_avatar => 'images/image-scott-lambridis.png',
+            :verb => 'said',
+            :object => '',
+            :details => 'I love the new picture! It fits perfectly.',
+            :timestamp => '4 hours ago'
+        },
         { :actor => 'Tyler Landry',
           :actor_avatar => 'images/image-scott-lambridis.png',
           :verb => 'added a',
           :object => 'picture',
-          :details => '"Rough sketch of the mourning crows. These really stick in my head."',
-          :timestamp => 'Sept 3, 2011'
-      },
-      { :actor => 'Tyler Landry',
+          :details => 'Rough sketch of the mourning crows. These really stick in my head.',
+          :timestamp => '12 hours ago'
+        },
+        { :actor => 'Alex Q Huffman',
           :actor_avatar => 'images/image-scott-lambridis.png',
-          :verb => 'added a',
-          :object => 'picture',
-          :details => '"Rough sketch of the mourning crows. These really stick in my head."',
-          :timestamp => 'Sept 3, 2011'
-      },
-      { :actor => 'Tyler Landry',
+          :verb => 'updated a',
+          :object => 'song',
+          :details => 'Fixed the bassline.',
+          :timestamp => 'Yesterday at 8:12pm'
+        },
+        { :actor => 'Tristan Kromer',
           :actor_avatar => 'images/image-scott-lambridis.png',
-          :verb => 'added a',
-          :object => 'picture',
-          :details => '"Rough sketch of the mourning crows. These really stick in my head."',
-          :timestamp => 'Sept 3, 2011'
-      },
-      { :actor => 'Tyler Landry',
-          :actor_avatar => 'images/image-scott-lambridis.png',
-          :verb => 'added a',
-          :object => 'picture',
-          :details => '"Rough sketch of the mourning crows. These really stick in my head."',
-          :timestamp => 'Sept 3, 2011'
-      },
-      { :actor => 'Tyler Landry',
-          :actor_avatar => 'images/image-scott-lambridis.png',
-          :verb => 'added a',
-          :object => 'picture',
-          :details => '"Rough sketch of the mourning crows. These really stick in my head."',
-          :timestamp => 'Sept 3, 2011'
-      }
+          :verb => 'created a ',
+          :object => 'branch',
+          :details => 'Started a new story based on the Jane character.',
+          :timestamp => 'Yesterday at 1:01pm'
+        }
     ]
     render 'crout2'
   end
