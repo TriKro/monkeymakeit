@@ -100,7 +100,7 @@ class CroutsController < ApplicationController
     render 'crout-4'
   end
 
-      def doris_5
+  def doris_5
     crout_doris
     activities_with_thumbnails
     render 'crout-5'
@@ -142,7 +142,7 @@ class CroutsController < ApplicationController
   def crout_hiccup
     @crout = {
         :title => "Oh, Mighty Hiccup!",
-        :subtitle => "about brothers, hiccups, and the end of time",
+        :subtitle => "a novel in progress about brothers, hiccups, and the end of time",
         :author => "Scott Lambridis",
         :author_avatar => "images/image-scott-lambridis.png",
         :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
