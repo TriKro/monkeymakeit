@@ -22,6 +22,23 @@
       \©2010-2011 Scott Lambridis
 
   #right_column
+    #remix
+      #remix_header
+        #logo
+        #remix_header_text
+          %h4
+            Did you know?
+          %h3
+            Monkeys are remixing this story!
+        .clear
+      #activities
+        - @activities.each do |activity|
+          = render :partial => "activity", :locals => { :activity => activity }
+
+      .buttons
+        .join
+        .watch
+
     #about_author
       %h3 About the author
       %img{:src => "images/image-scott-lambridis.png"}
