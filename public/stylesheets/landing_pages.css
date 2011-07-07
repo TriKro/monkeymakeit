@@ -142,6 +142,9 @@ p {
 .clear {
   clear: both; }
 
+.hide {
+  display: none; }
+
 .field_with_errors input, .field_with_errors textarea {
   border: 2px #8a1f11 solid !important; }
   .field_with_errors input label, .field_with_errors textarea label {

@@ -1,0 +1,18 @@
+:javascript
+  $(document).ready(function() {
+    $('.access_denied').
+      colorbox({width:"450px", inline:true, href:"#must_login"}).
+      live('click', function() {
+        $.post("#{activities_path}", {
+          url : $(this).attr("data-denied"),
+          activity_type : "Clicked Access Denied"
+        });
+      });
+  });
+.hide
+  #must_login
+    #must_login_inner
+      %h1
+        Please create an account first!
+      %p
+        (Or just login...)
