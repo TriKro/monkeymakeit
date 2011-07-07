@@ -177,7 +177,7 @@ class CroutsController < ApplicationController
         :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
         :content => "life_of_the_gallows",
         :artwork => "images/image-jester.jpg",
-        :artwork_title => "Jester",
+        :artwork_title => "Crows",
         :artist => "Tyler Landry"
     }
   end
