@@ -13,7 +13,7 @@ class CroutsController < ApplicationController
   def heart
     crout_heart_of_the_sun
     activities_with_thumbnails
-    render 'crout3'
+    render 'crout'
   end
 
   def hiccup
