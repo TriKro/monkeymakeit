@@ -18,35 +18,35 @@ class CroutsController < ApplicationController
     }
     @activities = [
         { :actor => 'Scott Lambridis',
-            :actor_avatar => 'images/image-scott-lambridis.png',
-            :verb => 'edited the ',
-            :object => 'text',
-            :details => '"Killed some bad scenes, did some general editing for cadence and flow.."',
-            :timestamp => '18 minutes ago'
+          :actor_avatar => 'images/remix-hiccup/thumbnail-edit.png',
+          :verb => 'edited the ',
+          :object => 'text',
+          :details => '"Killed some bad scenes, did some general editing for cadence and flow.."',
+          :timestamp => '18 minutes ago'
         },
         { :actor => 'Savanah Rose',
-            :actor_avatar => 'images/image-maggie.jpg',
-            :verb => 'said',
-            :object => '',
-            :details => '"I love the new picture! It fits perfectly."',
-            :timestamp => '4 hours ago'
+          :actor_avatar => 'images/remix-hiccup/thumbnail-comment.png',
+          :verb => 'said',
+          :object => '',
+          :details => '"I love the new picture! It fits perfectly."',
+          :timestamp => '4 hours ago'
         },
         { :actor => 'Tyler Landry',
-          :actor_avatar => 'images/image-alok.jpg',
+          :actor_avatar => 'images/remix-hiccup/thumbnail-tree.png',
           :verb => 'added a',
           :object => 'picture',
           :details => '"Rough sketch of the mourning crows. These really stick in my head."',
           :timestamp => '12 hours ago'
         },
         { :actor => 'Alex Q Huffman',
-          :actor_avatar => 'images/image-edward.jpg',
+          :actor_avatar => 'images/remix-hiccup/thumbnail-music.png',
           :verb => 'updated a',
           :object => 'song',
           :details => '"Fixed the bassline."',
           :timestamp => 'Yesterday at 8:12pm'
         },
         { :actor => 'Tristan Kromer',
-          :actor_avatar => 'images/image-tristan.jpg',
+          :actor_avatar => 'images/remix-hiccup/thumbnail-branch.png',
           :verb => 'created a ',
           :object => 'branch',
           :details => '"Started a new story based on the Jane character."',
