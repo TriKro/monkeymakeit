@@ -30,6 +30,8 @@
             Monkeys are remixing this story!
         .clear
       #activities
+        %h4
+          Recent remixing
         - @activities.each do |activity|
           = render :partial => "activity", :locals => { :activity => activity }
 

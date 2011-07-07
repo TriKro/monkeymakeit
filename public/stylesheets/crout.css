@@ -83,6 +83,12 @@ content {
           font-size: 1.7em;
           font-weight: 100;
           color: #00b7fb; }
+      #crout #right_column #remix #activities h4 {
+        font-size: 1em;
+        color: #666666;
+        border-bottom: 1px dashed #666666;
+        margin: 10px 0 10px 0;
+        padding: 0 0 5px 0; }
       #crout #right_column #remix #activities .activity {
         font-size: 13px;
         margin: 5px 0 0 0;
