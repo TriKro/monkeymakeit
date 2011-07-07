@@ -3,10 +3,13 @@
 
   %head
     = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'colorbox'
     = render '/layouts/head_loading'
     = render '/layouts/google_analytics'
+    = javascript_include_tag 'jquery.colorbox-min'
 
   %body
+    = render '/layouts/signup'
     %container
 
       = render '/layouts/header'

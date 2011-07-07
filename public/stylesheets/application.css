@@ -110,13 +110,13 @@ h1 {
   margin: 20px; }
 
 h2 {
-  font-size: 1.6em;
+  font-size: 1.7em;
   margin: 20px;
   font-weight: 100; }
 
 p {
   margin: 20px;
-  line-height: 1.6em; }
+  line-height: 1.7em; }
 
 .bold {
   font-weight: 500px; }
@@ -141,6 +141,9 @@ p {
 
 .clear {
   clear: both; }
+
+.hide {
+  display: none; }
 
 .field_with_errors input, .field_with_errors textarea {
   border: 2px #8a1f11 solid !important; }
@@ -233,7 +236,7 @@ header {
       header header_inner a#home_link h1 {
         position: absolute;
         top: 40px;
-        left: 95px;
+        left: 115px;
         margin: 0 0 0 0;
         font-family: "Helvetica";
         font-size: 24px;
@@ -243,6 +246,11 @@ header {
           font-family: "Helvetica, serif";
           font-size: 40px;
           font-weight: 500; }
+      header header_inner a#home_link .signup {
+        position: absolute;
+        right: 30px;
+        top: 10px;
+        cursor: pointer; }
 
 footer {
   display: inline-block;
@@ -268,3 +276,65 @@ footer {
       padding: 0 0 0 20px; }
     footer footer_inner a {
       color: #666666; }
+
+#registration {
+  position: relative;
+  margin: 60px auto 40px auto;
+  width: 490px;
+  height: 100px;
+  background: #e6e6e6;
+  border: 7px solid #00b7fb;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px; }
+  #registration .field {
+    margin: 10px 20px 0 20px; }
+    #registration .field label {
+      display: none; }
+    #registration .field input {
+      padding: 3px;
+      width: 270px;
+      font-size: 1.5em;
+      font-family: "Arial";
+      color: #666666; }
+  #registration .actions {
+    position: absolute;
+    top: 25px;
+    right: 15px; }
+    #registration .actions input {
+      height: 52px;
+      width: 151px;
+      background: url(/images/button-yes-sprite.png) no-repeat 0px 0px;
+      display: inline-block;
+      vertical-align: middle;
+      border: none; }
+      #registration .actions input:hover {
+        background-position: 0 -52px; }
+
+#cboxContent {
+  background: #efefea !important; }
+
+#must_login h2 {
+  text-align: center; }
+#must_login ul {
+  margin: 40px 0 40px 60px; }
+  #must_login ul li {
+    font-size: 1.5em;
+    color: #666666;
+    list-style-image: url(/images/check-green.png); }
+#must_login #registration {
+  margin: 0 0 60px 0;
+  border: none;
+  background: none;
+  text-align: center; }
+  #must_login #registration .field {
+    margin: 0; }
+  #must_login #registration .actions {
+    position: relative;
+    top: none;
+    right: none; }
+    #must_login #registration .actions input {
+      padding: 0;
+      height: 52px;
+      width: 166px;
+      background: url(/images/button-yes-sprite.png) no-repeat 0px 0px; }

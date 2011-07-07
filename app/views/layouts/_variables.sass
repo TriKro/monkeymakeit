@@ -4,6 +4,7 @@
 $darkblue: #0088ba
 $blue: #00b7fb
 $grey: #e6e6e6
+$greyer: #bdbdbd
 $lightgrey: #efefea
 $darkgrey: #666
 $black: #000
@@ -31,9 +32,9 @@ $info-link: #205791
 // Sizes
 
 $ginormous: 2em
-$giant: 1.6em
-$huge: 1.5em
-$largest: 1.3em
+$giant: 1.7em
+$huge: 1.6em
+$largest: 1.5em
 $larger: 1.2em
 $large: 1.1em
 $justright: 1em
@@ -73,6 +74,12 @@ $global-shadow-color: rgba(0,0,0,0.1)
   -moz-transform: rotate($degrees) /* Firefox */
   -webkit-transform: rotate($degrees) /* Safari and Chrome */
   -o-transform: rotate($degrees) /* Opera */
+
+@mixin linear-gradient($top_color, $bottom_color)
+  background: -moz-linear-gradient(top,  $top_color, $bottom_color)
+  background: -webkit-gradient(linear, left top, left bottom, from($top_color), to($bottom_color))
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$topcolor', endColorstr='$bottom_color')
+
 
 @mixin pointer
   cursor: pointer
