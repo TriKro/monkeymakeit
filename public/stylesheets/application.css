@@ -246,6 +246,11 @@ header {
           font-family: "Helvetica, serif";
           font-size: 40px;
           font-weight: 500; }
+      header header_inner a#home_link .signup {
+        position: absolute;
+        right: 30px;
+        top: 10px;
+        cursor: pointer; }
 
 footer {
   display: inline-block;
