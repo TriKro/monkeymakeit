@@ -34,6 +34,10 @@ http://monkeymake.it/admin
 
     NOTE: this will clobber your local db files
 
+## Copy logs from production
+
+    heroku logs --app suggestedit-production
+
 ## Creating a new heroku app
 
 Let's say we have a branch "omniauth", which we want to deploy to a new heroku app.  Create the app thus:
