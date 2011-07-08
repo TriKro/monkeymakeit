@@ -92,7 +92,7 @@
         %th
           Button Clicks
 
-      - Invitation.all.each do |button|
+      - Button.all.each do |button|
 
         - button_views = Activity.where(:activity_type => "Viewed Button", :target_id => button.id).count
         - button_clicks = Activity.where(:activity_type => "Clicked Button", :target_id => button.id).count
