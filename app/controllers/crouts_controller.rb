@@ -175,13 +175,13 @@ class CroutsController < ApplicationController
         :title => "Heart of the Sun",
         :subtitle => "Love in the Time of Posthumans - An Open Source Screenplay",
         :author => "Harlan Knight Wood",
-        :author_avatar => "images/image-scott-lambridis.png",
-        :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
+        :author_avatar => "images/image-harlan.jpg",
+        :author_bio => "Harlan brings a decade of software development experience together with a diverse background including many years of work in various personal transformation systems. In addition to software, he is working on an open source spiritual science fiction film.",
         :content => "heart_of_the_sun",
         :artwork => "images/image-clarity.jpg",
-        :artwork_title => "Clarity",
-        :artist => "Harlan Knight Wood",
-        :artist_avatar => "images/image-scott-lambridis.png"
+        :artwork_title => "Luminous",
+        :artist => "Adam Apollo",
+        :artist_avatar => "images/image-aa.jpg"
     }
   end
 
@@ -246,46 +246,38 @@ class CroutsController < ApplicationController
 
   def heart_activities_with_thumbnails
     @activities = [
-        { :actor => 'Scott Lambridis',
-          :actor_avatar => 'images/image-scott-lambridis.png',
-          :action_icon => 'images/remix-hiccup/thumbnail-edit.png',
-          :verb => 'edited the ',
-          :object => 'text',
-          :details => 'Killed some bad scenes, did some general editing for cadence and flow...',
-          :timestamp => '18 minutes ago'
-        },
-        { :actor => 'Savanah Rose',
-          :actor_avatar => 'images/image-maggie.jpg',
-          :action_icon => 'images/remix-hiccup/thumbnail-comment.png',
-          :verb => 'said',
-          :object => '',
-          :details => 'I love the new picture! It fits perfectly.',
-          :timestamp => '4 hours ago'
-        },
-        { :actor => 'Tyler Landry',
-          :actor_avatar => 'images/image-adam.jpg',
+        { :actor => 'Adam Apollo',
+          :actor_avatar => 'images/image-aa.jpg',
           :action_icon => 'images/remix-hiccup/thumbnail-tree.png',
-          :verb => 'added a',
-          :object => 'picture',
-          :details => 'Rough sketch of the mourning crows. These really stick in my head.',
-          :timestamp => '12 hours ago'
+          :verb => 'added an',
+          :object => 'image',
+          :details => 'Supernova, with crop circle highlights, and seven pointed rainbow star.',
+          :timestamp => 'just now'
         },
-        { :actor => 'Alex Q Huffman',
-          :actor_avatar => 'images/image-edward.jpg',
-          :action_icon => 'images/remix-hiccup/thumbnail-music.png',
-          :verb => 'updated a',
-          :object => 'song',
-          :details => 'Fixed the bassline.',
-          :timestamp => 'Yesterday at 8:12pm'
+        { :actor => 'Summer Shapiro',
+          :actor_avatar => 'images/images-summer.jpg',
+          :action_icon => 'images/remix-hiccup/thumbnail-edit.png',
+          :verb => 'edited',
+          :object => 'the movie',
+          :details => 'Minor style and grammar edits',
+          :timestamp => 'yesterday'
         },
-        { :actor => 'Tristan Kromer',
-          :actor_avatar => 'images/image-tristan.jpg',
-          :action_icon => 'images/remix-hiccup/thumbnail-branch.png',
-          :verb => 'created a ',
-          :object => 'branch',
-          :details => 'Started a new story based on the Jane character.',
-          :timestamp => 'Yesterday at 1:01pm'
-        }
+        { :actor => 'Lily Sun',
+          :actor_avatar => 'images/image_lily.jpg',
+          :action_icon => 'images/remix-hiccup/thumbnail-edit.png',
+          :verb => 'remixed',
+          :object => 'the movie',
+          :details => 'Added more sexy character intrigue',
+          :timestamp => '2 days ago'
+        },
+        { :actor => 'Harlan Knight Wood',
+          :actor_avatar => 'images/image-harlan.jpg',
+          :action_icon => 'images/remix-hiccup/thumbnail-edit.png',
+          :verb => 'uploaded a',
+          :object => 'movie summary',
+          :details => 'A transhuman love story',
+          :timestamp => '4 days ago'
+        },
     ]
   end
 
