@@ -18,7 +18,7 @@ module ApplicationHelper
 
   def auth_providers
     ActiveSupport::OrderedHash[
-#            :facebook, 'Facebook',
+            :facebook, 'Facebook',
             :twitter,  'Twitter',
 #            :open_id,  'OpenID',
     ]
