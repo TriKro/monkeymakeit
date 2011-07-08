@@ -3,7 +3,7 @@
     $('.join_modal').
       colorbox({width:"600px", height:"540px", inline:true, href:"#join"}).
       live('click', function() {
-        $.post("#{activities_path}", {
+        $.get("/activities/create", {
           url : location.href,
           activity_type : "Clicked",
           target_model : "Join Button",
@@ -12,7 +12,7 @@
     $('.watch_modal').
       colorbox({width:"600px", height:"540px", inline:true, href:"#watch"}).
       live('click', function() {
-        $.post("#{activities_path}", {
+        $.get("/activities/create", {
           url : location.href,
           activity_type : "Clicked",
           target_model : "Watch Button",

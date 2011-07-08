@@ -9,6 +9,7 @@ Suggestedit::Application.routes.draw do
   match "/login/:provider" => "sessions#new"
   match "/signout" => "sessions#destroy", :as => :signout
 
+  match "/activities/create", :to => "activities#create"
   resources :activities
 
   resources :invitations, :only => [:new, :create]

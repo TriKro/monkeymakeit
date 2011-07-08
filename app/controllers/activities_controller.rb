@@ -5,7 +5,7 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    Activity.create :url => params[:url], :activity_type => params[:activity_type], :target_model => params[:target_model], :target => params[:target], :subtarget_model => params[:subtarget_model]
+    log_activity(params[:url], params[:activity_type], params[:target_model], params[:target], params[:subtarget_model], params[:subtarget])
     render :text => 'ok'
   end
 
