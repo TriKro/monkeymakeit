@@ -4,6 +4,22 @@ class CroutsController < ApplicationController
     log_activity(request.request_uri, "Viewed", "Page")
   }
 
+  def doris
+    redirect_to doris_3_path
+  end
+
+  def heart
+    redirect_to heart_3_path
+  end
+
+  def hiccup
+      redirect_to hiccup_3_path
+  end
+
+  def life_of_the_gallows
+    redirect_to life_of_the_gallows_3_path
+  end
+
   def doris_1
     crout_doris
     activities_with_thumbnails

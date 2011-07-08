@@ -1,3 +1,35 @@
+#bookshelf {
+  margin: 20px auto;
+  width: 900px;
+  text-align: center; }
+  #bookshelf #bookshelf_inner {
+    display: inline-block; }
+    #bookshelf #bookshelf_inner .book {
+      float: left;
+      position: relative;
+      margin: 20px;
+      width: 150px;
+      height: 200px;
+      overflow: hidden;
+      -moz-box-shadow: 5px 5px 5px 0 #555555;
+      -webkit-box-shadow: 5px 5px 5px 0 #555555;
+      box-shadow: 5px 5px 5px 0 #555555; }
+      #bookshelf #bookshelf_inner .book:hover {
+        -moz-box-shadow: 5px 5px 5px 0 #00b7fb;
+        -webkit-box-shadow: 5px 5px 5px 0 #00b7fb;
+        box-shadow: 5px 5px 5px 0 #00b7fb; }
+      #bookshelf #bookshelf_inner .book img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 150px; }
+      #bookshelf #bookshelf_inner .book img.sun {
+        width: 200px;
+        left: -23px; }
+      #bookshelf #bookshelf_inner .book img.duck {
+        width: 180px;
+        left: -20px; }
+
 container, content {
   background-color: #0088ba; }
   container content_inner, content content_inner {
@@ -53,7 +85,10 @@ container, content {
       border: 7px solid #00b7fb;
       border-radius: 10px;
       -moz-border-radius: 10px;
-      -webkit-border-radius: 10px; }
+      -webkit-border-radius: 10px;
+      -moz-box-shadow: 5px 5px 5px 0 #555555;
+      -webkit-box-shadow: 5px 5px 5px 0 #555555;
+      box-shadow: 5px 5px 5px 0 #555555; }
       #landing_page #center_container #registration .field {
         margin: 10px 20px 0 20px; }
         #landing_page #center_container #registration .field label {

@@ -30,6 +30,10 @@ Suggestedit::Application.routes.draw do
 
   # Crout page routes
   [
+          :doris,
+          :heart,
+          :hiccup,
+          :life_of_the_gallows,
           :doris_1,
           :heart_1,
           :hiccup_1,

@@ -1,4 +1,4 @@
-@import 'variables'
+@import 'variables', 'bookshelf'
 
 container, content
   background-color: $darkblue
@@ -59,6 +59,7 @@ container, content
       background: $grey
       border: 7px solid $blue
       @include radius
+      @include box-shadow(5px, 5px, 5px, 0, #555)
 
       .field
         margin: 10px 20px 0 20px
