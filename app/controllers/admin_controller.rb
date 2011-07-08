@@ -1,7 +1,10 @@
 class AdminController < ApplicationController
 
-  def index
+  before_filter lambda {
     session[:admin] = true
+  }
+
+  def scott
     @scott = User.find(4)
   end
 
