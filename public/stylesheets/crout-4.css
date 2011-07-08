@@ -142,13 +142,17 @@ content {
       display: inline-block;
       vertical-align: middle;
       border: none;
-      height: 108px;
+      height: 112px;
       width: 198px;
-      background: url(/images/button-remix-pencil.png) no-repeat 0px 0px; }
+      background: url(/images/remix-hiccup/button-remix-arrow-sprite.png) no-repeat 0px 0px; }
+      #crout .buttons .join_modal:hover {
+        background-position: 0 -112px; }
     #crout .buttons .watch_modal {
       display: inline-block;
       vertical-align: middle;
       border: none;
-      height: 108px;
+      height: 112px;
       width: 198px;
-      background: url(/images/button-follow.png) no-repeat 0px 0px; }
+      background: url(/images/remix-hiccup/button-follow-arrow-sprite.png) no-repeat 0px 0px; }
+      #crout .buttons .watch_modal:hover {
+        background-position: 0 -112px; }
