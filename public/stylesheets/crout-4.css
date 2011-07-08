@@ -138,14 +138,14 @@ content {
     margin: 0 auto;
     position: relative;
     height: 108px; }
-    #crout .buttons .join {
+    #crout .buttons .join_modal {
       display: inline-block;
       vertical-align: middle;
       border: none;
       height: 108px;
       width: 198px;
       background: url(/images/button-remix-pencil.png) no-repeat 0px 0px; }
-    #crout .buttons .watch {
+    #crout .buttons .watch_modal {
       display: inline-block;
       vertical-align: middle;
       border: none;

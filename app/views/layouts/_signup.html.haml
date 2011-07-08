@@ -1,11 +1,21 @@
 :javascript
   $(document).ready(function() {
-    $('.access_denied').
-      colorbox({width:"600px", height:"540px", inline:true, href:"#must_login"}).
+    $('.join_modal').
+      colorbox({width:"600px", height:"540px", inline:true, href:"#join"}).
       live('click', function() {
         $.post("#{activities_path}", {
           url : location.href,
-          activity_type : "Clicked Access Denied"
+          activity_type : "Clicked",
+          target_model : "Join Button",
+        });
+      });
+    $('.watch_modal').
+      colorbox({width:"600px", height:"540px", inline:true, href:"#watch"}).
+      live('click', function() {
+        $.post("#{activities_path}", {
+          url : location.href,
+          activity_type : "Clicked",
+          target_model : "Watch Button",
         });
       });
   });
