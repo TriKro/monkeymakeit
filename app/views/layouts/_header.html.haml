@@ -1,14 +1,3 @@
-.login.signup
-  - if current_user
-    = current_user.full_name
-    &#8226;
-    = link_to "Sign Out", signout_path
-  - else
-    Sign In:
-    = render :partial => "/shared/login_strip"
-    or
-    .access_denied
-      Sign Up
 %header
   %header_inner
     = link_to root_path, :id => 'home_link' do
@@ -17,3 +6,7 @@
         %span.first_letter<>
           M
         onkeyMake.it
+      .signup.access_denied
+        Sign Up
+        &#8226;
+        Sign In
