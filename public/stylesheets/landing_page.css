@@ -16,7 +16,14 @@
       height: 200px;
       -moz-box-shadow: 5px 5px 5px 0 #555555;
       -webkit-box-shadow: 5px 5px 5px 0 #555555;
-      box-shadow: 5px 5px 5px 0 #555555; }
+      box-shadow: 5px 5px 5px 0 #555555;
+      -moz-transition: all 0.25s linear;
+      -webkit-transition: all 0.25s linear; }
+      #bookshelf #bookshelf_inner .book:hover {
+        -moz-transform: scale(1.15);
+        -webkit-transform: scale(1.15);
+        -ms-transform: scale(1.15);
+        -o-transform: scale(1.15); }
       #bookshelf #bookshelf_inner .book img {
         position: absolute;
         top: 0;

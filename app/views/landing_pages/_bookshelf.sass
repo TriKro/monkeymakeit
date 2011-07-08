@@ -19,6 +19,13 @@
       width: 150px
       height: 200px
       @include box-shadow(5px, 5px, 5px, 0, #555)
+      -moz-transition: all 0.25s linear
+      -webkit-transition: all 0.25s linear
+      &:hover
+        -moz-transform: scale(1.15)
+        -webkit-transform: scale(1.15)
+        -ms-transform: scale(1.15)
+        -o-transform: scale(1.15)
 
       img
         position: absolute
