@@ -1,0 +1,116 @@
+= title "- ADMIN"
+- stylesheets 'admin'
+
+-# Add a no track cookie to google analytics
+= javascript_tag "_gaq.push(['_setVar', 'monkey_no_track']);"
+
+#white_background
+  .funnel
+    %h1
+      Scott's Conversion Funnel
+
+    %table
+      %tr
+        %th
+          Start Date
+        %th
+          End Date
+        %th
+          Button Views
+        %th
+          Button Clicks
+        %th
+          Signed Up
+        %th
+          Invites Sent
+
+
+      -# Take only activities in what range?
+      - range = 1
+      -# Display how many ranges?
+      - rows = 30
+
+      -# Start counter at -1 due to strange issue with getting start_date to include today.
+      - i = -1
+      - until i >= (rows - 1)
+        - start_date = Time.now.midnight - (i + range).day
+        - end_date = Time.now.midnight - i.day
+        - end_date_display = Time.now.midnight - (i + 1).day
+
+        -# Get all activities in date range
+        - activities = Activity.where(:created_at => start_date..end_date)
+
+        -# Separate out activities in funnel
+        - button_views = activities.where(:activity_type => "Viewed Button")
+        - button_clicks = activities.where(:activity_type => "Clicked Button")
+        - signups = activities.where(:activity_type => "Signed Up")
+        - invitations_sent = activities.where(:activity_type => "Sent", :target_type => "Invitation")
+
+        %tr
+          %td
+            = start_date.month
+            \/
+            = start_date.day
+          %td
+            = end_date_display.month
+            \/
+            = end_date_display.day
+
+          %td
+            -# Display raw number
+            = scott_button_views = parse_scott(button_views)
+
+          %td
+            -# Display raw number
+            - scott_button_clicks = parse_scott(button_clicks)
+
+            -# Display conversion %
+            = number_to_percentage(scott_button_clicks.to_f / scott_button_views.to_f * 100)
+
+          %td
+            -# Display raw number
+            -# TODO: There is no way to differenciate signups on a different page!!!
+            - scott_signups = signups.count
+
+            -# Display conversion %
+            = number_to_percentage(scott_signups.to_f / scott_button_views.to_f * 100)
+
+          %td
+            -# Display raw number
+            - scott_invitations_sent = parse_scott(invitations_sent)
+
+            -# Display conversion %
+            = number_to_percentage(scott_invitations_sent.to_f / scott_button_views.to_f * 100)
+
+        -# Increment counter
+        - i = i + 1
+
+  .funnel
+    %h1
+      Button test
+
+    %table
+      %tr
+        %th
+          Button Type
+        %th
+          Button Views
+        %th
+          Button Clicks
+
+      - Button.all.each do |button|
+
+        - button_views = Activity.where(:activity_type => "Viewed Button", :target_id => button.id).count
+        - button_clicks = Activity.where(:activity_type => "Clicked Button", :target_id => button.id).count
+        %tr
+          %td
+            = button.button_name
+          %td
+            = button_views
+          %td
+            = button_clicks
+            %b
+              (
+              = number_to_percentage(button_clicks.to_f / button_views.to_f * 100)
+              )
+
