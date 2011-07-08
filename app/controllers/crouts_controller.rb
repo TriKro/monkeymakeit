@@ -158,7 +158,7 @@ class CroutsController < ApplicationController
   def crout_hiccup
     @crout = {
         :title => "Oh, Mighty Hiccup!",
-        :subtitle => "a novel in progress about brothers, hiccups, and the end of time",
+        :subtitle => "a novel about brothers, hiccups, and the end of time",
         :author => "Scott Lambridis",
         :author_avatar => "images/image-scott-lambridis.png",
         :artist_avatar => "images/image-oscar.jpg",
