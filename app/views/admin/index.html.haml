@@ -43,6 +43,7 @@
         -# Separate out activities in funnel
         - button_views = activities.where(:activity_type => "Viewed Button")
         - button_clicks = activities.where(:activity_type => "Clicked Button")
+        - signups = activities.where(:activity_type => "Signed Up")
         - invitations_sent = activities.where(:activity_type => "Sent", :target_type => "Invitation")
 
         %tr
