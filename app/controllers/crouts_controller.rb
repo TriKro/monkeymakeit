@@ -161,6 +161,7 @@ class CroutsController < ApplicationController
         :subtitle => "a novel in progress about brothers, hiccups, and the end of time",
         :author => "Scott Lambridis",
         :author_avatar => "images/image-scott-lambridis.png",
+        :artist_avatar => "images/image-oscar.jpg",
         :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
         :content => "hiccup",
         :artwork => "images/remix-hiccup/hiccup-image-campustree.png",
