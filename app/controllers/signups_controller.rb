@@ -14,7 +14,6 @@ class SignupsController < ApplicationController
     log_activity(request.request_uri, "Created", "User", @user)
 
     session[:user] = @user
-    log_activity(request.request_uri, "Signed Up", "User", @user)
     redirect_to(new_invitation_url)
   end
 

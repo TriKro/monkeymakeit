@@ -16,10 +16,6 @@ class RegistrationsController < ApplicationController
         return redirect_to new_registration_path(:user => params[:user]), :alert => @user.errors.full_messages.first
       end
     end
-
-#    log_activity(request.request_uri, "Registered", "User", @signup)
-#    redirect_to(registration_thanks_url)
-
   end
 
 end
