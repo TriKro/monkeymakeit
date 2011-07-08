@@ -40,6 +40,12 @@
         -# Get all activities in date range
         - activities = Activity.where(:created_at => start_date..end_date)
 
+        -# Separate out activities in funnel
+        - button_views = activities.where(:activity_type => "Viewed Button")
+        - button_clicks = activities.where(:activity_type => "Clicked Button")
+        - signups = activities.where(:activity_type => "Signed Up")
+        - invitations_sent = activities.where(:activity_type => "Sent", :target_type => "Invitation")
+
         %tr
           %td
             = start_date.month
@@ -52,11 +58,11 @@
 
           %td
             -# Display raw number
-            = scott_button_views = activities.where(:activity_type => "Viewed Button").where(["url like ?", '%'+@scott.random_key+'%']).count(:session_id, :distinct => true)
+            = scott_button_views = parse_scott(button_views)
 
           %td
             -# Display raw number
-            - scott_button_clicks = activities.where(:activity_type => "Clicked Button").where(["url like ?", '%'+@scott.random_key+'%']).count(:session_id, :distinct => true)
+            - scott_button_clicks = parse_scott(button_clicks)
 
             -# Display conversion %
             = number_to_percentage(scott_button_clicks.to_f / scott_button_views.to_f * 100)
@@ -64,14 +70,14 @@
           %td
             -# Display raw number
             -# TODO: There is no way to differenciate signups on a different page!!!
-            - scott_signups = activities.where(:activity_type => "Signed Up").count(:session_id, :distinct => true)
+            - scott_signups = signups.count
 
             -# Display conversion %
             = number_to_percentage(scott_signups.to_f / scott_button_views.to_f * 100)
 
           %td
             -# Display raw number
-            - scott_invitations_sent = activities.where(:activity_type => "Sent", :target_type => "Invitation").where(["url like ?", '%'+@scott.random_key+'%']).count(:session_id, :distinct => true)
+            - scott_invitations_sent = parse_scott(invitations_sent)
 
             -# Display conversion %
             = number_to_percentage(scott_invitations_sent.to_f / scott_button_views.to_f * 100)
