@@ -1,9 +1,15 @@
 @import 'variables'
 
 #bookshelf
-  margin: 20px auto
-  width: 900px
+  margin: 80px auto 20px
+  width: 780px
+  padding: 20px 20px 30px
   text-align: center
+
+  a
+    text-decoration: none
+    border-bottom: none
+
   #bookshelf_inner
     display: inline-block
     .book
@@ -12,19 +18,15 @@
       margin: 20px
       width: 150px
       height: 200px
-      overflow: hidden
       @include box-shadow(5px, 5px, 5px, 0, #555)
-      &:hover
-        @include box-shadow(5px, 5px, 5px, 0, $blue)
 
       img
         position: absolute
         top: 0
         left: 0
         width: 150px
-      img.sun
-        width: 200px
-        left: -23px
-      img.duck
-        width: 180px
-        left: -20px
+        text-align: center
+
+      .title
+        margin-top: 220px
+        color: $white !important

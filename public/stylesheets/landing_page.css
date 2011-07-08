@@ -1,7 +1,11 @@
 #bookshelf {
-  margin: 20px auto;
-  width: 900px;
+  margin: 80px auto 20px;
+  width: 780px;
+  padding: 20px 20px 30px;
   text-align: center; }
+  #bookshelf a {
+    text-decoration: none;
+    border-bottom: none; }
   #bookshelf #bookshelf_inner {
     display: inline-block; }
     #bookshelf #bookshelf_inner .book {
@@ -10,25 +14,18 @@
       margin: 20px;
       width: 150px;
       height: 200px;
-      overflow: hidden;
       -moz-box-shadow: 5px 5px 5px 0 #555555;
       -webkit-box-shadow: 5px 5px 5px 0 #555555;
       box-shadow: 5px 5px 5px 0 #555555; }
-      #bookshelf #bookshelf_inner .book:hover {
-        -moz-box-shadow: 5px 5px 5px 0 #00b7fb;
-        -webkit-box-shadow: 5px 5px 5px 0 #00b7fb;
-        box-shadow: 5px 5px 5px 0 #00b7fb; }
       #bookshelf #bookshelf_inner .book img {
         position: absolute;
         top: 0;
         left: 0;
-        width: 150px; }
-      #bookshelf #bookshelf_inner .book img.sun {
-        width: 200px;
-        left: -23px; }
-      #bookshelf #bookshelf_inner .book img.duck {
-        width: 180px;
-        left: -20px; }
+        width: 150px;
+        text-align: center; }
+      #bookshelf #bookshelf_inner .book .title {
+        margin-top: 220px;
+        color: white !important; }
 
 container, content {
   background-color: #0088ba; }
@@ -56,14 +53,14 @@ container, content {
       height: 300px;
       width: 575px;
       background: url(/images/logo_big.png) no-repeat 0px 0px; }
-    #landing_page #center_container h1 {
+    #landing_page #center_container > h1 {
       margin: 229px 0 0 0;
       text-align: center;
       font-family: "Helvetica";
       font-size: 84px;
       font-weight: 100;
       letter-spacing: -1px; }
-      #landing_page #center_container h1 .first_letter {
+      #landing_page #center_container > h1 .first_letter {
         font-family: "Helvetica, serif";
         font-size: 168px;
         font-weight: 500; }
