@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   include RandomKey
 
+  has_many :authentications
   has_many :widgets
   has_many :activities, :as => :target
   has_many :activities, :as => :subtarget
@@ -32,5 +33,29 @@ class User < ActiveRecord::Base
     return "DEMO" if url.include?("demo=true")
     User.find_by_random_key(CGI.parse(url.split('?')[1])['code'][0]).identifier rescue url
   end
+
+  def self.create_from_hash!(hash)
+
+    info = hash['user_info']
+
+    if hash['provider'] == 'linked_in'
+      users_name = [info['first_name'],info['last_name']].join(' ')
+    else
+      users_name = info['name']
+    end
+
+    if info['image'] != ""
+      image = info['image']
+    else
+      image = nil
+    end
+
+    user = new( :full_name => users_name, :avatar_remote_url => image )
+    user.save( false )
+    user
+
+
+  end
+
 
 end

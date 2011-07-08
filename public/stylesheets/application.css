@@ -338,3 +338,15 @@ footer {
       height: 52px;
       width: 166px;
       background: url(/images/button-yes-sprite.png) no-repeat 0px 0px; }
+
+.login > .icon {
+  height: 32px;
+  width: 32px;
+  display: inline-block;
+  border: 0; }
+
+.login > .icon.twitter {
+  background: url(/images/social/twitter_32.png) no-repeat; }
+
+.login > .icon.facebook {
+  background: url(/images/social/facebook_32.png) no-repeat; }
