@@ -4,7 +4,7 @@
       colorbox({width:"600px", height:"540px", inline:true, href:"#must_login"}).
       live('click', function() {
         $.post("#{activities_path}", {
-          url : $(this).attr("data-denied"),
+          url : location.href,
           activity_type : "Clicked Access Denied"
         });
       });
