@@ -47,13 +47,14 @@ container, content {
     padding: 20px 0;
     width: 950px; }
     #landing_page #center_container #big_logo {
-      position: absolute;
+      display: block !important;
       z-index: 1;
+      margin: 0 auto;
       display: inline-block;
       vertical-align: middle;
       border: none;
       height: 300px;
-      width: 366px;
+      width: 575px;
       background: url(/images/logo_big.png) no-repeat 0px 0px; }
     #landing_page #center_container h1 {
       margin: 229px 0 0 0;
