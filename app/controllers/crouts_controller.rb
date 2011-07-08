@@ -28,7 +28,7 @@ class CroutsController < ApplicationController
 
   def heart_1
     crout_heart_of_the_sun
-    activities_with_thumbnails
+    heart_activities_with_thumbnails
     render 'crout-1'
   end
 
@@ -52,7 +52,7 @@ class CroutsController < ApplicationController
 
   def heart_2
     crout_heart_of_the_sun
-    activities_with_thumbnails
+    heart_activities_with_thumbnails
     render 'crout-2'
   end
 
@@ -82,7 +82,7 @@ class CroutsController < ApplicationController
 
   def heart_3
     crout_heart_of_the_sun
-    activities_with_thumbnails
+    heart_activities_with_thumbnails
     render 'crout-3'
   end
 
@@ -106,7 +106,7 @@ class CroutsController < ApplicationController
 
   def heart_4
     crout_heart_of_the_sun
-    activities_with_thumbnails
+    heart_activities_with_thumbnails
     render 'crout-4'
   end
 
@@ -130,7 +130,7 @@ class CroutsController < ApplicationController
 
   def heart_5
     crout_heart_of_the_sun
-    activities_with_thumbnails
+    heart_activities_with_thumbnails
     render 'crout-5'
   end
 
@@ -199,6 +199,51 @@ class CroutsController < ApplicationController
   end
 
   def activities_with_thumbnails
+    @activities = [
+        { :actor => 'Scott Lambridis',
+          :actor_avatar => 'images/image-scott-lambridis.png',
+          :action_icon => 'images/remix-hiccup/thumbnail-edit.png',
+          :verb => 'edited the ',
+          :object => 'text',
+          :details => 'Killed some bad scenes, did some general editing for cadence and flow...',
+          :timestamp => '18 minutes ago'
+        },
+        { :actor => 'Savanah Rose',
+          :actor_avatar => 'images/image-maggie.jpg',
+          :action_icon => 'images/remix-hiccup/thumbnail-comment.png',
+          :verb => 'said',
+          :object => '',
+          :details => 'I love the new picture! It fits perfectly.',
+          :timestamp => '4 hours ago'
+        },
+        { :actor => 'Tyler Landry',
+          :actor_avatar => 'images/image-adam.jpg',
+          :action_icon => 'images/remix-hiccup/thumbnail-tree.png',
+          :verb => 'added a',
+          :object => 'picture',
+          :details => 'Rough sketch of the mourning crows. These really stick in my head.',
+          :timestamp => '12 hours ago'
+        },
+        { :actor => 'Alex Q Huffman',
+          :actor_avatar => 'images/image-edward.jpg',
+          :action_icon => 'images/remix-hiccup/thumbnail-music.png',
+          :verb => 'updated a',
+          :object => 'song',
+          :details => 'Fixed the bassline.',
+          :timestamp => 'Yesterday at 8:12pm'
+        },
+        { :actor => 'Tristan Kromer',
+          :actor_avatar => 'images/image-tristan.jpg',
+          :action_icon => 'images/remix-hiccup/thumbnail-branch.png',
+          :verb => 'created a ',
+          :object => 'branch',
+          :details => 'Started a new story based on the Jane character.',
+          :timestamp => 'Yesterday at 1:01pm'
+        }
+    ]
+  end
+
+  def heart_activities_with_thumbnails
     @activities = [
         { :actor => 'Scott Lambridis',
           :actor_avatar => 'images/image-scott-lambridis.png',
