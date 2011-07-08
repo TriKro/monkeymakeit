@@ -13,9 +13,9 @@ class User < ActiveRecord::Base
 
   belongs_to :inviter, :class_name => 'User'
 
-  #validates_uniqueness_of :email
-  #validates_presence_of :email
-  #validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,}$/i
+  validates_uniqueness_of :email
+  validates_presence_of :email
+  validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,}$/i
 
   def first_name
     full_name.sub(/ .*/, '') rescue ''
@@ -50,7 +50,10 @@ class User < ActiveRecord::Base
       image = nil
     end
 
-    create( :full_name => users_name, :avatar_remote_url => image )
+    user = new( :full_name => users_name, :avatar_remote_url => image )
+    user.save( false )
+    user
+
 
   end
 
