@@ -5,7 +5,7 @@ class ScriptsController < ApplicationController
 
   def collaborate
     @button =  Button.all[ rand Button.count ]
-    log_activity(request.request_uri, 'Viewed', 'Button', @button)
+    log_activity(request.request_uri, 'Viewed Button', 'Button', @button)
     @unique_code = short_key
   end
 end
