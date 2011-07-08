@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(:version => 20110708015634) do
   add_index "alternatives", ["experiment_id"], :name => "index_alternatives_on_experiment_id"
   add_index "alternatives", ["lookup"], :name => "index_alternatives_on_lookup"
 
+  create_table "authentications", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.string   "token"
+    t.string   "secret"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "buttons", :force => true do |t|
     t.integer   "widget_id"
     t.string    "button_name"
@@ -83,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20110708015634) do
     t.timestamp "updated_at"
     t.integer   "inviter_id"
     t.string    "full_name"
+    t.string    "avatar_remote_url"
   end
 
   create_table "widgets", :force => true do |t|

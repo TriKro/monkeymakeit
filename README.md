@@ -34,6 +34,20 @@ http://monkeymake.it/admin
 
     NOTE: this will clobber your local db files
 
+## Creating a new heroku app
+
+Let's say we have a branch "omniauth", which we want to deploy to a new heroku app.  Create the app thus:
+
+    rake heroku:create TARGET=omniauth
+
+Then deploy to it:
+
+    rake heroku:deploy TARGET=omniauth REF=omniauth
+
+And view it here:
+
+    http://suggestedit-omniauth.heroku.com/
+
 ## When pulling
 
     git pull --rebase origin master

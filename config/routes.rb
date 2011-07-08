@@ -2,6 +2,13 @@ Suggestedit::Application.routes.draw do
 
   root :to => 'landing_pages#home'
 
+  # Omniauth routes
+  match "/auth/:provider/callback" => "sessions#create"
+
+  #Session routes
+  match "/login/:provider" => "sessions#new"
+  match "/signout" => "sessions#destroy", :as => :signout
+
   resources :activities
 
   resources :invitations, :only => [:new, :create]

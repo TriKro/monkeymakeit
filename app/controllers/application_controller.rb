@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   after_filter :maybe_commit_activity_log
+  helper_method :current_user
 
   rescue_from ActiveRecord::RecordNotFound do |e|
     flash[:error] = "That record does not exist!"
@@ -9,6 +10,15 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def current_user
+    @current_user ||= User.find_by_id(session[:user_id])
+  end
+
+  def current_user=(user)
+    @current_user = user
+    session[:user_id] = user.id
+  end
 
   def log_activity(url, activity_type, target_model = nil, target = nil, subtarget_model = nil, subtarget = nil)
     maybe_commit_activity_log # We may not have a session id if log_activity is called multiple times. Oh well.
