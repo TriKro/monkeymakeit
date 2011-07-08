@@ -314,26 +314,26 @@ footer {
 #cboxContent {
   background: #efefea !important; }
 
-#must_login h2 {
+#join h2 {
   text-align: center; }
-#must_login ul {
+#join ul {
   margin: 40px 0 40px 60px; }
-  #must_login ul li {
+  #join ul li {
     font-size: 1.5em;
     color: #666666;
     list-style-image: url(/images/check-green.png); }
-#must_login #registration {
+#join #registration {
   margin: 0 0 60px 0;
   border: none;
   background: none;
   text-align: center; }
-  #must_login #registration .field {
+  #join #registration .field {
     margin: 0; }
-  #must_login #registration .actions {
+  #join #registration .actions {
     position: relative;
     top: none;
     right: none; }
-    #must_login #registration .actions input {
+    #join #registration .actions input {
       padding: 0;
       height: 52px;
       width: 166px;
