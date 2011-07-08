@@ -1,4 +1,4 @@
-class Invitation < ActiveRecord::Base
+class Button < ActiveRecord::Base
   belongs_to :widget
   has_many :activities, :as => :target
   has_many :activities, :as => :subtarget

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110625074240) do
+ActiveRecord::Schema.define(:version => 20110708015634) do
 
   create_table "activities", :force => true do |t|
     t.integer   "user_id"
@@ -32,16 +32,37 @@ ActiveRecord::Schema.define(:version => 20110625074240) do
   add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
   add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
 
-  create_table "invitations", :force => true do |t|
-    t.integer  "widget_id"
-    t.string   "button_name"
-    t.text     "call_to_action"
-    t.text     "confirmation"
+  create_table "alternatives", :force => true do |t|
+    t.integer "experiment_id"
+    t.string  "content"
+    t.string  "lookup",        :limit => 32
+    t.integer "weight",                      :default => 1
+    t.integer "participants",                :default => 0
+    t.integer "conversions",                 :default => 0
+  end
+
+  add_index "alternatives", ["experiment_id"], :name => "index_alternatives_on_experiment_id"
+  add_index "alternatives", ["lookup"], :name => "index_alternatives_on_lookup"
+
+  create_table "buttons", :force => true do |t|
+    t.integer   "widget_id"
+    t.string    "button_name"
+    t.text      "call_to_action"
+    t.text      "confirmation"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "button_width"
+    t.integer   "button_height"
+  end
+
+  create_table "experiments", :force => true do |t|
+    t.string   "test_name"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "button_width"
-    t.integer  "button_height"
   end
+
+  add_index "experiments", ["test_name"], :name => "index_experiments_on_test_name"
 
   create_table "suggestions", :force => true do |t|
     t.string    "email"
@@ -56,19 +77,19 @@ ActiveRecord::Schema.define(:version => 20110625074240) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "random_key"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "inviter_id"
-    t.string   "full_name"
+    t.string    "email"
+    t.string    "random_key"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "inviter_id"
+    t.string    "full_name"
   end
 
   create_table "widgets", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "random_key"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "user_id"
+    t.string    "random_key"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
 end

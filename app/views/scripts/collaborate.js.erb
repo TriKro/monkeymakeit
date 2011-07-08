@@ -45,7 +45,7 @@ try {
       var iframe_span = document.createElement('span');
 
       <% page_to_tweak = params[ :demo ] ? 'http://grasshopperherder.com/' : "' + window.location + '" %>
-      <% iframe_source = new_signup_url( params.slice( :demo, :code ).merge( :invitation_id => @invitation.id ) ) %>
+      <% iframe_source = new_signup_url( params.slice( :demo, :code ).merge( :button_id => @button.id ) ) %>
       <% iframe_source += "&url=#{page_to_tweak}" %>
 
       var iframe = '<iframe src="<%= iframe_source %>" ' +
@@ -81,13 +81,13 @@ try {
     document.write(
             '<style type="text/css">' +
             '#monkeymakeit_button {' +
-            '  background: url(<%= root_url %>images/widget_buttons/<%= @invitation.button_name %>) no-repeat 0px 0px;' +
+            '  background: url(<%= root_url %>images/widget_buttons/<%= @button.button_name %>) no-repeat 0px 0px;' +
             '  display: inline-block;' +
-            '  width: <%= @invitation.button_width %>px;' +
-            '  height: <%= @invitation.button_height %>px;' +
+            '  width: <%= @button.button_width %>px;' +
+            '  height: <%= @button.button_height %>px;' +
             '}' +
             '#monkeymakeit_button:hover {' +
-            '  background-position: 0 -<%= @invitation.button_height %>px;' +
+            '  background-position: 0 -<%= @button.button_height %>px;' +
             '}' +
             '</style>' +
             '<a href="javascript:void(collaborate_lightbox_<%= @unique_code %>());"' +

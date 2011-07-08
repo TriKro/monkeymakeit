@@ -4,8 +4,8 @@ class ScriptsController < ApplicationController
   include RandomKey
 
   def collaborate
-    @invitation =  Invitation.all[ rand Invitation.count ]
-    log_activity(request.request_uri, "Viewed Button", 'Invitation', @invitation)
+    @button =  Button.all[ rand Button.count ]
+    log_activity(request.request_uri, 'Viewed', 'Button', @button)
     @unique_code = short_key
   end
 end

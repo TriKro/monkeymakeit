@@ -9,9 +9,10 @@ Suggestedit::Application.routes.draw do
   resources :registrations, :only => [:create]
   match "/thanks_for_registering" => "registrations#thanks", :as => :registration_thanks
 
+  match "/demo" => "landing_pages#demo"
+  
   # Static page routes
   [
-          :demo,
           :code,
           :privacy_policy,
           :terms_of_service,
