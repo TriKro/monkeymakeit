@@ -39,7 +39,7 @@
       %p
         Additional contributors:
 
-      - @activities.each do |activity|
+      - @additional_contributors.each do |activity|
         = render :partial => "contributor", :locals => { :activity => activity }
       .clear
     #activities

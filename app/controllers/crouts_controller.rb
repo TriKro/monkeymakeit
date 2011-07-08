@@ -195,7 +195,8 @@ class CroutsController < ApplicationController
         :content => "life_of_the_gallows",
         :artwork => "images/image-jester.jpg",
         :artwork_title => "Crows",
-        :artist => "Tyler Landry"
+        :artist => "Tyler Landry",
+        :artist_avatar => "images/image-alok.jpg",
     }
   end
 
@@ -242,6 +243,7 @@ class CroutsController < ApplicationController
           :timestamp => 'Yesterday at 1:01pm'
         }
     ]
+    additional_contributors
   end
 
   def heart_activities_with_thumbnails
@@ -262,8 +264,8 @@ class CroutsController < ApplicationController
           :details => 'Minor style and grammar edits',
           :timestamp => 'yesterday'
         },
-        { :actor => 'Lily Sun',
-          :actor_avatar => 'images/image_lily.jpg',
+        { :actor => 'Harlan Knight Wood',
+          :actor_avatar => 'images/image-harlan.jpg',
           :action_icon => 'images/remix-hiccup/thumbnail-edit.png',
           :verb => 'remixed',
           :object => 'the movie',
@@ -276,9 +278,14 @@ class CroutsController < ApplicationController
           :verb => 'uploaded a',
           :object => 'movie summary',
           :details => 'A transhuman love story',
-          :timestamp => '4 days ago'
+          :timestamp => '18 days ago'
         },
     ]
+    additional_contributors
   end
 
+  def additional_contributors
+    @additional_contributors = @activities.map{ |activity| { :actor => activity[:actor], :actor_avatar => activity[:actor_avatar] } }.uniq
+    @additional_contributors.delete_if{ |contributor| contributor[:actor_avatar] == @crout[:author_avatar] || contributor[:actor_avatar] == @crout[:artist_avatar] }
+  end
 end
