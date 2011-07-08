@@ -19,14 +19,22 @@ container, content
     padding: 20px 0
     width: 950px
 
-    #big_logo
-      display: block !important
-      z-index: 1
+    #logo_container
       margin: 0 auto
-      @include sprite
-      height: 300px
-      width: 575px
-      background: url(/images/logo_big.png) no-repeat 0px 0px
+      position: relative
+      display: block !important
+      height: 350px
+
+      #big_logo
+        position: absolute
+        left: 125px
+        top: -60px
+        z-index: 1
+
+        @include sprite
+        height: 410px
+        width: 548px
+        background: url(/images/logo-big.png) no-repeat 0px 0px
 
     > h1
       margin: 229px 0 0 0
@@ -41,16 +49,20 @@ container, content
         font-weight: 500
 
     #description
-      margin: 40px 0
+      margin: 60px 0
       text-align: center
       h2
-        margin: 20px
+        margin: 15px
         font-family: 'Helvetica'
-        font-size: $giant
+        font-size: 1.4em
         font-weight: 100
+        color: #EEE
         .bold
           font-weight: 500
 
+    .cta
+      margin: 0 auto
+      width: 246px
 
     #registration
       position: relative

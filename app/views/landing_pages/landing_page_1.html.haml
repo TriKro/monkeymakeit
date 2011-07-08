@@ -4,7 +4,8 @@
 
 #landing_page
   #center_container
-    #big_logo
+    #logo_container
+      #big_logo
 
     #description
       %h2
@@ -13,9 +14,12 @@
           sucks.
 
       %h2
-        Join us and see what happens when 1,000,000 monkeys collaborate.
+        What happens when a million monkeys collaborate?
 
     #flash_messages
       = render :partial => '/layouts/flash', :locals => { :flash => flash }
+
+    .cta
+      %img{ :src => "images/remixing-now.png" }
 
     = render '/landing_pages/bookshelf'

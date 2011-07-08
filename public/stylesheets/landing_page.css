@@ -1,7 +1,7 @@
 #bookshelf {
-  margin: 80px auto 20px;
+  margin: 0 auto 20px;
   width: 780px;
-  padding: 20px 20px 30px;
+  padding: 0 20px 30px;
   text-align: center; }
   #bookshelf a {
     text-decoration: none;
@@ -14,9 +14,9 @@
       margin: 20px;
       width: 150px;
       height: 200px;
-      -moz-box-shadow: 5px 5px 5px 0 #555555;
-      -webkit-box-shadow: 5px 5px 5px 0 #555555;
-      box-shadow: 5px 5px 5px 0 #555555;
+      -moz-box-shadow: 0px 0px 10px 0 black;
+      -webkit-box-shadow: 0px 0px 10px 0 black;
+      box-shadow: 0px 0px 10px 0 black;
       -moz-transition: all 0.25s linear;
       -webkit-transition: all 0.25s linear; }
       #bookshelf #bookshelf_inner .book:hover {
@@ -50,16 +50,22 @@ container, content {
     margin: 0 auto;
     padding: 20px 0;
     width: 950px; }
-    #landing_page #center_container #big_logo {
-      display: block !important;
-      z-index: 1;
+    #landing_page #center_container #logo_container {
       margin: 0 auto;
-      display: inline-block;
-      vertical-align: middle;
-      border: none;
-      height: 300px;
-      width: 575px;
-      background: url(/images/logo_big.png) no-repeat 0px 0px; }
+      position: relative;
+      display: block !important;
+      height: 350px; }
+      #landing_page #center_container #logo_container #big_logo {
+        position: absolute;
+        left: 125px;
+        top: -60px;
+        z-index: 1;
+        display: inline-block;
+        vertical-align: middle;
+        border: none;
+        height: 410px;
+        width: 548px;
+        background: url(/images/logo-big.png) no-repeat 0px 0px; }
     #landing_page #center_container > h1 {
       margin: 229px 0 0 0;
       text-align: center;
@@ -72,15 +78,19 @@ container, content {
         font-size: 168px;
         font-weight: 500; }
     #landing_page #center_container #description {
-      margin: 40px 0;
+      margin: 60px 0;
       text-align: center; }
       #landing_page #center_container #description h2 {
-        margin: 20px;
+        margin: 15px;
         font-family: "Helvetica";
-        font-size: 1.7em;
-        font-weight: 100; }
+        font-size: 1.4em;
+        font-weight: 100;
+        color: #eeeeee; }
         #landing_page #center_container #description h2 .bold {
           font-weight: 500; }
+    #landing_page #center_container .cta {
+      margin: 0 auto;
+      width: 246px; }
     #landing_page #center_container #registration {
       position: relative;
       margin: 60px auto 40px auto;
