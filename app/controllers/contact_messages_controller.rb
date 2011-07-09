@@ -14,11 +14,12 @@ class ContactMessagesController < ApplicationController
       redirect_to(contact_thanks_url)
     else
       render :action => 'new' # error shown in view
+      log_activity(request.request_uri, "Error Creating", "ContactMessage")
     end
   end
 
   def thanks
-
+    log_activity(request.request_uri, "Viewed", "Page")
   end
 
 end
