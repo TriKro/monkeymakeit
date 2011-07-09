@@ -1,12 +1,23 @@
-#sharing-show
+.sharing-show
   -# Twitter share button
   .twitter
-    %a.twitter-share-button{"data-count" => "horizontal", "data-text" => content, "data-url" => url, "data-via" => "MonkeyMakeIt", :href => "http://twitter.com/share"} Tweet
-    %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
+    %a.twitter-share-button{ "data-text" => content,
+        "data-url" => url,
+        "related" => "monkeymakeit:Collaborative Writing and Publishing",
+        :href => "http://twitter.com/share",
+        "data-count" => count,
+    }
+      Tweet
+    %script{ :src => "http://platform.twitter.com/widgets.js", :type => "text/javascript" }
 
-  -# FB share button
+  -# Facebook like and send button
   .facebook
-    %a{:href => "http://www.facebook.com/sharer.php", :name => "fb_share", :share_url => url, :type => "button_count"}
-    %script{:src => "http://static.ak.fbcdn.net/connect.php/js/FB.Share", :type => "text/javascript"}
-    -#TODO: Figure out how to suggest text for sharing if possible.
-  .clear
+    #fb-root
+    %script{:src => "http://connect.facebook.net/en_US/all.js#appId=135537883194595&xfbml=1"}
+    %fb:like{:font => "",
+        :href => ( url == "http://monkeymake.it") ? "http://www.facebook.com/pages/MonkeyMakeit/210728972305103?sk=wall" : url,
+        :layout => (count == "vertical") ? "box_count" : "button_count",
+        :send => "true",
+        :show_faces => "true",
+        :width => "200",
+    }

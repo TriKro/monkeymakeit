@@ -119,10 +119,10 @@ p {
   line-height: 1.7em; }
 
 .bold {
-  font-weight: 500px; }
+  font-weight: 600; }
 
 .thin {
-  font-weight: 100px; }
+  font-weight: 100; }
 
 .italics {
   font-style: italic; }

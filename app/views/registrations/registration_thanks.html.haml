@@ -1,0 +1,51 @@
+- title "- Thank you"
+- stylesheets 'registration_thanks'
+
+#registration_thanks
+  %h1
+    Thank you!
+
+  #happy_monkeys
+    %h2
+      The monkeys are
+      %span.darkblue
+        happy...
+
+    %img{ :src => "images/image-code_monkey.jpg", :style => "width: 500px;"}
+
+    = render :partial => "/layouts/sharing", :locals => { :url => "http://monkeymake.it", :content => "I'm reading and remixing stories with @monkeymakeit", :count => "vertical" }
+
+    %h2{ :style => "margin: 0 0 60px 420px;"}
+      \...but not yet finished
+      %span.darkblue
+        building
+      the site.
+
+  %p
+    We're working hard to let you
+    %span.bold
+      remix
+    %br
+    and follow amazing
+    %span.bold
+      stories
+    from independent
+    %span.bold
+      authors.
+
+  %p
+    We'll email you something
+    %span.bold
+      cool
+    soon.
+
+  %p
+    In the meantime,
+    %span.bold
+      share this site!
+
+    %span.blue{ :style => "font-size: .7em"}
+      (Monkeys make great friends.)
+
+  #bottom-sharing
+    = render :partial => "/layouts/sharing", :locals => { :url => "http://monkeymake.it", :content => "I'm reading and remixing stories with @monkeymakeit", :count => "horizontal" }

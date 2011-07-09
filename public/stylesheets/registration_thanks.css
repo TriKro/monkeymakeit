@@ -1,0 +1,38 @@
+#registration_thanks h1 {
+  font-size: 4em;
+  font-weight: 100;
+  color: #0088ba; }
+#registration_thanks h2 {
+  font-size: 1.7em;
+  color: #00b7fb; }
+#registration_thanks #happy_monkeys {
+  position: relative; }
+  #registration_thanks #happy_monkeys h2 {
+    position: relative;
+    z-index: 1;
+    margin: 60px 20px 200px 20px; }
+  #registration_thanks #happy_monkeys img {
+    position: absolute;
+    left: 100px;
+    top: -30px; }
+  #registration_thanks #happy_monkeys .sharing-show {
+    position: absolute;
+    left: 600px;
+    top: 0; }
+    #registration_thanks #happy_monkeys .sharing-show .facebook {
+      margin-left: 10px; }
+#registration_thanks p {
+  color: #666666;
+  font-size: 1.5em; }
+#registration_thanks .sharing-show .twitter {
+  float: left;
+  padding: 0 0 0 10px;
+  position: relative;
+  top: -3px; }
+#registration_thanks .sharing-show .facebook {
+  float: left;
+  padding: 0;
+  position: relative;
+  top: -2px; }
+#registration_thanks #bottom-sharing {
+  margin-bottom: 40px; }

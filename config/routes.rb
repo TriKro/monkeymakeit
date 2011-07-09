@@ -15,7 +15,7 @@ Suggestedit::Application.routes.draw do
   resources :invitations, :only => [:new, :create]
   resources :signups, :only => [:new, :create]
   resources :registrations, :only => [:new, :create]
-  match "/thanks_for_registering" => "registrations#thanks", :as => :registration_thanks
+  match "/thanks_for_registering" => "registrations#registration_thanks", :as => :registration_thanks
 
   match "/demo" => "landing_pages#demo"
   
