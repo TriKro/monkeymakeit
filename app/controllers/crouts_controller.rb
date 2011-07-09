@@ -145,13 +145,13 @@ class CroutsController < ApplicationController
         :title => "Doris",
         :subtitle => "a short story about an albino duck",
         :author => "Scott Lambridis",
-        :author_avatar => "images/image-scott-lambridis.png",
+        :author_avatar => "images/avatars/avatar-scott-lambridis.png",
         :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
         :content => "doris",
         :artwork => "images/image-doris.jpg",
         :artwork_title => "Doris",
         :artist => "Tyler Landry",
-        :artist_avatar => "images/image-alok.jpg"
+        :artist_avatar => "images/avatars/avatar-tyler-landry.png"
     }
   end
 
@@ -160,13 +160,13 @@ class CroutsController < ApplicationController
         :title => "Oh, Mighty Hiccup!",
         :subtitle => "a novel about brothers, hiccups, and the end of time",
         :author => "Scott Lambridis",
-        :author_avatar => "images/image-scott-lambridis.png",
-        :artist_avatar => "images/image-oscar.jpg",
+        :author_avatar => "images/avatars/avatar-scott-lambridis.png",
         :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
         :content => "hiccup",
         :artwork => "images/remix-hiccup/hiccup-image-campustree.png",
         :artwork_title => "Jester",
-        :artist => "Tyler Landry"
+        :artist => "Tyler Landry",
+        :artist_avatar => "images/avatars/avatar-oscar.jpg"
     }
   end
 
@@ -175,13 +175,13 @@ class CroutsController < ApplicationController
         :title => "Heart of the Sun",
         :subtitle => "Love in the Time of Posthumans - An Open Source Screenplay",
         :author => "Harlan Knight Wood",
-        :author_avatar => "images/image-harlan.jpg",
+        :author_avatar => "images/avatars/avatar-harlan-knight-wood.jpg",
         :author_bio => "Harlan brings a decade of software development experience together with a diverse background including many years of work in various personal transformation systems. In addition to software, he is working on an open source spiritual science fiction film.",
         :content => "heart_of_the_sun",
         :artwork => "images/image-clarity.jpg",
         :artwork_title => "Luminous",
         :artist => "Adam Apollo",
-        :artist_avatar => "images/image-aa.jpg"
+        :artist_avatar => "images/avatars/avatar-adam-apollo.jpg"
     }
   end
 
@@ -190,20 +190,20 @@ class CroutsController < ApplicationController
         :title => "Life of the Gallows",
         :subtitle => "a short story about a medieval jester-turned-executioner",
         :author => "Scott Lambridis",
-        :author_avatar => "images/image-scott-lambridis.png",
+        :author_avatar => "images/avatars/avatar-scott-lambridis.png",
         :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
         :content => "life_of_the_gallows",
         :artwork => "images/image-jester.jpg",
         :artwork_title => "Crows",
         :artist => "Tyler Landry",
-        :artist_avatar => "images/image-alok.jpg",
+        :artist_avatar => "images/avatars/avatar-tyler-landry.png",
     }
   end
 
   def activities_with_thumbnails
     @activities = [
         { :actor => 'Scott Lambridis',
-          :actor_avatar => 'images/image-scott-lambridis.png',
+          :actor_avatar => 'images/avatars/avatar-scott-lambridis.png',
           :action_icon => 'images/remix-hiccup/thumbnail-edit.png',
           :verb => 'edited the ',
           :object => 'text',
@@ -211,7 +211,7 @@ class CroutsController < ApplicationController
           :timestamp => '18 minutes ago'
         },
         { :actor => 'Savanah Rose',
-          :actor_avatar => 'images/image-maggie.jpg',
+          :actor_avatar => 'images/avatars/avatar-savanah-rose.png',
           :action_icon => 'images/remix-hiccup/thumbnail-comment.png',
           :verb => 'said',
           :object => '',
@@ -219,7 +219,7 @@ class CroutsController < ApplicationController
           :timestamp => '4 hours ago'
         },
         { :actor => 'Tyler Landry',
-          :actor_avatar => 'images/image-adam.jpg',
+          :actor_avatar => 'images/avatars/avatar-tyler-landry.png',
           :action_icon => 'images/remix-hiccup/thumbnail-tree.png',
           :verb => 'added a',
           :object => 'picture',
@@ -227,7 +227,7 @@ class CroutsController < ApplicationController
           :timestamp => '12 hours ago'
         },
         { :actor => 'Alex Q Huffman',
-          :actor_avatar => 'images/image-edward.jpg',
+          :actor_avatar => 'images/avatars/avatar-alex-huffman.png',
           :action_icon => 'images/remix-hiccup/thumbnail-music.png',
           :verb => 'updated a',
           :object => 'song',
@@ -235,7 +235,7 @@ class CroutsController < ApplicationController
           :timestamp => 'Yesterday at 8:12pm'
         },
         { :actor => 'Tristan Kromer',
-          :actor_avatar => 'images/image-tristan.jpg',
+          :actor_avatar => 'images/avatars/avatar-tristan-kromer.jpg',
           :action_icon => 'images/remix-hiccup/thumbnail-branch.png',
           :verb => 'created a ',
           :object => 'branch',
@@ -249,7 +249,7 @@ class CroutsController < ApplicationController
   def heart_activities_with_thumbnails
     @activities = [
         { :actor => 'Adam Apollo',
-          :actor_avatar => 'images/image-aa.jpg',
+          :actor_avatar => 'images/avatars/avatar-adam-apollo.jpg',
           :action_icon => 'images/remix-hiccup/thumbnail-tree.png',
           :verb => 'added an',
           :object => 'image',
@@ -257,7 +257,7 @@ class CroutsController < ApplicationController
           :timestamp => 'just now'
         },
         { :actor => 'Summer Shapiro',
-          :actor_avatar => 'images/images-summer.jpg',
+          :actor_avatar => 'images/avatars/avatar-summer.jpg',
           :action_icon => 'images/remix-hiccup/thumbnail-edit.png',
           :verb => 'edited',
           :object => 'the movie',
@@ -265,7 +265,7 @@ class CroutsController < ApplicationController
           :timestamp => 'yesterday'
         },
         { :actor => 'Harlan Knight Wood',
-          :actor_avatar => 'images/image-harlan.jpg',
+          :actor_avatar => 'images/avatars/avatar-harlan-knight-wood.jpg',
           :action_icon => 'images/remix-hiccup/thumbnail-edit.png',
           :verb => 'remixed',
           :object => 'the movie',
@@ -273,7 +273,7 @@ class CroutsController < ApplicationController
           :timestamp => '2 days ago'
         },
         { :actor => 'Harlan Knight Wood',
-          :actor_avatar => 'images/image-harlan.jpg',
+          :actor_avatar => 'images/avatars/avatar-harlan-knight-wood.jpg',
           :action_icon => 'images/remix-hiccup/thumbnail-edit.png',
           :verb => 'uploaded a',
           :object => 'movie summary',
