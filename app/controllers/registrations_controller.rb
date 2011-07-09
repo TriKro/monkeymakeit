@@ -1,6 +1,7 @@
 class RegistrationsController < ApplicationController
 
   def new
+    log_activity(request.request_uri, "Viewed")
   end
 
   def create
@@ -12,13 +13,16 @@ class RegistrationsController < ApplicationController
         current_user = @user
         return redirect_to registration_thanks_path, :notice => 'Thanks, we are working hard and will let you know when more awesomeness is ready for you.'
       else
+        log_activity(request.request_uri, "Error Creating", "User")
         return redirect_to new_registration_path(:user => params[:user]), :alert => @user.errors.full_messages.first
       end
     end
+    log_activity(request.request_uri, "Error", "User", @user)
     redirect_to registration_thanks_path, :notice => 'You already signed up!'
   end
 
   def registration_thanks
+    log_activity(request.request_uri, "Viewed")
   end
 
 end
