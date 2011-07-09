@@ -12,9 +12,13 @@
     z-index: 1;
     margin: 60px 20px 200px 20px; }
   #registration_thanks #happy_monkeys img {
-    position: absolute;
+    position: absolute; }
+  #registration_thanks #happy_monkeys img#cute_monkey {
     left: 100px;
     top: -30px; }
+  #registration_thanks #happy_monkeys img#cute_sharing {
+    top: -100px;
+    left: 640px; }
   #registration_thanks #happy_monkeys .sharing-show {
     position: absolute;
     left: 600px;

@@ -11,11 +11,13 @@
       %span.darkblue
         happy...
 
-    %img{ :src => "images/image-code_monkey.jpg", :style => "width: 500px;"}
+    %img{ :id => "cute_monkey", :src => "images/image-code_monkey.jpg" }
+
+    %img{ :id => "cute_sharing", :src => "images/arrow-cute_sharing.png" }
 
     = render :partial => "/layouts/sharing", :locals => { :url => "http://monkeymake.it", :content => "I'm reading and remixing stories with @monkeymakeit", :count => "vertical" }
 
-    %h2{ :style => "margin: 0 0 60px 420px;"}
+    %h2{ :style => "margin: 0 0 40px 420px;"}
       \...but not yet finished
       %span.darkblue
         building
