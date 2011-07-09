@@ -148,7 +148,7 @@ class CroutsController < ApplicationController
         :author_avatar => "images/avatars/avatar-scott-lambridis.png",
         :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
         :content => "doris",
-        :artwork => "images/image-doris.jpg",
+        :artwork => "images/crouts/image-doris.jpg",
         :artwork_title => "Doris",
         :artist => "Tyler Landry",
         :artist_avatar => "images/avatars/avatar-tyler-landry.png"
@@ -163,7 +163,7 @@ class CroutsController < ApplicationController
         :author_avatar => "images/avatars/avatar-scott-lambridis.png",
         :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
         :content => "hiccup",
-        :artwork => "images/remix-hiccup/hiccup-image-campustree.png",
+        :artwork => "images/crouts/image-hiccup.png",
         :artwork_title => "Jester",
         :artist => "Tyler Landry",
         :artist_avatar => "images/avatars/avatar-oscar.jpg"
@@ -178,7 +178,7 @@ class CroutsController < ApplicationController
         :author_avatar => "images/avatars/avatar-harlan-knight-wood.jpg",
         :author_bio => "Harlan brings a decade of software development experience together with a diverse background including many years of work in various personal transformation systems. In addition to software, he is working on an open source spiritual science fiction film.",
         :content => "heart_of_the_sun",
-        :artwork => "images/image-clarity.jpg",
+        :artwork => "images/crouts/image-heart_of_the_sun.jpg",
         :artwork_title => "Luminous",
         :artist => "Adam Apollo",
         :artist_avatar => "images/avatars/avatar-adam-apollo.jpg"
@@ -193,7 +193,7 @@ class CroutsController < ApplicationController
         :author_avatar => "images/avatars/avatar-scott-lambridis.png",
         :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
         :content => "life_of_the_gallows",
-        :artwork => "images/image-jester.jpg",
+        :artwork => "images/crouts/image-life_of_the_gallows.jpg",
         :artwork_title => "Crows",
         :artist => "Tyler Landry",
         :artist_avatar => "images/avatars/avatar-tyler-landry.png",
