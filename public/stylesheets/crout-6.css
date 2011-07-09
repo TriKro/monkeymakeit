@@ -31,7 +31,7 @@ content {
     height: 108px; }
     #crout .buttons .join_modal {
       position: absolute;
-      left: -55px;
+      right: -45px;
       top: 0;
       display: inline-block;
       vertical-align: middle;
@@ -43,7 +43,7 @@ content {
         background-position: 0 -112px; }
     #crout .buttons .watch_modal {
       position: absolute;
-      right: -45px;
+      left: -55px;
       top: 0;
       display: inline-block;
       vertical-align: middle;
