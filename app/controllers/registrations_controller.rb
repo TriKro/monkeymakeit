@@ -11,7 +11,7 @@ class RegistrationsController < ApplicationController
       if @user.save
         log_activity(request.request_uri, "Created", "User", @user)
         current_user = @user
-        return redirect_to registration_thanks_path, :notice => 'Thanks, we are working hard and will let you know when more awesomeness is ready for you.'
+        return redirect_to registration_thanks_path
       else
         log_activity(request.request_uri, "Error Creating", "User")
         return redirect_to new_registration_path(:user => params[:user]), :alert => @user.errors.full_messages.first
