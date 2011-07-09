@@ -1,4 +1,4 @@
-= title "- ADMIN"
+= title "- Admin"
 - stylesheets 'admin'
 
 -# Add a no track cookie to google analytics
@@ -6,105 +6,51 @@
 
 #white_background
   .funnel
+    -# Take only activities in what range?
+    - range = 1
+
+    -# Display how many ranges?
+    - rows = 15
+
     %h1
-      Conversion Funnel
+      Landing page #{range == 1 ? 'daily' : "every #{range} days"}
 
     %table
       %tr
         %th
           Start Date
         %th
-          End Date
+          Landing Page Views
         %th
-          Button Views
+          Landing Page Clicks
         %th
-          Button Clicks
+          Button clicks
         %th
-          Signed Up
-        %th
-          Invites Sent
+          Signups
 
-
-      -# Take only activities in what range?
-      - range = 1
-      -# Display how many ranges?
-      - rows = 15
-
-      -# Start counter at -1 due to strange issue with getting start_date to include today.
-      - i = -1
-      - until i >= (rows - 1)
+      - (0..rows).each do |i|
         - start_date = Time.now.midnight - (i + range).day
         - end_date = Time.now.midnight - i.day
-        - end_date_display = Time.now.midnight - (i + 1).day
 
-        -# Get all activities in date range
-        - activities = Activity.where(:created_at => start_date..end_date)
+        - sessions = Activity.unique_sessions(:created_at => start_date..end_date)
 
         %tr
           %td
             = start_date.month
             \/
             = start_date.day
-          %td
-            = end_date_display.month
-            \/
-            = end_date_display.day
 
           %td
-            -# Display raw number
-            = button_views = activities.where(:activity_type => "Viewed Button").where(["url like ?", '%monkeymake%']).count(:session_id, :distinct => true)
+            = landing_page_views = Activity.landing_page_views_before_click(sessions).length
 
           %td
-            -# Display raw number
-            - button_clicks = activities.where(:activity_type => "Clicked Button").where(["url like ?", '%monkeymake%']).count(:session_id, :distinct => true)
-
-            -# Display conversion %
-            = number_to_percentage(button_clicks.to_f / button_views.to_f * 100)
+            - landing_page_clicks_after_view = Activity.landing_page_clicks_after_view(sessions).length
+            = number_to_percentage(landing_page_clicks_after_view.to_f / landing_page_views * 100)
 
           %td
-            -# Display raw number
-            -# TODO: There is no way to differenciate signups on a different page!!!
-            - signups = activities.where(:activity_type => "Signed Up").count(:session_id, :distinct => true)
-
-            -# Display conversion %
-            = number_to_percentage(signups.to_f / button_views.to_f * 100)
+            - button_clicks = Activity.button_clicks(sessions).length
+            = number_to_percentage(button_clicks.to_f / landing_page_views * 100)
 
           %td
-            -# Display raw number
-            - invitations_sent = activities.where(:activity_type => "Sent", :target_type => "Invitation").where(["url like ?", '%monkeymake%']).count(:session_id, :distinct => true)
-
-            -# Display conversion %
-            = number_to_percentage(invitations_sent.to_f / button_views.to_f * 100)
-
-        -# Increment counter
-        - i = i + 1
-
-  .funnel
-    %h1
-      Button test
-
-    %table
-      %tr
-        %th
-          Button Type
-        %th
-          Button Views
-        %th
-          Button Clicks
-
-      - Button.all.each do |button|
-
-        - button_views = Activity.where(:activity_type => "Viewed Button", :target_id => button.id).count
-        - button_clicks = Activity.where(:activity_type => "Clicked Button", :target_id => button.id).count
-        %tr
-          %td
-            = button.button_name
-          %td
-            = button_views
-          %td
-            = button_clicks
-            %b
-              (
-              = number_to_percentage(button_clicks.to_f / button_views.to_f * 100)
-              )
-
+            - signups = Activity.signups(sessions).length
+            = number_to_percentage(signups.to_f / landing_page_views * 100)
