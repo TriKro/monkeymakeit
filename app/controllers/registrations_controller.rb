@@ -15,6 +15,7 @@ class RegistrationsController < ApplicationController
         return redirect_to new_registration_path(:user => params[:user]), :alert => @user.errors.full_messages.first
       end
     end
+    redirect_to root_path, :notice => 'You already signed up!'
   end
 
 end
