@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
 
   def contact_us(contact_message)
     @contact_message = contact_message
-    mail :to => "TK@TristanKromer.com",
+    mail :to => "Monkeys@MonkeyMake.it",
          :from => "no-reply@monkeymake.it",
          :reply_to => @contact_message.sender,
          :subject => @contact_message.subject
