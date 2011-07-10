@@ -24,7 +24,7 @@
         %th
           Landing Page Clicks
         %th
-          Button clicks
+          Button Clicks
         %th
           Signups
 
@@ -54,3 +54,48 @@
           %td
             - signups = Activity.signups(sessions).length
             = number_to_percentage(signups.to_f / landing_page_views * 100)
+
+#white_background
+  .funnel
+    -# Take only activities in what range?
+    - range = 1
+
+    -# Display how many ranges?
+    - rows = 15
+
+    %h1
+      Directly to different pages #{range == 1 ? 'daily' : "every #{range} days"}
+
+    %table
+      %tr
+        %th
+          Start Date
+        %th
+          Button Views
+        %th
+          Button Clicks
+        %th
+          Signups
+
+      - (0..rows).each do |i|
+        - start_date = Time.now.midnight - (i + range).day
+        - end_date = Time.now.midnight - i.day
+
+        - sessions = Activity.crout_view_without_landing_page(Activity.unique_sessions(:created_at => start_date..end_date))
+
+        %tr
+          %td
+            = start_date.month
+            \/
+            = start_date.day
+
+          %td
+            = button_views = sessions.length
+
+          %td
+            - button_clicks = Activity.button_clicks(sessions).length
+            = number_to_percentage(button_clicks.to_f / button_views * 100)
+
+          %td
+            - signups = Activity.signups(sessions).length
+            = number_to_percentage(signups.to_f / button_views * 100)

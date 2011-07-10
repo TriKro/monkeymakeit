@@ -65,4 +65,22 @@ class Activity < ActiveRecord::Base
     end
   end
 
+  def self.crout_view_without_landing_page(sessions)
+    sessions.select do |session_id, activities|
+      activities_contain_some_crout_before_landing_page(activities)
+    end
+  end
+
+  def self.activities_contain_some_crout_before_landing_page(activities) # landing page is optional
+    activities.each do |activity|
+      next if activity.activity_type != 'Viewed'
+      if ['/', 'http://monkeymake.it', 'http://monkeymake.it/'].include?(activity.url)
+        return false
+      elsif activity.url.index('gallows') || activity.url.index('gallows') || activity.url.index('gallows') || activity.url.index('gallows')
+        return true
+      end
+    end
+    return false
+  end
+
 end
