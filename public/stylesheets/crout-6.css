@@ -35,7 +35,7 @@ content {
     height: 108px; }
     #crout .buttons .join_modal {
       position: absolute;
-      right: -45px;
+      left: -55px;
       top: 0;
       display: inline-block;
       vertical-align: middle;
@@ -47,7 +47,7 @@ content {
         background-position: 0 -112px; }
     #crout .buttons .watch_modal {
       position: absolute;
-      left: -55px;
+      right: -45px;
       top: 0;
       display: inline-block;
       vertical-align: middle;
@@ -72,6 +72,10 @@ content {
       padding: 20px 20px 0px 0; }
       #crout #left_column2 .story_pic img {
         width: 300px; }
+    #crout #left_column2 .story_sharing {
+      position: absolute;
+      left: 340px;
+      margin: 23px 0 0 0; }
     #crout #left_column2 #first_letter {
       font-size: 48px;
       font-weight: 100;
@@ -87,14 +91,12 @@ content {
       #crout #left_column2 p + p {
         text-indent: 30px; }
     #crout #left_column2 #first_p {
-      margin-top: 25px; }
+      margin-top: 110px; }
     #crout #left_column2 .copyright {
       font-size: 0.9em;
       color: #666666; }
     #crout #left_column2 .story_sharing-bottom {
-      position: relative;
-      margin: 0 auto 40px;
-      width: 250px;
+      margin: 0 0 40px 170px;
       height: 40px; }
   #crout #right_column2 {
     float: right;
@@ -104,7 +106,7 @@ content {
     #crout #right_column2 #contributors {
       background: white;
       padding: 10px 10px;
-      margin: 40px 0 10px 0;
+      margin: 21px 0 10px 0;
       -moz-box-shadow: 0 0 5px 0 #666666;
       -webkit-box-shadow: 0 0 5px 0 #666666;
       box-shadow: 0 0 5px 0 #666666; }

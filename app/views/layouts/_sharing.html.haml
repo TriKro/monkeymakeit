@@ -17,7 +17,7 @@
     %fb:like{ :font => "",
         :href => share[:url] == "http://monkeymake.it/tw" ? "http://www.facebook.com/pages/MonkeyMakeit/210728972305103?sk=wall" : share[:url],
         :layout => share[:count] == "vertical" ? "box_count" : "button_count",
-        :send => share[:send] == "true" ? "true" : "false",
+        :send => share[:send] == "false" ? "false" : "true",
         :show_faces => share[:faces] == "true" ? "true" : "false",
-        :width => "200",
+        :width => !share[:width].nil? ? share[:width] : "200",
     }

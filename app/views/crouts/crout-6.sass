@@ -44,7 +44,7 @@ content
     height: 108px
     .join_modal
       position: absolute
-      right: -45px
+      left: -55px
       top: 0
       @include sprite
       height: 112px
@@ -54,7 +54,7 @@ content
         background-position: 0 -112px
     .watch_modal
       position: absolute
-      left: -55px
+      right: -45px
       top: 0
       @include sprite
       height: 112px
@@ -80,6 +80,11 @@ content
       img
         width: 300px
 
+    .story_sharing
+      position: absolute
+      left: 340px
+      margin: 23px 0 0 0
+
     #first_letter
       font-size: 48px
       font-weight: 100
@@ -98,16 +103,14 @@ content
         text-indent: 30px
 
     #first_p
-      margin-top: 25px
+      margin-top: 110px
 
     .copyright
       font-size: $small
       color: $darkgrey
 
     .story_sharing-bottom
-      position: relative
-      margin: 0 auto 40px
-      width: 250px
+      margin: 0 0 40px 170px
       height: 40px
 
   #right_column2
@@ -119,7 +122,7 @@ content
     #contributors
       background: #FFF
       padding: 10px 10px
-      margin: 40px 0 10px 0
+      margin: 21px 0 10px 0
       @include box-shadow(0, 0, 5px, 0, #666)
       h4
         font-size: 1em

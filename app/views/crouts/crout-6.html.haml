@@ -9,8 +9,6 @@
     %h2
       = @crout[:subtitle]
 
-    .story_sharing
-      = render :partial => "/layouts/sharing", :locals => { :share => { :url => "http://monkeymake.it/tw" + request.request_uri, :content => "I'm reading and remixing stories with @monkeymakeit" } }
 
   #right_column1
     .buttons
@@ -22,7 +20,11 @@
     .story_pic
       %img{ :src => "#{ @crout[:artwork] }"}
 
+    .story_sharing
+      = render :partial => "/layouts/sharing", :locals => { :share => { :url => "http://monkeymake.it/tw" + request.request_uri, :content => "I'm reading and remixing stories with @monkeymakeit" } }
+
     = render "#{@crout[:content]}"
+
 
     .buttons{ :style => "margin-bottom: 40px;"}
       %span.join_modal
