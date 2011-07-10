@@ -18,15 +18,15 @@
 
   #left_column2
     .story_pic
-      %img{ :src => "#{ @crout[:artwork] }"}
+      %img{ :src => "#{ @crout[:artwork] }" }
 
     .story_sharing
       = render :partial => "/layouts/sharing", :locals => { :share => { :url => "http://monkeymake.it/tw" + request.request_uri, :content => "I'm reading and remixing stories with @monkeymakeit" } }
 
-    = render "#{@crout[:content]}"
+    = render "#{ @crout[:content] }"
 
 
-    .buttons{ :style => "margin-bottom: 40px;"}
+    .buttons{ :style => "margin-bottom: 40px;" }
       %span.join_modal
       %span.watch_modal
 
@@ -37,14 +37,14 @@
   #right_column2
     #contributors
       %h4
-        Contributors
+        %img{ :src => "images/text-collaborators.png" }
       #author
-        %img{:src => "#{ @crout[:author_avatar] }", :title => "#{ @crout[:author] }"}
+        %img{ :src => "#{ @crout[:author_avatar] }", :title => "#{ @crout[:author] }" }
         = @crout[:author]
         %span.role
           \- author
       #artist
-        %img{:src => "#{ @crout[:artist_avatar] }", :title => "#{ @crout[:artist] }"}
+        %img{ :src => "#{ @crout[:artist_avatar] }", :title => "#{ @crout[:artist] }"}
         = @crout[:artist]
         %span.role
           \- artist
@@ -54,8 +54,10 @@
       - @additional_contributors.each do |actor|
         = render :partial => "contributor", :locals => { :activity => actor }
       .clear
+
     #activities
       %h4
-        Recent remixing
+        %img{ :src => "images/text-remixingnow.png" }
       - @activities.each do |activity|
         = render :partial => "activity_with_action_icon", :locals => { :activity => activity }
+
