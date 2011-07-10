@@ -10,7 +10,7 @@
       = @crout[:subtitle]
 
     .story_sharing
-      = render :partial => "/layouts/sharing", :locals => { :url => "http://monkeymake.it/tw" + request.request_uri, :content => "I'm reading and remixing stories with @monkeymakeit", :count => "horizontal" }
+      = render :partial => "/layouts/sharing", :locals => { :share => { :url => "http://monkeymake.it/tw" + request.request_uri, :content => "I'm reading and remixing stories with @monkeymakeit" } }
 
   #right_column1
     .buttons
@@ -29,7 +29,7 @@
       %span.watch_modal
 
     .story_sharing-bottom
-      = render :partial => "/layouts/sharing", :locals => { :url => "http://monkeymake.it/tw" + request.request_uri, :content => "I'm reading and remixing stories with @monkeymakeit", :count => "horizontal" }
+      = render :partial => "/layouts/sharing", :locals => { :share => { :url => "http://monkeymake.it/tw" + request.request_uri, :content => "I'm reading and remixing stories with @monkeymakeit" } }
 
 
   #right_column2

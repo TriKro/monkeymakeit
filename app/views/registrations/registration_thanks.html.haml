@@ -15,7 +15,7 @@
 
     %img{ :id => "cute_sharing", :src => "images/arrow-cute_sharing.png" }
 
-    = render :partial => "/layouts/sharing", :locals => { :url => "http://monkeymake.it/tw", :content => "I'm reading and remixing stories with @monkeymakeit", :count => "vertical" }
+    = render :partial => "/layouts/sharing", :locals => { :share => { :url => "http://monkeymake.it/tw", :content => "I'm reading and remixing stories with @monkeymakeit", :count => "vertical" } }
 
     %h2{ :style => "margin: 0 0 40px 420px;"}
       \...but not yet finished
@@ -50,4 +50,4 @@
       (Monkeys make great friends.)
 
   #bottom-sharing
-    = render :partial => "/layouts/sharing", :locals => { :url => "http://monkeymake.it/tw", :content => "I'm reading and remixing stories with @monkeymakeit", :count => "horizontal" }
+    = render :partial => "/layouts/sharing", :locals => { :share => { :url => "http://monkeymake.it/tw", :content => "I'm reading and remixing stories with @monkeymakeit"} }
