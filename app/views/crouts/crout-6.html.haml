@@ -8,6 +8,10 @@
       = @crout[:title]
     %h2
       = @crout[:subtitle]
+
+    .story_sharing
+      = render :partial => "/layouts/sharing", :locals => { :url => "http://monkeymake.it/tw" + request.request_uri, :content => "I'm reading and remixing stories with @monkeymakeit", :count => "horizontal" }
+
   #right_column1
     .buttons
       %span.join_modal

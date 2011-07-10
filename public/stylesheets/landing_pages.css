@@ -119,7 +119,7 @@ p {
   line-height: 1.7em; }
 
 .bold {
-  font-weight: 600; }
+  font-weight: 0; }
 
 .thin {
   font-weight: 100; }
@@ -224,3 +224,14 @@ footer {
       padding: 0 0 0 20px; }
     footer footer_inner a {
       color: #666666; }
+
+.sharing-show .twitter {
+  float: left;
+  padding: 0 0 0 10px;
+  position: relative;
+  top: -3px; }
+.sharing-show .facebook {
+  float: left;
+  padding: 0;
+  position: relative;
+  top: -2px; }

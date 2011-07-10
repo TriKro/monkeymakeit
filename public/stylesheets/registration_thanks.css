@@ -28,15 +28,5 @@
 #registration_thanks p {
   color: #666666;
   font-size: 1.5em; }
-#registration_thanks .sharing-show .twitter {
-  float: left;
-  padding: 0 0 0 10px;
-  position: relative;
-  top: -3px; }
-#registration_thanks .sharing-show .facebook {
-  float: left;
-  padding: 0;
-  position: relative;
-  top: -2px; }
 #registration_thanks #bottom-sharing {
   margin-bottom: 40px; }

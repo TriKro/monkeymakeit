@@ -119,7 +119,7 @@ p {
   line-height: 1.7em; }
 
 .bold {
-  font-weight: 600; }
+  font-weight: 0; }
 
 .thin {
   font-weight: 100; }
@@ -338,6 +338,17 @@ footer {
       height: 52px;
       width: 166px;
       background: url(/images/button-yes-sprite.png) no-repeat 0px 0px; }
+
+.sharing-show .twitter {
+  float: left;
+  padding: 0 0 0 10px;
+  position: relative;
+  top: -3px; }
+.sharing-show .facebook {
+  float: left;
+  padding: 0;
+  position: relative;
+  top: -2px; }
 
 .login > .icon {
   height: 32px;
