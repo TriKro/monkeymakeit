@@ -28,6 +28,10 @@
       %span.join_modal
       %span.watch_modal
 
+    .story_sharing-bottom
+      = render :partial => "/layouts/sharing", :locals => { :url => "http://monkeymake.it/tw" + request.request_uri, :content => "I'm reading and remixing stories with @monkeymakeit", :count => "horizontal" }
+
+
   #right_column2
     #contributors
       %h4

@@ -21,6 +21,8 @@ content {
     color: #111111;
     width: 600px;
     z-index: 3; }
+    #crout #left_column1 .story_sharing {
+      margin-left: 30px; }
   #crout #right_column1 {
     float: right;
     color: #111111;
@@ -89,6 +91,11 @@ content {
     #crout #left_column2 .copyright {
       font-size: 0.9em;
       color: #666666; }
+    #crout #left_column2 .story_sharing-bottom {
+      position: relative;
+      margin: 0 auto 40px;
+      width: 250px;
+      height: 40px; }
   #crout #right_column2 {
     float: right;
     width: 320px;
