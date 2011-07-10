@@ -9,7 +9,7 @@ class Activity < ActiveRecord::Base
 
   def self.unique_sessions(where_clauses)
     sessions = {}
-    Activity.where(where_clauses).each do |x|
+    Activity.where(where_clauses).reverse.each do |x|
       sessions[x.session_id] ||= []
       sessions[x.session_id] << x
     end
