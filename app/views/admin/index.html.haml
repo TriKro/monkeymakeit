@@ -41,18 +41,19 @@
             = start_date.day
 
           %td
-            = landing_page_views = Activity.landing_page_views_before_click(sessions).length
+            - sessions_to_landing_page = Activity.landing_page_views_before_click(sessions)
+            = landing_page_views = sessions_to_landing_page.length
 
           %td
             - landing_page_clicks_after_view = Activity.landing_page_clicks_after_view(sessions).length
             = number_to_percentage(landing_page_clicks_after_view.to_f / landing_page_views * 100)
 
           %td
-            - button_clicks = Activity.button_clicks(sessions).length
+            - button_clicks = Activity.button_clicks(sessions_to_landing_page).length
             = number_to_percentage(button_clicks.to_f / landing_page_views * 100)
 
           %td
-            - signups = Activity.signups(sessions).length
+            - signups = Activity.signups(sessions_to_landing_page).length
             = number_to_percentage(signups.to_f / landing_page_views * 100)
 
 #white_background
