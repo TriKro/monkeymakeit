@@ -143,24 +143,28 @@ class CroutsController < ApplicationController
   def doris_6
     crout_doris
     activities_with_thumbnails
+    related_crouts
     render 'crout-6'
   end
 
   def hiccup_6
     crout_hiccup
     activities_with_thumbnails
+    related_crouts
     render 'crout-6'
   end
 
   def heart_6
     crout_heart_of_the_sun
     heart_activities_with_thumbnails
+    related_crouts
     render 'crout-6'
   end
 
   def life_of_the_gallows_6
     crout_life_of_the_gallows
     activities_with_thumbnails
+    related_crouts
     render 'crout-6'
   end
 
@@ -312,4 +316,31 @@ class CroutsController < ApplicationController
     @additional_contributors = @activities.map{ |activity| { :actor => activity[:actor], :actor_avatar => activity[:actor_avatar] } }.uniq
     @additional_contributors.delete_if{ |contributor| contributor[:actor_avatar] == @crout[:author_avatar] || contributor[:actor_avatar] == @crout[:artist_avatar] }
   end
+
+  def related_crouts
+    @related = [
+        { :title => "Life of the Gallows",
+          :subtitle => "a short story about a medieval jester-turned-executioner",
+          :cover => "images/crouts/thumbnail-life_of_the_gallows.png",
+          :url => life_of_the_gallows_path,
+        },
+        { :title => "Oh, Mighty Hiccup!",
+          :subtitle => "a novel about brothers, hiccups, and the end of time",
+          :cover => "images/crouts/thumbnail-hiccup.png",
+          :url => hiccup_path,
+        },
+        { :title => "Doris",
+          :subtitle => "a short story about an albino duck",
+          :cover => "images/crouts/thumbnail-doris.png",
+          :url => doris_path,
+        },
+        { :title => "Heart of the Sun",
+          :subtitle => "Love in the Time of Posthumans - An Open Source Screenplay",
+          :cover => "images/crouts/thumbnail-heart_of_the_sun.png",
+          :url => heart_path,
+        },
+    ]
+    @related.delete_if{ |crout| crout[:title] == @crout[:title] }
+  end
+
 end

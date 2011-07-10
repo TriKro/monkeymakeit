@@ -192,3 +192,35 @@ content
         .actor_icon
           img
             width: 30px
+
+    #related_crouts
+      background: #FFF
+      padding: 10px 10px
+      margin: 10px 0
+      @include box-shadow(0, 0, 5px, 0, #666)
+      h4
+        font-size: 1em
+        color: $black
+        border-bottom: 2px solid $darkgrey
+        margin: 0 0 10px 0
+        padding: 0 0 5px 0
+      .related_crout
+        -moz-transition: all 0.25s linear
+        -webkit-transition: all 0.25s linear
+        &:hover
+          -moz-transform: scale(1.15)
+          -webkit-transform: scale(1.15)
+          -ms-transform: scale(1.15)
+          -o-transform: scale(1.15)
+        a
+          color: $black
+          text-decoration: none
+          img
+            float: left
+            width: 65px
+          .title
+            margin: 10px 0 0 70px
+            padding: 10px 0 0 0
+            font-weight: 600
+          .subtitle
+            margin: 5px 0 0 70px

@@ -176,3 +176,36 @@ content {
             color: #bdbdbd; }
         #crout #right_column2 #activities .activity .actor_icon img {
           width: 30px; }
+    #crout #right_column2 #related_crouts {
+      background: white;
+      padding: 10px 10px;
+      margin: 10px 0;
+      -moz-box-shadow: 0 0 5px 0 #666666;
+      -webkit-box-shadow: 0 0 5px 0 #666666;
+      box-shadow: 0 0 5px 0 #666666; }
+      #crout #right_column2 #related_crouts h4 {
+        font-size: 1em;
+        color: black;
+        border-bottom: 2px solid #666666;
+        margin: 0 0 10px 0;
+        padding: 0 0 5px 0; }
+      #crout #right_column2 #related_crouts .related_crout {
+        -moz-transition: all 0.25s linear;
+        -webkit-transition: all 0.25s linear; }
+        #crout #right_column2 #related_crouts .related_crout:hover {
+          -moz-transform: scale(1.15);
+          -webkit-transform: scale(1.2);
+          -ms-transform: scale(1.15);
+          -o-transform: scale(1.15); }
+        #crout #right_column2 #related_crouts .related_crout a {
+          color: black;
+          text-decoration: none; }
+          #crout #right_column2 #related_crouts .related_crout a img {
+            float: left;
+            width: 65px; }
+          #crout #right_column2 #related_crouts .related_crout a .title {
+            margin: 10px 0 0 70px;
+            padding: 10px 0 0 0;
+            font-weight: 600; }
+          #crout #right_column2 #related_crouts .related_crout a .subtitle {
+            margin: 5px 0 0 70px; }

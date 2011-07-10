@@ -1,0 +1,10 @@
+.related_crout
+  %a{ :href => related[:url] }
+    .cover
+      %img{:src => "#{related[:cover]}"}
+    .related_titles
+      .title
+        "#{ related[:title] }"
+      .subtitle
+        = related[:subtitle]
+    .clear

@@ -61,3 +61,8 @@
       - @activities.each do |activity|
         = render :partial => "activity_with_action_icon", :locals => { :activity => activity }
 
+    #related_crouts
+      %h4
+        %img{ :src => "images/text-monkeywithmore.png" }
+      - @related.each do |related|
+        = render :partial => "related_crout", :locals => { :related => related }
