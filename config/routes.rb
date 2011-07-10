@@ -2,7 +2,8 @@ Suggestedit::Application.routes.draw do
 
   root :to => 'landing_pages#home'
 
-  match "/tw" => 'landing_pages#home'
+  match "/tw" => 'redirects#show'
+  match "/tw/*path" => 'redirects#show'
 
   # Omniauth routes
   match "/auth/:provider/callback" => "sessions#create"
