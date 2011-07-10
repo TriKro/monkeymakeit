@@ -27,7 +27,7 @@ class Activity < ActiveRecord::Base
       next if activity.activity_type != 'Viewed'
       if ['/', 'http://monkeymake.it', 'http://monkeymake.it/'].include?(activity.url)
         return true
-      elsif activity.url.index('gallows') || activity.url.index('gallows') || activity.url.index('gallows') || activity.url.index('gallows')
+      elsif activity.url.index('gallows') || activity.url.index('doris') || activity.url.index('hiccup') || activity.url.index('heart')
         return false
       end
     end
@@ -76,7 +76,7 @@ class Activity < ActiveRecord::Base
       next if activity.activity_type != 'Viewed'
       if ['/', 'http://monkeymake.it', 'http://monkeymake.it/'].include?(activity.url)
         return false
-      elsif activity.url.index('gallows') || activity.url.index('gallows') || activity.url.index('gallows') || activity.url.index('gallows')
+      elsif activity.url.index('gallows') || activity.url.index('doris') || activity.url.index('hiccup') || activity.url.index('heart')
         return true
       end
     end
