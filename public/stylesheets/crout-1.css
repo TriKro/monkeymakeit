@@ -71,7 +71,7 @@ content {
         border: none;
         height: 80px;
         width: 98px;
-        background: url(/images/logo-small.png) no-repeat 0px 0px; }
+        background: url(/images/logo_small.png) no-repeat 0px 0px; }
       #crout #right_column #remix #remix_header #remix_header_text {
         float: right;
         width: 175px; }
@@ -198,7 +198,7 @@ content {
     border: none;
     height: 80px;
     width: 98px;
-    background: url(/images/logo-small.png) no-repeat 0px 0px; }
+    background: url(/images/logo_small.png) no-repeat 0px 0px; }
   #crout #bottom_cta #cta_text {
     float: left; }
     #crout #bottom_cta #cta_text h4 {

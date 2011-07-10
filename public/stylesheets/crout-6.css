@@ -7,13 +7,15 @@ content {
     margin: 0;
     padding: 0;
     font-size: 4em;
+    font-family: Georgia;
     font-weight: 100;
     color: black; }
   #crout h2 {
-    margin: 0;
+    margin: 10px 0 20px 40px;
     padding: 0;
-    font-size: 2em;
-    color: #666666; }
+    font-size: 1.8em;
+    font-family: Georgia;
+    color: #7a7a7a; }
   #crout #left_column1 {
     float: left;
     color: #111111;
@@ -71,11 +73,14 @@ content {
     #crout #left_column2 #first_letter {
       font-size: 48px;
       font-weight: 100;
-      font-family: Georgia; }
+      font-family: Georgia;
+      color: #dc9422; }
     #crout #left_column2 p {
       margin: 20px 0;
       padding: 0;
       line-height: 26px;
+      font-family: Tahoma;
+      color: #111111;
       text-align: justify; }
       #crout #left_column2 p + p {
         text-indent: 30px; }
