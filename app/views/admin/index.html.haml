@@ -28,7 +28,7 @@
         %th
           Signups
 
-      - (0..rows).each do |i|
+      - (-1..rows).each do |i|
         - start_date = Time.now.midnight - (i + range).day
         - end_date = Time.now.midnight - i.day
 
@@ -77,7 +77,7 @@
         %th
           Signups
 
-      - (0..rows).each do |i|
+      - (-1..rows).each do |i|
         - start_date = Time.now.midnight - (i + range).day
         - end_date = Time.now.midnight - i.day
 
