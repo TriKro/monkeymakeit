@@ -194,7 +194,7 @@ content {
         -webkit-transition: all 0.25s linear; }
         #crout #right_column2 #related_crouts .related_crout:hover {
           -moz-transform: scale(1.15);
-          -webkit-transform: scale(1.2);
+          -webkit-transform: scale(1.15);
           -ms-transform: scale(1.15);
           -o-transform: scale(1.15); }
         #crout #right_column2 #related_crouts .related_crout a {

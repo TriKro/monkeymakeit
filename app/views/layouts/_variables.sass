@@ -86,6 +86,15 @@ $global-shadow-color: rgba(0,0,0,0.1)
   background: -webkit-gradient(linear, left top, left bottom, from($top_color), to($bottom_color))
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$topcolor', endColorstr='$bottom_color')
 
+@mixin transition($duration:0.25s)
+  -moz-transition: all $duration linear
+  -webkit-transition: all $duration linear
+
+@mixin transform-scale($scale:1.15)
+  -moz-transform: scale($scale)
+  -webkit-transform: scale($scale)
+  -ms-transform: scale($scale)
+  -o-transform: scale($scale)
 
 @mixin pointer
   cursor: pointer
