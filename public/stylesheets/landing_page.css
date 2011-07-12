@@ -69,12 +69,12 @@ container, content {
     #landing_page #center_container > h1 {
       margin: 229px 0 0 0;
       text-align: center;
-      font-family: "Helvetica";
+      font-family: "Helvetica, Arial, Veranda, sans-serif";
       font-size: 84px;
       font-weight: 100;
       letter-spacing: -1px; }
       #landing_page #center_container > h1 .first_letter {
-        font-family: "Helvetica, serif";
+        font-family: "Helvetica, Arial, Veranda, sans-serif";
         font-size: 168px;
         font-weight: 500; }
     #landing_page #center_container #description {
@@ -82,7 +82,7 @@ container, content {
       text-align: center; }
       #landing_page #center_container #description h2 {
         margin: 15px;
-        font-family: "Helvetica";
+        font-family: "Helvetica, Arial, Veranda, sans-serif";
         font-size: 1.4em;
         font-weight: 100;
         color: #eeeeee; }
@@ -112,7 +112,7 @@ container, content {
           padding: 3px;
           width: 270px;
           font-size: 1.5em;
-          font-family: "Arial, Verdana, sans-serif";
+          font-family: "Arial";
           color: #666666; }
       #landing_page #center_container #registration .actions {
         position: absolute;

@@ -238,12 +238,12 @@ header {
         top: 40px;
         left: 115px;
         margin: 0 0 0 0;
-        font-family: "Helvetica";
+        font-family: "Helvetica, Arial, Veranda, sans-serif";
         font-size: 24px;
         font-weight: 100;
         letter-spacing: -1px; }
         header header_inner a#home_link h1 .first_letter {
-          font-family: "Helvetica, serif";
+          font-family: "Helvetica, Arial, Veranda, sans-serif";
           font-size: 40px;
           font-weight: 500; }
       header header_inner a#home_link .signup {

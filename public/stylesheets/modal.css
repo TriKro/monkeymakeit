@@ -210,14 +210,14 @@ p {
     #new_signup #new_signup_inner h2 {
       margin: 40px 0 10px 0;
       text-align: left;
-      font-family: "Helvetica";
+      font-family: "Helvetica, Arial, Veranda, sans-serif";
       font-size: 3em;
       font-weight: 100;
       letter-spacing: -1px; }
     #new_signup #new_signup_inner h3 {
       margin: 40px 0 0 0;
       text-align: left;
-      font-family: "Helvetica";
+      font-family: "Helvetica, Arial, Veranda, sans-serif";
       font-size: 1.6em;
       font-weight: 100;
       color: #666666; }
@@ -251,7 +251,7 @@ p {
         background-position: 0 -52px; }
       #new_signup #new_signup_inner #signup_form .actions .company_id {
         margin: 10px 0 0 0;
-        font-family: "Helvetica"; }
+        font-family: "Helvetica, Arial, Veranda, sans-serif"; }
         #new_signup #new_signup_inner #signup_form .actions .company_id .powered_by {
           color: #666666;
           font-style: italic;
@@ -270,21 +270,21 @@ p {
     #new_invitation #new_invitation_inner h2 {
       margin: 10px 0 10px 0;
       text-align: left;
-      font-family: "Helvetica";
+      font-family: "Helvetica, Arial, Veranda, sans-serif";
       font-size: 2em;
       font-weight: 100;
       letter-spacing: -1px; }
     #new_invitation #new_invitation_inner h3 {
       margin: 40px 0 0 0;
       text-align: left;
-      font-family: "Helvetica";
+      font-family: "Helvetica, Arial, Veranda, sans-serif";
       font-size: 1.8em;
       font-weight: 100;
       color: #666666; }
     #new_invitation #new_invitation_inner h4 {
       margin: 40px 0 0 0;
       text-align: left;
-      font-family: "Helvetica";
+      font-family: "Helvetica, Arial, Veranda, sans-serif";
       font-size: 1.7em;
       font-weight: 100; }
     #new_invitation #new_invitation_inner p.additional_info {
@@ -292,7 +292,7 @@ p {
       border-top: 1px solid #999999;
       padding-top: 20px;
       text-align: left;
-      font-family: "Helvetica";
+      font-family: "Helvetica, Arial, Veranda, sans-serif";
       font-size: 1.5em;
       font-weight: 100;
       color: #666666; }
@@ -303,7 +303,7 @@ p {
       #new_invitation #new_invitation_inner #invitation_form #fields #invitation_field_name #invitation_name {
         margin: 10px 0 0 0;
         width: 250px;
-        font-family: "Arial, Verdana, sans-serif";
+        font-family: "Arial";
         font-size: 1.6em;
         color: #666666; }
       #new_invitation #new_invitation_inner #invitation_form #fields #invitation_field_email label {
@@ -311,7 +311,7 @@ p {
       #new_invitation #new_invitation_inner #invitation_form #fields #invitation_field_email #invitation_email {
         margin: 10px 0 0 0;
         width: 250px;
-        font-family: "Arial, Verdana, sans-serif";
+        font-family: "Arial";
         font-size: 1.6em;
         color: #666666; }
     #new_invitation #new_invitation_inner #invitation_form .actions {
@@ -328,7 +328,7 @@ p {
         background-position: 0 -52px; }
       #new_invitation #new_invitation_inner #invitation_form .actions .company_id {
         margin: 5px 0 0 0;
-        font-family: "Helvetica"; }
+        font-family: "Helvetica, Arial, Veranda, sans-serif"; }
         #new_invitation #new_invitation_inner #invitation_form .actions .company_id .powered_by {
           font-style: italic;
           font-size: 0.7em;
