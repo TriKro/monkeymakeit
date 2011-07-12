@@ -7,14 +7,14 @@ content {
     margin: 0;
     padding: 0;
     font-size: 4em;
-    font-family: Georgia;
+    font-family: "Georgia, Times New Roman, serif";
     font-weight: 100;
     color: black; }
   #crout h2 {
     margin: 10px 0 20px 40px;
     padding: 0;
     font-size: 1.8em;
-    font-family: Georgia;
+    font-family: "Georgia, Times New Roman, serif";
     color: #7a7a7a; }
   #crout #left_column1 {
     float: left;
@@ -73,13 +73,13 @@ content {
     #crout #left_column2 #first_letter {
       font-size: 48px;
       font-weight: 100;
-      font-family: Georgia;
+      font-family: "Georgia, Times New Roman, serif";
       color: #dc9422; }
     #crout #left_column2 p {
       margin: 20px 0;
       padding: 0;
       line-height: 26px;
-      font-family: Tahoma;
+      font-family: "Tahoma, Arial, sans-serif";
       color: #111111;
       text-align: justify; }
       #crout #left_column2 p + p {
