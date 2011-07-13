@@ -1,0 +1,7 @@
+- if @user.full_name != NIL
+  = title "- Editing User - " + @user.full_name
+- else
+  = title "- Editing User - " + @user.id.to_s
+
+%h1 Editing user
+= render 'form'

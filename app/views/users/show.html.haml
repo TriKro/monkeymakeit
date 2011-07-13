@@ -1,0 +1,21 @@
+- if @user.full_name != NIL
+  = title "- Show User - " + @user.full_name
+- else
+  = title "- Show User - " + @user.id.to_s
+
+%p
+  %b id:
+  = @user.id
+%p
+  %b Name:
+  = @user.full_name
+%p
+  %b Access:
+  = @user.access
+- if can? :update, @user
+  = link_to 'Edit', edit_user_path(@user)
+&#8226;
+- if can? :create, @user
+  = link_to 'New User', new_user_path
+&#8226;
+= link_to 'Back', users_path

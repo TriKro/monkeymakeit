@@ -15,6 +15,7 @@ Suggestedit::Application.routes.draw do
   match "/activities/create", :to => "activities#create"
   resources :activities
 
+  resources :users
   resources :invitations, :only => [:new, :create]
   resources :signups, :only => [:new, :create]
   resources :registrations, :only => [:new, :create]
