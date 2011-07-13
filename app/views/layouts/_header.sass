@@ -51,4 +51,17 @@ header
       a
         color: $white
         text-decoration: none
-        border-bottom: 1px dotted $white
+
+      @mixin signin_small
+        @include sprite
+        @include pointer
+        height: 20px
+        width: 63px
+
+      .signin_twitter_small
+        @include signin_small
+        background: url(/images/social/signin_twitter_small.png) no-repeat 0px 0px
+
+      .signin_facebook_small
+        @include signin_small
+        background: url(/images/social/signin_facebook_small.png) no-repeat 0px 0px

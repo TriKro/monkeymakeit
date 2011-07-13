@@ -253,8 +253,41 @@ header {
       cursor: pointer; }
       header header_inner .top_menu a {
         color: white;
-        text-decoration: none;
-        border-bottom: 1px dotted white; }
+        text-decoration: none; }
+  header .signin_twitter {
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+    height: 32px;
+    width: 230px;
+    margin: 5px;
+    background: url(/images/social/signin_twitter.png) no-repeat 0px 0px; }
+  header .signin_facebook {
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+    height: 32px;
+    width: 230px;
+    margin: 5px;
+    background: url(/images/social/signin_facebook.png) no-repeat 0px 0px; }
+  header .signin_twitter_small {
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+    height: 20px;
+    width: 63px;
+    background: url(/images/social/signin_twitter_small.png) no-repeat 0px 0px; }
+  header .signin_facebook_small {
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+    height: 20px;
+    width: 63px;
+    background: url(/images/social/signin_facebook_small.png) no-repeat 0px 0px; }
 
 footer {
   display: inline-block;

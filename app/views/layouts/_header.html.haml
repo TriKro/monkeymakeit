@@ -9,7 +9,7 @@
             &#8226;
             = link_to "Admin", admin_path
         - else
-          .signup.join_modal
-            Sign Up
-            &#8226;
-            Sign In
+          = link_to("/login/facebook", :class => "nodec") do
+            .signin_facebook_small
+          = link_to("/login/twitter", :class => "nodec") do
+            .signin_twitter_small
