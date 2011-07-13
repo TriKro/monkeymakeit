@@ -16,6 +16,7 @@ Suggestedit::Application.routes.draw do
   resources :activities
 
   resources :users
+  resources :authentications, :only => [:index, :destroy]
   resources :invitations, :only => [:new, :create]
   resources :signups, :only => [:new, :create]
   resources :registrations, :only => [:new, :create]

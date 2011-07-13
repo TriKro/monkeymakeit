@@ -1,0 +1,23 @@
+= title "- Index Authentications"
+
+%h1 Listing Authentications
+%table
+  %tr
+    %th User ID
+    %th User
+    %th Provider
+    %th UID
+    - if can? :destroy, @authenticaion
+      %th
+  - @authentications.each do |authentication|
+    %tr
+      %td
+        = link_to authentication.user do
+          = authentication.user.id
+      %td
+        = link_to authentication do
+          = authentication.user.full_name  if !authentication.user.nil?
+      %td= authentication.provider
+      %td= authentication.uid
+      - if can? :destroy, @authenticaion
+        %td= link_to 'Destroy', authentication, :confirm => 'Are you sure?', :method => :delete
