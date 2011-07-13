@@ -11,4 +11,6 @@
 = javascript_include_tag 'notifications'
 - if !:scripts.nil?
   = javascript_include_tag yield :scripts
+- if !:fonts.nil?
+  %link{:href => "#{ yield :fonts }", :rel => "stylesheet", :type => "text/css"}/
 = csrf_meta_tag

@@ -12,6 +12,10 @@ module ApplicationHelper
     content_for(:stylesheets) { stylesheets_name }
   end
 
+  def fonts(fonts_name)
+    content_for(:fonts) { fonts_name }
+  end
+
   def collaborate_js_tag(js_tag_params={})
     %{<script type="text/javascript" src="#{collaborate_js_url(:format => :js)}?#{js_tag_params.to_query}"></script>}
   end
