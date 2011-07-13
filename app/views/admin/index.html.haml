@@ -7,18 +7,20 @@
 #white_background
   .funnel
     -# Take only activities in what range?
-    - range = 1
+    - range = 0
 
     -# Display how many ranges?
     - rows = 15
 
     %h1
-      Landing page #{range == 1 ? 'daily' : "every #{range} days"}
+      Landing page #{range == 0 ? 'daily' : "every #{range} days"}
 
     %table
       %tr
         %th
           Start Date
+        %th
+          End Date
         %th
           Landing Page Views
         %th
@@ -28,9 +30,9 @@
         %th
           Signups
 
-      - (-1..rows).each do |i|
-        - start_date = Time.now.midnight - (i + range).day
-        - end_date = Time.now.midnight - i.day
+      - (0..rows).each do |i|
+        - start_date = Time.now.beginning_of_day - (i + range).day
+        - end_date = Time.now.end_of_day - i.day
 
         - sessions = Activity.unique_sessions(:created_at => start_date..end_date)
 
@@ -39,21 +41,31 @@
             = start_date.month
             \/
             = start_date.day
+          %td
+            = end_date.month
+            \/
+            = end_date.day
 
           %td
             - sessions_to_landing_page = Activity.landing_page_views_before_click(sessions)
             = landing_page_views = sessions_to_landing_page.length
 
           %td
-            - landing_page_clicks_after_view = Activity.landing_page_clicks_after_view(sessions).length
+            (
+            = landing_page_clicks_after_view = Activity.landing_page_clicks_after_view(sessions).length
+            )
             = number_to_percentage(landing_page_clicks_after_view.to_f / landing_page_views * 100)
 
           %td
-            - button_clicks = Activity.button_clicks(sessions_to_landing_page).length
+            (
+            = button_clicks = Activity.button_clicks(sessions_to_landing_page).length
+            )
             = number_to_percentage(button_clicks.to_f / landing_page_views * 100)
 
           %td
-            - signups = Activity.signups(sessions_to_landing_page).length
+            (
+            = signups = Activity.signups(sessions_to_landing_page).length
+            )
             = number_to_percentage(signups.to_f / landing_page_views * 100)
 
 #white_background
@@ -94,9 +106,13 @@
             = button_views = sessions.length
 
           %td
-            - button_clicks = Activity.button_clicks(sessions).length
+            (
+            = button_clicks = Activity.button_clicks(sessions).length
+            )
             = number_to_percentage(button_clicks.to_f / button_views * 100)
 
           %td
-            - signups = Activity.signups(sessions).length
+            (
+            = signups = Activity.signups(sessions).length
+            )
             = number_to_percentage(signups.to_f / button_views * 100)
