@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110708015634) do
+ActiveRecord::Schema.define(:version => 20110713002915) do
 
   create_table "activities", :force => true do |t|
     t.integer   "user_id"
@@ -26,32 +26,21 @@ ActiveRecord::Schema.define(:version => 20110708015634) do
     t.string    "session_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.integer   "user_session_id"
   end
 
   add_index "activities", ["subtarget_id", "subtarget_type"], :name => "index_activities_on_subtarget_id_and_subtarget_type"
   add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
   add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
 
-  create_table "alternatives", :force => true do |t|
-    t.integer "experiment_id"
-    t.string  "content"
-    t.string  "lookup",        :limit => 32
-    t.integer "weight",                      :default => 1
-    t.integer "participants",                :default => 0
-    t.integer "conversions",                 :default => 0
-  end
-
-  add_index "alternatives", ["experiment_id"], :name => "index_alternatives_on_experiment_id"
-  add_index "alternatives", ["lookup"], :name => "index_alternatives_on_lookup"
-
   create_table "authentications", :force => true do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.integer  "user_id"
-    t.string   "token"
-    t.string   "secret"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "provider"
+    t.string    "uid"
+    t.integer   "user_id"
+    t.string    "token"
+    t.string    "secret"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "buttons", :force => true do |t|
@@ -65,14 +54,16 @@ ActiveRecord::Schema.define(:version => 20110708015634) do
     t.integer   "button_height"
   end
 
-  create_table "experiments", :force => true do |t|
-    t.string   "test_name"
-    t.string   "status"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "invitations", :force => true do |t|
+    t.integer   "widget_id"
+    t.string    "button_name"
+    t.text      "call_to_action"
+    t.text      "confirmation"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "button_width"
+    t.integer   "button_height"
   end
-
-  add_index "experiments", ["test_name"], :name => "index_experiments_on_test_name"
 
   create_table "suggestions", :force => true do |t|
     t.string    "email"
@@ -84,6 +75,13 @@ ActiveRecord::Schema.define(:version => 20110708015634) do
     t.text      "before_html"
     t.string    "url"
     t.boolean   "subscribed"
+  end
+
+  create_table "user_sessions", :force => true do |t|
+    t.string   "session_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

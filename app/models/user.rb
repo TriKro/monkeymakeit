@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :authentications
   has_many :widgets
+  has_many :user_sessions
   has_many :activities, :as => :target
   has_many :activities, :as => :subtarget
 
