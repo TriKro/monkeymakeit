@@ -246,11 +246,15 @@ header {
           font-family: "Helvetica, Arial, Veranda, sans-serif";
           font-size: 40px;
           font-weight: 500; }
-      header header_inner a#home_link .signup {
-        position: absolute;
-        right: 30px;
-        top: 10px;
-        cursor: pointer; }
+    header header_inner .top_menu {
+      position: absolute;
+      right: 30px;
+      top: 10px;
+      cursor: pointer; }
+      header header_inner .top_menu a {
+        color: white;
+        text-decoration: none;
+        border-bottom: 1px dotted white; }
 
 footer {
   display: inline-block;

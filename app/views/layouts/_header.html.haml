@@ -2,7 +2,14 @@
   %header_inner
     = link_to root_path, :id => 'home_link' do
       %logo
-      .signup.join_modal
-        Sign Up
-        &#8226;
-        Sign In
+      .top_menu
+        - if current_user
+          = link_to "Sign Out", signout_path
+          - if can? :manage, AdminController
+            &#8226;
+            = link_to "Admin", admin_path
+        - else
+          .signup.join_modal
+            Sign Up
+            &#8226;
+            Sign In
