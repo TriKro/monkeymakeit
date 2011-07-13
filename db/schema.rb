@@ -10,23 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110713002915) do
+ActiveRecord::Schema.define(:version => 20110713011212) do
 
   create_table "activities", :force => true do |t|
-    t.integer   "user_id"
-    t.string    "activity_type"
-    t.string    "data"
-    t.integer   "target_id"
-    t.string    "target_type"
-    t.integer   "subtarget_id"
-    t.string    "subtarget_type"
-    t.string    "url"
-    t.string    "target_model"
-    t.string    "subtarget_model"
-    t.string    "session_id"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.integer   "user_session_id"
+    t.integer  "user_id"
+    t.string   "activity_type"
+    t.string   "data"
+    t.integer  "target_id"
+    t.string   "target_type"
+    t.integer  "subtarget_id"
+    t.string   "subtarget_type"
+    t.string   "url"
+    t.string   "target_model"
+    t.string   "subtarget_model"
+    t.string   "session_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_session_id"
   end
 
   add_index "activities", ["subtarget_id", "subtarget_type"], :name => "index_activities_on_subtarget_id_and_subtarget_type"
@@ -55,14 +55,14 @@ ActiveRecord::Schema.define(:version => 20110713002915) do
   end
 
   create_table "invitations", :force => true do |t|
-    t.integer   "widget_id"
-    t.string    "button_name"
-    t.text      "call_to_action"
-    t.text      "confirmation"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.integer   "button_width"
-    t.integer   "button_height"
+    t.integer  "widget_id"
+    t.string   "button_name"
+    t.text     "call_to_action"
+    t.text     "confirmation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "button_width"
+    t.integer  "button_height"
   end
 
   create_table "suggestions", :force => true do |t|
