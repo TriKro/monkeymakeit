@@ -103,6 +103,13 @@ content {
     width: 320px;
     margin-bottom: 40px;
     z-index: 3; }
+    #crout #right_column2 h4 {
+      font-size: 2em;
+      font-family: "Reenie Beanie", cursive;
+      color: #0088ba;
+      border-bottom: 2px solid #666666;
+      margin: 0 0 10px 0;
+      padding: 0 0 5px 0; }
     #crout #right_column2 #contributors {
       background: white;
       padding: 10px 10px;
@@ -110,12 +117,6 @@ content {
       -moz-box-shadow: 0 0 5px 0 #666666;
       -webkit-box-shadow: 0 0 5px 0 #666666;
       box-shadow: 0 0 5px 0 #666666; }
-      #crout #right_column2 #contributors h4 {
-        font-size: 1em;
-        color: black;
-        border-bottom: 2px solid #666666;
-        margin: 0 0 10px 0;
-        padding: 0 0 5px 0; }
       #crout #right_column2 #contributors #artist, #crout #right_column2 #contributors #author {
         margin: 0 0 20px 0;
         font-weight: 600; }
@@ -141,12 +142,6 @@ content {
       -moz-box-shadow: 0 0 5px 0 #666666;
       -webkit-box-shadow: 0 0 5px 0 #666666;
       box-shadow: 0 0 5px 0 #666666; }
-      #crout #right_column2 #activities h4 {
-        font-size: 1em;
-        color: black;
-        border-bottom: 2px solid #666666;
-        margin: 0 0 10px 0;
-        padding: 0 0 5px 0; }
       #crout #right_column2 #activities .activity {
         font-size: 13px;
         margin: 5px 0 0 0;
@@ -183,29 +178,17 @@ content {
       -moz-box-shadow: 0 0 5px 0 #666666;
       -webkit-box-shadow: 0 0 5px 0 #666666;
       box-shadow: 0 0 5px 0 #666666; }
-      #crout #right_column2 #related_crouts h4 {
-        font-size: 1em;
+      #crout #right_column2 #related_crouts .related_crout a {
         color: black;
-        border-bottom: 2px solid #666666;
-        margin: 0 0 10px 0;
-        padding: 0 0 5px 0; }
-      #crout #right_column2 #related_crouts .related_crout {
-        -moz-transition: all 0.25s linear;
-        -webkit-transition: all 0.25s linear; }
-        #crout #right_column2 #related_crouts .related_crout:hover {
-          -moz-transform: scale(1.15);
-          -webkit-transform: scale(1.15);
-          -ms-transform: scale(1.15);
-          -o-transform: scale(1.15); }
-        #crout #right_column2 #related_crouts .related_crout a {
-          color: black;
-          text-decoration: none; }
-          #crout #right_column2 #related_crouts .related_crout a img {
-            float: left;
-            width: 65px; }
-          #crout #right_column2 #related_crouts .related_crout a .title {
-            margin: 10px 0 0 70px;
-            padding: 10px 0 0 0;
-            font-weight: 600; }
-          #crout #right_column2 #related_crouts .related_crout a .subtitle {
-            margin: 5px 0 0 70px; }
+        text-decoration: none; }
+        #crout #right_column2 #related_crouts .related_crout a:hover .title {
+          color: #0088ba; }
+        #crout #right_column2 #related_crouts .related_crout a img {
+          float: left;
+          width: 65px; }
+        #crout #right_column2 #related_crouts .related_crout a .title {
+          margin: 10px 0 0 70px;
+          padding: 10px 0 0 0;
+          font-weight: 600; }
+        #crout #right_column2 #related_crouts .related_crout a .subtitle {
+          margin: 5px 0 0 70px; }

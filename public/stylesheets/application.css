@@ -139,11 +139,18 @@ p {
 .darkgrey {
   color: #666666 !important; }
 
+.red {
+  color: #8a1f11 !important; }
+
 .clear {
   clear: both; }
 
 .hide {
   display: none; }
+
+.nodec {
+  text-decoration: none !important;
+  border-bottom: none !important; }
 
 .field_with_errors input, .field_with_errors textarea {
   border: 2px #8a1f11 solid !important; }
@@ -254,40 +261,22 @@ header {
       header header_inner .top_menu a {
         color: white;
         text-decoration: none; }
-  header .signin_twitter {
-    display: inline-block;
-    vertical-align: middle;
-    border: none;
-    cursor: pointer;
-    height: 32px;
-    width: 230px;
-    margin: 5px;
-    background: url(/images/social/signin_twitter.png) no-repeat 0px 0px; }
-  header .signin_facebook {
-    display: inline-block;
-    vertical-align: middle;
-    border: none;
-    cursor: pointer;
-    height: 32px;
-    width: 230px;
-    margin: 5px;
-    background: url(/images/social/signin_facebook.png) no-repeat 0px 0px; }
-  header .signin_twitter_small {
-    display: inline-block;
-    vertical-align: middle;
-    border: none;
-    cursor: pointer;
-    height: 20px;
-    width: 63px;
-    background: url(/images/social/signin_twitter_small.png) no-repeat 0px 0px; }
-  header .signin_facebook_small {
-    display: inline-block;
-    vertical-align: middle;
-    border: none;
-    cursor: pointer;
-    height: 20px;
-    width: 63px;
-    background: url(/images/social/signin_facebook_small.png) no-repeat 0px 0px; }
+      header header_inner .top_menu .signin_twitter_small {
+        display: inline-block;
+        vertical-align: middle;
+        border: none;
+        cursor: pointer;
+        height: 20px;
+        width: 63px;
+        background: url(/images/social/signin_twitter_small.png) no-repeat 0px 0px; }
+      header header_inner .top_menu .signin_facebook_small {
+        display: inline-block;
+        vertical-align: middle;
+        border: none;
+        cursor: pointer;
+        height: 20px;
+        width: 63px;
+        background: url(/images/social/signin_facebook_small.png) no-repeat 0px 0px; }
 
 footer {
   display: inline-block;
@@ -317,7 +306,6 @@ footer {
 #registration {
   position: relative;
   margin: 60px auto 40px auto;
-  width: 490px;
   height: 100px;
   background: #e6e6e6;
   border: 7px solid #00b7fb;
@@ -351,10 +339,18 @@ footer {
 #cboxContent {
   background: #efefea !important; }
 
+#watch h1, #join h1 {
+  margin-left: 30px; }
 #watch h2, #join h2 {
   text-align: center; }
+#watch p, #join p {
+  margin: 10px 30px 0 30px;
+  font-size: 1.5em;
+  color: #666666;
+  font-family: "Arial, Verdana, sans-serif";
+  line-height: 1em; }
 #watch ul, #join ul {
-  margin: 40px 0 40px 60px; }
+  margin: 20px 0 40px 70px; }
   #watch ul li, #join ul li {
     font-size: 1.5em;
     color: #666666;
@@ -368,13 +364,47 @@ footer {
     margin: 0; }
   #watch #registration .actions, #join #registration .actions {
     position: relative;
-    top: none;
-    right: none; }
+    top: 0;
+    right: 0;
+    margin: 20px 0 0 0; }
     #watch #registration .actions input, #join #registration .actions input {
       padding: 0;
       height: 52px;
       width: 166px;
-      background: url(/images/button-yes-sprite.png) no-repeat 0px 0px; }
+      background: url(/images/button-signup-sprite.png) no-repeat 0px 0px; }
+
+#social_signup {
+  text-align: center; }
+  #social_signup .signin_twitter {
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+    height: 32px;
+    width: 230px;
+    margin: 5px;
+    background: url(/images/social/signin_twitter.png) no-repeat 0px 0px; }
+  #social_signup .signin_facebook {
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+    height: 32px;
+    width: 230px;
+    margin: 5px;
+    background: url(/images/social/signin_facebook.png) no-repeat 0px 0px; }
+  #social_signup .signup_via_email {
+    margin: 10px 0 0 0;
+    cursor: pointer;
+    font-size: 0.8em;
+    color: #666666; }
+    #social_signup .signup_via_email:hover {
+      color: #0088ba; }
+
+#no_spam_disclaimer {
+  position: absolute;
+  bottom: 0;
+  font-size: 0.9em !important; }
 
 .sharing-show .twitter {
   float: left;
@@ -386,15 +416,3 @@ footer {
   padding: 0;
   position: relative;
   top: -2px; }
-
-.login > .icon {
-  height: 32px;
-  width: 32px;
-  display: inline-block;
-  border: 0; }
-
-.login > .icon.twitter {
-  background: url(/images/social/twitter_32.png) no-repeat; }
-
-.login > .icon.facebook {
-  background: url(/images/social/facebook_32.png) no-repeat; }

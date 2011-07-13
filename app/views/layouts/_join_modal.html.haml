@@ -5,6 +5,11 @@
       %span.darkblue
         early access
 
+    %p
+      We're in private beta right now. Sign up and we'll send you an invite shortly.
+    %p
+      You'll be able to:
+
     %ul
       %li
         Collaborate with the author
@@ -13,11 +18,7 @@
       %li
         Find more fans
 
-    %h2.blue
-      We'll send you an email
-      %span.darkblue
-        soon
-
     = render :partial =>'layouts/registration_form'
-    %p
+    %p#no_spam_disclaimer
+      %span.red *
       We will never spam or sell your email address.

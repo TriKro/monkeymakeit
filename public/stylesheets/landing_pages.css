@@ -139,11 +139,18 @@ p {
 .darkgrey {
   color: #666666 !important; }
 
+.red {
+  color: #8a1f11 !important; }
+
 .clear {
   clear: both; }
 
 .hide {
   display: none; }
+
+.nodec {
+  text-decoration: none !important;
+  border-bottom: none !important; }
 
 .field_with_errors input, .field_with_errors textarea {
   border: 2px #8a1f11 solid !important; }
