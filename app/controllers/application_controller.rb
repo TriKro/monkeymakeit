@@ -8,6 +8,14 @@ class ApplicationController < ActionController::Base
     redirect_to :back
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    logger.debug('CanCan:: AccessDenied : ' + exception.message)
+
+    flash[:alert] = exception.message.chop + ': "' + request.fullpath + '"'
+    log_activity(request.request_uri, "Access Denied")
+    redirect_to root_path( :accessdenied => flash[:alert])
+  end
+
   private
 
   def current_user
@@ -17,6 +25,11 @@ class ApplicationController < ActionController::Base
   def current_user=(user)
     @current_user = user
     session[:user_id] = user.id
+  end
+
+  def access_denied
+    log_activity(request.request_uri, "Access Denied")
+    redirect_to :back, :notice => "Please log in to continue" and return false
   end
 
   def log_activity(url, activity_type, target_model = nil, target = nil, subtarget_model = nil, subtarget = nil)

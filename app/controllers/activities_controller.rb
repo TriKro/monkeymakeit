@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+  load_and_authorize_resource :class => ActivitiesController
 
   def index
     @activities = Activity.all.paginate(:page => params[:page], :per_page => 20)

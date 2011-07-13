@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110713011212) do
+ActiveRecord::Schema.define(:version => 20110713051826) do
 
   create_table "activities", :force => true do |t|
     t.integer  "user_id"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(:version => 20110713011212) do
     t.integer   "inviter_id"
     t.string    "full_name"
     t.string    "avatar_remote_url"
+    t.string    "access"
   end
 
   create_table "widgets", :force => true do |t|
