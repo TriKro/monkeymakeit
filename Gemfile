@@ -19,11 +19,6 @@ gem 'recaptcha',           :require => 'recaptcha/rails'
 gem 'sass'
 gem 'will_paginate',       '~> 3.0.pre2'
 
-group :development do
-  gem 'heroku'
-  gem 'taps',              '~> 0.3.22'
-end
-
 #group :test do
 #  gem 'capybara',            '0.4.1.2'
 #  gem 'cucumber',            '0.10.0'
