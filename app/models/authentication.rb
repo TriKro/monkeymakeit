@@ -23,6 +23,7 @@ class Authentication < ActiveRecord::Base
     #email = Email.new(:email => email, :user_id => user.id)
     #email.save(:validate => false)
 
+    # TODO: Set basic access levels.
     # If the user has no access, give member access.
     # This is to prevent overwriting existing access.
     #if !user.access

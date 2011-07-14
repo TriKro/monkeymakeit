@@ -3,6 +3,8 @@ require_dependency File.dirname(__FILE__) + '/../../config/initializers/string'
 
 class Suggestion < ActiveRecord::Base
 
+  # TODO: Delete this? Not using it right now.
+
   has_many :activities, :as => :target
   has_many :activities, :as => :subtarget
 

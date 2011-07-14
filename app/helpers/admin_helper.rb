@@ -3,7 +3,7 @@ module AdminHelper
   def parse_scott(activities)
     # Based on array of activities passed in, create an array of only activities relating to Scott's account
     # Note: Does not function on signups since there is no signup information related to a url or code
-    # TODO: Clean up code with model. A user can own a code. Every button displayed should relate to that code. Then all activities can be realted to a code as a subtarget.
+    # TODO: Erase this eventually.
     scott = []
     activities.each do |activity|
       if activity.url.include?("code=")

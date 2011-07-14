@@ -17,6 +17,7 @@ class Ability
     end
 
     # Abilities for all users:
+    # TODO: Decide on general approach to access control. Implement permissions here.
     can :create, Activity
 
   end

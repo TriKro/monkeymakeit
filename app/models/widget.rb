@@ -2,6 +2,8 @@ require_dependency File.dirname(__FILE__) + '/../../lib/random_key'
 
 class Widget < ActiveRecord::Base
 
+  # TODO: Delete this? Not using it.
+
   include RandomKey
 
   belongs_to :user
