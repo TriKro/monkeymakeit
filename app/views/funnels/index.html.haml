@@ -16,6 +16,14 @@
       %td= funnel.id
       %td
         = funnel.name
+      %td
+        %table
+          - funnel.steps.each do |step|
+            %tr
+              %td
+                = step.sequence
+              %td
+                = step.name
       - if can? :show, @funnel
         %td= link_to 'Show', funnel
       - if can? :update, @funnel
