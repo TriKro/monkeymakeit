@@ -1,9 +1,10 @@
+# NOTE: Comment these two lines out if you need to edit a User in the console directly.
 require_dependency File.dirname(__FILE__) + '/../../lib/random_key'
-
 require 'cgi'
 
 class User < ActiveRecord::Base
 
+  # NOTE: Comment this lines out if you need to edit a User in the console directly.
   include RandomKey
 
   has_many :authentications
@@ -14,6 +15,7 @@ class User < ActiveRecord::Base
 
   belongs_to :inviter, :class_name => 'User'
 
+  # NOTE: Comment these three lines out if you need to edit a User in the console directly. Or just give yourself an email.
   validates_uniqueness_of :email
   validates_presence_of :email
   validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,}$/i
@@ -55,9 +57,5 @@ class User < ActiveRecord::Base
     user.save( false )
     # TODO This should be logged.
     user
-
-
   end
-
-
 end
