@@ -5,19 +5,19 @@ class CroutsController < ApplicationController
   }
 
   def doris
-    redirect_to doris_3_path
+    redirect_to doris_6_path
   end
 
   def heart
-    redirect_to heart_3_path
+    redirect_to heart_6_path
   end
 
   def hiccup
-      redirect_to hiccup_3_path
+      redirect_to hiccup_6_path
   end
 
   def life_of_the_gallows
-    redirect_to life_of_the_gallows_3_path
+    redirect_to life_of_the_gallows_6_path
   end
 
   def doris_1
