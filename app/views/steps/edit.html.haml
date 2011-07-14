@@ -1,0 +1,7 @@
+- if @step.name != NIL
+  = title "- Editing Step - " + @step.name
+- else
+  = title "- Editing Step - " + @step.id.to_s
+
+%h1 Editing step
+= render 'form'

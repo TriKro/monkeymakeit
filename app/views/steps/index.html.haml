@@ -1,0 +1,31 @@
+= title "- Index Steps"
+
+%h1 Listing steps
+%table
+  %tr
+    %th ID
+    %th Name
+    %th Sequence
+    - if can? :show, @step
+      %th
+    - if can? :update, @step
+      %th
+    - if can? :destroy, @step
+      %th
+  - @steps.each do |step|
+    %tr
+      %td= step.id
+      %td
+        = step.name
+      %td= step.sequence
+      - if can? :show, @step
+        %td= link_to 'Show', step
+      - if can? :update, @step
+        %td= link_to 'Edit', edit_step_path(step)
+      - if can? :destroy, @step
+        %td= link_to 'Destroy', step, :confirm => 'Are you sure?', :method => :delete
+%br/
+- if can? :create, @step
+  = link_to(new_step_path) do
+    .button
+      New Step

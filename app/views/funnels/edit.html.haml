@@ -1,0 +1,7 @@
+- if @funnel.name != NIL
+  = title "- Editing Funnel - " + @funnel.name
+- else
+  = title "- Editing Funnel - " + @funnel.id.to_s
+
+%h1 Editing funnel
+= render 'form'

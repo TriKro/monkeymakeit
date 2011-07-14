@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110713051826) do
+ActiveRecord::Schema.define(:version => 20110714005845) do
 
   create_table "activities", :force => true do |t|
     t.integer  "user_id"
@@ -54,6 +54,12 @@ ActiveRecord::Schema.define(:version => 20110713051826) do
     t.integer   "button_height"
   end
 
+  create_table "funnels", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "invitations", :force => true do |t|
     t.integer  "widget_id"
     t.string   "button_name"
@@ -63,6 +69,14 @@ ActiveRecord::Schema.define(:version => 20110713051826) do
     t.datetime "updated_at"
     t.integer  "button_width"
     t.integer  "button_height"
+  end
+
+  create_table "steps", :force => true do |t|
+    t.integer  "funnel_id"
+    t.string   "name"
+    t.integer  "sequence"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "suggestions", :force => true do |t|

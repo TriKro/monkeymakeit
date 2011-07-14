@@ -14,6 +14,8 @@ Suggestedit::Application.routes.draw do
 
   match "/activities/create", :to => "activities#create"
   resources :activities
+  resources :funnels
+  resources :steps
 
   resources :users
   resources :authentications, :only => [:index, :destroy]

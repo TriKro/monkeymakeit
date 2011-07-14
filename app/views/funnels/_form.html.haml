@@ -1,0 +1,17 @@
+= form_for(@funnel) do |f|
+  - if @funnel.errors.any?
+    #error_explanation
+      %h4
+        = pluralize(@funnel.errors.count, "error")
+        prohibited this funnel from being saved:
+      %ul
+        - @funnel.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .actions
+    %span.lowbutton
+      = link_to 'Back', :back if :back
+    = f.submit
