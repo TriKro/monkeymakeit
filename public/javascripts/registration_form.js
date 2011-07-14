@@ -37,4 +37,11 @@ $(document).ready(function() {
        }
     });
 
+//    Temporarily added this
+//    TODO: Remove this once views are able to content_for multiple :scripts
+    $('.signup_via_email').click(function() {
+        $('#social_signup').hide();
+        $('#registration').show();
+    });
+
 });
