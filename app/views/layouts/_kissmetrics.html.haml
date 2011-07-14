@@ -1,9 +1,10 @@
-:javascript
-  var _kmq = _kmq || [];
-  function _kms(u){
-    setTimeout(function(){
-      var s = document.createElement('script'); var f = document.getElementsByTagName('script')[0]; s.type = 'text/javascript'; s.async = true;
-      s.src = u; f.parentNode.insertBefore(s, f);
-    }, 1);
-  }
-  _kms('//i.kissmetrics.com/i.js');_kms('//doug1izaerwt3.cloudfront.net/4c67e3969c626932c5c577b2d8cfb5f67ced6f03.1.js');
+- if RAILS_ENV == "production" && !session[:admin]
+  :javascript
+    var _kmq = _kmq || [];
+    function _kms(u){
+      setTimeout(function(){
+        var s = document.createElement('script'); var f = document.getElementsByTagName('script')[0]; s.type = 'text/javascript'; s.async = true;
+        s.src = u; f.parentNode.insertBefore(s, f);
+      }, 1);
+    }
+    _kms('//i.kissmetrics.com/i.js');_kms('//doug1izaerwt3.cloudfront.net/4c67e3969c626932c5c577b2d8cfb5f67ced6f03.1.js');
