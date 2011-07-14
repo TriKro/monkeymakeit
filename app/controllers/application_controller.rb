@@ -21,7 +21,9 @@ class ApplicationController < ActionController::Base
 
   def log_activity(url, activity_type, target_model = nil, target = nil, subtarget_model = nil, subtarget = nil)
     session[:monkey_id] ||= SecureRandom.hex(6)
-    Activity.create(:url => url, :activity_type => activity_type, :target_model => target_model, :target => target, :subtarget_model => subtarget_model, :subtarget => subtarget, :session_id => session[:monkey_id])
+    unless session[:admin]
+      Activity.create(:url => url, :activity_type => activity_type, :target_model => target_model, :target => target, :subtarget_model => subtarget_model, :subtarget => subtarget, :session_id => session[:monkey_id])
+    end
   end
 
 end
