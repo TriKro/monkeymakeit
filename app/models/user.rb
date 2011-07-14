@@ -53,6 +53,7 @@ class User < ActiveRecord::Base
 
     user = new( :full_name => users_name, :avatar_remote_url => image )
     user.save( false )
+    # TODO This should be logged.
     user
 
 

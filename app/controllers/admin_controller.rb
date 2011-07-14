@@ -9,6 +9,7 @@ class AdminController < ApplicationController
   end
 
   def scott
+    # TODO: Clean Up, record results, then erase.
     @scott = User.find(4)
   end
 

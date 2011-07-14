@@ -13,6 +13,8 @@ class ApplicationController < ActionController::Base
 
     flash[:alert] = exception.message.chop + ': "' + request.fullpath + '"'
     log_activity(request.request_uri, "Access Denied")
+
+    # TODO: Should redirect back, not home.
     redirect_to root_path( :accessdenied => flash[:alert])
   end
 
@@ -34,7 +36,16 @@ class ApplicationController < ActionController::Base
 
   def log_activity(url, activity_type, target_model = nil, target = nil, subtarget_model = nil, subtarget = nil)
     session[:monkey_id] ||= SecureRandom.hex(6)
-    Activity.create(:url => url, :activity_type => activity_type, :target_model => target_model, :target => target, :subtarget_model => subtarget_model, :subtarget => subtarget, :session_id => session[:monkey_id])
+
+    # TODO: Can cleanup. No need to log session_id in activities table. Now associated with UserSession.
+    logged_activity = Activity.create(:url => url, :activity_type => activity_type, :target_model => target_model, :target => target, :subtarget_model => subtarget_model, :subtarget => subtarget, :session_id => session[:monkey_id])
+
+    # Associate activity with existing UserSession or create a new one.
+    # TODO: Move to new method in model?
+    if !(user_session = UserSession.find_by_session_id(session[:monkey_id]) )
+      user_session = UserSession.create( :session_id => session[:monkey_id])
+    end
+    user_session.activities << logged_activity
   end
 
 end

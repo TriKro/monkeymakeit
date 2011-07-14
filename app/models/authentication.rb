@@ -14,6 +14,7 @@ class Authentication < ActiveRecord::Base
   def self.create_from_hash(hash, user = nil)
     user ||= User.create_from_hash!(hash)
 
+    # TODO: Re-enable facebook email saving.
     #if hash['provider'] == 'facebook'
     #  email = hash['extra']['user_hash']['email']
     #else
