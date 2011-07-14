@@ -19,17 +19,12 @@ gem 'recaptcha',           :require => 'recaptcha/rails'
 gem 'sass'
 gem 'will_paginate',       '~> 3.0.pre2'
 
-#group :test do
-#  gem 'capybara',            '0.4.1.2'
-#  gem 'cucumber',            '0.10.0'
-#  gem 'cucumber-rails',      '0.3.2'
-#  gem 'factory_girl',        '1.3.3'
-#  gem 'factory_girl_rails',  '1.0.1'
-#  gem 'faker',               '0.9.5'
-#  gem 'rspec',               '2.5.0'
-#  gem 'rspec-rails',         '2.5.0'
-#  gem 'webrat',              '~> 0.7.3'
-#end
+group :development do
+  gem 'heroku'
+  gem 'taps',              '~> 0.3.22'
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+end
+
 
 
 # Bundle edge Rails instead:
