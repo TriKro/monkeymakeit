@@ -175,7 +175,6 @@ p {
 .error, .alert, .notice, .success, .info {
   padding: 0.8em;
   margin: 0 auto 20px;
-  width: 100%;
   border: 2px solid #efefea;
   border-radius: 5px;
   -moz-border-radius: 5px;
