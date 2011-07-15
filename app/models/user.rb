@@ -39,8 +39,7 @@ class User < ActiveRecord::Base
   end
 
   def self.create_from_hash!(hash)
-    p 111
-    ap info = hash['user_info']
+    info = hash['user_info']
 
     if hash['provider'] == 'linked_in'
       users_name = [info['first_name'],info['last_name']].join(' ')
@@ -53,8 +52,6 @@ class User < ActiveRecord::Base
     else
       image = nil
     end
-
-#    email = info['extra']['user_hash']['email'] rescue nil
 
     user = new( :full_name => users_name, :avatar_remote_url => image )
     user.create_random_key
