@@ -12,7 +12,7 @@
       %p
         Anything else, please leave in the trash.
 
-      = form_for(@contact_message) do |f|
+      = form_for(@contact_message, :html => { :class => "event_form_contact" } ) do |f|
         - if @contact_message.errors.any?
           #error_explanation
             %h4

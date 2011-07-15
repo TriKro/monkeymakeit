@@ -15,12 +15,12 @@
 
   #right_column1
     .buttons
-      %span.join_modal
-      %span.watch_modal
+      %span.join_modal.event_clicked_remix.event_clicked_remix_top
+      %span.watch_modal.event_clicked_follow.event_clicked_follow_top
   .clear
 
   #left_column2
-    .story_pic
+    .story_pic.event_clicked_story_picture
       %img{ :src => "#{ @crout[:artwork] }" }
 
     .story_sharing
@@ -30,23 +30,22 @@
 
 
     .buttons{ :style => "margin-bottom: 40px;" }
-      %span.join_modal
-      %span.watch_modal
+      %span.join_modal.event_clicked_remix.event_clicked_remix_bottom
+      %span.watch_modal.event_clicked_follow.event_clicked_follow_bottom
 
     .story_sharing-bottom
       = render :partial => "/layouts/sharing", :locals => { :share => { :url => "http://monkeymake.it/tw" + request.request_uri, :content => "I'm reading and remixing stories with @monkeymakeit" } }
-
 
   #right_column2
     #contributors
       %h4
         %img{ :src => "images/text-collaborators.png", :alt => "Collaborators", :title => "Writers, Artists, Editors, and others who have contributed to #{ @crout[:title] }"}
-      #author
+      #author.event_clicked_contributor
         %img{ :src => "#{ @crout[:author_avatar] }", :title => "#{ @crout[:author] }" }
         = @crout[:author]
         %span.role
           \- author
-      #artist
+      #artist.event_clicked_contributor
         %img{ :src => "#{ @crout[:artist_avatar] }", :title => "#{ @crout[:artist] }"}
         = @crout[:artist]
         %span.role

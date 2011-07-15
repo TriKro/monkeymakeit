@@ -1,6 +1,6 @@
 .sharing-show
   -# Twitter share button
-  .twitter
+  .twitter.event_share.event_share_twitter
     %a.twitter-share-button{ "data-text" => share[:content],
         "data-url" => share[:url],
         "related" => "monkeymakeit:Collaborative Writing and Publishing",
@@ -11,7 +11,7 @@
     %script{ :src => "http://platform.twitter.com/widgets.js", :type => "text/javascript" }
 
   -# Facebook like and send button
-  .facebook
+  .facebook.event_share.event_share_facebook
     #fb-root
     %script{:src => "http://connect.facebook.net/en_US/all.js#appId=135537883194595&xfbml=1"}
     %fb:like{ :font => "",
