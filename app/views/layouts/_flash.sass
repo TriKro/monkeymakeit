@@ -1,8 +1,16 @@
 @import 'variables'
 
+.tag
+  margin: 0 3px
+  padding: 2px 4px
+  @include radius(2px)
+  background-color: $blue-tag
+  color: $white
+
+
 .error, .alert, .notice, .success, .info
   padding: 0.8em
-  margin: 0 auto
+  margin: 0 auto 20px
   width: 100%
   border: 2px solid $lightgrey
   @include radius(5px)

@@ -113,7 +113,7 @@ content {
     #crout #right_column2 #contributors {
       background: white;
       padding: 10px 10px;
-      margin: 21px 0 10px 0;
+      margin: 10px 0 10px 0;
       -moz-box-shadow: 0 0 5px 0 #666666;
       -webkit-box-shadow: 0 0 5px 0 #666666;
       box-shadow: 0 0 5px 0 #666666; }
@@ -138,7 +138,7 @@ content {
     #crout #right_column2 #activities {
       background: white;
       padding: 10px 10px;
-      margin: 10px 0;
+      margin: 21px 0 10px;
       -moz-box-shadow: 0 0 5px 0 #666666;
       -webkit-box-shadow: 0 0 5px 0 #666666;
       box-shadow: 0 0 5px 0 #666666; }

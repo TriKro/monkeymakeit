@@ -2,5 +2,8 @@
   - flash.each do |name, msg|
     %div{:class => name, :style => "display: none;"}
       = msg
+      - flash[:tag].each do |tag|
+        %span.tag
+          = tag
       .close
       .clear

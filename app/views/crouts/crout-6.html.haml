@@ -23,8 +23,8 @@
     .story_pic.event_clicked_story_picture
       %img{ :src => "#{ @crout[:artwork] }" }
 
-    .story_sharing
-      = render :partial => "/layouts/sharing", :locals => { :share => { :url => "http://monkeymake.it/tw" + request.request_uri, :content => "I'm reading and remixing stories with @monkeymakeit" } }
+    -#.story_sharing
+    -#  = render :partial => "/layouts/sharing", :locals => { :share => { :url => "http://monkeymake.it/tw" + request.request_uri, :content => "I'm reading and remixing stories with @monkeymakeit" } }
 
     = render "#{ @crout[:content] }"
 
@@ -33,10 +33,17 @@
       %span.join_modal.event_clicked_remix.event_clicked_remix_bottom
       %span.watch_modal.event_clicked_follow.event_clicked_follow_bottom
 
-    .story_sharing-bottom
-      = render :partial => "/layouts/sharing", :locals => { :share => { :url => "http://monkeymake.it/tw" + request.request_uri, :content => "I'm reading and remixing stories with @monkeymakeit" } }
+    -#.story_sharing-bottom
+    -#  = render :partial => "/layouts/sharing", :locals => { :share => { :url => "http://monkeymake.it/tw" + request.request_uri, :content => "I'm reading and remixing stories with @monkeymakeit" } }
 
   #right_column2
+
+    #activities
+      %h4
+        %img{ :src => "images/text-remixingnow.png", :alt => "Remixing Now", :title => "Monkeys are remixing #{ @crout[:title] } to improve or just create alternate versions!" }
+      - @activities.each do |activity|
+        = render :partial => "activity_with_action_icon", :locals => { :activity => activity }
+
     #contributors
       %h4
         %img{ :src => "images/text-collaborators.png", :alt => "Collaborators", :title => "Writers, Artists, Editors, and others who have contributed to #{ @crout[:title] }"}
@@ -56,12 +63,6 @@
       - @additional_contributors.each do |actor|
         = render :partial => "contributor", :locals => { :activity => actor }
       .clear
-
-    #activities
-      %h4
-        %img{ :src => "images/text-remixingnow.png", :alt => "Remixing Now", :title => "Monkeys are remixing #{ @crout[:title] } to improve or just create alternate versions!" }
-      - @activities.each do |activity|
-        = render :partial => "activity_with_action_icon", :locals => { :activity => activity }
 
     #related_crouts
       %h4

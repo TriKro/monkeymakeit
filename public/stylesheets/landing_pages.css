@@ -163,9 +163,18 @@ p {
   margin-bottom: 20px;
   background-color: #cccc00; }
 
+.tag {
+  margin: 0 3px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  background-color: #5ba5d3;
+  color: white; }
+
 .error, .alert, .notice, .success, .info {
   padding: 0.8em;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   width: 100%;
   border: 2px solid #efefea;
   border-radius: 5px;

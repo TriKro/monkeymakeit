@@ -15,10 +15,10 @@
 
       = render '/layouts/header'
 
-      = render :partial => '/layouts/flash', :locals => { :flash => flash }
-
       %content
         %content_inner
+
+          = render :partial => '/layouts/flash', :locals => { :flash => flash }
 
           = yield
 
