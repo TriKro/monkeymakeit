@@ -61,6 +61,18 @@ class Activity < ActiveRecord::Base
     end
   end
 
+  def self.join_button_clicks(sessions)
+    sessions.select do |session_id, activities|
+      activities.index {|activity| activity.activity_type == 'Clicked' && activity.target_model == 'Join Button'}
+    end
+  end
+
+  def self.watch_button_clicks(sessions)
+    sessions.select do |session_id, activities|
+      activities.index {|activity| activity.activity_type == 'Clicked' && activity.target_model == 'Watch Button'}
+    end
+  end
+
   def self.signups(sessions)
     sessions.select do |session_id, activities|
       activities.index { |activity| activity.activity_type == 'Created' && activity.target_type = 'User' }
@@ -83,6 +95,12 @@ class Activity < ActiveRecord::Base
       end
     end
     return false
+  end
+
+  def self.landing_page_views(sessions)
+    sessions.select do |session_id, activities|
+      activities.index {|activity| activity.activity_type == 'Viewed' && activity.url == '/'}
+    end
   end
 
 end

@@ -116,3 +116,52 @@
             = signups = Activity.signups(sessions).length
             )
             = number_to_percentage(signups.to_f / button_views * 100)
+
+#white_background
+  .funnel
+    -# Take only activities in what range?
+    - range = 1
+
+    -# Display how many ranges?
+    - rows = 15
+
+    %h1
+      Which button? (#{range == 1 ? 'daily' : "every #{range} days"})
+
+    %table
+      %tr
+        %th
+          Start Date
+        %th
+          Landing Page Views
+        %th
+          Clicks on remix button
+        %th
+          Clicks on follow button
+
+      - (-1..rows).each do |i|
+        - start_date = Time.now.midnight - (i + range).day
+        - end_date = Time.now.midnight - i.day
+
+        - sessions = Activity.unique_sessions(:created_at => start_date..end_date)
+
+        %tr
+          %td
+            = start_date.month
+            \/
+            = start_date.day
+
+          %td
+            = views = Activity.landing_page_views(sessions).length
+
+          %td
+            (
+            = joins = Activity.join_button_clicks(sessions).length
+            )
+            = number_to_percentage(joins.to_f / views * 100)
+
+          %td
+            (
+            = follows = Activity.watch_button_clicks(sessions).length
+            )
+            = number_to_percentage(follows.to_f / views * 100)
