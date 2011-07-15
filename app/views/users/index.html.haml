@@ -6,26 +6,26 @@
     %th ID
     %th Name
     %th Access
-    - if can? :show, @user
-      %th
-    - if can? :update, @user
-      %th
-    - if can? :destroy, @user
-      %th
+    -#- if can? :show, @user
+    -#  %th
+    -#- if can? :update, @user
+    -#  %th
+    -#- if can? :destroy, @user
+    -#  %th
   - @users.each do |user|
     %tr
       %td= user.id
       %td
         = user.full_name
       %td= user.access
-      - if can? :show, @user
-        %td= link_to 'Show', user
-      - if can? :update, @user
-        %td= link_to 'Edit', edit_user_path(user)
-      - if can? :destroy, @user
-        %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+      -#- if can? :show, @user
+      -#  %td= link_to 'Show', user
+      -#- if can? :update, @user
+      -#  %td= link_to 'Edit', edit_user_path(user)
+      -#- if can? :destroy, @user
+      -#  %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
 %br/
-- if can? :create, @user
-  = link_to(new_user_path) do
-    .button
-      New User
+-#- if can? :create, @user
+-#  = link_to(new_user_path) do
+-#    .button
+-#      New User
