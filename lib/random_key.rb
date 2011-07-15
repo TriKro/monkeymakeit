@@ -8,14 +8,14 @@ module RandomKey
     end
   end
 
-  private
-
   def create_random_key
     begin
       key_candidate = short_key
-    end while ( self.class.where( :random_key => key_candidate ).count > 0 )
+    end while self.class.where( :random_key => key_candidate ).present?
     self.random_key = key_candidate
   end
+
+  private
 
   def short_key( max_length = 32 )
     raise "Please use a max_length of 100 or less" if max_length > 100

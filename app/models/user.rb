@@ -54,6 +54,7 @@ class User < ActiveRecord::Base
     end
 
     user = new( :full_name => users_name, :avatar_remote_url => image )
+    user.create_random_key
     user.save( false )
     # TODO This should be logged.
     user
