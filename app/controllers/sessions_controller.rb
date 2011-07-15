@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
     log_activity(request.request_uri, "Logged In", "User", current_user)
 
     flash[:notice] = "Logged in as #{current_user.full_name}"
-    redirect_to root_url
+    redirect_to registration_thanks_url
   end
 
   def destroy
