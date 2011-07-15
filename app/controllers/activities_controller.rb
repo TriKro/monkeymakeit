@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-  load_and_authorize_resource :class => ActivitiesController
+  #load_and_authorize_resource :class => ActivitiesController
 
   def index
     # TODO: Fetch in batches. Takes too long to load now.

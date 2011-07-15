@@ -18,7 +18,12 @@ class Ability
 
     # Abilities for all users:
     # TODO: Decide on general approach to access control. Implement permissions here.
-    can :create, Activity
+    can [:create, :update], Activity
+    can :create, UserSession
+    can :create, User
+    can [:manage], User, :user_id => current_user.id
+    can [:create, :update], Authentication
+    can :create, ContactMessage
 
   end
 
