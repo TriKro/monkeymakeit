@@ -33,12 +33,12 @@ class User < ActiveRecord::Base
   end
 
   def self.owning(url)
+    return unless url
     return "DEMO" if url.include?("demo=true")
     User.find_by_random_key(CGI.parse(url.split('?')[1])['code'][0]).identifier rescue url
   end
 
   def self.create_from_hash!(hash)
-
     info = hash['user_info']
 
     if hash['provider'] == 'linked_in'
@@ -56,7 +56,12 @@ class User < ActiveRecord::Base
     user = new( :full_name => users_name, :avatar_remote_url => image )
     user.create_random_key
     user.save( false )
-    # TODO This should be logged.
+    Activity.create(
+            :url => nil,
+            :activity_type => "OmniAuth (#{hash['provider']}) Created",
+            :target_model => 'User',
+            :target => user
+    )
     user
   end
 end
