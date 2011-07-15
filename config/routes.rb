@@ -31,7 +31,8 @@ Suggestedit::Application.routes.draw do
           :code,
           :privacy_policy,
           :terms_of_service,
-          :about
+          :about,
+          :cookie
   ].each do |static_page|
     match "/#{static_page}" => "static##{static_page}", :as => static_page
   end
