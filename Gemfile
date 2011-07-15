@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'awesome_print'
-gem 'cancan'
+#gem 'cancan'
 gem 'diff-lcs',            '1.1.2'
 gem 'haml'
 gem 'haml-rails'

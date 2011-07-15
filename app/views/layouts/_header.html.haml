@@ -5,9 +5,9 @@
       .top_menu
         - if current_user
           = link_to "Sign Out", signout_path
-          - if can? :manage, AdminController
-            &#8226;
-            = link_to "Admin", admin_path
+          -#- if can? :manage, AdminController
+          -#  &#8226;
+          -#  = link_to "Admin", admin_path
         - else
           = link_to("/login/facebook", :class => "nodec") do
             .signin_facebook_small.event_clicked_login.event_clicked_login_facebook.event_clicked_login_facebook_header
