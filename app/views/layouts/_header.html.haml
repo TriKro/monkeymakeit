@@ -9,7 +9,13 @@
           -#  &#8226;
           -#  = link_to "Admin", admin_path
         - else
-          = link_to("/login/facebook", :class => "nodec") do
-            .signin_facebook_small.event_clicked_login.event_clicked_login_facebook.event_clicked_login_facebook_header
-          = link_to("/login/twitter", :class => "nodec") do
-            .signin_twitter_small.event_clicked_login.event_clicked_login_twitter.event_clicked_login_twitter_header
+          = link_to "About", :about
+          &#8226;
+          = link_to "Contact", :contact
+          &#8226;
+          %span.join_modal.event_clicked_signup
+            Sign in
+          -#= link_to("/login/facebook", :class => "nodec") do
+          -#  .signin_facebook_small.event_clicked_login.event_clicked_login_facebook.event_clicked_login_facebook_header
+          -#= link_to("/login/twitter", :class => "nodec") do
+          -#  .signin_twitter_small.event_clicked_login.event_clicked_login_twitter.event_clicked_login_twitter_header
