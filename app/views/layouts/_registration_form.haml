@@ -7,7 +7,7 @@
   = link_to("/login/twitter", :class => "nodec event_login event_login_twitter event_login_twitter_modal") do
     .signin_twitter
 
-  .signup_via_email.event_clicked_email_login.event_clicked_email_login_modal
+  .signup_via_email.event_clicked_login.event_clicked_login_email.event_clicked_login_email_modal
     sign up with email
 
 #registration.hide
@@ -30,5 +30,5 @@
       = f.text_field :email, :class => "user_email", :value => params[:user].try(:[], :email).presence || "Email"
 
     .actions
-      = f.submit '', :class => "event_login event_login_email event_login_email_modal"
+      = f.submit ''
     .clear
