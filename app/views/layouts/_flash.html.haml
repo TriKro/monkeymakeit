@@ -2,7 +2,12 @@
   - flash.each do |name, msg|
     %div{:class => name, :style => "display: none;"}
       = msg
-      - flash[:tag].each do |tag|
+      .close
+      .clear
+  - if !@message.nil?
+    %div{:class => "info", :style => "display: none;"}
+      = @message[:msg]
+      - @message[:tags].each do |tag|
         %span.tag
           = tag
       .close

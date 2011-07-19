@@ -141,8 +141,8 @@ class CroutsController < ApplicationController
   end
 
   def doris_6
-    flash[:info] = "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: "
-    flash[:tag] = ["feedback", "illustration", "a publisher", "collaborators"]
+    @message = { :msg => "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: ",
+                 :tags => ["feedback", "illustration", "a publisher", "collaborators"] }
     crout_doris
     activities_with_thumbnails
     related_crouts
@@ -150,8 +150,8 @@ class CroutsController < ApplicationController
   end
 
   def hiccup_6
-    flash[:info] = "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: "
-    flash[:tag] = ["feedback on characters", "editing", "collaborators"]
+    @message = { :msg => "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: ",
+                 :tags => ["feedback on characters", "editing", "collaborators"] }
     crout_hiccup
     activities_with_thumbnails
     related_crouts
@@ -159,8 +159,8 @@ class CroutsController < ApplicationController
   end
 
   def heart_6
-    flash[:info] = "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: "
-    flash[:tag] = ["feedback", "editing", "collaborators"]
+    @message = { :msg => "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: ",
+                 :tags => ["feedback", "editing", "collaborators"] }
     crout_heart_of_the_sun
     heart_activities_with_thumbnails
     related_crouts
@@ -168,8 +168,8 @@ class CroutsController < ApplicationController
   end
 
   def life_of_the_gallows_6
-    flash[:info] = "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: "
-    flash[:tag] = ["feedback","editing", "illustrations", "collaborators"]
+    @message = { :msg => "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: ",
+                 :tags => ["feedback", "editing", "a publisher", "collaborators"] }
     crout_life_of_the_gallows
     activities_with_thumbnails
     related_crouts
