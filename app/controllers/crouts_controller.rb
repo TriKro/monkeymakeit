@@ -8,6 +8,7 @@ class CroutsController < ApplicationController
     @message = { :msg => "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: ",
                  :tags => ["feedback", "illustration", "a publisher", "collaborators"] }
     crout_doris
+    related_crouts
     render (rand > 0.5 ? 'crout-7' : 'crout-8')
   end
 
@@ -15,6 +16,7 @@ class CroutsController < ApplicationController
     @message = { :msg => "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: ",
                  :tags => ["feedback on characters", "editing", "collaborators"] }
     crout_hiccup
+    related_crouts
     render (rand > 0.5 ? 'crout-7' : 'crout-8')
   end
 
@@ -22,6 +24,7 @@ class CroutsController < ApplicationController
     @message = { :msg => "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: ",
                  :tags => ["feedback", "editing", "collaborators"] }
     crout_heart_of_the_sun
+    related_crouts
     render (rand > 0.5 ? 'crout-7' : 'crout-8')
   end
 
@@ -29,6 +32,7 @@ class CroutsController < ApplicationController
     @message = { :msg => "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: ",
                  :tags => ["feedback", "editing", "a publisher", "collaborators"] }
     crout_life_of_the_gallows
+    related_crouts
     render (rand > 0.5 ? 'crout-7' : 'crout-8')
   end
 
@@ -90,6 +94,32 @@ class CroutsController < ApplicationController
         :artist => "Tyler Landry",
         :artist_avatar => "images/avatars/avatar-tyler-landry.png",
     }
+  end
+
+  def related_crouts
+    @related = [
+        { :title => "Life of the Gallows",
+          :subtitle => "a short story about a medieval jester-turned-executioner",
+          :cover => "images/crouts/thumbnail-life_of_the_gallows.png",
+          :url => life_of_the_gallows_path,
+        },
+        { :title => "Oh, Mighty Hiccup!",
+          :subtitle => "a novel about brothers, hiccups, and the end of time",
+          :cover => "images/crouts/thumbnail-hiccup.png",
+          :url => hiccup_path,
+        },
+        { :title => "Doris",
+          :subtitle => "a short story about an albino duck",
+          :cover => "images/crouts/thumbnail-doris.png",
+          :url => doris_path,
+        },
+        { :title => "Heart of the Sun",
+          :subtitle => "Love in the Time of Posthumans - An Open Source Screenplay",
+          :cover => "images/crouts/thumbnail-heart_of_the_sun.png",
+          :url => heart_path,
+        },
+    ]
+    @related.delete_if{ |crout| crout[:title] == @crout[:title] }
   end
 
 end

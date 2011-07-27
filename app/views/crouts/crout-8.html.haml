@@ -195,15 +195,18 @@
       }
 
     / End mc_embed_signup
+
   .clear
-  -##related_crouts
-  -#  %h4
-  -#    %img{ :src => "images/text-monkeywithmore.png", :alt => "Monkey with more", :title => "Additional novels, screenplays, and other work you might be interested in." }
-  -#  - @related.each do |related|
-  -#    = render :partial => "related_crout", :locals => { :related => related }
 
   #left_column2
     .story_pic.event_clicked_story_picture
       %img{ :src => "#{ @crout[:artwork] }" }
 
     = render "#{ @crout[:content] }"
+
+  #right_column2
+    #related_crouts
+      %h4
+        %img{ :src => "images/text-monkeywithmore.png", :alt => "Monkey with more", :title => "Additional novels, screenplays, and other work you might be interested in." }
+      - @related.each do |related|
+        = render :partial => "related_crout", :locals => { :related => related }
