@@ -1,0 +1,24 @@
+- title "- " + @crout[:title] + " - " + @crout[:subtitle]
+- stylesheets 'crouts'
+- scripts 'crouts'
+- fonts 'http://fonts.googleapis.com/css?family=Reenie+Beanie&v2'
+
+#crout
+  #left_column1
+    %h1
+      = @crout[:title]
+    %h2
+      = @crout[:subtitle]
+
+
+  #right_column1
+    %h2
+      subscribe.
+    xxx
+  .clear
+
+  #left_column2
+    .story_pic.event_clicked_story_picture
+      %img{ :src => "#{ @crout[:artwork] }" }
+
+    = render "#{ @crout[:content] }"
