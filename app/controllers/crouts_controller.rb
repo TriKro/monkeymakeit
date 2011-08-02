@@ -20,14 +20,6 @@ class CroutsController < ApplicationController
     render (rand > 0.5 ? 'crout-7' : 'crout-8')
   end
 
-  def heart
-    @message = { :msg => "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: ",
-                 :tags => ["feedback", "editing", "collaborators"] }
-    crout_heart_of_the_sun
-    related_crouts
-    render (rand > 0.5 ? 'crout-7' : 'crout-8')
-  end
-
   def life_of_the_gallows
     @message = { :msg => "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: ",
                  :tags => ["feedback", "editing", "a publisher", "collaborators"] }
@@ -66,21 +58,6 @@ class CroutsController < ApplicationController
     }
   end
 
-  def crout_heart_of_the_sun
-    @crout = {
-        :title => "Heart of the Sun",
-        :subtitle => "Love in the Time of Posthumans - An Open Source Screenplay",
-        :author => "Harlan Knight Wood",
-        :author_avatar => "images/avatars/avatar-harlan-knight-wood.jpg",
-        :author_bio => "Harlan brings a decade of software development experience together with a diverse background including many years of work in various personal transformation systems. In addition to software, he is working on an open source spiritual science fiction film.",
-        :content => "heart_of_the_sun",
-        :artwork => "images/crouts/image-heart_of_the_sun.jpg",
-        :artwork_title => "Luminous",
-        :artist => "Adam Apollo",
-        :artist_avatar => "images/avatars/avatar-adam-apollo.jpg"
-    }
-  end
-
   def crout_life_of_the_gallows
     @crout = {
         :title => "Life of the Gallows",
@@ -112,11 +89,6 @@ class CroutsController < ApplicationController
           :subtitle => "a short story about an albino duck",
           :cover => "images/crouts/thumbnail-doris.png",
           :url => doris_path,
-        },
-        { :title => "Heart of the Sun",
-          :subtitle => "Love in the Time of Posthumans - An Open Source Screenplay",
-          :cover => "images/crouts/thumbnail-heart_of_the_sun.png",
-          :url => heart_path,
         },
     ]
     @related.delete_if{ |crout| crout[:title] == @crout[:title] }
