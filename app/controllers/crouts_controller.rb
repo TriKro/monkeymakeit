@@ -4,28 +4,38 @@ class CroutsController < ApplicationController
     log_activity(request.request_uri, "Viewed", "Page")
   }
 
+  def set_experiment_7
+    session[:monkey_experiment_id] = 7
+    redirect_to doris_path
+  end
+
+  def set_experiment_8
+    session[:monkey_experiment_id] = 8
+    redirect_to doris_path
+  end
+
   def doris
-    @message = { :msg => "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: ",
-                 :tags => ["feedback", "illustration", "a publisher", "collaborators"] }
+    @message = { :msg => "This story is looking for: ",
+                 :tags => ["feedback", "illustration", "a publisher"] }
     crout_doris
     related_crouts
-    render (rand > 0.5 ? 'crout-7' : 'crout-8')
+    render_experiment
   end
 
   def hiccup
-    @message = { :msg => "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: ",
-                 :tags => ["feedback on characters", "editing", "collaborators"] }
+    @message = { :msg => "This story is looking for: ",
+                 :tags => ["feedback on characters", "editing"] }
     crout_hiccup
     related_crouts
-    render (rand > 0.5 ? 'crout-7' : 'crout-8')
+    render_experiment
   end
 
   def life_of_the_gallows
-    @message = { :msg => "Welcome to collaborative story writing for professionals and enthusiasts. This story is looking for: ",
-                 :tags => ["feedback", "editing", "a publisher", "collaborators"] }
+    @message = { :msg => "This story is looking for: ",
+                 :tags => ["feedback", "editing", "a publisher"] }
     crout_life_of_the_gallows
     related_crouts
-    render (rand > 0.5 ? 'crout-7' : 'crout-8')
+    render_experiment
   end
 
   def crout_doris
@@ -94,4 +104,14 @@ class CroutsController < ApplicationController
     @related.delete_if{ |crout| crout[:title] == @crout[:title] }
   end
 
+  def render_experiment
+    if !session[:monkey_experiment_id]
+      if rand > 0.5
+        session[:monkey_experiment_id] = 8
+      else
+        session[:monkey_experiment_id] = 7
+      end
+    end
+    render (session[:monkey_experiment_id] == 7 ? 'crout-7' : 'crout-8')
+  end
 end
