@@ -14,6 +14,11 @@ class CroutsController < ApplicationController
     redirect_to doris_path
   end
 
+  def set_experiment_9
+    session[:monkey_experiment_id] = 9
+    redirect_to doris_path
+  end
+
   def doris
     crout_doris
     related_crouts
@@ -31,6 +36,8 @@ class CroutsController < ApplicationController
     related_crouts
     render_experiment
   end
+
+
 
   def crout_doris
     @crout = {
@@ -103,9 +110,10 @@ class CroutsController < ApplicationController
       if rand > 0.5
         session[:monkey_experiment_id] = 8
       else
-        session[:monkey_experiment_id] = 7
+        session[:monkey_experiment_id] = 9
       end
     end
-    render (session[:monkey_experiment_id] == 7 ? 'crout-7' : 'crout-8')
-  end
+    log_activity(request.request_uri, "Viewed", "Experiment-" + session[:monkey_experiment_id].to_s )
+    render 'crout-' + session[:monkey_experiment_id].to_s
+   end
 end
