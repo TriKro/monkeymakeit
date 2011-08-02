@@ -15,24 +15,18 @@ class CroutsController < ApplicationController
   end
 
   def doris
-    @message = { :msg => "This story is looking for: ",
-                 :tags => ["feedback", "illustration", "a publisher"] }
     crout_doris
     related_crouts
     render_experiment
   end
 
   def hiccup
-    @message = { :msg => "This story is looking for: ",
-                 :tags => ["feedback on characters", "editing"] }
     crout_hiccup
     related_crouts
     render_experiment
   end
 
   def life_of_the_gallows
-    @message = { :msg => "This story is looking for: ",
-                 :tags => ["feedback", "editing", "a publisher"] }
     crout_life_of_the_gallows
     related_crouts
     render_experiment
