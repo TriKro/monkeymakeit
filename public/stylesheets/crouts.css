@@ -220,3 +220,25 @@ content {
           margin: 0; }
       #crout #right_column2 #signup_widget #subscribe_content {
         padding: 10px; }
+        #crout #right_column2 #signup_widget #subscribe_content .field {
+          margin: 10px 20px 0 20px; }
+          #crout #right_column2 #signup_widget #subscribe_content .field label {
+            display: none; }
+          #crout #right_column2 #signup_widget #subscribe_content .field input {
+            padding: 3px;
+            width: 250px;
+            font-size: 1.5em;
+            font-family: "Arial, Verdana, sans-serif";
+            color: #666666; }
+        #crout #right_column2 #signup_widget #subscribe_content .actions {
+          text-align: center;
+          margin: 10px 0 0 0; }
+          #crout #right_column2 #signup_widget #subscribe_content .actions input {
+            height: 52px;
+            width: 151px;
+            background: url(/images/button-signup-sprite.png) no-repeat 0px 0px;
+            display: inline-block;
+            vertical-align: middle;
+            border: none; }
+            #crout #right_column2 #signup_widget #subscribe_content .actions input:hover {
+              background-position: 0 -52px; }

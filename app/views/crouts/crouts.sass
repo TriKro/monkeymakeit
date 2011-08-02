@@ -235,4 +235,27 @@ content
           margin: 0
       #subscribe_content
         padding: 10px
+        .field
+          margin: 10px 20px 0 20px
+          label
+            display: none
+          input
+            padding: 3px
+            width: 250px
+            font-size: $largest
+            font-family: $font-3
+            color: $darkgrey
+
+        .actions
+          text-align: center
+          margin: 10px 0 0 0
+          input
+            height: 52px
+            width: 151px
+            background: url(/images/button-signup-sprite.png) no-repeat 0px 0px
+            @include sprite
+
+            &:hover
+              background-position: 0 -52px
+
 
