@@ -220,6 +220,9 @@ content {
           margin: 0; }
       #crout #right_column2 #signup_widget #subscribe_content {
         padding: 10px; }
+        #crout #right_column2 #signup_widget #subscribe_content p {
+          font-size: 1.2em;
+          font-family: Arial, sans-serif; }
         #crout #right_column2 #signup_widget #subscribe_content .field {
           margin: 10px 20px 0 20px; }
           #crout #right_column2 #signup_widget #subscribe_content .field label {

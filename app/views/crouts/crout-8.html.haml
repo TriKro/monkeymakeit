@@ -27,6 +27,12 @@
         %h4
           %img{ :src => "images/text-signup.png", :alt => "Sign Up", :title => "Sign Up now!" }
       #subscribe_content
+        %p
+          Invite your friends and
+          %b
+            have your name printed
+          in the first edition!
+
         - @registration = User.new
         = form_for(@registration, :url => registrations_path, :html => { :class => "event_form_email_login" }) do |f|
           - if @registration.errors.any?
