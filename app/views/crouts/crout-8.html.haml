@@ -31,10 +31,14 @@
           %img{ :src => "images/text-signup.png", :alt => "Sign Up", :title => "Sign Up now!" }
       #subscribe_content
         %p
+          %i Want to see your name in print?
+        %p
           Invite your friends and
-          %b
-            have your name printed
-          in the first edition of this story!
+          %b get your name printed in the first edition
+          of
+          %i><
+            \ #{@crout[:title]}
+          !
 
         - @registration = User.new
         = form_for(@registration, :url => registrations_path, :html => { :class => "event_form_email_login" }) do |f|
