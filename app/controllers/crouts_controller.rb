@@ -19,6 +19,12 @@ class CroutsController < ApplicationController
     redirect_to doris_path
   end
 
+  def doris7
+    crout_doris
+    related_crouts
+    render 'crout-7'
+  end
+
   def doris
     crout_doris
     related_crouts
@@ -36,7 +42,6 @@ class CroutsController < ApplicationController
     related_crouts
     render_experiment
   end
-
 
 
   def crout_doris
