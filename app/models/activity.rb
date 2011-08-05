@@ -24,6 +24,14 @@ class Activity < ActiveRecord::Base
     end
   end
 
+  def self.experiment_views(sessions, experiment_id)
+    sessions.select do |session_id, activities|
+      activities.index do |activity|
+        activity.target_model == "Experiment-#{experiment_id}"
+      end
+    end
+  end
+
   def self.activities_contain_landing_page_before_any_crouts(activities) # crouts are optional
     activities.each do |activity|
       next if activity.activity_type != 'Viewed'
