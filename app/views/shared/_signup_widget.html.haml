@@ -20,7 +20,7 @@
 
     - elsif session[:monkey_experiment_id] == 10
       %p
-        To get the next chapters when it's ready sign up here:
+        To get the next chapters when they're ready, sign up here:
 
     - @registration = User.new
     = form_for(@registration, :url => registrations_path, :html => { :class => "event_form_email_login" }) do |f|
