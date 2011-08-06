@@ -1,6 +1,8 @@
 .bundle
 .DS_Store
 .idea
+.idea/**/*
+.idea/*
 capybara-*
 db/backup
 db/*.sqlite3
