@@ -7,14 +7,7 @@
         %img{ :src => "images/text-next_chapter.png", :alt => "Sign Up", :title => "Sign Up now!" }
   .signup_content
     %p
-      %i Want to see your name in print?
-    %p
-      Invite your friends and
-      %b get your name printed in the first edition
-      of
-      %i><
-        \ #{@crout[:title]}
-      !
+      To get the next chapters when it's ready sign up here:
 
     - @registration = User.new
     = form_for(@registration, :url => registrations_path, :html => { :class => "event_form_email_login" }) do |f|
