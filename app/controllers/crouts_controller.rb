@@ -117,11 +117,7 @@ class CroutsController < ApplicationController
 
   def render_experiment
     if !session[:monkey_experiment_id]
-      if rand > 0.5
-        session[:monkey_experiment_id] = 8
-      else
-        session[:monkey_experiment_id] = 9
-      end
+      session[:monkey_experiment_id] = 10
     end
     log_activity(request.request_uri, "Viewed", "Experiment-" + session[:monkey_experiment_id].to_s )
     render 'crout-' + session[:monkey_experiment_id].to_s
