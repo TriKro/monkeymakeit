@@ -2,12 +2,25 @@
   .signup_header
     %h4
       - if session[:monkey_experiment_id] < 10
-        %img{ :src => "images/text/text-signup.png", :alt => "Sign Up", :title => "Sign Up now!" }
+        %img{ :src => "images/text-signup.png", :alt => "Sign Up", :title => "Sign Up now!" }
       - elsif session[:monkey_experiment_id] == 10
-        %img{ :src => "images/text/text-next_chapter.png", :alt => "Next Chapter", :title => "Sign Up now!" }
+        %img{ :src => "images/text-next_chapter.png", :alt => "Next Chapter", :title => "Sign Up now!" }
   .signup_content
-    %p
-      To get the next chapters when it's ready sign up here:
+    - if session[:monkey_experiment_id] == 8
+      %p
+        Want to see your name in print?
+      %p
+        Invite your friends and get your name printed in the first edition of Doris!
+
+    - elsif session[:monkey_experiment_id] == 9
+      %p
+        Want a free book?
+      %p
+        Invite your friends and get a free first edition copy of Doris!
+
+    - elsif session[:monkey_experiment_id] == 10
+      %p
+        To get the next chapters when it's ready sign up here:
 
     - @registration = User.new
     = form_for(@registration, :url => registrations_path, :html => { :class => "event_form_email_login" }) do |f|
