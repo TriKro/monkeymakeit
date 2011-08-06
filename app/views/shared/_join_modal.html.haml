@@ -1,5 +1,5 @@
-#watch
-  #watch_inner
+#join
+  #join_inner
     %h1.blue
       Sign up for
       %span.darkblue
@@ -12,13 +12,14 @@
 
     %ul
       %li
-        Get access to early drafts
+        Promote your work
       %li
-        Be a part of the writing
+        Find a publisher
       %li
-        Help change the publishing industry
+        Find collaborators
 
-    = render :partial =>'layouts/registration_form'
+    = render :partial =>'shared/registration_form'
+
     %p#no_spam_disclaimer
       %span.red *
       We will never spam or sell your email address.
