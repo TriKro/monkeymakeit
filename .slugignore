@@ -5,3 +5,6 @@ spec
 assets/**/*
 assets/*
 assets
+.idea/**/*
+.idea/*
+.idea
