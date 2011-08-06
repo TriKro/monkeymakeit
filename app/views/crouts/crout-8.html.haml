@@ -21,6 +21,12 @@
   #left_column2
     .story_pic.event_clicked_story_picture
       %img{ :src => "#{ @crout[:artwork] }" }
+      #art_credit
+        "
+        %b><
+          = @crout[:artwork_title]
+        " by
+        = @crout[:artist]
 
     = render "#{ @crout[:content] }"
 

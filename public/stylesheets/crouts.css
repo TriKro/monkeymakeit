@@ -72,6 +72,12 @@ content {
       padding: 20px 20px 0px 0; }
       #crout #left_column2 .story_pic img {
         width: 300px; }
+    #crout #left_column2 #art_credit {
+      position: absolute;
+      font-size: 0.9em;
+      bottom: -10px;
+      left: 90px;
+      color: #666666; }
     #crout #left_column2 .story_sharing {
       position: absolute;
       left: 340px;
