@@ -13,4 +13,13 @@ class AdminController < ApplicationController
     @scott = User.find(4)
   end
 
+  def select_experiment
+    @experiment = 10
+  end
+
+  def set_experiment
+    session[:monkey_experiment_id] = params[:experiment]
+    redirect_to select_experiment_path
+  end
+
 end

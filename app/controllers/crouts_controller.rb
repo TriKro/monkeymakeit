@@ -4,32 +4,6 @@ class CroutsController < ApplicationController
     log_activity(request.request_uri, "Viewed", "Page")
   }
 
-  def set_experiment_7
-    session[:monkey_experiment_id] = 7
-    redirect_to doris_path
-  end
-
-  def set_experiment_8
-    session[:monkey_experiment_id] = 8
-    redirect_to doris_path
-  end
-
-  def set_experiment_9
-    session[:monkey_experiment_id] = 9
-    redirect_to doris_path
-  end
-
-  def set_experiment_10
-    session[:monkey_experiment_id] = 10
-    redirect_to doris_path
-  end
-
-  def doris7
-    crout_doris
-    related_crouts
-    render 'crout-7'
-  end
-
   def doris
     crout_doris
     related_crouts
@@ -116,9 +90,7 @@ class CroutsController < ApplicationController
   end
 
   def render_experiment
-    if !session[:monkey_experiment_id]
-      session[:monkey_experiment_id] = 10
-    end
+    session[:monkey_experiment_id] = 10
     log_activity(request.request_uri, "Viewed", "Experiment-" + session[:monkey_experiment_id].to_s )
     render 'crout-' + session[:monkey_experiment_id].to_s
    end

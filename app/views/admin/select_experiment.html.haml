@@ -1,0 +1,17 @@
+= title "- ADMIN"
+- stylesheets 'admin'
+
+-# Add a no track cookie to google analytics
+= javascript_tag "_gaq.push(['_setVar', 'monkey_no_track']);"
+
+
+Current Experiment:
+= session[:monkey_experiment_id]
+= form_tag(set_experiment_path, :method => "post") do
+  .field
+    = label_tag :experiment, "Set experiment:"
+    = number_field_tag :experiment
+
+  .actions
+    = submit_tag 'SUBMIT'
+  .clear

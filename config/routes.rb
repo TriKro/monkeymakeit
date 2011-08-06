@@ -40,13 +40,8 @@ Suggestedit::Application.routes.draw do
   # Crout page routes
   [
           :doris,
-          :doris7,
           :hiccup,
           :life_of_the_gallows,
-          :set_experiment_7,
-          :set_experiment_8,
-          :set_experiment_9,
-          :set_experiment_10,
   ].each do |crout_page|
     match "/#{crout_page}" => "crouts##{crout_page}", :as => crout_page
   end
@@ -63,5 +58,7 @@ Suggestedit::Application.routes.draw do
   # logging.
   match '/admin' => 'admin#index'
   match '/admin/scott' => 'admin#scott'
+  match '/select_experiment' => 'admin#select_experiment', :as => :select_experiment
+  match '/set_experiment' => 'admin#set_experiment', :as => :set_experiment
 
 end
