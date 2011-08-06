@@ -1,0 +1,24 @@
+#watch
+  #watch_inner
+    %h1.blue
+      Sign up for
+      %span.darkblue
+        early access
+
+    %p
+      We're in private beta right now. Sign up and we'll send you an invite shortly.
+    %p
+      You'll be able to:
+
+    %ul
+      %li
+        Get access to early drafts
+      %li
+        Be a part of the writing
+      %li
+        Help change the publishing industry
+
+    = render :partial =>'shared/registration_form'
+    %p#no_spam_disclaimer
+      %span.red *
+      We will never spam or sell your email address.

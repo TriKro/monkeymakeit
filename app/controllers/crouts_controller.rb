@@ -4,27 +4,6 @@ class CroutsController < ApplicationController
     log_activity(request.request_uri, "Viewed", "Page")
   }
 
-  def set_experiment_7
-    session[:monkey_experiment_id] = 7
-    redirect_to doris_path
-  end
-
-  def set_experiment_8
-    session[:monkey_experiment_id] = 8
-    redirect_to doris_path
-  end
-
-  def set_experiment_9
-    session[:monkey_experiment_id] = 9
-    redirect_to doris_path
-  end
-
-  def doris7
-    crout_doris
-    related_crouts
-    render 'crout-7'
-  end
-
   def doris
     crout_doris
     related_crouts
@@ -68,7 +47,7 @@ class CroutsController < ApplicationController
         :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
         :content => "hiccup",
         :artwork => "images/crouts/image-hiccup.png",
-        :artwork_title => "Jester",
+        :artwork_title => "Crows",
         :artist => "Tyler Landry",
         :artist_avatar => "images/avatars/avatar-tyler-landry.png"
     }
@@ -83,7 +62,7 @@ class CroutsController < ApplicationController
         :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
         :content => "life_of_the_gallows",
         :artwork => "images/crouts/image-life_of_the_gallows.jpg",
-        :artwork_title => "Crows",
+        :artwork_title => "Jester",
         :artist => "Tyler Landry",
         :artist_avatar => "images/avatars/avatar-tyler-landry.png",
     }
@@ -111,13 +90,7 @@ class CroutsController < ApplicationController
   end
 
   def render_experiment
-    if !session[:monkey_experiment_id]
-      if rand > 0.5
-        session[:monkey_experiment_id] = 8
-      else
-        session[:monkey_experiment_id] = 9
-      end
-    end
+    session[:monkey_experiment_id] = 10
     log_activity(request.request_uri, "Viewed", "Experiment-" + session[:monkey_experiment_id].to_s )
     render 'crout-' + session[:monkey_experiment_id].to_s
    end
