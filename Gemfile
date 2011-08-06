@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'awesome_print'
-#gem 'cancan'
 gem 'diff-lcs',            '1.1.2'
 gem 'haml'
 gem 'haml-rails'
@@ -18,8 +17,10 @@ gem 'will_paginate',       '~> 3.0.pre2'
 
 group :development do
   gem 'heroku'
-  gem 'taps',              '~> 0.3.22'
+  gem 'rspec'
+  gem 'rspec-rails'
   gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'taps',              '~> 0.3.22'
 end
 
 
