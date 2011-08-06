@@ -19,6 +19,7 @@ group :development do
   gem 'heroku'
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'taps',              '~> 0.3.22'
 end
