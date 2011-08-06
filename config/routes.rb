@@ -46,6 +46,7 @@ Suggestedit::Application.routes.draw do
           :set_experiment_7,
           :set_experiment_8,
           :set_experiment_9,
+          :set_experiment_10,
   ].each do |crout_page|
     match "/#{crout_page}" => "crouts##{crout_page}", :as => crout_page
   end

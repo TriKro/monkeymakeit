@@ -1,0 +1,52 @@
+- title "- " + @crout[:title] + " - " + @crout[:subtitle]
+- stylesheets 'crouts'
+- scripts 'crouts'
+- fonts 'http://fonts.googleapis.com/css?family=Reenie+Beanie&v2'
+
+:javascript
+  _kmq.push(['set', {'experiment_id': 9}])
+
+#crout
+  #left_column1
+    %h1
+      = @crout[:title]
+    %h2
+      = @crout[:subtitle]
+
+
+  #right_column1
+
+  .clear
+
+  #left_column2
+    .story_pic.event_clicked_story_picture
+      %img{ :src => "#{ @crout[:artwork] }" }
+      #art_credit
+        "
+        %b><
+          = @crout[:artwork_title]
+        " by
+        = @crout[:artist]
+
+    = render "#{ @crout[:content] }"
+
+    = render "/shared/signup_widget"
+
+  #right_column2
+    = render "/shared/signup_widget"
+
+    #about_author
+      %h4
+        %img{ :src => "images/text-abouttheauthor.png", :alt => "About the Author", :title => "About the Author" }
+      %author_image
+        %span{ :style => "float: left;"}
+          %img{:src => "images/avatars/image-scott-lambridis.png", :width => "100px;", :style => "margin: 0 10px 0 0;"}
+        %p
+          Scott Lambridis' stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, he earned a degree in neurobiology from UVa - which he promptly abandoned for a creative career. Scott is currently completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You can contact Scott here:
+          %a.blue{:href => "mailto:scott@omnibucket.com"} Email Scott
+
+    #related_crouts
+      %h4
+        %img{ :src => "images/text-morestories.png", :alt => "More Stories", :title => "Additional novels, screenplays, and other work you might be interested in." }
+      - @related.each do |related|
+        = render :partial => "related_crout", :locals => { :related => related }

@@ -1,7 +1,10 @@
 .signup_widget
   .signup_header
     %h4
-      %img{ :src => "images/text-signup.png", :alt => "Sign Up", :title => "Sign Up now!" }
+      - if session[:monkey_experiment_id] < 10
+        %img{ :src => "images/text-signup.png", :alt => "Sign Up", :title => "Sign Up now!" }
+      - elsif session[:monkey_experiment_id] == 10
+        %img{ :src => "images/text-next_chapter.png", :alt => "Sign Up", :title => "Sign Up now!" }
   .signup_content
     %p
       %i Want to see your name in print?

@@ -19,6 +19,11 @@ class CroutsController < ApplicationController
     redirect_to doris_path
   end
 
+  def set_experiment_10
+    session[:monkey_experiment_id] = 10
+    redirect_to doris_path
+  end
+
   def doris7
     crout_doris
     related_crouts
