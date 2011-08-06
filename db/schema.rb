@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110806223114) do
+ActiveRecord::Schema.define(:version => 20110806230717) do
 
   create_table "activities", :force => true do |t|
     t.integer   "user_id"
@@ -58,6 +58,11 @@ ActiveRecord::Schema.define(:version => 20110806223114) do
     t.string   "full_name"
     t.string   "avatar_remote_url"
     t.string   "access"
+    t.string   "invite_code"
+    t.string   "invited_by"
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["invite_code"], :name => "index_users_on_invite_code", :unique => true
 
 end
