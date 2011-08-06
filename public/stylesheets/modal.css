@@ -250,7 +250,7 @@ p {
       #new_signup #new_signup_inner #signup_form .actions input {
         height: 52px;
         width: 206px;
-        background: url(/images/button-yes-sprite.png) no-repeat 0px 0px;
+        background: url(/images/buttons/button-yes-sprite.png) no-repeat 0px 0px;
         display: inline-block;
         vertical-align: middle;
         border: none; }
@@ -330,7 +330,7 @@ p {
         border: none;
         height: 52px;
         width: 206px;
-        background: url(/images/button-invite-sprite.png) no-repeat 0px 0px; }
+        background: url(/images/buttons/button-invite-sprite.png) no-repeat 0px 0px; }
       #new_invitation #new_invitation_inner #invitation_form .actions:hover {
         background-position: 0 -52px; }
       #new_invitation #new_invitation_inner #invitation_form .actions .company_id {

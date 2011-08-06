@@ -37,7 +37,7 @@
 
     #about_author
       %h4
-        %img{ :src => "images/text-abouttheauthor.png", :alt => "About the Author", :title => "About the Author" }
+        %img{ :src => "images/text/text-abouttheauthor.png", :alt => "About the Author", :title => "About the Author" }
       %author_image
         %span{ :style => "float: left;"}
           %img{:src => "images/avatars/image-scott-lambridis.png", :width => "100px;", :style => "margin: 0 10px 0 0;"}
@@ -47,6 +47,6 @@
 
     #related_crouts
       %h4
-        %img{ :src => "images/text-morestories.png", :alt => "More Stories", :title => "Additional novels, screenplays, and other work you might be interested in." }
+        %img{ :src => "images/text/text-morestories.png", :alt => "More Stories", :title => "Additional novels, screenplays, and other work you might be interested in." }
       - @related.each do |related|
         = render :partial => "related_crout", :locals => { :related => related }
