@@ -428,13 +428,13 @@ footer {
 .signup_widget {
   background: white;
   margin: 10px 0;
-  border: 3px solid #8a1f11;
+  border: 3px solid #0088ba;
   -moz-box-shadow: 0 0 5px 0 #666666;
   -webkit-box-shadow: 0 0 5px 0 #666666;
   box-shadow: 0 0 5px 0 #666666; }
   .signup_widget .signup_header {
     padding: 10px 10px 0 10px;
-    background-color: #8a1f11; }
+    background-color: #0088ba; }
     .signup_widget .signup_header h4 {
       color: white;
       border-bottom: none;
