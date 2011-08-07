@@ -16,4 +16,12 @@ class UserMailer < ActionMailer::Base
     mail :from => sender.email_header, :to => recipient.email, :subject => subject, :url => url
   end
 
+  def invite_email(from, to, subject, message)
+    @message = message
+    
+    mail :from => from,
+         :to => to,
+         :subject => subject
+  end
+
 end

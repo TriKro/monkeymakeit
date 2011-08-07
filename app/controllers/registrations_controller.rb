@@ -15,18 +15,49 @@ class RegistrationsController < ApplicationController
       if @user.save
         log_activity(request.request_uri, "Created", "User", @user)
         current_user = @user
-        return redirect_to registration_thanks_path
+        return render 'registration_thanks'
       else
         log_activity(request.request_uri, "Error Creating", "User")
         return redirect_to new_registration_path(:user => params[:user]), :alert => @user.errors.full_messages.first
       end
     end
     log_activity(request.request_uri, "Error Creating", "User", @user)
-    redirect_to registration_thanks_path, :notice => 'You already signed up!'
+    render 'registration_thanks'
   end
 
-  def registration_thanks
-    log_activity(request.request_uri, "Viewed", "Page")
+  def invite_email
+    @user = User.where(:email => session[:signed_up_email]).first
+    unless params[:email]
+      flash[:error] = "Must provide email details."
+      render "registration_thanks" and return
+    end
+    if params[:email][:to].blank?
+      flash[:error] = "Must email someone."
+      render "registration_thanks" and return
+    end
+    if params[:email][:from].blank?
+      flash[:error] = "Must provide your email."
+      render "registration_thanks" and return
+    end
+    if params[:email][:message].blank?
+      flash[:error] = "Must provide a message."
+      render "registration_thanks" and return
+    end
+    if params[:email][:invite_link].blank?
+      flash[:error] = "Must provide your invite link."
+      render "registration_thanks" and return
+    end
+    unless params[:email][:message].include? params[:email][:invite_link]
+      flash[:error] = "Must include your invite link in your message."
+      render "registration_thanks" and return
+    end
+
+    UserMailer.invite_email(params[:email][:from], params[:email][:to],
+                            'A new story at MonkeyMake.it',
+                            params[:email][:message]).deliver
+    flash[:notice] = "Email sent. Thanks for spreading the word!"
+
+    render "registration_thanks"
   end
 
 end

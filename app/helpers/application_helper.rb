@@ -31,4 +31,9 @@ module ApplicationHelper
     ]
   end
 
+  def facebook_iframe_src(invite_url)
+    invite_url = ERB::Util.url_encode(invite_url)
+    "http://www.facebook.com/plugins/like.php?href=#{invite_url};send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21"
+  end
+
 end
