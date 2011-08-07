@@ -9,6 +9,9 @@ class RegistrationsController < ApplicationController
     @user = User.find_by_email(params[:user][:email])
     unless @user
       @user = User.new (params[:user])
+      if session[:invite_code] and !User.where(:invite_code => session[:invite_code]).empty?
+        @user.invited_by = session[:invite_code]
+      end
       if @user.save
         log_activity(request.request_uri, "Created", "User", @user)
         current_user = @user
