@@ -9,11 +9,6 @@ class SessionsController < ApplicationController
   def create
     #render :text => request.env["rack.auth"].to_yaml
     auth = request.env['omniauth.auth']
-    puts "**********"
-    ap auth
-    puts "**********"
-    ap auth['user_info']['name']
-    puts "**********"
     unless @auth = Authentication.find_from_hash(auth)
       # Create a new user or add an auth to existing user, depending on
       # whether there is already a user signed in.
