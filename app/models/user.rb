@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
 
   belongs_to :inviter, :class_name => 'User'
 
+  after_create lambda {
+    self.update_attribute(:invite_code, (read_attribute(:id)+100).to_s(36))
+  }
+
   validates_uniqueness_of :email
   validates_presence_of :email
   validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,}$/i
