@@ -43,6 +43,31 @@ ActiveRecord::Schema.define(:version => 20110806230717) do
     t.timestamp "updated_at"
   end
 
+  create_table "funnels", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "invitations", :force => true do |t|
+    t.integer  "widget_id"
+    t.string   "button_name"
+    t.text     "call_to_action"
+    t.text     "confirmation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "button_width"
+    t.integer  "button_height"
+  end
+
+  create_table "steps", :force => true do |t|
+    t.integer  "funnel_id"
+    t.string   "name"
+    t.integer  "sequence"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "user_sessions", :force => true do |t|
     t.string    "session_id"
     t.integer   "user_id"
