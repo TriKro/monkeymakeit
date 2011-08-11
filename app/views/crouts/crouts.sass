@@ -27,46 +27,16 @@ content
     width: 600px
     z-index: 3
 
-    .story_sharing
-      margin-left: 30px
-
-
   #right_column1
     float: right
     color: #111
     width: 300px
     z-index: 3
 
-  .buttons
-    width: 250px
-    margin: 0 auto
-    position: relative
-    height: 108px
-    .join_modal
-      position: absolute
-      left: -55px
-      top: 0
-      @include sprite
-      height: 112px
-      width: 198px
-      background: url(/images/remix-hiccup/button-remix-arrow-sprite.png) no-repeat 0px 0px
-      &:hover
-        background-position: 0 -112px
-    .watch_modal
-      position: absolute
-      right: -45px
-      top: 0
-      @include sprite
-      height: 112px
-      width: 198px
-      background: url(/images/remix-hiccup/button-follow-arrow-sprite.png) no-repeat 0px 0px
-      &:hover
-        background-position: 0 -112px
-
   #left_column2
     float: left
     color: #111
-    width: 600px
+    width: 590px
     z-index: 3
 
     .story_pic
@@ -78,7 +48,7 @@ content
       z-index: 3
       padding: 20px 20px 30px 0
       img
-        width: 300px
+        width: 250px
 
     #art_credit
       position: absolute
@@ -86,11 +56,6 @@ content
       bottom: 10px
       left: 90px
       color: $darkgrey
-
-    .story_sharing
-      position: absolute
-      left: 340px
-      margin: 23px 0 0 0
 
     #first_letter
       font-size: 48px
@@ -110,7 +75,7 @@ content
         text-indent: 30px
 
     #first_p
-      margin-top: 110px
+      margin-top: 20px
 
     .copyright
       font-size: $small
@@ -123,7 +88,7 @@ content
   #right_column2
     float: right
     width: 320px
-    margin-bottom: 40px
+    margin: 10px 0 40px 0
     z-index: 3
     h4
       font-size: 2em
@@ -133,94 +98,10 @@ content
       margin: 0 0 10px 0
       padding: 0 0 5px 0
 
-    #contributors
-      background: #FFF
-      padding: 10px 10px
-      margin: 10px 0 10px 0
-      @include box-shadow(0, 0, 5px, 0, #666)
-      #artist, #author
-        margin: 0 0 20px 0
-        font-weight: 600
-        img
-          width: 35px
-          vertical-align: middle
-      .role
-        font-weight: 100
-        font-size: 13px
-      p
-        margin: 0
-        padding: 0
-      .contributor
-        float: left
-        margin: 0 0 10px 0
-        img
-          width: 35px
-          margin: 0 2px
-
-    #activities
-      background: #FFF
-      padding: 10px 10px
-      margin: 21px 0 10px
-      @include box-shadow(0, 0, 5px, 0, #666)
-
-      .activity
-        font-size: 13px
-        margin: 5px 0 0 0
-        border-bottom: 1px solid $grey
-        .activity_pic
-          margin: 5px
-          float: left
-          img
-            width: 40px
-        .activity_content
-          float: right
-          width: 250px
-          p
-            line-height: 1.05em
-            margin: 9px 0
-            padding: 0
-          .summary
-            .actor
-              font-weight: 600
-            .verb
-              color: $darkgrey
-            .object
-              font-weight: 600
-          .details
-            color: $darkgrey
-          .timestamp
-            font-size: $smaller
-            color: $greyer
-        .actor_icon
-          img
-            width: 30px
-
-    #related_crouts
-      background: #FFF
-      padding: 10px
-      margin: 10px 0
-      @include box-shadow(0, 0, 5px, 0, #666)
-      .related_crout
-        a
-          color: $black
-          text-decoration: none
-          &:hover .title
-            color: $darkblue
-          img
-            float: left
-            width: 65px
-          .title
-            margin: 10px 0 0 70px
-            padding: 10px 0 0 0
-            font-weight: 600
-          .subtitle
-            margin: 5px 0 0 70px
-
-
     #about_author
       background: #FFF
       padding: 10px
-      margin: 10px 0
+      margin: 20px 0
       @include box-shadow(0, 0, 5px, 0, #666)
       p
         margin: 0

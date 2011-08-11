@@ -44,9 +44,3 @@
         %p
           Scott Lambridis' stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, he earned a degree in neurobiology from UVa - which he promptly abandoned for a creative career. Scott is currently completing his MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You can contact Scott here:
           %a.darkgrey{:href => "mailto:scott@omnibucket.com"} Email Scott
-
-    #related_crouts
-      %h4
-        %img{ :src => "images/text/text-morestories.png", :alt => "More Stories", :title => "Additional novels, screenplays, and other work you might be interested in." }
-      - @related.each do |related|
-        = render :partial => "related_crout", :locals => { :related => related }
