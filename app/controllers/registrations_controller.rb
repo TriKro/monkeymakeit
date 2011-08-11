@@ -14,7 +14,7 @@ class RegistrationsController < ApplicationController
       end
       if @user.save
         log_activity(request.request_uri, "Created", "User", @user)
-        current_user = @user
+        session[:user_id] = @user.id
         return render 'registration_thanks'
       else
         log_activity(request.request_uri, "Error Creating", "User")
@@ -26,7 +26,7 @@ class RegistrationsController < ApplicationController
   end
 
   def invite_email
-    @user = User.where(:email => session[:signed_up_email]).first
+    @user = User.find_by_id(session[:user_id])
     unless params[:email]
       flash[:error] = "Must provide email details."
       render "registration_thanks" and return
