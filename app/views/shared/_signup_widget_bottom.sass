@@ -1,23 +1,25 @@
 @import 'variables'
 
-.signup_widget
-  background: #FFF
-  margin: 10px 0
-  border: 3px solid $darkblue
-  @include box-shadow(0, 0, 5px, 0, #666)
+.signup_widget_bottom
+  margin: 10px 0 40px 0
+  text-align: center
   .signup_header
     padding: 10px 10px 0 10px
-    background-color: $darkblue
-    h4
-      color: $white
+    h2
       border-bottom: none
-      padding: 0
-      margin: 0
+      padding: 0 !important
+      margin: 0 !important
+      color: $black !important
   .signup_content
-    padding: 10px
     p
+      margin: 10px 0 0 0 !important
+      padding: 0 !important
       font-size: $larger
       font-family: Arial, sans-serif
+      margin-left: 20px !important
+      text-align: center !important
+    p + p
+      text-indent: 0 !important
     .field
       margin: 10px 20px 0 20px
       label
