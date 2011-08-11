@@ -1,6 +1,8 @@
 @import 'variables'
 
 #registration_thanks
+  position: relative
+
   h1
     font-size: 4em
     font-weight: 100
@@ -13,49 +15,78 @@
   p
     color: $darkgrey
     font-size: $largest
+    line-height: 1.2em
+
+  ol
+    list-style: none
+    margin: 0
+    padding: 0
+
+    li:before
+      content: counter(list)
+      background: $orange
+      @include radius(50px)
+      padding: 0px 19px
+      margin-right: 10px
+      color: $white
+      border: 3px solid $black
+      font-size: $giant
+
+
+    li
+      counter-increment: list
+      margin: 0 0 30px 40px
+      font-size: 2.4em
+      font-weight: 100
+
+  #email
+    margin-left: 90px
+    label
+      width: 300px
+      //font-size: $largest
+    input
+      margin: 10px 0 10px 0
+      padding: 5px
+      font-size: $tiny
+      width: 400px
+    textarea
+      width: 600px
+      height: 100px
+      font-size: $tiny
+    input[type="submit"]
+      margin: 0
+      padding: 0
+      height: 52px
+      width: 151px
+      background: url(/images/buttons/button-send-sprite.png) no-repeat 0px 0px
+      @include sprite
+
+      &:hover
+        background-position: 0 -52px
+
+  #sharing
+    position: relative
+    .sharing-show
+      position: absolute
+      left: 0
+      top: 10px
+      width: 200px
+      .facebook
+        margin-left: 10px
 
   #invite_code
+    margin-left: 90px
     input
       border: 3px solid $darkblue
       background-color: #CAE3F4
-      margin-left: 20px
+      margin-top: 10px
       padding: 5px
+      font-size: $tiny
+      width: 50%
       @include radius(5px)
       @include box-shadow(0, 0, 5px, 0, #666)
 
-  .left_column
-    width: 500px
-    float: left
-    #sharing
-      position: relative
-      .sharing-show
-        position: absolute
-        left: 100px
-        top: 10px
-        .facebook
-          margin-left: 10px
-    #email
-      margin-left: 20px
-      label
-        width: 300px
-        font-size: $largest
-      input
-        margin: 20px 0
-        padding: 5px
-        font-size: $large
-      textarea
-        width: 300px
-        height: 200px
-        font-size: $large
-      input[type="submit"]
-        height: 52px
-        width: 151px
-        background: url(/images/buttons/button-send-sprite.png) no-repeat 0px 0px
-        @include sprite
-
-        &:hover
-          background-position: 0 -52px
-
-  .right_column
-    width: 400px
-    float: left
+  #happy_monkey
+    position: absolute
+    top: 0
+    right: -60px
