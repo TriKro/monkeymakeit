@@ -9,47 +9,63 @@
   %h1
     Thank you!
 
-  #happy_monkeys
-    %h2
-      The monkeys are
-      %span.darkblue
-        happy...
-
-    %img{ :id => "cute_monkey", :src => "images/image-code_monkey.jpg" }
-
-    %img{ :id => "cute_sharing", :src => "images/arrow-cute_sharing.png" }
-
-    %h2{ :style => "margin: 0 0 40px 420px;"}
-      \...but not yet finished
-      %span.darkblue
-        building
-      the site.
+  %p
+    = User.all.count
+    have signed up.
 
   %p
-    We're working hard to let you
-    %span.bold
-      remix
-    %br
-    and follow amazing
-    %span.bold
-      stories
-    from independent
-    %span.bold
-      authors.
+    Once we hit 5,000 readers, the book will be published.
 
   %p
-    We'll email you something
-    %span.bold
-      awesome
-    soon.
+    %b
+      Help out
+    by inviting readers with your
+    %b
+      invite code!
+
+  #invite_code
+    %input{:type => "text", :style => "width:50%; font-size:1.25em;", :value => "http://monkeymake.it/hiccup?#{@user.invite_code}"}
 
   %p
-    In the meantime,
-    %span.bold
-      share this site!
+    If you're one of the top 50 inviters you'll receive a
+    %b< free copy
+    signed by the author!
 
-    %span.blue{ :style => "font-size: .7em"}
-      (Monkeys make great friends.)
+  .clear
+  .left_column
+    #sharing
+      %p
+        Share:
+      = render :partial => "/shared/sharing", :locals => { :share => { :url => "http://monkeymake.it/hiccup?#{@user.invite_code}", :content => "test", :faces => "false", :width => "70px", :count => "none" } }
 
-  #bottom-sharing.event_registration_thanks_sharing
-    = render :partial => "/shared/sharing", :locals => { :share => { :url => "http://monkeymake.it/tw", :content => "I'm reading and remixing stories with @monkeymakeit", :faces => "true" } }
+    %p
+      Or invite by email:
+
+    :javascript
+      $(function() {
+        $("#invite_link input").focus();
+
+        $("#email_message").val(
+          $("#email_message").val() + " " + "http://monkeymake.it/hiccup?#{@user.invite_code}" ); // TODO: store url for each user/invite
+      });
+
+    #email
+      = form_tag invite_email_registrations_path do
+        = hidden_field_tag "email[from]", @user.email
+        = hidden_field_tag "email[invite_link]", "http://monkeymake.it/hiccup?#{@user.invite_code}"
+        .field
+          = label_tag "email[to]", "Email"
+          = text_field_tag "email[to]"
+        .field
+          = label_tag "email[message]", "Message"
+          = text_area_tag "email[message]", "Hi! I just signed up to help publish a book by Scott Lambridis. You can check it out here: "
+        .action
+          = submit_tag ""
+
+  .right_column
+    #happy_monkeys
+      %img{ :id => "cute_monkey", :src => "images/image-code_monkey.jpg" }
+
+      -#%img{ :id => "cute_sharing", :src => "images/arrow-cute_sharing.png" }
+
+  .clear
