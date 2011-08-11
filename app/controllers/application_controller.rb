@@ -8,16 +8,6 @@ class ApplicationController < ActionController::Base
     redirect_to :back
   end
 
-  #rescue_from CanCan::AccessDenied do |exception|
-  #  logger.debug('CanCan:: AccessDenied : ' + exception.message)
-  #
-  #  flash[:alert] = exception.message.chop + ': "' + request.fullpath + '"'
-  #  log_activity(request.request_uri, "Access Denied")
-  #
-  #  # TODO: Should redirect back, not home.
-  #  redirect_to root_path( :accessdenied => flash[:alert])
-  #end
-
   private
 
   def current_user
