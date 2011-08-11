@@ -19,7 +19,7 @@ content {
   #crout #left_column1 {
     float: left;
     color: #111111;
-    width: 600px;
+    width: 610px;
     z-index: 3; }
   #crout #right_column1 {
     float: right;
@@ -29,7 +29,7 @@ content {
   #crout #left_column2 {
     float: left;
     color: #111111;
-    width: 590px;
+    width: 610px;
     z-index: 3; }
     #crout #left_column2 .story_pic {
       position: relative;
@@ -71,7 +71,7 @@ content {
       height: 40px; }
   #crout #right_column2 {
     float: right;
-    width: 320px;
+    width: 300px;
     margin: 10px 0 40px 0;
     z-index: 3; }
     #crout #right_column2 h4 {
