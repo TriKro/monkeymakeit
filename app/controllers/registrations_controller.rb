@@ -2,7 +2,7 @@ class RegistrationsController < ApplicationController
 
   def new
     session[:invite_code] = params[:invite_code]
-    log_activity(request.request_uri, "Viewed", "Page")
+    redirect_to '/hiccup'
   end
 
   def create

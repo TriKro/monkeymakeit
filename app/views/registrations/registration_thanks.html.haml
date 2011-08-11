@@ -24,7 +24,7 @@
       invite code!
 
   #invite_code
-    %input{:type => "text", :style => "width:50%; font-size:1.25em;", :value => "http://monkeymake.it/hiccup?#{@user.invite_code}"}
+    %input{:type => "text", :style => "width:50%; font-size:1.25em;", :value => "http://monkeymake.it/i/#{@user.invite_code}"}
 
   %p
     If you're one of the top 50 inviters you'll receive a
@@ -36,7 +36,7 @@
     #sharing
       %p
         Share:
-      = render :partial => "/shared/sharing", :locals => { :share => { :url => "http://monkeymake.it/hiccup?#{@user.invite_code}", :content => "test", :faces => "false", :width => "70px", :count => "none" } }
+      = render :partial => "/shared/sharing", :locals => { :share => { :url => "http://monkeymake.it/i/#{@user.invite_code}", :content => "test", :faces => "false", :width => "70px", :count => "none" } }
 
     %p
       Or invite by email:
@@ -46,13 +46,13 @@
         $("#invite_link input").focus();
 
         $("#email_message").val(
-          $("#email_message").val() + " " + "http://monkeymake.it/hiccup?#{@user.invite_code}" ); // TODO: store url for each user/invite
+          $("#email_message").val() + " " + "http://monkeymake.it/i/#{@user.invite_code}"); // TODO: store url for each user/invite
       });
 
     #email
       = form_tag invite_email_registrations_path do
         = hidden_field_tag "email[from]", @user.email
-        = hidden_field_tag "email[invite_link]", "http://monkeymake.it/hiccup?#{@user.invite_code}"
+        = hidden_field_tag "email[invite_link]", "http://monkeymake.it/i/#{@user.invite_code}"
         .field
           = label_tag "email[to]", "Email"
           = text_field_tag "email[to]"

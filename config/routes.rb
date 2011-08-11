@@ -25,7 +25,7 @@ Suggestedit::Application.routes.draw do
     post :invite_email, :on => :collection
   end
   match "/thanks_for_registering" => "registrations#registration_thanks", :as => :registration_thanks
-#?   match "/:invite_code" => "TODO#todo", :as => :invite_link
+  match "/i/:invite_code" => "registrations#new", :as => :invite
 
   match "/demo" => "landing_pages#demo"
   
