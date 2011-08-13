@@ -76,3 +76,59 @@ p
 .nodec
   text-decoration: none !important
   border-bottom: none !important
+
+input[type="submit"]
+  -moz-box-shadow: inset 0px 1px 0px 0px #bbdaf7
+  -webkit-box-shadow: inset 0px 1px 0px 0px #bbdaf7
+  box-shadow: inset 0px 1px 0px 0px #bbdaf7
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, $blue), color-stop(1, $darkblue))
+  background: -moz-linear-gradient(center top, $blue 5%, $darkblue 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$blue, endColorstr='$darkblue')
+  background-color: $blue
+  @include radius(6px)
+  border: 1px solid #84bbf3
+  display: inline-block
+  color: #ffffff
+  font-family: arial !important
+  font-size: 15px !important
+  font-weight: bold !important
+  padding: 6px 24px !important
+  text-decoration: none
+  text-shadow: 1px 1px 0px #528ecc
+  &:hover
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, $darkblue), color-stop(1, $blue))
+    background: -moz-linear-gradient(center top, $darkblue 5%, $blue 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$darkblue', endColorstr='$blue')
+    background-color: $darkblue
+  &:active
+    position: relative
+    top: 1px
+
+input[type="submit"].grey
+  -moz-box-shadow: inset 0px 1px 0px 0px #ffffff
+  -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff
+  box-shadow: inset 0px 1px 0px 0px #ffffff
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf))
+  background: -moz-linear-gradient(center top, #ededed 5%, #dfdfdf 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf')
+  background-color: #ededed
+  -moz-border-radius: 6px
+  -webkit-border-radius: 6px
+  border-radius: 6px
+  border: 1px solid #dcdcdc
+  display: inline-block
+  color: #777777
+  font-family: arial
+  font-size: 15px
+  font-weight: bold
+  padding: 6px 24px
+  text-decoration: none
+  text-shadow: 1px 1px 0px #ffffff
+  &:hover
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed))
+    background: -moz-linear-gradient(center top, #dfdfdf 5%, #ededed 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed')
+    background-color: #dfdfdf
+  &:active
+    position: relative
+    top: 1px

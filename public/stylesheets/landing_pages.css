@@ -155,6 +155,64 @@ p {
   text-decoration: none !important;
   border-bottom: none !important; }
 
+input[type="submit"] {
+  -moz-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #00b7fb), color-stop(1, #0088ba));
+  background: -moz-linear-gradient(center top, #00b7fb 5%, #0088ba 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$blue, endColorstr='$darkblue');
+  background-color: #00b7fb;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border: 1px solid #84bbf3;
+  display: inline-block;
+  color: white;
+  font-family: arial !important;
+  font-size: 15px !important;
+  font-weight: bold !important;
+  padding: 6px 24px !important;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px #528ecc; }
+  input[type="submit"]:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0088ba), color-stop(1, #00b7fb));
+    background: -moz-linear-gradient(center top, #0088ba 5%, #00b7fb 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$darkblue', endColorstr='$blue');
+    background-color: #0088ba; }
+  input[type="submit"]:active {
+    position: relative;
+    top: 1px; }
+
+input[type="submit"].grey {
+  -moz-box-shadow: inset 0px 1px 0px 0px white;
+  -webkit-box-shadow: inset 0px 1px 0px 0px white;
+  box-shadow: inset 0px 1px 0px 0px white;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf));
+  background: -moz-linear-gradient(center top, #ededed 5%, #dfdfdf 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+  background-color: #ededed;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  color: #777777;
+  font-family: arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px white; }
+  input[type="submit"].grey:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed));
+    background: -moz-linear-gradient(center top, #dfdfdf 5%, #ededed 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+    background-color: #dfdfdf; }
+  input[type="submit"].grey:active {
+    position: relative;
+    top: 1px; }
+
 .field_with_errors input, .field_with_errors textarea {
   border: 2px #8a1f11 solid !important; }
   .field_with_errors input label, .field_with_errors textarea label {
