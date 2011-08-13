@@ -37,6 +37,16 @@ if CONFIG.allow_heroku_commands
       execute( "heroku rake --trace db:seed                    --app #{app}-#{target}" )
     end
 
+    desc "Deploy to Staging from REF=<ref> TARGET=<#{TARGETS.join('|')}>"
+    task :staging => :environment do
+      ref = ENV['REF'] || 'master'
+      target = ENV['TARGET'] || TARGETS.second
+      deploy( target, ref )
+      execute( "heroku rake --trace db:migrate                 --app #{app}-#{target}" )
+      execute( "heroku restart                                 --app #{app}-#{target}" )
+      execute( "heroku rake --trace db:seed                    --app #{app}-#{target}" )
+    end
+
     def deploy( target, ref )
       # add remote in case this dev box doesn't have it yet, makes it easier to track, eg in gitx
       git_remote = "heroku-#{app}-#{target}"
