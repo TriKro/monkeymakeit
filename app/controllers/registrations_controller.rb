@@ -15,6 +15,7 @@ class RegistrationsController < ApplicationController
       if @user.save
         log_activity(request.request_uri, "Created", "User", @user)
         session[:user_id] = @user.id
+        UserMailer.welcome_email(@user).deliver
         return render 'registration_thanks'
       else
         log_activity(request.request_uri, "Error Creating", "User")

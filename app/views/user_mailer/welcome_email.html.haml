@@ -1,0 +1,45 @@
+%p
+  - if !@recipient.full_name.nil?
+    Hi #{ @recipient.first_name },
+  - else
+    Hi,
+
+%p
+  Thanks! You're signed up.
+
+%p
+  I'll send you each draft chapter as it's written.
+
+%p
+  Want the whole book for free?
+
+%p
+  Invite some friends. I'll give a
+  %b signed first edition print
+  of "Oh, Mighty Hiccup!" to the top 50 inviters.
+
+%p
+  I'll get this book published and printed once we hit 5000
+  %span{ :style => 'color: #8a1f11' }> *
+  &#32;readers (We're at
+  = User.all.count
+  now.)
+%p{ :style => "color: #888; font-size: .9em;" }
+  %span{ :style => 'color: #8a1f11' } *
+  Why 5000? That's the number of readers a major publisher needs before signing new authors.
+
+%p
+  Tweet this story:
+  %a{ :html => 'http://twitter.com/share?url=http://monkeymake.it/i/#{ @recipient.invite_code }&text=Checkout%20Oh%20Mighty%20Hiccup%20by%20Scott%20Lambridis%20&count=vertical&via=monkeymakeit&related=trikro:Tristan%20Kromer' }
+    Click here to tweet
+
+%p
+  Or share this link: http://monkeymake.it/i/#{ @recipient.invite_code }
+
+.footer{ :style => "border-bottom: 1px solid #999" }
+
+%p
+  Powered by
+  = link_to root_path do
+    MonkeyMake.it
+  \- Help New Books Get Published

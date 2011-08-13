@@ -1,0 +1,26 @@
+- if !@recipient.full_name.nil?
+  Hi #{ @recipient.first_name },
+- else
+  Hi,
+
+Thanks! You're signed up.
+
+I'll send you each draft chapter as it's written.
+
+Want the whole book for free?
+
+Invite some friends. I'll give a signed first edition print of "Oh, Mighty Hiccup!" to the top 50 inviters.
+
+I'll get this book published and printed once we hit 5000* readers (We're at #{ User.all.count } now.)
+
+* Why 5000? That's the number of readers a major publisher needs before signing new authors.
+
+Share this story by sharing this link: http://monkeymake.it/i/#{ @recipient.invite_code }
+
+Or you can tweet by clicking on this really big link:
+
+http://twitter.com/share?url=http://monkeymake.it/i/#{ @recipient.invite_code }&text=Checkout%20Oh%20Mighty%20Hiccup%20by%20Scott%20Lambridis%20&count=vertical&via=monkeymakeit&related=trikro:Tristan%20Kromer
+
+__________________________________________________________________
+
+Powered by MonkeyMake.it - Help New Books Get Published

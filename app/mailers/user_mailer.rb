@@ -24,4 +24,10 @@ class UserMailer < ActionMailer::Base
          :subject => subject
   end
 
+  def welcome_email(recipient)
+    @recipient = recipient
+    mail :from => 'Monkeys <no-reply@MonkeyMake.it>',
+         :to => recipient.email
+  end
+
 end

@@ -18,7 +18,7 @@ Suggestedit::Application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   # Mailer sending now disabled in development
-  config.action_mailer.perform_deliveries = false
+  #config.action_mailer.perform_deliveries = false
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
