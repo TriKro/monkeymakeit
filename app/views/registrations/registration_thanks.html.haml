@@ -6,57 +6,67 @@
   _kmq.push(['record', 'Signed up'])
 
 #registration_thanks
-  %h1
-    Thank you!
+  #thanks
+    %h1
+      Thank you!
 
-  %p
-    %b.black
+    %p
+      You're signed up. I'll send you each draft chapter as it's written.
+
+    #happy_monkey
+      %img{ :id => "cute_monkey", :src => "images/image-code_monkey.jpg" }
+
+  #invite
+    .clear
+
+    %h2
+      Want the whole book for free?
+
+    %p
+      Invite some friends. I'll give a
+      %b signed first edition print
+      of "Oh, Mighty Hiccup!" to the top 50 inviters.
+
+    %p
+      I'll get this book published and printed once we hit
+      %span.black 5000
+      %span.red> *
+      &#32;readers (We're at
       = User.all.count
-    have already signed up!
-    %br
-    Once we hit
-    %b.black 5,000
-    readers, we can get this book published.
+      now.)
+    %p{ :style => "color: #888; font-size: 14px;" }
+      %span.red> *
+      Why 5000? That's the number of readers a major publisher needs before signing new authors.
 
-  %p
-    %i
-      Want a free book? Invite your friends.
-    %br
-    The top 50 inviters will get a
-    %b.black< free first edition copy
-    %br
-    of "Oh, Mighty Hiccup!"
-
-  %p
-    Inviting friends is easy. You can
-
-  %ol
-    %li
-      %span
-        %span.blue
+    #invite_options
+      .left_column
+        %h3
           Email your friends:
+      .right_column
         #email
           = form_tag invite_email_registrations_path do
             = hidden_field_tag "email[from]", @user.email
             = hidden_field_tag "email[invite_link]", "http://monkeymake.it/i/#{@user.invite_code}"
             .field
-              = text_field_tag "email[to]", "Your friend's email address", :class => "darkgrey"
+              = text_field_tag "email[to]", "Your friend's email address", :class => "grey"
             .field
-              = text_area_tag "email[message]", "Check out the first chapter novel draft by Scott Lambridis. http://monkeymake.it/i/#{@user.invite_code} Pretty cool. Thanks!", :class => "darkgrey"
+              = text_area_tag "email[message]", 'Check out this first chapter of "Oh, Mighty Hiccup!" by Scott Lambridis. http://monkeymake.it/i/' + @user.invite_code + ' Pretty cool. Thanks!', :class => "grey"
             .action
               = submit_tag ""
+      .clear
 
-    %li
-      %span.blue
-        Share or tweet the story:
+      .left_column
+        %h3
+          Share this story:
+      .right_column
         %span#sharing
           = render :partial => "/shared/sharing", :locals => { :share => { :url => "http://monkeymake.it/i/#{@user.invite_code}", :content => "test", :faces => "false", :width => "70px", :count => "none" } }
+      .clear
 
-    %li
-      %span.blue
-        Or just pass around this coded link:
-      #invite_code
-        %input{:type => "text", :value => "http://monkeymake.it/i/#{@user.invite_code}"}
-
-    #happy_monkey
-      %img{ :id => "cute_monkey", :src => "images/image-code_monkey.jpg" }
+      .left_column
+        %h3
+          Or copy and paste this link:
+      .right_column
+        #invite_code
+          %input{:type => "text", :value => "http://monkeymake.it/i/#{@user.invite_code}"}
+      .clear

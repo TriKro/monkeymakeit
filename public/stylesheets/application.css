@@ -136,6 +136,9 @@ p {
 .black {
   color: black !important; }
 
+.grey {
+  color: #888888 !important; }
+
 .darkgrey {
   color: #666666 !important; }
 
