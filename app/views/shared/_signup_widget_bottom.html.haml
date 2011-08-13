@@ -26,8 +26,9 @@
         = f.text_field :email, :class => "user_email", :value => params[:user].try(:[], :email).presence || "Email"
 
       .actions
-        = f.submit ''
+        = f.submit 'SIGN UP'
       .clear
-    %p{ :style => "font-size: 9px" }
+
+    %p{ :style => "font-size: 12px" }
       %span.red *
       We will never spam or sell your email address.

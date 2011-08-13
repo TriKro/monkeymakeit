@@ -521,15 +521,6 @@ footer {
     .signup_widget .signup_content .actions {
       text-align: center;
       margin: 10px 0 0 0; }
-      .signup_widget .signup_content .actions input {
-        height: 52px;
-        width: 151px;
-        background: url(/images/buttons/button-signup-sprite.png) no-repeat 0px 0px;
-        display: inline-block;
-        vertical-align: middle;
-        border: none; }
-        .signup_widget .signup_content .actions input:hover {
-          background-position: 0 -52px; }
 
 .signup_widget_bottom {
   margin: 10px 0 40px 0;
@@ -563,12 +554,3 @@ footer {
   .signup_widget_bottom .signup_content .actions {
     text-align: center;
     margin: 10px 0 0 0; }
-    .signup_widget_bottom .signup_content .actions input {
-      height: 52px;
-      width: 151px;
-      background: url(/images/buttons/button-signup-sprite.png) no-repeat 0px 0px;
-      display: inline-block;
-      vertical-align: middle;
-      border: none; }
-      .signup_widget_bottom .signup_content .actions input:hover {
-        background-position: 0 -52px; }
