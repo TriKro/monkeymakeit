@@ -8,9 +8,7 @@ class User < ActiveRecord::Base
 
   belongs_to :inviter, :class_name => 'User'
 
-  after_create lambda {
-    self.update_attribute(:invite_code, (read_attribute(:id)+100).to_s(36))
-  }
+  after_create :update_invite_code
 
   validates_uniqueness_of :email
   validates_presence_of :email
@@ -59,5 +57,10 @@ class User < ActiveRecord::Base
             :target => user
     )
     user
+  end
+
+  def update_invite_code
+    return if invite_code.present?
+    self.update_attribute(:invite_code, (read_attribute(:id)+100).to_s(36))
   end
 end

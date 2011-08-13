@@ -42,7 +42,7 @@
             .field
               = text_field_tag "email[to]", "Your friend's email address", :class => "darkgrey"
             .field
-              = text_area_tag "email[message]", "Check out the first chapter novel draft by Scott Lambridis. http://monkeymake.it/i/" + @user.invite_code + "Pretty cool. Thanks!", :class => "darkgrey"
+              = text_area_tag "email[message]", "Check out the first chapter novel draft by Scott Lambridis. http://monkeymake.it/i/#{@user.invite_code} Pretty cool. Thanks!", :class => "darkgrey"
             .action
               = submit_tag ""
 
