@@ -50,7 +50,7 @@
             .field
               = text_field_tag "email[to]", "Your friend's email address", :class => "grey"
             .field
-              = text_area_tag "email[message]", 'Check out this first chapter of "Oh, Mighty Hiccup!" by Scott Lambridis. http://monkeymake.it/i/' + @user.invite_code + ' Pretty cool. Thanks!', :class => "grey"
+              = text_area_tag "email[message]", 'Check out this first draft chapter of "Oh, Mighty Hiccup!" by Scott Lambridis. http://monkeymake.it/i/' + @user.invite_code + ' Pretty cool. Thanks!', :class => "grey"
             .action
               = submit_tag "SEND", :id => "invite_submit", :class => "grey"
       .clear
