@@ -28,7 +28,7 @@ $(document).ready(function() {
         $(this).addClass('grey').removeClass('black');
     });
 
-    $('.user_submit').click(function() {
+    $('#invite_submit').click(function() {
       if ($(this).val() == "Your friend's email address" ) {
         $(this).val('');
        };
@@ -64,7 +64,7 @@ $(document).ready(function() {
       }
     });
 
-    $('.user_submit').click(function() {
+    $('#user_submit').click(function() {
       if ($(this).val() == "Email" ) {
         $(this).val('');
        };

@@ -35,7 +35,7 @@ $(document).ready(function() {
       }
     });
 
-    $('.user_submit').click(function() {
+    $('#user_submit').click(function() {
       if ($(this).val() == "Email" ) {
         $(this).val('');
        };
