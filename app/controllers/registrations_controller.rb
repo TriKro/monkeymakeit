@@ -2,6 +2,8 @@ class RegistrationsController < ApplicationController
 
   def new
     session[:invite_code] = params[:invite_code]
+    @User = User.find_by_invite_code(params[:invite_code])
+    log_activity(request.request_uri, "Invited by", "User", @user)
     redirect_to '/hiccup'
   end
 
