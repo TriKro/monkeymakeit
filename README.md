@@ -2,49 +2,36 @@
 
 ## Cookie page (to eliminate admin logging)
 
-http://monkeymake.it/cookie
+    http://ROOT/cookie
 
-## Deploying to monkeymakeit-staging
-
-    rake heroku:staging
-
-## Deploying to monkeymakeit-production
+## Deploying to production / staging
 
     rake heroku:deploy
+    rake heroku:staging
 
-## Adding & removing Heroku domains (one time operation for each domain)
+## Script console on production / staging
 
-    bundle exec heroku domains:add MonkeyMake.it          --app suggestedit-production
-    bundle exec heroku domains:remove www.suggestedit.org --app suggestedit-production
-    bundle exec heroku domains                            --app suggestedit-production  # list domains
+    heroku console --app APP_NAME-production
+    heroku console --app APP_NAME-staging
 
-## Script console on production
+## Copy db from production / staging
 
-    bundle exec heroku console --app suggestedit-production
-
-## Copy db from production
-
-    heroku db:pull --confirm suggestedit-production
+    heroku db:pull --app APP_NAME-production --confirm APP_NAME-production
+    heroku db:pull --app APP_NAME-staging --confirm APP_NAME-staging
 
     NOTE: this will clobber your local db files
 
-## Copy logs from production
+## Copy db from production / staging
 
-    heroku logs --app suggestedit-production
+    heroku db:push --app APP_NAME-production --confirm APP_NAME-production
+    heroku db:push --app APP_NAME-staging --confirm APP_NAME-staging
 
-## Creating a new heroku app
+    NOTE: this will clobber your remote db files
 
-Let's say we have a branch "omniauth", which we want to deploy to a new heroku app.  Create the app thus:
+## Copy logs from production / staging
 
-    rake heroku:create TARGET=omniauth
-
-Then deploy to it:
-
-    rake heroku:deploy TARGET=omniauth REF=omniauth
-
-And view it here:
-
-    http://suggestedit-omniauth.heroku.com/
+    heroku logs --app APP_NAME-production
+    heroku logs --app APP_NAME-staging
 
 ## When pulling
 
