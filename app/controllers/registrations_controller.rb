@@ -60,6 +60,7 @@ class RegistrationsController < ApplicationController
     UserMailer.invite_email(params[:email][:from], params[:email][:to],
                             'First look at "Oh, Mighty Hiccup!" on MonkeyMake.it',
                             params[:email][:message]).deliver
+    log_activity(request.request_uri, "Created", "Invite")
     flash[:notice] = "Email sent. Thanks for spreading the word!"
 
     render "registration_thanks"

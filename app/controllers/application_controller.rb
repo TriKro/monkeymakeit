@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
       # Associate activity with existing UserSession or create a new one.
       # TODO: Move to new method in model?
       if !(user_session = UserSession.find_by_session_id(session[:monkey_id]) )
-        user_session = UserSession.create( :session_id => session[:monkey_id])
+        user_session = UserSession.create( :session_id => session[:monkey_id] )
       end
       user_session.activities << logged_activity
     end
