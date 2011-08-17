@@ -57,7 +57,7 @@ class RegistrationsController < ApplicationController
       render "registration_thanks" and return
     end
 
-    UserMailer.invite_email(params[:email][:from], params[:email][:to],
+    UserMailer.invite_email(params[:email][:from], params[:email][:to].split(','),
                             'First look at "Oh, Mighty Hiccup!" on MonkeyMake.it',
                             params[:email][:message]).deliver
     flash[:notice] = "Email sent. Thanks for spreading the word!"
