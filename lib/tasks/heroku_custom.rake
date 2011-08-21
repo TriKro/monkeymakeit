@@ -19,7 +19,7 @@ if CONFIG.allow_heroku_commands
       execute "heroku db:pull --app #{app}-#{target} --confirm #{app}-#{target}"
     end
 
-    desc "Clone DB from production to localhost"
+    desc "Clone DB from localhost to production"
     task :push do
       target = ENV['TARGET'] || raise( 'please pass in TARGET')
       raise 'Refusing to push db to production' if target=='prod' || target=='production'
@@ -35,6 +35,7 @@ if CONFIG.allow_heroku_commands
       execute( "heroku rake --trace db:migrate                 --app #{app}-#{target}" )
       execute( "heroku restart                                 --app #{app}-#{target}" )
       execute( "heroku rake --trace db:seed                    --app #{app}-#{target}" )
+      execute( "rake hoptoad:deploy TO=production" )
     end
 
     desc "Deploy to Staging from REF=<ref> TARGET=<#{TARGETS.join('|')}>"
@@ -42,9 +43,12 @@ if CONFIG.allow_heroku_commands
       ref = ENV['REF'] || 'master'
       target = ENV['TARGET'] || TARGETS.second
       deploy( target, ref )
-      execute( "heroku rake --trace db:migrate                 --app #{app}-#{target}" )
-      execute( "heroku restart                                 --app #{app}-#{target}" )
-      execute( "heroku rake --trace db:seed                    --app #{app}-#{target}" )
+      execute( "heroku rake --trace db:migrate                           --app #{app}-#{target}" )
+      execute( "heroku pgbackups:capture --expire                        --app #{app}-staging" )
+      execute( "heroku pgbackups:restore DATABASE `heroku pgbackups:url  --app #{app}-production` --app #{app}-staging --confirm #{app}-staging" )
+      execute( "heroku restart                                           --app #{app}-#{target}" )
+      execute( "heroku rake --trace db:seed                              --app #{app}-#{target}" )
+      execute( "rake hoptoad:deploy TO=staging" )
     end
 
     def deploy( target, ref )
