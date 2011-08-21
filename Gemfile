@@ -16,6 +16,7 @@ gem 'rspec-rails'
 gem 'sass'
 gem 'shoulda'
 gem 'will_paginate',       '~> 3.0.pre2'
+gem 'snogmetrics'
 
 group :development do
   gem 'awesome_print'
