@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  cache_sweeper :user_sweeper
+
   def new
     login_url = "/auth/#{params[:provider]}"
     log_activity(request.request_uri, "Clicked to Sign In")

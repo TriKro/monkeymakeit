@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   #load_and_authorize_resource
 
+  cache_sweeper :user_sweeper
+
   def index
     @users = User.all
   end

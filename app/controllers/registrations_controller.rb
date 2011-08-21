@@ -1,5 +1,7 @@
 class RegistrationsController < ApplicationController
 
+  cache_sweeper :user_sweeper
+
   def new
     session[:invite_code] = params[:invite_code]
     @User = User.find_by_invite_code(params[:invite_code])
