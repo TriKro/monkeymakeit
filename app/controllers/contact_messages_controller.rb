@@ -1,5 +1,9 @@
 class ContactMessagesController < ApplicationController
 
+  before_filter lambda {
+    km_log_page_view('contact')
+  }, :only => [:new, :thanks]
+
   def new
     @contact_message = ContactMessage.new
   end
