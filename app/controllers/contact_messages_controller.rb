@@ -7,7 +7,7 @@ class ContactMessagesController < ApplicationController
 
   def create
     @contact_message = ContactMessage.new(params[:contact_message])
-    if verify_recaptcha(@contact_message) && @contact_message.valid?
+    if @contact_message.valid?
       UserMailer.contact_us(@contact_message).deliver
       log_activity(request.request_uri, "Created", "ContactMessage")
       flash[:success] = 'Your message has been sent! We\'ll reply as soon as possible.'

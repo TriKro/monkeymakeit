@@ -10,7 +10,6 @@ gem 'json'
 gem 'omniauth'
 gem 'rails',               '3.0.4'
 gem 'rake',                '0.8.7'
-gem 'recaptcha',           :require => 'recaptcha/rails'
 gem 'rspec'
 gem 'rspec-rails'
 gem 'sass'
@@ -28,6 +27,11 @@ end
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
 end
+
+group :test do
+  gem 'no_peeping_toms', :git => 'git://github.com/alindeman/no_peeping_toms.git'
+end
+
 
 group :production do
 
