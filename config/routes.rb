@@ -14,8 +14,7 @@ Suggestedit::Application.routes.draw do
 
   resources :users
   resources :authentications, :only => [:index, :destroy]
-  resources :invitations, :only => [:new, :create]
-  resources :signups, :only => [:new, :create]
+
   resources :registrations, :only => [:new, :create] do
     post :invite_email, :on => :collection
   end
@@ -48,9 +47,6 @@ Suggestedit::Application.routes.draw do
   resources :contact_messages, :only => [:new, :create]
   match "/contact" => "contact_messages#new", :as => :contact
   match "/thanks_for_your_message" => "contact_messages#thanks", :as => :contact_thanks
-
-  # Javascript
-  get "/scripts/collaborate" => "scripts#collaborate", :as => 'collaborate_js'
 
   # Team members, bookmark the admin page. Visit it first to be excluded from
   # logging.
