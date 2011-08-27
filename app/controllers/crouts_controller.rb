@@ -46,8 +46,8 @@ class CroutsController < ApplicationController
         :author_avatar => "images/avatars/avatar-scott-lambridis.png",
         :author_bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time. You know, the usual.",
         :content => "hiccup",
-        :artwork => "images/crouts/image-hiccup.png",
-        :artwork_title => "Crows",
+        :artwork => "images/crouts/cover-hiccup-chapter1.png",
+        :artwork_title => "Untitled",
         :artist => "Tyler Landry",
         :artist_avatar => "images/avatars/avatar-tyler-landry.png"
     }
