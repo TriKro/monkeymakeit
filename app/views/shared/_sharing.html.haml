@@ -1,12 +1,12 @@
 .sharing-show
   -# Twitter share button
-  .twitter.event_clicked_share.event_clicked_share_twitter
+  .twitter
     %a.twitter-share-button{ "data-text" => share[:content], "data-url" => share[:url], "related" => "monkeymakeit:Collaborative Writing and Publishing", :href => "http://twitter.com/share", "data-count" => share[:count] }
       Tweet
     %script{ :src => "http://platform.twitter.com/widgets.js", :type => "text/javascript" }
 
   -# Facebook like and send button
-  .facebook.event_clicked_share.event_clicked_share_facebook
+  .facebook
     #fb-root
     %script{:src => "http://connect.facebook.net/en_US/all.js#appId=135537883194595&xfbml=1"}
     %fb:like{ :font => "", :href => share[:url] == "http://monkeymake.it/" ? "http://www.facebook.com/pages/MonkeyMakeit/210728972305103?sk=wall" : share[:url], :layout => share[:count] == "vertical" ? "box_count" : "button_count", :send => share[:send] == "false" ? "false" : "true", :show_faces => share[:faces] == "true" ? "true" : "false", :width => !share[:width].nil? ? share[:width] : "200" }

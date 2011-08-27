@@ -3,15 +3,12 @@
 #social_signup
   = link_to("/auth/facebook", :class => "nodec") do
     .signin_facebook
-  -#%br
-  -#= link_to("/auth/twitter", :class => "nodec event_login event_login_twitter event_login_twitter_modal") do
-  -#  .signin_twitter
 
   .signup_via_email
     sign up with email
 
 #registration.hide
-  = form_for(@registration, :url => registrations_path, :html => { :class => "event_form_email_login" }) do |f|
+  = form_for(@registration, :url => registrations_path) do |f|
     - if @registration.errors.any?
       #error_explanation
         %h4

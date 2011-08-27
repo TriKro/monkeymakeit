@@ -7,7 +7,7 @@
       Sign up here and I'll email you when it's ready.
 
     - @registration = User.new
-    = form_for(@registration, :url => registrations_path, :html => { :class => "event_form_email_login" }) do |f|
+    = form_for(@registration, :url => registrations_path ) do |f|
       - if @registration.errors.any?
         #error_explanation
           %h4
