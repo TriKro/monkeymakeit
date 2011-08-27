@@ -12,8 +12,9 @@
   - @authentications.each do |authentication|
     %tr
       %td
-        = link_to authentication.user do
-          = authentication.user.id
+        - if !authentication.user.blank?
+          = link_to authentication.user do
+            = authentication.user.id
       %td
         = link_to authentication do
           = authentication.user.full_name  if !authentication.user.nil?

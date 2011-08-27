@@ -7,19 +7,14 @@ class ApplicationController < ActionController::Base
     redirect_to :back
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
   private
 
   def current_user
-    @current_user ||= User.find_by_id(session[:user_id])
-  end
-
-  def current_user=(user)
-    @current_user = user
-    session[:user_id] = user.id
-  end
-
-  def access_denied
-    redirect_to :back, :notice => "Please log in to continue" and return false
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def km_log_page_view(type)

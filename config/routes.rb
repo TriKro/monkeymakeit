@@ -8,6 +8,7 @@ Suggestedit::Application.routes.draw do
   #Session routes
   match "/login/:provider" => "sessions#new"
   match "/signout" => "sessions#destroy", :as => :signout
+  match "/auth/failure" => "sessions#failure", :as => :auth_failure
 
   resources :users
   resources :authentications, :only => [:index, :destroy]
