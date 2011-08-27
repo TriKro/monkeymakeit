@@ -17,8 +17,6 @@ Suggestedit::Application.routes.draw do
   end
   match "/thanks_for_registering" => "registrations#registration_thanks", :as => :registration_thanks
   match "/i/:invite_code" => "registrations#new", :as => :invite
-
-  match "/demo" => "landing_pages#demo"
   
   # Static page routes
   [
