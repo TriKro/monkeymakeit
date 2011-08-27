@@ -59,10 +59,13 @@ class RegistrationsController < ApplicationController
       render "registration_thanks" and return
     end
 
-    UserMailer.invite_email(params[:email][:from], params[:email][:to].split(','),
+    params[:email][:to].split(',').each do |to|
+      UserMailer.invite_email(params[:email][:from], to,
                             'First look at "Oh, Mighty Hiccup!" on MonkeyMake.it',
                             params[:email][:message]).deliver
-    log_activity(request.request_uri, "Created", "Invite")
+      km.record('referral', { 'method' => 'email', 'to' => to, 'from' => params[:email][:from] })
+      log_activity(request.request_uri, "Created", "Invite")
+    end
     flash[:notice] = "Email sent. Thanks for spreading the word!"
 
     render "registration_thanks"
