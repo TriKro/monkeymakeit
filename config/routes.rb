@@ -6,7 +6,6 @@ Suggestedit::Application.routes.draw do
   match "/auth/:provider/callback" => "sessions#create"
 
   #Session routes
-  match "/login/:provider" => "sessions#new"
   match "/signout" => "sessions#destroy", :as => :signout
   match "/auth/failure" => "sessions#failure", :as => :auth_failure
 

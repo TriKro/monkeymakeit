@@ -2,11 +2,6 @@ class SessionsController < ApplicationController
 
   cache_sweeper :user_sweeper
 
-  def new
-    login_url = "/auth/#{params[:provider]}"
-    redirect_to login_url
-  end
-
   def create
     auth = request.env['omniauth.auth']
     unless @auth = Authentication.find_from_hash(auth)
