@@ -5,7 +5,6 @@ class RegistrationsController < ApplicationController
   def new
     session[:invite_code] = params[:invite_code]
     @user = User.find_by_invite_code(params[:invite_code])
-    log_activity(request.request_uri, "Invited by", "User", @user)
     km.record('referral arrival', { 'from' => @user.email })
     redirect_to '/hiccup'
   end
@@ -18,18 +17,15 @@ class RegistrationsController < ApplicationController
         @user.invited_by = session[:invite_code]
       end
       if @user.save
-        log_activity(request.request_uri, "Created", "User", @user)
         session[:user_id] = @user.id
         UserMailer.welcome_email(@user).deliver
         return render 'registration_thanks'
       else
-        log_activity(request.request_uri, "Error Creating", "User")
         return redirect_to new_registration_path(:user => params[:user]), :alert => @user.errors.full_messages.first
       end
     end
     session[:user_id] = @user.id
     @user.update_invite_code # in case an old, invite_code-less user returns
-    log_activity(request.request_uri, "Error Creating", "User", @user)
     render 'registration_thanks'
   end
 
@@ -65,7 +61,6 @@ class RegistrationsController < ApplicationController
                             'First look at "Oh, Mighty Hiccup!" on MonkeyMake.it',
                             params[:email][:message]).deliver
       km.record('referral', { 'method' => 'email', 'to' => to, 'from' => params[:email][:from] })
-      log_activity(request.request_uri, "Created", "Invite")
     end
     flash[:notice] = "Email sent. Thanks for spreading the word!"
 

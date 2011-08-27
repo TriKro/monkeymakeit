@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound do |e|
     flash[:error] = "That record does not exist!"
-    log_activity(request.request_uri, "Record not Found")
     redirect_to :back
   end
 
@@ -20,24 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def access_denied
-    log_activity(request.request_uri, "Access Denied")
     redirect_to :back, :notice => "Please log in to continue" and return false
-  end
-
-  def log_activity(url, activity_type, target_model = nil, target = nil, subtarget_model = nil, subtarget = nil)
-    session[:monkey_id] ||= SecureRandom.hex(6)
-
-    unless session[:admin]
-      # TODO: Can cleanup. No need to log session_id in activities table. Now associated with UserSession.
-      logged_activity = Activity.create(:url => url, :activity_type => activity_type, :target_model => target_model, :target => target, :subtarget_model => subtarget_model, :subtarget => subtarget, :session_id => session[:monkey_id])
-
-      # Associate activity with existing UserSession or create a new one.
-      # TODO: Move to new method in model?
-      if !(user_session = UserSession.find_by_session_id(session[:monkey_id]) )
-        user_session = UserSession.create( :session_id => session[:monkey_id] )
-      end
-      user_session.activities << logged_activity
-    end
   end
 
   def km_log_page_view(type)

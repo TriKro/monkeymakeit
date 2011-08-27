@@ -1,7 +1,6 @@
 class CroutsController < ApplicationController
 
   before_filter lambda {
-    log_activity(request.request_uri, "Viewed", "Page")
     km_log_page_view('crout')
   }
 
@@ -92,7 +91,6 @@ class CroutsController < ApplicationController
 
   def render_experiment
     session[:monkey_experiment_id] = 10
-    log_activity(request.request_uri, "Viewed", "Experiment-" + session[:monkey_experiment_id].to_s )
     render 'crout-' + session[:monkey_experiment_id].to_s
    end
 end

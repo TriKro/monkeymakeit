@@ -51,8 +51,6 @@ Suggestedit::Application.routes.draw do
   # Team members, bookmark the admin page. Visit it first to be excluded from
   # logging.
   match '/admin' => 'admin#index'
-  match '/admin/scott' => 'admin#scott'
-  match '/select_experiment' => 'admin#select_experiment', :as => :select_experiment
   match '/set_experiment' => 'admin#set_experiment', :as => :set_experiment
 
 end

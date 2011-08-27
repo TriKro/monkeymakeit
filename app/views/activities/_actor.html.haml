@@ -1,8 +1,0 @@
-- if !activity.user.nil?
-  = activity.user.full_name
-- else
-  Unknown
-  - if !activity.session_id.nil?
-    (#{ activity.session_id })
-  - else
-    (no session recorded)
