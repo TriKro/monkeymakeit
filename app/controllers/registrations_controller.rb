@@ -4,7 +4,7 @@ class RegistrationsController < ApplicationController
 
   def new
     session[:invite_code] = params[:invite_code]
-    @User = User.find_by_invite_code(params[:invite_code])
+    @user = User.find_by_invite_code(params[:invite_code])
     log_activity(request.request_uri, "Invited by", "User", @user)
     km.record('referral arrival', { 'from' => @user.email })
     redirect_to '/hiccup'
@@ -13,7 +13,7 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.find_by_email(params[:user][:email])
     unless @user
-      @user = User.new (params[:user])
+      @user = User.new(params[:user])
       if session[:invite_code] and !User.where(:invite_code => session[:invite_code]).empty?
         @user.invited_by = session[:invite_code]
       end
