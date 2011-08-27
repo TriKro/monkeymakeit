@@ -6,6 +6,7 @@ class RegistrationsController < ApplicationController
     session[:invite_code] = params[:invite_code]
     @User = User.find_by_invite_code(params[:invite_code])
     log_activity(request.request_uri, "Invited by", "User", @user)
+    km.record('referral arrival', { 'from' => @user.email })
     redirect_to '/hiccup'
   end
 
