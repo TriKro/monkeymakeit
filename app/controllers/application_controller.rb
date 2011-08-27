@@ -38,7 +38,10 @@ class ApplicationController < ActionController::Base
       end
       user_session.activities << logged_activity
     end
+  end
 
+  def km_log_page_view(type)
+    km.record('viewed page', { 'page type' => type, 'url' => request.url.split("?")[0] })
   end
 
 end
