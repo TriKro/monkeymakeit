@@ -1,16 +1,16 @@
 #bookshelf
   #bookshelf_inner
-    = link_to life_of_the_gallows_path do
+    = link_to story_path(Story.find_by_title("Life of the Gallows")) do
       .book
         %img{ :src => "images/stories/thumbnail-life_of_the_gallows.png", :title => "Life of the Gallows - a short story about a medieval jester-turned-executioner" }
         .title
           Life of the Gallows
-    = link_to doris_path do
+    = link_to story_path(Story.find_by_title("Doris")) do
       .book
         %img.duck{ :src => "images/stories/thumbnail-doris.png", :title => "Doris - a strange story about an albino duck" }
         .title
           Doris
-    = link_to hiccup_path do
+    = link_to story_path(Story.find_by_title("Oh, Mighty Hiccup!")) do
       .book
         %img{ :src => "images/stories/thumbnail-hiccup.png", :title => "Oh, Mighty Hiccup! - a novel in progress about brothers, hiccups, and the end of time" }
         .title
