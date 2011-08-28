@@ -14,10 +14,10 @@
       %td
         - if !authentication.user.blank?
           = link_to authentication.user do
-            = authentication.user.id
-      %td
-        = link_to authentication do
-          = authentication.user.full_name  if !authentication.user.nil?
+            - if !authentication.user.full_name.blank?
+              = authentication.user.full_name
+            - else
+              =authentication.user.id
       %td= authentication.provider
       %td= authentication.uid
       - if can? :destroy, @authenticaion

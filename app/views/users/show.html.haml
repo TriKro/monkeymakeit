@@ -1,21 +1,34 @@
-- if @user.full_name != NIL
+- if !@user.full_name.blank?
   = title "- Show User - " + @user.full_name
 - else
   = title "- Show User - " + @user.id.to_s
 
 %p
-  %b id:
-  = @user.id
-%p
-  %b Name:
+  %img{ :src => @user.image, :style => "vertical-align: middle;"}
   = @user.full_name
 %p
   %b Access:
   = @user.access
+%p
+  %b Inviter:
+  = link_to @user.inviter.full_name, @user.inviter if !@user.inviter.nil?
+%p
+  %b Invitees:
+  - @user.invitees.each do |invitee|
+    - if !invitee.full_name.blank?
+      = link_to invitee.full_name, invitee
+    - else
+      = link_to "Anonymous", invitee
+%p
+  %b Subscriptions:
+  - @user.subscriptions.each do |subscription|
+    = link_to subscription.title, subscription
+%p
+  %b Stories:
+  - @user.stories.each do |story|
+    = link_to story.title, story
+
 - if can? :update, @user
   = link_to 'Edit', edit_user_path(@user)
-&#8226;
-- if can? :create, @user
-  = link_to 'New User', new_user_path
 &#8226;
 = link_to 'Back', users_path

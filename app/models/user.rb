@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,}$/i
 
   has_many :authentications
-  has_many :stories
+  has_many :stories, :foreign_key => "author_id"
   has_and_belongs_to_many :subscriptions, :class_name => "Story", :join_table => "subscribers_subscriptions"
   has_many :invites
   has_many :invitees, :class_name => "User", :foreign_key => "inviter_id"
