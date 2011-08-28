@@ -51,3 +51,18 @@ Authentication.find_or_create_by_token(:token => "169349883130377|dd0dec9c68aec0
                                        :uid => "713411825",
                                        :provider => "facebook",
                                        :user_id => user.id)
+
+story = Story.find_or_create_by_title(:title => "Oh, Mighty Hiccup!",
+                                      :subtitle => "a novel about brothers, hiccups, and the end of time")
+
+user.stories << story
+
+story = Story.find_or_create_by_title(:title => "Doris",
+                                      :subtitle => "a short story about an albino duck")
+
+user.stories << story
+
+story = Story.find_or_create_by_title(:title => "Life of the Gallows",
+                                      :subtitle => "a short story about a medieval jester-turned-executioner")
+
+user.stories << story
