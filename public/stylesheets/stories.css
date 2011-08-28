@@ -1,37 +1,37 @@
 content {
   background: #f7f6ed; }
 
-#crout {
+#story {
   width: 950px; }
-  #crout h1 {
+  #story h1 {
     margin: 0;
     padding: 0;
     font-size: 4em;
     font-family: "Georgia, Times New Roman, serif";
     font-weight: 100;
     color: black; }
-  #crout h2 {
+  #story h2 {
     margin: 10px 0 20px 40px;
     padding: 0;
     font-size: 1.8em;
     font-family: "Georgia, Times New Roman, serif";
     color: #7a7a7a; }
-  #crout #left_column1 {
+  #story #left_column1 {
     float: left;
     color: #111111;
     width: 610px;
     z-index: 3; }
-  #crout #right_column1 {
+  #story #right_column1 {
     float: right;
     color: #111111;
     width: 300px;
     z-index: 3; }
-  #crout #left_column2 {
+  #story #left_column2 {
     float: left;
     color: #111111;
     width: 610px;
     z-index: 3; }
-    #crout #left_column2 .story_pic {
+    #story #left_column2 .story_pic {
       position: relative;
       display: inline-block;
       vertical-align: middle;
@@ -39,56 +39,56 @@ content {
       float: left;
       z-index: 3;
       padding: 20px 20px 30px 0; }
-      #crout #left_column2 .story_pic img {
+      #story #left_column2 .story_pic img {
         width: 250px; }
-    #crout #left_column2 #art_credit {
+    #story #left_column2 #art_credit {
       position: absolute;
       font-size: 0.9em;
       bottom: 14px;
       left: 60px;
       color: #666666; }
-    #crout #left_column2 #first_letter {
+    #story #left_column2 #first_letter {
       font-size: 48px;
       font-weight: 100;
       font-family: "Georgia, Times New Roman, serif";
       color: #dc9422; }
-    #crout #left_column2 p {
+    #story #left_column2 p {
       margin: 20px 0;
       padding: 0;
       line-height: 26px;
       font-family: "Tahoma, Arial, sans-serif";
       color: #111111;
       text-align: justify; }
-      #crout #left_column2 p + p {
+      #story #left_column2 p + p {
         text-indent: 30px; }
-    #crout #left_column2 #first_p {
+    #story #left_column2 #first_p {
       margin-top: 20px; }
-    #crout #left_column2 .copyright {
+    #story #left_column2 .copyright {
       font-size: 0.9em;
       color: #666666; }
-    #crout #left_column2 .story_sharing-bottom {
+    #story #left_column2 .story_sharing-bottom {
       margin: 0 0 40px 170px;
       height: 40px; }
-  #crout #right_column2 {
+  #story #right_column2 {
     float: right;
     width: 300px;
     margin: 10px 0 40px 0;
     z-index: 3; }
-    #crout #right_column2 h4 {
+    #story #right_column2 h4 {
       font-size: 2em;
       font-family: "Reenie Beanie", cursive;
       color: #0088ba;
       border-bottom: 2px solid #666666;
       margin: 0 0 10px 0;
       padding: 0 0 5px 0; }
-    #crout #right_column2 #about_author {
+    #story #right_column2 #about_author {
       background: white;
       padding: 10px;
       margin: 20px 0;
       -moz-box-shadow: 0 0 5px 0 #666666;
       -webkit-box-shadow: 0 0 5px 0 #666666;
       box-shadow: 0 0 5px 0 #666666; }
-      #crout #right_column2 #about_author p {
+      #story #right_column2 #about_author p {
         margin: 0;
         padding: 0;
         text-align: justified; }

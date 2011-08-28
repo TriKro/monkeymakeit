@@ -29,13 +29,13 @@ Suggestedit::Application.routes.draw do
     match "/#{static_page}" => "static##{static_page}", :as => static_page
   end
 
-  # Crout page routes
+  # Story page routes
   [
           :doris,
           :hiccup,
           :life_of_the_gallows,
-  ].each do |crout_page|
-    match "/#{crout_page}" => "crouts##{crout_page}", :as => crout_page
+  ].each do |story_page|
+    match "/#{story_page}" => "stories##{story_page}", :as => story_page
   end
 
   # Contact message routes
