@@ -9,7 +9,7 @@ class UserSweeper < ActionController::Caching::Sweeper
   end
 
   def after_validation(user)
-    km.identify(user.email) if user.email_changed?
+    km.identify(user.email) if user.email_changed? && !user.email.nil?
   end
 
 end
