@@ -45,6 +45,8 @@ Authentication.find_or_create_by_token(:token => "169349883130377|66d29be0c659fe
 
 user = User.find_or_create_by_email(:full_name => "Scott Lambridis",
                              :email => "scott@omnibucket.com",
+                             :avatar_remote_url => "/images/avatars/image-scott-lambridis.png",
+                             :bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time.",
                              :access => "admin")
 
 Authentication.find_or_create_by_token(:token => "169349883130377|dd0dec9c68aec02ea07d38b7.1-713411825|XuASGELymbbvxAC01zyIzQmixSM",
