@@ -10,11 +10,12 @@ class Ability
 
     elsif user.access == "author"
       can :manage, User, :user_id => user.id
+      can :update, Authentication, :user_id => user.id
       can :manage, Story, :user_id => user.id
+      can :create, Story
     end
 
     # Abilities for all users:
-    can [:create, :update], Authentication
     can :create, ContactMessage
     can :read, Story
   end
