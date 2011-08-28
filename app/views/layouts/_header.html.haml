@@ -2,19 +2,22 @@
   %header_inner
     = link_to root_path, :id => 'home_link' do
       %logo
-      .top_menu
-        - if current_user
+    .top_menu
+      - if current_user
+        = link_to current_user do
           - if !current_user.image.blank?
             %img{ :src => current_user.image, :style => "width: 25px; vertical-align: middle;" }
           - if !current_user.full_name.blank?
             = current_user.full_name
-            &#8226;
-          = link_to "Sign Out", signout_path
+          - else
+            = current_user.email
+        &#8226;
+        = link_to "Sign Out", signout_path
 
-        - else
-          = link_to "About", :about
-          &#8226;
-          = link_to "Contact", :contact
-          &#8226;
-          %span.join_modal
-            Sign in
+      - else
+        = link_to "About", :about
+        &#8226;
+        = link_to "Contact", :contact
+        &#8226;
+        %span.join_modal
+          Sign in
