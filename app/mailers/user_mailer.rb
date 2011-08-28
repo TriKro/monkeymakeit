@@ -10,12 +10,6 @@ class UserMailer < ActionMailer::Base
          :subject => @contact_message.subject
   end
 
-  def invite(sender, recipient, subject, url)
-    @recipient = recipient
-    @sender = sender
-    mail :from => sender.email_header, :to => recipient.email, :subject => subject, :url => url
-  end
-
   def invite_email(from, to, subject, message)
     @message = message
     
