@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110806230717) do
+ActiveRecord::Schema.define(:version => 20110828031500) do
 
   create_table "activities", :force => true do |t|
     t.integer   "user_id"
@@ -68,6 +68,15 @@ ActiveRecord::Schema.define(:version => 20110806230717) do
     t.datetime "updated_at"
   end
 
+  create_table "stories", :force => true do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "summary"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "user_sessions", :force => true do |t|
     t.string    "session_id"
     t.integer   "user_id"
@@ -76,15 +85,16 @@ ActiveRecord::Schema.define(:version => 20110806230717) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "inviter_id"
-    t.string   "full_name"
-    t.string   "avatar_remote_url"
-    t.string   "access"
-    t.string   "invite_code"
-    t.string   "invited_by"
+    t.string    "email"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "inviter_id"
+    t.string    "full_name"
+    t.string    "avatar_remote_url"
+    t.string    "access"
+    t.string    "invite_code"
+    t.string    "invited_by"
+    t.text      "bio"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

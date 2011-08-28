@@ -1,0 +1,30 @@
+= title "- Index Stories"
+
+%h1 Listing stories
+%table
+  %tr
+    %th Author
+    %th Title
+    %th Subtitle
+    %th Summary
+    - if can? :show, @story
+      %th
+    - if can? :update, @story
+      %th
+    - if can? :destroy, @story
+      %th
+  - @stories.each do |story|
+    %tr
+      %td= story.author
+      %td= story.title
+      %td= story.subtitle
+      %td= story.summary
+      - if can? :show, @story
+        %td= link_to 'Show', story
+      - if can? :update, @story
+        %td= link_to 'Edit', edit_story_path(story)
+      - if can? :destroy, @story
+        %td= link_to 'Destroy', story, :confirm => 'Are you sure?', :method => :delete
+
+- if can? :create, Story
+  = link_to "Create new story", new_story_path

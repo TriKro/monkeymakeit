@@ -11,6 +11,7 @@ Suggestedit::Application.routes.draw do
 
   resources :users
   resources :authentications, :only => [:index, :destroy]
+  resources :stories
 
   resources :registrations, :only => [:new, :create] do
     post :invite_email, :on => :collection
@@ -27,15 +28,6 @@ Suggestedit::Application.routes.draw do
           :cookie
   ].each do |static_page|
     match "/#{static_page}" => "static##{static_page}", :as => static_page
-  end
-
-  # Story page routes
-  [
-          :doris,
-          :hiccup,
-          :life_of_the_gallows,
-  ].each do |story_page|
-    match "/#{story_page}" => "stories##{story_page}", :as => story_page
   end
 
   # Contact message routes

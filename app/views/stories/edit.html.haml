@@ -1,0 +1,7 @@
+- if @story.title != NIL
+  = title "- Editing Story - " + @story.title
+- else
+  = title "- Editing Story - " + @story.id.to_s
+
+%h1 Editing story
+= render 'form'

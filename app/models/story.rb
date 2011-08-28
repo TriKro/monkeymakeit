@@ -3,4 +3,8 @@ class Story < ActiveRecord::Base
   validates_presence_of :title
 
   belongs_to :user
+
+  def author
+    user
+  end
 end
