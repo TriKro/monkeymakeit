@@ -35,6 +35,7 @@ if CONFIG.allow_heroku_commands
       execute( "heroku rake --trace db:migrate                 --app #{app}-#{target}" )
       execute( "heroku restart                                 --app #{app}-#{target}" )
       execute( "heroku rake --trace db:seed                    --app #{app}-#{target}" )
+      execute( "heroku restart                                 --app #{app}-#{target}" )
       execute( "rake hoptoad:deploy TO=production" )
     end
 
@@ -48,6 +49,7 @@ if CONFIG.allow_heroku_commands
       execute( "heroku pgbackups:restore DATABASE `heroku pgbackups:url  --app #{app}-production` --app #{app}-staging --confirm #{app}-staging" )
       execute( "heroku restart                                           --app #{app}-#{target}" )
       execute( "heroku rake --trace db:seed                              --app #{app}-#{target}" )
+      execute( "heroku restart                                           --app #{app}-#{target}" )
       execute( "rake hoptoad:deploy TO=staging" )
     end
 
