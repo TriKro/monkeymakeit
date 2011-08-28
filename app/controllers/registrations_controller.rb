@@ -12,7 +12,7 @@ class RegistrationsController < ApplicationController
     else
       km.record('referral arrival')
     end
-    redirect_to story_path(Story.find_by_title("Oh, Mighty Hiccup!"))
+    redirect_to story_path(Invite.find_by_code(params[:invite_code]).story)
   end
 
   def create
@@ -20,7 +20,7 @@ class RegistrationsController < ApplicationController
     unless @user
       @user = User.new(params[:user])
       if session[:invite_code] and !User.where(:invite_code => session[:invite_code]).empty?
-        @user.invited_by = session[:invite_code]
+        Invite.find_by_code(session[:invite_code]).user.invitees << @user
       end
       if @user.save
         session[:user_id] = @user.id

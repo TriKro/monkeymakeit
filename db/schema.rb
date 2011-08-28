@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110828070441) do
+ActiveRecord::Schema.define(:version => 20110828071015) do
 
   create_table "activities", :force => true do |t|
     t.integer   "user_id"
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(:version => 20110828070441) do
     t.timestamp "created_at"
     t.timestamp "updated_at"
   end
+
+  create_table "invites", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "story_id"
+    t.string   "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "invites", ["code"], :name => "index_invites_on_code", :unique => true
 
   create_table "slugs", :force => true do |t|
     t.string   "name"
@@ -87,14 +97,11 @@ ActiveRecord::Schema.define(:version => 20110828070441) do
     t.string   "full_name"
     t.string   "image"
     t.string   "access"
-    t.string   "invite_code"
-    t.string   "invited_by"
     t.text     "bio"
     t.string   "cached_slug"
   end
 
   add_index "users", ["cached_slug"], :name => "index_users_on_cached_slug", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["invite_code"], :name => "index_users_on_invite_code", :unique => true
 
 end

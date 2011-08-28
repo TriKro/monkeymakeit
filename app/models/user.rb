@@ -2,7 +2,12 @@ class User < ActiveRecord::Base
   has_many :authentications
   has_many :stories
   has_and_belongs_to_many :subscriptions, :class_name => "Story", :join_table => "subscribers_subscriptions"
+  has_many :invites
   belongs_to :inviter, :class_name => 'User'
+
+  has_many :invitees, :class_name => "User", :foreign_key => "inviter_id"
+  belongs_to :inviter, :class_name => "User"
+
   has_friendly_id :slug_name, :use_slug => true
 
   after_create :update_invite_code

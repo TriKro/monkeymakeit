@@ -19,7 +19,7 @@
       %td= user.full_name
       %td= user.email
       %td= user.access
-      %td= User.where(:inviter_id => user.id).count
+      %td= user.invitees.count
       - if can? :show, @user
         %td= link_to 'Show', user
       - if can? :update, @user
