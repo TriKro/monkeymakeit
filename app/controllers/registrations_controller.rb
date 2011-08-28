@@ -23,6 +23,7 @@ class RegistrationsController < ApplicationController
         Invite.find_by_code(session[:invite_code]).user.invitees << @user
       end
       if @user.save
+        @user.subscriptions << Story.find_by_id(params[:story_id])
         session[:user_id] = @user.id
         UserMailer.welcome_email(@user).deliver
         return render 'registration_thanks'
@@ -30,8 +31,8 @@ class RegistrationsController < ApplicationController
         return redirect_to new_registration_path(:user => params[:user]), :alert => @user.errors.full_messages.first
       end
     end
+    @user.subscriptions << Story.find_by_id(params[:story_id])
     session[:user_id] = @user.id
-    @user.update_invite_code # in case an old, invite_code-less user returns
     render 'registration_thanks'
   end
 
