@@ -15,6 +15,8 @@ require 'image_size'
 #button_names = button_paths.map{|button_path| button_path.split('/').last }
 #Button.where("button_name NOT IN (?)", button_names).destroy_all
 
+ActiveRecord::Observer.disable_observers
+
 user = User.find_or_create_by_email(:full_name => "Tristan Kromer",
                              :email => "accounts@tristankromer.com",
                              :avatar_remote_url => "http://a2.twimg.com/profile_images/1092489881/24208_1328078796346_1062228442_1001804_2392997_n_normal.jpg",

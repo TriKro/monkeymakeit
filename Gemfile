@@ -17,6 +17,7 @@ gem 'shoulda'
 gem 'will_paginate',       '~> 3.0.pre2'
 gem 'snogmetrics'
 gem 'cancan'
+gem 'no_peeping_toms', :git => 'git://github.com/alindeman/no_peeping_toms.git'
 
 group :development do
   gem 'awesome_print'
@@ -30,7 +31,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'no_peeping_toms', :git => 'git://github.com/alindeman/no_peeping_toms.git'
 end
 
 
