@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
   belongs_to :inviter, :class_name => 'User'
 
+  has_friendly_id :slug_name, :use_slug => true
+
   after_create :update_invite_code
 
   validates_uniqueness_of :email
@@ -35,4 +37,12 @@ class User < ActiveRecord::Base
     return if invite_code.present?
     self.update_attribute(:invite_code, (read_attribute(:id)+100).to_s(36))
   end
+
+  def slug_name
+    if full_name.blank?
+      return 'Anonymous'
+    end
+    full_name
+  end
+
 end

@@ -18,6 +18,7 @@ gem 'will_paginate',       '~> 3.0.pre2'
 gem 'snogmetrics'
 gem 'cancan'
 gem 'no_peeping_toms', :git => 'git://github.com/alindeman/no_peeping_toms.git'
+gem 'friendly_id'
 
 group :development do
   gem 'awesome_print'

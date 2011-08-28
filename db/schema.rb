@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110828031500) do
+ActiveRecord::Schema.define(:version => 20110828043156) do
 
   create_table "activities", :force => true do |t|
     t.integer   "user_id"
@@ -60,6 +60,18 @@ ActiveRecord::Schema.define(:version => 20110828031500) do
     t.integer  "button_height"
   end
 
+  create_table "slugs", :force => true do |t|
+    t.string   "name"
+    t.integer  "sluggable_id"
+    t.integer  "sequence",                     :default => 1, :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
+  add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
   create_table "steps", :force => true do |t|
     t.integer  "funnel_id"
     t.string   "name"
@@ -75,7 +87,10 @@ ActiveRecord::Schema.define(:version => 20110828031500) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cached_slug"
   end
+
+  add_index "stories", ["cached_slug"], :name => "index_stories_on_cached_slug", :unique => true
 
   create_table "user_sessions", :force => true do |t|
     t.string    "session_id"
@@ -95,8 +110,10 @@ ActiveRecord::Schema.define(:version => 20110828031500) do
     t.string    "invite_code"
     t.string    "invited_by"
     t.text      "bio"
+    t.string    "cached_slug"
   end
 
+  add_index "users", ["cached_slug"], :name => "index_users_on_cached_slug", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["invite_code"], :name => "index_users_on_invite_code", :unique => true
 
