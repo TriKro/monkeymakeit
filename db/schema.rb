@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110828065759) do
+ActiveRecord::Schema.define(:version => 20110828070441) do
 
   create_table "activities", :force => true do |t|
     t.integer   "user_id"
@@ -41,17 +41,6 @@ ActiveRecord::Schema.define(:version => 20110828065759) do
     t.string    "secret"
     t.timestamp "created_at"
     t.timestamp "updated_at"
-  end
-
-  create_table "invitations", :force => true do |t|
-    t.integer  "widget_id"
-    t.string   "button_name"
-    t.text     "call_to_action"
-    t.text     "confirmation"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "button_width"
-    t.integer  "button_height"
   end
 
   create_table "slugs", :force => true do |t|
