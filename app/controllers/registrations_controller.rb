@@ -12,7 +12,7 @@ class RegistrationsController < ApplicationController
     else
       km.record('referral arrival')
     end
-    redirect_to '/hiccup'
+    redirect_to story_path(Story.find_by_title("Oh, Mighty Hiccup!"))
   end
 
   def create
