@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :authentications
+  has_many :stories
 
   belongs_to :inviter, :class_name => 'User'
 
