@@ -5,7 +5,13 @@ class RegistrationsController < ApplicationController
   def new
     session[:invite_code] = params[:invite_code]
     @user = User.find_by_invite_code(params[:invite_code])
-    km.record('referral arrival', { 'from' => @user.email })
+    if !@user.email.nil?
+      km.record('referral arrival', { 'from' => @user.email })
+    elsif
+      km.record('referral arrival', { 'from' => @user.full_name })
+    else
+      km.record('referral arrival')
+    end
     redirect_to '/hiccup'
   end
 
