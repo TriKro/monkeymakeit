@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
     info = hash['user_info']
     users_name = info['name']
     image = info['image'] if !info['image'].blank?
-    user = new( :full_name => users_name, :avatar_remote_url => image )
+    user = new( :full_name => users_name, :image => image )
     user.save( false )
     user
   end

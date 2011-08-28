@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110828065206) do
+ActiveRecord::Schema.define(:version => 20110828065759) do
 
   create_table "activities", :force => true do |t|
     t.integer   "user_id"
@@ -91,17 +91,17 @@ ActiveRecord::Schema.define(:version => 20110828065206) do
   end
 
   create_table "users", :force => true do |t|
-    t.string    "email"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.integer   "inviter_id"
-    t.string    "full_name"
-    t.string    "avatar_remote_url"
-    t.string    "access"
-    t.string    "invite_code"
-    t.string    "invited_by"
-    t.text      "bio"
-    t.string    "cached_slug"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "inviter_id"
+    t.string   "full_name"
+    t.string   "image"
+    t.string   "access"
+    t.string   "invite_code"
+    t.string   "invited_by"
+    t.text     "bio"
+    t.string   "cached_slug"
   end
 
   add_index "users", ["cached_slug"], :name => "index_users_on_cached_slug", :unique => true
