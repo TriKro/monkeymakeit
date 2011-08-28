@@ -32,6 +32,7 @@ if CONFIG.allow_heroku_commands
       ref = ENV['REF'] || 'master'
       target = ENV['TARGET'] || TARGETS.first
       deploy( target, ref )
+      execute( "heroku pgbackups:capture --expire              --app #{app}-#{target}" )
       execute( "heroku rake --trace db:migrate                 --app #{app}-#{target}" )
       execute( "heroku rake --trace db:seed                    --app #{app}-#{target}" )
       execute( "heroku restart                                 --app #{app}-#{target}" )
@@ -43,7 +44,8 @@ if CONFIG.allow_heroku_commands
       ref = ENV['REF'] || 'master'
       target = ENV['TARGET'] || TARGETS.second
       deploy( target, ref )
-      execute( "heroku pgbackups:capture --expire                        --app #{app}-staging" )
+      execute( "heroku pgbackups:capture --expire                        --app #{app}-#{target}" )
+      execute( "heroku pgbackups:capture --expire                        --app #{app}-production" )
       execute( "heroku pgbackups:restore DATABASE `heroku pgbackups:url  --app #{app}-production` --app #{app}-staging --confirm #{app}-staging" )
       execute( "heroku rake --trace db:migrate                           --app #{app}-#{target}" )
       execute( "heroku rake --trace db:seed                              --app #{app}-#{target}" )
