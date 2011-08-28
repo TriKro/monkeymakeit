@@ -15,7 +15,7 @@
       %th
   - @stories.each do |story|
     %tr
-      %td= story.author
+      %td= story.author.full_name
       %td= story.title
       %td= story.subtitle
       %td= story.summary
