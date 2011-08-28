@@ -40,3 +40,12 @@ Authentication.find_or_create_by_token(:token => "169349883130377|66d29be0c659fe
                                        :uid => "7951553",
                                        :provider => "facebook",
                                        :user_id => user.id)
+
+user = User.find_or_create_by_email(:full_name => "Scott Lambridis",
+                             :email => "scott@omnibucket.com",
+                             :access => "admin")
+
+Authentication.find_or_create_by_token(:token => "169349883130377|dd0dec9c68aec02ea07d38b7.1-713411825|XuASGELymbbvxAC01zyIzQmixSM",
+                                       :uid => "713411825",
+                                       :provider => "facebook",
+                                       :user_id => user.id)
