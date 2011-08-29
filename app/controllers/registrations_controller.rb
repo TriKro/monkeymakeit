@@ -32,7 +32,7 @@ class RegistrationsController < ApplicationController
       end
     end
     @user.subscriptions << Story.find_by_id(params[:story_id])
-    session[:user_id] = @user.id
+    session[:user_id] = @user.id if !(@user.access == "admin") # Hack to prevent users signing in as admin.
     render 'registration_thanks'
   end
 
