@@ -3,6 +3,7 @@ class RegistrationsController < ApplicationController
   cache_sweeper :user_sweeper
 
   def new
+    # TODO: Move to more sensical place.
     session[:referral_code] = params[:referral_code]
     @user = User.find_by_invite_code(params[:referral_code])
     if !@user.email.nil?
@@ -22,6 +23,7 @@ class RegistrationsController < ApplicationController
     unless @user
       @user = User.new(params[:user])
       if @user.save
+        # TODO: Move emailing to observer.
         UserMailer.welcome_email(@user, @story).deliver
       else
         return redirect_to new_registration_path(:user => params[:user]), :alert => @user.errors.full_messages.first
@@ -30,12 +32,14 @@ class RegistrationsController < ApplicationController
     @invite_code = @user.invites.find_or_create_by_story_id(@story.id).code
     @referral_code.user.invitees << @user if @referral_code
     @user.subscriptions << @story
+    # TODO: Move logging to sweeper.
     km.record('activity', { 'type' => 'subscribed', 'story' => @story.title, 'author' => @story.author.full_name, 'url' => request.referer.split("?")[0] })
     session[:user_id] = @user.id if !(@user.access == "admin") # Hack to prevent users signing in as admin.
     render 'registration_thanks'
   end
 
   def invite_email
+    # TODO: Move validations to model.
     @user = User.find_by_id(session[:user_id])
     unless params[:email]
       flash[:error] = "Must provide email details."
@@ -66,6 +70,7 @@ class RegistrationsController < ApplicationController
       UserMailer.invite_email(params[:email][:from], to,
                             'First look at "Oh, Mighty Hiccup!" on MonkeyMake.it',
                             params[:email][:message]).deliver
+      # TODO: Move logging to sweeper if possible.
       km.record('referral', { 'method' => 'email', 'to' => to, 'from' => params[:email][:from] })
     end
     flash[:notice] = "Email sent. Thanks for spreading the word!"
