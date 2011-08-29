@@ -2,6 +2,10 @@ class SessionsController < ApplicationController
 
   cache_sweeper :user_sweeper
 
+  def new
+    @registration = User.new
+  end
+
   def create
     auth = request.env['omniauth.auth']
     unless @auth = Authentication.find_from_hash(auth)
