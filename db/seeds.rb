@@ -1,5 +1,3 @@
-require 'image_size'
-
 ActiveRecord::Observer.disable_observers
 
 user = User.find_or_create_by_email(:email => "accounts@tristankromer.com")

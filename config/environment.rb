@@ -1,9 +1,5 @@
 require File.expand_path('../application', __FILE__)
 
-Suggestedit::Application.configure do
-  config.allow_heroku_commands = false
-end
-
 Suggestedit::Application.initialize!
 
 COMPANY_NAME = "Rapid Software Development LLC"
