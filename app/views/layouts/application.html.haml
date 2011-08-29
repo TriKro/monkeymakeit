@@ -3,14 +3,13 @@
 
   %head
     = stylesheet_link_tag 'application'
-    = stylesheet_link_tag 'colorbox'
-    = render '/layouts/head_loading'
-    = render '/layouts/google_analytics'
+    = render '/layouts/analytics'
+    = render '/layouts/head'
 
   %body
     %container
-
-      = render '/layouts/header'
+      - if request.request_uri != '/'
+        = render '/layouts/topnav'
 
       %content
         %content_inner
