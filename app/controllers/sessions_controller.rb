@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     # Log the authorizing user in.
     session[:user_id] = @auth.user.id
     flash[:notice] = "Logged in as #{current_user.full_name}"
-    redirect_to registration_thanks_url
+    redirect_to '/'
   end
 
   def destroy
