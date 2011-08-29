@@ -1,16 +1,28 @@
 .sharing-show
 
-  -# Track twitter shares
-  :javascript
-    twttr.events.bind('tweet', function(event) {
-      _kmq.push(['record', 'referral', {'method':'twitter'}]);
-    });
-
   -# Twitter share button
   .twitter
     %a.twitter-share-button{ "data-text" => share[:content], "data-url" => share[:url], "related" => "monkeymakeit:Collaborative Writing and Publishing", :href => "http://twitter.com/share", "data-count" => share[:count] }
       Tweet
     %script{ :src => "http://platform.twitter.com/widgets.js", :type => "text/javascript" }
+
+  -# Track twitter shares
+  :javascript
+    twttr.events.bind('click', function(event) {
+      _kmq.push(['record', 'start referral', {'method':'twitter'}]);
+    });
+
+  :javascript
+    twttr.events.bind('tweet', function(event) {
+      _kmq.push(['record', 'referral', {'method':'twitter'}]);
+    });
+
+  :javascript
+    twttr.events.bind('follow', function(event) {
+      var followed_user_id = event.data.user_id;
+      var followed_screen_name = event.data.screen_name;
+      _kmq.push(['record', 'activity', {'type':'followed', 'username':followed_screen_name, 'user id':followed_screen_name}]);
+    });
 
   -# Facebook like and send button
   .facebook
