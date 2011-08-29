@@ -43,6 +43,12 @@ auth.update_attributes(:uid => "7951553",
                        :provider => "facebook",
                        :user_id => user.id)
 
+auth = Authentication.find_or_create_by_token(:token => "8707662-doWtYOJxqPjjSKmnuWn9uvx5ngUvZV3VmG408DGHE")
+auth.update_attributes(:secret => "dZWY2OE8mfOikjBWW6bAeHKSSsOJl0BGU9qkYE3rImA",
+                       :uid => "8707662",
+                       :provider => "twitter",
+                       :user_id => user.id)
+
 user = User.find_or_create_by_email(:email => "scott@omnibucket.com")
 user.update_attributes(:full_name => "Scott Lambridis",
                        :image => "/images/avatars/image-scott-lambridis.png",
