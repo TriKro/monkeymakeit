@@ -1,20 +1,25 @@
 class CreateInvites < ActiveRecord::Migration
   def self.up
-    create_table :invites do |t|
-      t.integer :user_id
-      t.integer :story_id
-      t.string :code
+    unless table_exists?(:invites)
+      create_table :invites do |t|
+        t.integer :user_id
+        t.integer :story_id
+        t.string :code
 
-      t.timestamps
+        t.timestamps
+      end
     end
 
+    Invite.destroy_all
+    add_index :invites, :code, :unique => true rescue nil
+
     User.all.each do |user|
+      next if user.invite_code.blank?
       invite = Invite.create(:code => user.invite_code)
       user.invites << invite
       Story.find_by_title("Oh, Mighty Hiccup!").invites << invite
     end
 
-    add_index :invites, :code, :unique => true
     remove_index :users, :invite_code
     remove_column :users, :invited_by
     remove_column :users, :invite_code
