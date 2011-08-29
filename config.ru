@@ -1,4 +1,3 @@
-# This file is used by Rack-based servers to start the application.
-
+# For rack-based servers
 require ::File.expand_path('../config/environment',  __FILE__)
 run Suggestedit::Application

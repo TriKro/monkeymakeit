@@ -1,20 +1,5 @@
 require 'image_size'
 
-## create new buttons, or update existing if changed
-#button_paths = Dir[ Rails.root.join( *%w[ public images widget_buttons * ] ) ]
-#button_paths.each do |button_path|
-#  button_name = button_path.split('/').last
-#  invitation = Button.where(:button_name => button_name).first || Button.new(:button_name => button_name)
-#  image_width, image_height = open(button_path, 'rb') { |button_file| ImageSize.new(button_file.read).get_size }
-#  invitation.button_width  = image_width
-#  invitation.button_height = image_height / 2   # This assumes all images are sprites, with rollover image stacked below the normal state
-#  invitation.save!
-#end
-#
-## delete invitations for buttons that have been removed
-#button_names = button_paths.map{|button_path| button_path.split('/').last }
-#Button.where("button_name NOT IN (?)", button_names).destroy_all
-
 ActiveRecord::Observer.disable_observers
 
 user = User.find_or_create_by_email(:email => "accounts@tristankromer.com")
