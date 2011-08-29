@@ -13,6 +13,7 @@ Suggestedit::Application.routes.draw do
   resources :users
   resources :authentications, :only => [:index, :destroy]
   resources :stories
+  match '/hiccup' => 'stories#show', :id => 'oh-mighty-hiccup'
 
   resources :registrations, :only => [:new, :create] do
     post :invite_email, :on => :collection
