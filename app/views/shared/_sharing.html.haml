@@ -1,4 +1,11 @@
 .sharing-show
+
+  -# Track twitter shares
+  :javascript
+    twttr.events.bind('tweet', function(event) {
+      _kmq.push(['record', 'referral', {'method':'twitter'}]);
+    });
+
   -# Twitter share button
   .twitter
     %a.twitter-share-button{ "data-text" => share[:content], "data-url" => share[:url], "related" => "monkeymakeit:Collaborative Writing and Publishing", :href => "http://twitter.com/share", "data-count" => share[:count] }
