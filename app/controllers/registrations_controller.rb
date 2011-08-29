@@ -4,6 +4,7 @@ class RegistrationsController < ApplicationController
 
   def new
     # TODO: Move to more sensical place.
+    redirect_to root_url if params[:referral_code].blank?
     session[:referral_code] = params[:referral_code]
     @user = User.find_by_invite_code(params[:referral_code])
     if !@user.email.nil?
