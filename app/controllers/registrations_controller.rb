@@ -30,6 +30,7 @@ class RegistrationsController < ApplicationController
     @invite_code = @user.invites.find_or_create_by_story_id(@story.id).code
     @referral_code.user.invitees << @user if @referral_code
     @user.subscriptions << @story
+    km.record('activity', { 'type' => 'subscribed', 'story' => @story.title, 'author' => @story.author.full_name, 'url' => request.referer.split("?")[0] })
     session[:user_id] = @user.id if !(@user.access == "admin") # Hack to prevent users signing in as admin.
     render 'registration_thanks'
   end
