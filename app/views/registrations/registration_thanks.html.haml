@@ -46,11 +46,11 @@
         #email
           = form_tag invite_email_registrations_path do
             = hidden_field_tag "email[from]", @user.email
-            = hidden_field_tag "email[invite_link]", "http://monkeymake.it/i/#{@user.invite_code}"
+            = hidden_field_tag "email[invite_link]", "http://monkeymake.it/i/#{@invite_code}"
             .field
               = text_field_tag "email[to]", "Your friend's email address", :class => "grey"
             .field
-              = text_area_tag "email[message]", 'Check out this first draft chapter of "Oh, Mighty Hiccup!" by Scott Lambridis. http://monkeymake.it/i/' + @user.invite_code + ' Pretty cool. Thanks!', :class => "grey"
+              = text_area_tag "email[message]", 'Check out this first draft chapter of "Oh, Mighty Hiccup!" by Scott Lambridis. http://monkeymake.it/i/' + @invite_code + ' Pretty cool. Thanks!', :class => "grey"
             .action
               = submit_tag "SEND", :id => "invite_submit", :class => "grey"
       .clear
@@ -60,7 +60,7 @@
           Share this story:
       .right_column
         %span#sharing
-          = render :partial => "/shared/sharing", :locals => { :share => { :url => "http://monkeymake.it/i/#{@user.invite_code}", :content => 'Check out this first draft chapter of "Oh, Mighty Hiccup!" by Scott Lambridis. #books', :faces => "false", :width => "70px", :count => "none" } }
+          = render :partial => "/shared/sharing", :locals => { :share => { :url => "http://monkeymake.it/i/#{@invite_code}", :content => 'Check out this first draft chapter of "Oh, Mighty Hiccup!" by Scott Lambridis. #books', :faces => "false", :width => "70px", :count => "none" } }
       .clear
 
       .left_column
@@ -68,5 +68,5 @@
           Or copy and paste this link:
       .right_column
         #invite_code
-          %input{:type => "text", :value => "http://monkeymake.it/i/#{@user.invite_code}"}
+          %input{:type => "text", :value => "http://monkeymake.it/i/#{@invite_code}"}
       .clear

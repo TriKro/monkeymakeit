@@ -3,8 +3,8 @@ class RegistrationsController < ApplicationController
   cache_sweeper :user_sweeper
 
   def new
-    session[:invite_code] = params[:invite_code]
-    @user = User.find_by_invite_code(params[:invite_code])
+    session[:referral_code] = params[:referral_code]
+    @user = User.find_by_invite_code(params[:referral_code])
     if !@user.email.nil?
       km.record('referral arrival', { 'from' => @user.email })
     elsif
@@ -12,26 +12,24 @@ class RegistrationsController < ApplicationController
     else
       km.record('referral arrival')
     end
-    redirect_to story_path(Invite.find_by_code(params[:invite_code]).story)
+    redirect_to story_path(Invite.find_by_code(params[:referral_code]).story)
   end
 
   def create
-    @user = User.find_by_email(params[:user][:email])
+    @user = current_user || User.find_by_email(params[:user][:email])
+    @story = Story.find_by_id(params[:story_id])
+    @referral_code = Invite.find_by_code(session[:referral_code]) if session[:referral_code]
     unless @user
       @user = User.new(params[:user])
-      if session[:invite_code] and !User.where(:invite_code => session[:invite_code]).empty?
-        Invite.find_by_code(session[:invite_code]).user.invitees << @user
-      end
       if @user.save
-        @user.subscriptions << Story.find_by_id(params[:story_id])
-        session[:user_id] = @user.id
-        UserMailer.welcome_email(@user).deliver
-        return render 'registration_thanks'
+        UserMailer.welcome_email(@user, @story).deliver
       else
         return redirect_to new_registration_path(:user => params[:user]), :alert => @user.errors.full_messages.first
       end
     end
-    @user.subscriptions << Story.find_by_id(params[:story_id])
+    @invite_code = @user.invites.find_or_create_by_story_id(@story.id).code
+    @referral_code.user.invitees << @user if @referral_code
+    @user.subscriptions << @story
     session[:user_id] = @user.id if !(@user.access == "admin") # Hack to prevent users signing in as admin.
     render 'registration_thanks'
   end
