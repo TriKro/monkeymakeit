@@ -18,7 +18,7 @@ Suggestedit::Application.routes.draw do
     post :invite_email, :on => :collection
   end
   match "/thanks_for_registering" => "registrations#registration_thanks", :as => :registration_thanks
-  match "/i/:invite_code" => "registrations#new", :as => :invite
+  match "/i/:referral_code" => "stories#referral_redirect", :as => :referral_redirect
   
   # Static page routes
   [

@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
     full_name.blank? ? email : full_name
   end
 
+  def email_or_name
+    email.blank? ? full_name : email
+  end
+
   def self.create_from_hash!(hash)
     info = hash['user_info']
     users_name = info['name']
