@@ -14,7 +14,7 @@
       %content
         %content_inner
 
-          - if can? :manage, AdminController
+          - if request.request_uri != '/' && can?(:manage, AdminController)
             = render 'admin/nav'
 
           = render :partial => '/layouts/flash', :locals => { :flash => flash }
