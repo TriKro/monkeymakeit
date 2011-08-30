@@ -49,9 +49,9 @@
             = hidden_field_tag "email[from]", @invite.user.email
             = hidden_field_tag "email[invite_link]", "http://monkeymake.it/i/#{@invite.code}"
             .field
-              = text_field_tag "email[to]", "Your friend's email address", :class => "grey"
+              = text_field_tag "email[recipients]", "Your friend's email address", :class => "grey"
             .field
-              = text_area_tag "email[message]", 'Check out this first draft chapter of "' + @invite.story.title + '" by ' + @invite.story.author.full_name + '. http://monkeymake.it/i/' + @invite.code + ' Pretty cool. Thanks!', :class => "grey"
+              = text_area_tag "email[content]", 'Check out this first draft chapter of "' + @invite.story.title + '" by ' + @invite.story.author.full_name + '. http://monkeymake.it/i/' + @invite.code + ' Pretty cool. Thanks!', :class => "grey"
             .action
               = submit_tag "SEND", :id => "invite_submit", :class => "grey"
       .clear
