@@ -2,21 +2,6 @@ class RegistrationsController < ApplicationController
 
   cache_sweeper :user_sweeper
 
-  def new
-    # TODO: Move to more sensical place.
-    redirect_to root_url if params[:referral_code].blank?
-    session[:referral_code] = params[:referral_code]
-    @user = User.find_by_invite_code(params[:referral_code])
-    if !@user.email.nil?
-      km.record('referral arrival', { 'from' => @user.email })
-    elsif
-      km.record('referral arrival', { 'from' => @user.full_name })
-    else
-      km.record('referral arrival')
-    end
-    redirect_to story_path(Invite.find_by_code(params[:referral_code]).story)
-  end
-
   def create
     @user = current_user || User.find_by_email(params[:user][:email])
     @story = Story.find_by_id(params[:story_id])

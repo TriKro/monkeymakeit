@@ -18,6 +18,7 @@ class Ability
     # Abilities for all users:
     can :create, ContactMessage
     can :read, Story
+    can :referral_redirect, Story
   end
 
 end

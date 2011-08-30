@@ -44,11 +44,11 @@ ActiveRecord::Schema.define(:version => 20110828071015) do
   end
 
   create_table "invites", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "story_id"
-    t.string   "code"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "user_id"
+    t.integer   "story_id"
+    t.string    "code"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "invites", ["code"], :name => "index_invites_on_code", :unique => true
@@ -90,15 +90,15 @@ ActiveRecord::Schema.define(:version => 20110828071015) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "inviter_id"
-    t.string   "full_name"
-    t.string   "image"
-    t.string   "access"
-    t.text     "bio"
-    t.string   "cached_slug"
+    t.string    "email"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "inviter_id"
+    t.string    "full_name"
+    t.string    "image"
+    t.string    "access"
+    t.text      "bio"
+    t.string    "cached_slug"
   end
 
   add_index "users", ["cached_slug"], :name => "index_users_on_cached_slug", :unique => true
