@@ -1,4 +1,5 @@
 class InvitesController < ApplicationController
+  load_and_authorize_resource
 
   def show
     @invite = Invite.find(params[:id])

@@ -8,6 +8,7 @@ class SubscriptionsController < ApplicationController
     @referral_invite = Invite.find_by_code(session[:referral_code]) if session[:referral_code]
     unless @user
       @user = User.new(params[:user])
+      @user.access = "reader"
       if @user.save
         # TODO: Move emailing to observer.
         UserMailer.welcome_email(@user, @story).deliver
