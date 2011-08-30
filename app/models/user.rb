@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :authentications
   has_many :stories, :foreign_key => "author_id"
-  has_and_belongs_to_many :subscriptions, :class_name => "Story", :join_table => "subscribers_subscriptions"
+  has_many :subscriptions
+  has_many :subscribed_stories, :through => :subscriptions, :source => :story
   has_many :invites
   has_many :invitees, :class_name => "User", :foreign_key => "inviter_id"
   belongs_to :inviter, :class_name => "User"

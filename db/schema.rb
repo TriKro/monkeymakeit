@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110828071015) do
+ActiveRecord::Schema.define(:version => 20110830040907) do
 
   create_table "activities", :force => true do |t|
     t.integer   "user_id"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20110828071015) do
 
   add_index "stories", ["cached_slug"], :name => "index_stories_on_cached_slug", :unique => true
 
-  create_table "subscribers_subscriptions", :id => false, :force => true do |t|
+  create_table "subscriptions", :force => true do |t|
     t.integer "user_id"
     t.integer "story_id"
   end
