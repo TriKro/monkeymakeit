@@ -53,9 +53,9 @@ class RegistrationsController < ApplicationController
     end
 
     params[:email][:to].split(',').each do |to|
-      UserMailer.invite_email(params[:email][:from], to,
-                            'First look at "Oh, Mighty Hiccup!" on MonkeyMake.it',
-                            params[:email][:message]).deliver
+      UserMailer.deliver_email(params[:email][:from], to,
+          'First look at "Oh, Mighty Hiccup!" on MonkeyMake.it',
+          params[:email][:message])
       # TODO: Move logging to sweeper if possible.
       km.record('referral', { 'method' => 'email', 'to' => to, 'from' => params[:email][:from] })
     end
