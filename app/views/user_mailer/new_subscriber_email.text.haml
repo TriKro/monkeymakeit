@@ -1,0 +1,19 @@
+- if !@recipient.full_name.nil?
+  Hi #{ @recipient.first_name },
+- else
+  Hi,
+
+- if !@author.full_name.nil?
+  Hi #{ @author.first_name },
+- else
+  Hi,
+
+:plain
+  Great news! #{@subscriber.identifier} just subscribed to "#{@story.title}
+
+  That makes #{@story.subscribers.count} readers so far!
+
+  Time to invite some more!
+
+= render 'user_mailer/sharing_plain'
+= render 'user_mailer/footer_plain'
