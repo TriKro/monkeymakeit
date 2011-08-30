@@ -16,5 +16,7 @@ module Suggestedit
       g.stylesheets     false
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
+
+    config.active_record.observers = :subscription_observer
   end
 end

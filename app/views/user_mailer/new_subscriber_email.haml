@@ -1,0 +1,23 @@
+%p
+  - if !@author.full_name.nil?
+    Hi #{ @author.first_name },
+  - else
+    Hi,
+
+%p
+  Great news!
+%p
+  = @subscriber.identifier
+  just subscribed to your story
+  = @story.title
+
+%p
+  That makes
+  = @story.subscribers.count
+  total so far!
+
+%p
+  Time to invite some more!
+
+= render 'user_mailer/sharing'
+= render 'user_mailer/footer'

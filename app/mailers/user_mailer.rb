@@ -24,4 +24,15 @@ class UserMailer < ActionMailer::Base
          :to => recipient.email
   end
 
+  def new_subscriber_email(subscription)
+    @story = subscription.story
+    @author = subscription.story.author
+    @subscriber = subscription.user
+    @invite = @story.invites.find_or_create_by_user_id(@author.id)
+    return if @author.email.nil?
+    mail :from => 'Monkeys <no-reply@MonkeyMake.it>',
+         :to => @author.email,
+         :subject => 'People like you! They really really do!'
+  end
+
 end
