@@ -45,13 +45,21 @@
       .right_column
         #email
           = form_tag send_invites_invites_path do
+            - if @invite_message.errors.any?
+              #error_explanation
+                %h4
+                  = pluralize(@invite_message.errors.count, "error")
+                  prohibited this message from being sent:
+                %ul
+                  - @invite_message.errors.full_messages.each do |msg|
+                    %li= msg
             = hidden_field_tag "id", @invite.id
-            = hidden_field_tag "email[from]", @invite.user.email
-            = hidden_field_tag "email[invite_link]", "http://monkeymake.it/i/#{@invite.code}"
+            = hidden_field_tag "invite_message[from]", @invite.user.email
+            = hidden_field_tag "invite_message[invite_link]", "http://monkeymake.it/i/#{@invite.code}"
             .field
-              = text_field_tag "email[recipients]", "Your friend's email address", :class => "grey"
+              = text_field_tag "invite_message[recipients]", "Your friend's email address", :class => "grey"
             .field
-              = text_area_tag "email[content]", 'Check out this first draft chapter of "' + @invite.story.title + '" by ' + @invite.story.author.full_name + '. http://monkeymake.it/i/' + @invite.code + ' Pretty cool. Thanks!', :class => "grey"
+              = text_area_tag "invite_message[content]", 'Check out this first draft chapter of "' + @invite.story.title + '" by ' + @invite.story.author.full_name + '. http://monkeymake.it/i/' + @invite.code + ' Pretty cool. Thanks!', :class => "grey"
             .action
               = submit_tag "SEND", :id => "invite_submit", :class => "grey"
       .clear

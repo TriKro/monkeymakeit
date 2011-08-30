@@ -10,7 +10,6 @@ class InviteMessage
   validates_presence_of :recipients
   validate :recipients_should_contain_valid_emails
   validates_format_of :from, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,}$/i
-  validates_presence_of :subject
   validates_presence_of :content
   validates_length_of :content, :minimum => 10
   validate :content_should_contain_invite_link
