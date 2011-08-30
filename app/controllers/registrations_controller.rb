@@ -12,7 +12,7 @@ class RegistrationsController < ApplicationController
         # TODO: Move emailing to observer.
         UserMailer.welcome_email(@user, @story).deliver
       else
-        return redirect_to new_registration_path(:user => params[:user]), :alert => @user.errors.full_messages.first
+        redirect_to(params[:from]) and return
       end
     end
     @invite_code = @user.invites.find_or_create_by_story_id(@story.id).code
