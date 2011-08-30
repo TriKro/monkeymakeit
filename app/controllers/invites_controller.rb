@@ -6,17 +6,19 @@ class InvitesController < ApplicationController
 
   def send_invites
     @invite = Invite.find(params[:id])
-    @user = @invite.user
-    @story = @invite.story
 
     # TODO: Move validations to model.
     unless params[:email]
       flash[:error] = "Must provide email details."
       render "show" and return
     end
+    if params[:email][:to] == "Your friend's email address"
+      flash[:error] = "Must email someone."
+      render "show" and return
+    end
     if params[:email][:to].blank?
       flash[:error] = "Must email someone."
-      return
+      render "show" and return
     end
     if params[:email][:from].blank?
       flash[:error] = "Must provide your email."
@@ -37,7 +39,7 @@ class InvitesController < ApplicationController
 
     params[:email][:to].split(',').each do |to|
       UserMailer.deliver_email(params[:email][:from], to,
-          'First look at "' + @story.title + '" on MonkeyMake.it',
+          'First look at "' + @invite.story.title + '" on MonkeyMake.it',
           params[:email][:message])
       # TODO: Move logging to sweeper if possible.
       km.record('referral', { 'method' => 'email', 'to' => to, 'from' => params[:email][:from] })

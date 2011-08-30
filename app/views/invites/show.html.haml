@@ -45,8 +45,8 @@
       .right_column
         #email
           = form_tag send_invites_invites_path do
+            = hidden_field_tag "id", @invite.id
             = hidden_field_tag "email[from]", @invite.user.email
-            = hidden_field_tag "story_id", @invite.story.id
             = hidden_field_tag "email[invite_link]", "http://monkeymake.it/i/#{@invite.code}"
             .field
               = text_field_tag "email[to]", "Your friend's email address", :class => "grey"
