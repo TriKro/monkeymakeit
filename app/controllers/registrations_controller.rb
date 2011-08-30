@@ -1,6 +1,6 @@
 class RegistrationsController < ApplicationController
 
-  cache_sweeper :user_sweeper
+  cache_sweeper :user_sweeper, :subscription_sweeper
 
   def create
     @user = current_user || User.find_by_email(params[:user][:email])
@@ -18,8 +18,6 @@ class RegistrationsController < ApplicationController
     @invite_code = @user.invites.find_or_create_by_story_id(@story.id).code
     @referral_code.user.invitees << @user if @referral_code
     @user.subscribed_stories << @story
-    # TODO: Move logging to sweeper.
-    km.record('activity', { 'type' => 'subscribed', 'story' => @story.title, 'author' => @story.author.full_name, 'url' => request.referer.split("?")[0] })
     session[:user_id] = @user.id if !(@user.access == "admin") # Hack to prevent users signing in as admin.
     render 'registration_thanks'
   end
