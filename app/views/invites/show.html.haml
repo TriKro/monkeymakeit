@@ -1,6 +1,6 @@
 - title "- Thank you"
-- stylesheets 'registration_thanks'
-- scripts 'registration_thanks'
+- stylesheets 'invites'
+- scripts 'invites'
 
 #registration_thanks
   #thanks
@@ -25,14 +25,14 @@
     %p
       Invite some friends. I'll give a
       %b signed first edition print
-      of "Oh, Mighty Hiccup!" to the top 50 inviters.
+      of "#{@invite.story.title}" to the top 50 inviters.
 
     %p
       I'll get this book published and printed once we hit
       %span.black 5000
       %span.red> *
       &#32;readers (We're at
-      = User.all.count
+      = @invite.story.subscribers.count
       now.)
     %p{ :style => "color: #888; font-size: 14px;" }
       %span.red> *
@@ -44,13 +44,14 @@
           Email your friends:
       .right_column
         #email
-          = form_tag invite_email_registrations_path do
-            = hidden_field_tag "email[from]", @user.email
-            = hidden_field_tag "email[invite_link]", "http://monkeymake.it/i/#{@invite_code}"
+          = form_tag send_invites_invites_path do
+            = hidden_field_tag "email[from]", @invite.user.email
+            = hidden_field_tag "story_id", @invite.story.id
+            = hidden_field_tag "email[invite_link]", "http://monkeymake.it/i/#{@invite.code}"
             .field
               = text_field_tag "email[to]", "Your friend's email address", :class => "grey"
             .field
-              = text_area_tag "email[message]", 'Check out this first draft chapter of "Oh, Mighty Hiccup!" by Scott Lambridis. http://monkeymake.it/i/' + @invite_code + ' Pretty cool. Thanks!', :class => "grey"
+              = text_area_tag "email[message]", 'Check out this first draft chapter of "' + @invite.story.title + '" by ' + @invite.story.author.full_name + '. http://monkeymake.it/i/' + @invite.code + ' Pretty cool. Thanks!', :class => "grey"
             .action
               = submit_tag "SEND", :id => "invite_submit", :class => "grey"
       .clear
@@ -60,7 +61,7 @@
           Share this story:
       .right_column
         %span#sharing
-          = render :partial => "sharing", :locals => { :share => { :url => "http://monkeymake.it/i/#{@invite_code}", :content => 'Check out this first draft chapter of "Oh, Mighty Hiccup!" by Scott Lambridis. #books', :faces => "false", :width => "70px", :count => "none", :recommend => true } }
+          = render :partial => "invites/sharing", :locals => { :share => { :url => "http://monkeymake.it/i/#{@invite.code}", :content => 'Check out this first draft chapter of "Oh, Mighty Hiccup!" by Scott Lambridis. #books', :faces => "false", :width => "70px", :count => "none", :recommend => true } }
       .clear
 
       .left_column
@@ -68,5 +69,5 @@
           Or copy and paste this link:
       .right_column
         #invite_code
-          %input{:type => "text", :value => "http://monkeymake.it/i/#{@invite_code}"}
+          %input{:type => "text", :value => "http://monkeymake.it/i/#{@invite.code}"}
       .clear

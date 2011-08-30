@@ -14,10 +14,14 @@ Suggestedit::Application.routes.draw do
   resources :stories
   match '/hiccup' => 'stories#show', :id => 'oh-mighty-hiccup'
 
-  resources :registrations, :only => [:new, :create] do
-    post :invite_email, :on => :collection
+  resources :invites do
+    # TODO: Hate the name of this route. Just call it send? Creates bug when I do it.
+    post :send_invites, :on => :collection
   end
-  match "/thanks_for_registering" => "registrations#registration_thanks", :as => :registration_thanks
+  match "/thanks_for_registering" => "invites#registration_thanks", :as => :registration_thanks
+
+  resources :subscriptions, :only => :create
+
   match "/i/:referral_code" => "stories#referral_redirect", :as => :referral_redirect
   
   # Static page routes

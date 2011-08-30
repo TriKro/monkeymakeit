@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RegistrationsController do
+describe InvitesController do
 
   def mock_user(stubs={})
     @mock_user ||= mock_model(User, stubs).as_null_object
