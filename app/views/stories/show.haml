@@ -31,7 +31,11 @@
 
     = render "#{ @content }"
 
-    = render "/shared/signup_widget_bottom"
+    .signup_widget_bottom
+      .signup_header
+        %h2
+          Want to read the next chapter?
+        = render "signup_form"
 
     .darkgrey{ :style => "text-align: center" }
       \- to be continued -
@@ -42,7 +46,11 @@
       %br
 
   #right_column2
-    = render "/shared/signup_widget"
+    .signup_widget
+      .signup_header
+        %h4
+          %img{ :src => "images/text/text-next_chapter.png", :alt => "Next Chapter", :title => "Sign Up now!" }
+      = render "signup_form"
 
     #about_author
       %h4
@@ -52,4 +60,3 @@
           %img{:src => @story.author.image, :width => "100px;", :style => "margin: 0 10px 0 0;"}
         %p
           = @story.author.bio
-

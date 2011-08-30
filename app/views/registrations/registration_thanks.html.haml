@@ -60,7 +60,7 @@
           Share this story:
       .right_column
         %span#sharing
-          = render :partial => "/shared/sharing", :locals => { :share => { :url => "http://monkeymake.it/i/#{@invite_code}", :content => 'Check out this first draft chapter of "Oh, Mighty Hiccup!" by Scott Lambridis. #books', :faces => "false", :width => "70px", :count => "none", :recommend => true } }
+          = render :partial => "sharing", :locals => { :share => { :url => "http://monkeymake.it/i/#{@invite_code}", :content => 'Check out this first draft chapter of "Oh, Mighty Hiccup!" by Scott Lambridis. #books', :faces => "false", :width => "70px", :count => "none", :recommend => true } }
       .clear
 
       .left_column

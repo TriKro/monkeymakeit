@@ -1,14 +1,9 @@
-- @registration = User.new
+.signup_content
+  %p
+    Sign up here and I'll email you when it's ready.
 
-#social_signup
-  = link_to("/auth/facebook", :class => "nodec") do
-    .signin_facebook
-
-  .signup_via_email
-    sign up with email
-
-#registration.hide
-  = form_for(@registration, :url => registrations_path) do |f|
+  - @registration = User.new
+  = form_for(@registration, :url => registrations_path, :html => { :class => "event_form_email_login" }) do |f|
     - if @registration.errors.any?
       #error_explanation
         %h4
@@ -17,6 +12,8 @@
         %ul
           - @registration.errors.full_messages.each do |msg|
             %li= msg
+
+    = hidden_field_tag "story_id", @story.id
 
     .field
       = f.label :full_name, "Name:"
@@ -27,5 +24,9 @@
       = f.text_field :email, :class => "user_email", :value => params[:user].try(:[], :email).presence || "Email"
 
     .actions
-      = f.submit ''
+      = f.submit 'SIGN UP'
     .clear
+
+  %p{ :style => "font-size: 12px" }
+    %span.red *
+    We will never spam or sell your email address.
