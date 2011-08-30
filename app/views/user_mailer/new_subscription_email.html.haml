@@ -1,0 +1,32 @@
+%p
+  - if !@user.full_name.nil?
+    Hi #{ @user.first_name },
+  - else
+    Hi,
+
+%p
+  Thanks! You're subscribed to "#{@story.title}"
+
+%p
+  I'll send you each draft chapter as it's written.
+
+%p
+  Want the whole book for free?
+
+%p
+  Invite some friends. I'll give a
+  %b signed first edition print
+  of "#{@story.title}" to the top 50 inviters.
+
+%p
+  I'll get this book published and printed once we hit 5000
+  %span{ :style => 'color: #8a1f11' }> *
+  &#32;readers (We're at
+  = @story.subscribers.count
+  now.)
+%p{ :style => "color: #888; font-size: .9em;" }
+  %span{ :style => 'color: #8a1f11' } *
+  Why 5000? That's the number of readers a major publisher needs before signing new authors.
+
+= render 'user_mailer/sharing'
+= render 'user_mailer/footer'

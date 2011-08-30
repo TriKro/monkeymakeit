@@ -1,0 +1,20 @@
+- if !@user.full_name.nil?
+  Hi #{ @user.first_name },
+- else
+  Hi,
+
+:plain
+  Thanks! You've subscribed to "#{@story.title}"
+
+  I'll send you each draft chapter as it's written.
+
+  Want the whole book for free?
+
+  Invite some friends. I'll give a signed first edition print of "#{@story.title}" to the top 50 inviters.
+
+  I'll get this book published and printed once we hit 5000* readers (We're at "#{@story.subscribers.count}" now.)
+
+  * Why 5000? That's the number of readers a major publisher needs before signing new authors.
+
+= render 'user_mailer/sharing_plain'
+= render 'user_mailer/footer_plain'
