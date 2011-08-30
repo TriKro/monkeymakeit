@@ -11,13 +11,9 @@
     twttr.events.bind('click', function(event) {
       _kmq.push(['record', 'start referral', {'method':'twitter'}]);
     });
-
-  :javascript
     twttr.events.bind('tweet', function(event) {
       _kmq.push(['record', 'referral', {'method':'twitter'}]);
     });
-
-  :javascript
     twttr.events.bind('follow', function(event) {
       var followed_user_id = event.data.user_id;
       var followed_screen_name = event.data.screen_name;
@@ -28,6 +24,15 @@
   .facebook
     #fb-root
     %script{:src => "http://connect.facebook.net/en_US/all.js#appId=135537883194595&xfbml=1"}
-    %fb:like{ :font => "", :href => share[:url] == "http://monkeymake.it/" ? "http://www.facebook.com/pages/MonkeyMakeit/210728972305103?sk=wall" : share[:url], :layout => share[:count] == "vertical" ? "box_count" : "button_count", :send => share[:send] == "false" ? "false" : "true", :show_faces => share[:faces] == "true" ? "true" : "false", :width => !share[:width].nil? ? share[:width] : "200" }
+    %fb:like{ :font => "", :href => share[:url] == "http://monkeymake.it/" ? "http://www.facebook.com/pages/MonkeyMakeit/210728972305103?sk=wall" : share[:url], :layout => share[:count] == "vertical" ? "box_count" : "button_count", :send => share[:send] == "false" ? "false" : "true", :show_faces => share[:faces] == "true" ? "true" : "false", :action => !share[:recommend].nil? ? 'recommend' : 'like', :width => !share[:width].nil? ? share[:width] : "200" }
+
+  :javascript
+    FB.Event.subscribe('edge.create', function(href, widget) {
+      _kmq.push(['record', 'referral', {'method':'facebook'}]);
+    });
+    FB.Event.subscribe('edge.remove', function(href, widget) {
+      _kmq.push(['record', 'destroyed referral', {'method':'facebook'}]);
+    });
+  -#  TODO: Add tracking for use of the SEND button. Not possible with FB js api as of 8/29/2011
 
 .clear
