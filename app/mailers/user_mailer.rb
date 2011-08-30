@@ -19,7 +19,7 @@ class UserMailer < ActionMailer::Base
 
   def welcome_email(recipient, story)
     @recipient = recipient
-    @invite_code = recipient.invites.find_or_create_by_story_id(story.id).code
+    @invite = recipient.invites.find_or_create_by_story_id(story.id)
     mail :from => 'Monkeys <no-reply@MonkeyMake.it>',
          :to => recipient.email,
          :subject => "Welcome to MonkeyMake.it"
