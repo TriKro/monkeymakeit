@@ -14,11 +14,10 @@ Suggestedit::Application.routes.draw do
   resources :stories
   match '/hiccup' => 'stories#show', :id => 'oh-mighty-hiccup'
 
-  resources :invites do
+  resources :invites, :path => :thanks do
     # TODO: Hate the name of this route. Just call it send? Creates bug when I do it.
     post :send_invites, :on => :collection
   end
-  match "/thanks_for_registering" => "invites#registration_thanks", :as => :registration_thanks
 
   resources :subscriptions, :only => :create
 

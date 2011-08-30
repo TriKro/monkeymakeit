@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110830040907) do
+ActiveRecord::Schema.define(:version => 20110830065428) do
 
   create_table "activities", :force => true do |t|
     t.integer   "user_id"
@@ -49,8 +49,10 @@ ActiveRecord::Schema.define(:version => 20110830040907) do
     t.string    "code"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "cached_slug"
   end
 
+  add_index "invites", ["cached_slug"], :name => "index_invites_on_cached_slug", :unique => true
   add_index "invites", ["code"], :name => "index_invites_on_code", :unique => true
 
   create_table "slugs", :force => true do |t|
