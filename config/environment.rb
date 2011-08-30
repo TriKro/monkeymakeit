@@ -1,6 +1,6 @@
 require File.expand_path('../application', __FILE__)
 
-Suggestedit::Application.initialize!
+Monkeymakeit::Application.initialize!
 
 COMPANY_NAME = "Rapid Software Development LLC"
 SITE_NAME = "MonkeyMake.it"

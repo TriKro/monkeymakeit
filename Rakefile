@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Suggestedit::Application.load_tasks
+Monkeymakeit::Application.load_tasks

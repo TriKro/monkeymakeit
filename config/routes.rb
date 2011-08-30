@@ -1,4 +1,4 @@
-Suggestedit::Application.routes.draw do
+Monkeymakeit::Application.routes.draw do
   root :to => 'root#index'
 
   # Omniauth routes
