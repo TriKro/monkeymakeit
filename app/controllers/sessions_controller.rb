@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     # Log the authorizing user in.
     session[:user_id] = @auth.user.id
     flash[:notice] = "Logged in as #{current_user.full_name}"
-    redirect_to '/'
+    redirect_to root_url
   end
 
   def destroy
@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
 
   def failure
     if current_user
-      redirect_to root_url, :info => "You've signed in."
+      redirect_to root_url, :info => "Logged in as #{current_user.full_name}"
     end
     redirect_to root_url, :alert => "Uh oh...something weird just happened. We'll look into it. Please try to sign in again."
   end
