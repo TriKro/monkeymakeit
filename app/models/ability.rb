@@ -9,8 +9,8 @@ class Ability
     can :referral_redirect, Story
 
     if user.access == "reader" || user.access == "author"
-      can :read, User
-      can :manage, User, :id => user.id
+      can :show, User
+      can [:update, :destroy], User, :id => user.id
       can :update, Authentication, :user_id => user.id
       can :read, Invite, :user_id => user.id
       can :send_invites, Invite, :user_id => user.id
