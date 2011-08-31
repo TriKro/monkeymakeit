@@ -1,24 +1,19 @@
 class SubscriptionsController < ApplicationController
+  load_and_authorize_resource
 
   cache_sweeper :user_sweeper, :subscription_sweeper
 
   def create
-    @user = current_user || User.find_by_email(params[:user][:email])
     @story = Story.find_by_id(params[:story_id])
-    @referral_invite = Invite.find_by_code(session[:referral_code]) if session[:referral_code]
-    unless @user
-      @user = User.new(params[:user])
-      @user.access = "reader"
-      if @user.save
-        # TODO: Move emailing to observer.
-        UserMailer.welcome_email(@user, @story).deliver
-      else
-        redirect_to(params[:from]) and return
-      end
+    if (@user = current_user).nil?
+      @user = User.find_or_create_from_email_and_attributes(params[:user][:email], { :full_name => params[:user][:full_name] })
+      render "stories/show" and return if @user.errors.any?
+      redirect_to :signin, :alert => "Please use this page to sign in as an author or admin." and return if @user.access == "author" || @user.access == "admin"
+      session[:user_id] = @user.id # Log the user in
     end
-    session[:user_id] = @user.id if !(@user.access == "admin") # Hack to prevent users signing in as admin.
+    @referral_invite = Invite.find_by_code(session[:referral_code]) if session[:referral_code]
     @referral_invite.user.invitees << @user if @referral_invite
-    @user.subscribed_stories << @story
+    @user.subscribed_stories << @story if !@user.subscribed_stories.find_by_id(@story.id)
     @invite = @user.invites.find_or_create_by_story_id(@story.id)
     redirect_to invite_path(@invite)
   end

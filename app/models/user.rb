@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
     "\"#{full_name}\" <#{email}>"
   end
 
-  def identifier
+  def name_or_email
     full_name.blank? ? email : full_name
   end
 
@@ -34,6 +34,16 @@ class User < ActiveRecord::Base
     image = info['image'] if !info['image'].blank?
     user = new( :full_name => users_name, :image => image )
     user.save( false )
+    user
+  end
+
+  def self.find_or_create_from_email_and_attributes(email, *attributes)
+    user = User.find_by_email(email)
+    return user if user
+    user = User.create(:email => email)
+    attributes.each do |attribute|
+      user.update_attributes(attribute)
+    end
     user
   end
 

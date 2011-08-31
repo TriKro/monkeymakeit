@@ -11,30 +11,6 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find(params[:id])
-
-    # Bullshit cruft until artwork model is in.
-    if @story.title == "Oh, Mighty Hiccup!"
-      @content = "hiccup"
-      @art = {
-          :artwork => "/images/stories/cover-hiccup-chapter1.png",
-          :artwork_title => "Untitled",
-          :artist => "Tyler Landry",
-      }
-    elsif @story.title == "Life of the Gallows"
-      @content = "life_of_the_gallows"
-      @art = {
-        :artwork => "/images/stories/image-life_of_the_gallows.jpg",
-        :artwork_title => "Jester",
-        :artist => "Tyler Landry",
-      }
-    elsif @story.title == "Doris"
-      @content = "doris"
-      @art = {
-        :artwork => "/images/stories/image-doris.jpg",
-        :artwork_title => "Doris",
-        :artist => "Tyler Landry",
-      }
-    end
   end
 
   def new
