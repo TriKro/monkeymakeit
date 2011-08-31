@@ -17,8 +17,8 @@
       -moz-box-shadow: 0px 0px 10px 0 black;
       -webkit-box-shadow: 0px 0px 10px 0 black;
       box-shadow: 0px 0px 10px 0 black;
-      -moz-transition: all 0.25s linear;
-      -webkit-transition: all 0.25s linear; }
+      -moz-transition: all 0.1s linear;
+      -webkit-transition: all 0.1s linear; }
       #bookshelf #bookshelf_inner .book:hover {
         -moz-transform: scale(1.15);
         -webkit-transform: scale(1.15);
