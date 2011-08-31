@@ -15,8 +15,8 @@
       %th
   - @users.each do |user|
     %tr
-      %td= user.id
-      %td= user.full_name
+      %td
+        = link_to user.name_or_email, user
       %td= user.email
       %td= user.access
       %td= user.invitees.count

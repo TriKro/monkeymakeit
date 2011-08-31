@@ -42,6 +42,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    session[:user_id] = nil if @user == current_user
     @user.destroy
     redirect_to(users_url, :notice => 'User was successfully destroyed.')
   end

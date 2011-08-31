@@ -21,8 +21,8 @@
       = link_to "Anonymous", invitee
 %p
   %b Subscriptions:
-  - @user.subscriptions.each do |subscription|
-    = link_to subscription.title, subscription
+  - @user.subscribed_stories.each do |subscribed_story|
+    = link_to subscribed_story.title, subscribed_story
 %p
   %b Stories:
   - @user.stories.each do |story|
