@@ -1,5 +1,7 @@
 - if current_user && current_user.subscribed?(@story) == false
-  = link_to "subscribe", subscriptions_path(:story_id => @story.id), :method => :post
+  = link_to subscriptions_path(:story_id => @story.id), :method => :post do
+    .blue_button
+      SUBSCRIBE
 
 - elsif current_user && current_user.subscribed?(@story) == true
   You're already subscribed
