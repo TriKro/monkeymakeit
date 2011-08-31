@@ -2,15 +2,14 @@
   %p
     Sign up here and I'll email you when it's ready.
 
-  - @registration = User.new
-  = form_for(@registration, :url => subscriptions_path, :html => { :class => "event_form_email_login" }) do |f|
-    - if @registration.errors.any?
+  = form_for(@user, :url => subscriptions_path, :html => { :class => "event_form_email_login" }) do |f|
+    - if @user.errors.any?
       #error_explanation
         %h4
-          = pluralize(@registration.errors.count, "error")
-          prohibited this tag from being saved:
+          = pluralize(@user.errors.count, "error")
+          prevented us from being awesome.
         %ul
-          - @registration.errors.full_messages.each do |msg|
+          - @user.errors.full_messages.each do |msg|
             %li= msg
 
     = hidden_field_tag "story_id", @story.id

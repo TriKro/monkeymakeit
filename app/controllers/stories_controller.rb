@@ -11,6 +11,7 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find(params[:id])
+    @user = User.new if !current_user
   end
 
   def new
