@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
 
+  after_filter :store_location
+
   rescue_from ActiveRecord::RecordNotFound do |e|
     flash[:error] = "That record does not exist!"
     redirect_to :back
@@ -19,6 +21,10 @@ class ApplicationController < ActionController::Base
 
   def log_page_view(type)
     km.record('viewed page', { 'page type' => type, 'url' => request.url.split("?")[0] })
+  end
+
+  def store_location
+    session[:return_to] = request.url if request.get? and controller_name != "sessions"
   end
 
 end
