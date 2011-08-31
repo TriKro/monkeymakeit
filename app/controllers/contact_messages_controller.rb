@@ -1,7 +1,7 @@
 class ContactMessagesController < ApplicationController
 
   before_filter lambda {
-    km_log_page_view('contact')
+    log_page_view('contact')
   }, :only => [:new, :thanks]
 
   def new

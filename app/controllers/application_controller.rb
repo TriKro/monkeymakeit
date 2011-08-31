@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def km_log_page_view(type)
+  def log_page_view(type)
     km.record('viewed page', { 'page type' => type, 'url' => request.url.split("?")[0] })
   end
 

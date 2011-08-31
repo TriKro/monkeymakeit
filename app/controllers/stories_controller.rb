@@ -2,7 +2,7 @@ class StoriesController < ApplicationController
   load_and_authorize_resource
 
   before_filter lambda {
-    km_log_page_view('story')
+    log_page_view('story')
   }
 
   def index
