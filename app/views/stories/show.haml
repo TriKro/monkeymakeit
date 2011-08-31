@@ -48,7 +48,7 @@
       .signup_header
         %h2
           Want to read the next chapter?
-        = render "stories/signup_form"
+        = render "subscriptions/subscription_form"
 
     .darkgrey{ :style => "text-align: center" }
       \- to be continued -
@@ -63,7 +63,7 @@
       .signup_header
         %h4
           %img{ :src => "/images/text/text-next_chapter.png", :alt => "Next Chapter", :title => "Sign Up now!" }
-      = render "stories/signup_form"
+        = render "subscriptions/subscription_form"
 
     #about_author
       %h4

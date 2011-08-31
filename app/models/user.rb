@@ -54,4 +54,8 @@ class User < ActiveRecord::Base
     full_name
   end
 
+  def subscribed?(story)
+    !subscribed_stories.find_by_id(story.id).nil?
+  end
+
 end
