@@ -12,6 +12,10 @@ class StoriesController < ApplicationController
   def show
     @story = Story.find(params[:id])
     @user = User.new if !current_user
+    if current_user && current_user.subscribed?(@story)
+      @invite = current_user.invites.find_or_create_by_story_id(@story.id)
+      @invite_message = InviteMessage.new
+    end
   end
 
   def new

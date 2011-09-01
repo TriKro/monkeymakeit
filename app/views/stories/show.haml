@@ -44,11 +44,14 @@
 
     = render "stories/#{ @content }"
 
-    .signup_widget_bottom
-      .signup_header
-        %h2
-          Want to read the next chapter?
-      = render "subscriptions/subscription_form"
+    - if current_user && current_user.subscribed?(@story)
+      = render :partial => "invites/invite_widget", :locals => { :story => @story, :invite => @invite, :invite_message => @invite_message }
+    - else
+      .signup_widget_bottom
+        .signup_header
+          %h2
+            Want to read the next chapter?
+        = render "subscriptions/subscription_form"
 
     .darkgrey{ :style => "text-align: center" }
       \- to be continued -
@@ -59,11 +62,14 @@
       %br
 
   #right_column2
-    .signup_widget
-      .signup_header
-        %h4
-          %img{ :src => "/images/text/text-next_chapter.png", :alt => "Next Chapter", :title => "Sign Up now!" }
-      = render "subscriptions/subscription_form"
+    - if current_user && current_user.subscribed?(@story)
+      = render :partial => "invites/invite_widget", :locals => { :story => @story, :invite => @invite, :invite_message => @invite_message }
+    - else
+      .signup_widget
+        .signup_header
+          %h4
+            %img{ :src => "/images/text/text-next_chapter.png", :alt => "Next Chapter", :title => "Sign Up now!" }
+        = render "subscriptions/subscription_form"
 
     #about_author
       %h4
