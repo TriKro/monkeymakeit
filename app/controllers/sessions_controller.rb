@@ -23,6 +23,8 @@ class SessionsController < ApplicationController
     end
 
     session[:user_id] = @user.id # Log the user in
+    @referral_invite = Invite.find_by_code(session[:referral_code]) if session[:referral_code]
+    @referral_invite.user.invitees << @user if @referral_invite
     flash[:notice] = "Logged in as #{current_user.full_name}"
     redirect_to session[:return_to]
   end
