@@ -45,7 +45,7 @@
     = render "stories/#{ @content }"
 
     - if current_user && current_user.subscribed?(@story)
-      = render :partial => "invites/invite_widget", :locals => { :story => @story, :invite => @invite, :invite_message => @invite_message }
+      = render :partial => "invites/invite_widget", :locals => { :invite => @invite, :invite_message => @invite_message }
     - else
       .signup_widget_bottom
         .signup_header

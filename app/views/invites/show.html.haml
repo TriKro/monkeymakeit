@@ -39,43 +39,4 @@
       Why 5000? That's the number of readers a major publisher needs before signing new authors.
 
     #invite_options
-      .left_column
-        %h3
-          Email your friends:
-      .right_column
-        #email
-          = form_tag send_invites_invites_path do
-            - if @invite_message.errors.any?
-              #error_explanation
-                %h4
-                  = pluralize(@invite_message.errors.count, "error")
-                  prohibited this message from being sent:
-                %ul
-                  - @invite_message.errors.full_messages.each do |msg|
-                    %li= msg
-            = hidden_field_tag "id", @invite.id
-            = hidden_field_tag "invite_message[from]", @invite.user.email
-            = hidden_field_tag "invite_message[invite_link]", "http://monkeymake.it/i/#{@invite.code}"
-            .field
-              = text_field_tag "invite_message[recipients]", "Your friend's email address", :class => "grey"
-            .field
-              = text_area_tag "invite_message[content]", 'Check out this first draft chapter of "' + @invite.story.title + '" by ' + @invite.story.author.full_name + '. http://monkeymake.it/i/' + @invite.code + ' Pretty cool. Thanks!', :class => "grey"
-            .action
-              = submit_tag "SEND", :id => "invite_submit", :class => "grey"
-      .clear
-
-      .left_column
-        %h3
-          Share this story:
-      .right_column
-        %span#sharing
-          = render :partial => "invites/sharing", :locals => { :share => { :url => "http://monkeymake.it/i/#{@invite.code}", :content => 'Check out this first draft chapter of "Oh, Mighty Hiccup!" by Scott Lambridis. #books', :faces => "false", :width => "70px", :count => "none", :recommend => true } }
-      .clear
-
-      .left_column
-        %h3
-          Or copy and paste this link:
-      .right_column
-        #invite_code
-          %input{:type => "text", :value => "http://monkeymake.it/i/#{@invite.code}"}
-      .clear
+      = render "invites/invite_widget", :invite => @invite, :invite_message => @invite_message
