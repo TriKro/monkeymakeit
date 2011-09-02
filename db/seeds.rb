@@ -53,5 +53,5 @@ YAML::load(File.open("#{Rails.root}/app/views/stories/index.yml")).each do |stor
     chapter['creatives'] = chapter['creatives'].collect{|c| Creative.create c}
     Chapter.create(chapter)
   end
-  Story.create(story)
+  #Story.create(story)
 end
