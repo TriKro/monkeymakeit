@@ -29,15 +29,10 @@ class User < ActiveRecord::Base
 
   def self.create_from_hash!(hash)
     info = hash['user_info']
-    puts hash
-    puts info
     users_name = info['name']
     image = info['image'] if !info['image'].blank?
-    puts "got the image"
     if hash['provider'] == 'facebook'
       email = hash['extra']['user_hash']['email']
-      puts "got the email"
-      puts email
     else
       email = nil
     end
