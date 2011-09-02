@@ -1,7 +1,7 @@
-.left_column
+.left_column.email
   %h3
     Email your friends:
-.right_column
+.right_column.email
   #email
     = form_tag send_invites_invites_path do
       - if invite_message.errors.any?
@@ -23,18 +23,18 @@
         = submit_tag "SEND", :id => "invite_submit", :class => "grey"
 .clear
 
-.left_column
+.left_column.share
   %h3
     Share this story:
-.right_column
+.right_column.share
   %span#sharing
     = render :partial => "invites/sharing", :locals => { :share => { :url => "http://monkeymake.it/i/#{invite.code}", :content => 'Check out this first draft chapter of "Oh, Mighty Hiccup!" by Scott Lambridis. #books', :faces => "false", :width => "70px", :count => "none", :recommend => true } }
 .clear
 
-.left_column
+.left_column.link
   %h3
     Or copy and paste this link:
-.right_column
+.right_column.link
   #invite_code
     %input{:type => "text", :value => "http://monkeymake.it/i/#{invite.code}"}
 .clear

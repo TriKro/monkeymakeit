@@ -83,13 +83,31 @@
   #right_column2 .invite_widget .invite_header {
     padding: 10px 10px 0 10px;
     background-color: #0088ba; }
-    #right_column2 .invite_widget .invite_header h4 {
+    #right_column2 .invite_widget .invite_header h3 {
+      font-size: 1.8em;
+      font-family: "Georgia, Times New Roman, serif";
+      font-weight: 100;
       color: white;
       border-bottom: none;
-      padding: 0;
+      padding: 0 0 10px 0;
       margin: 0; }
   #right_column2 .invite_widget .invite_content {
     padding: 10px; }
+    #right_column2 .invite_widget .invite_content .email {
+      display: none; }
+    #right_column2 .invite_widget .invite_content .sharing-show {
+      margin: 10px 0; }
+      #right_column2 .invite_widget .invite_content .sharing-show .twitter, #right_column2 .invite_widget .invite_content .sharing-show .facebook {
+        display: inline-block;
+        vertical-align: middle; }
+      #right_column2 .invite_widget .invite_content .sharing-show .twitter {
+        padding-right: 10px; }
+    #right_column2 .invite_widget .invite_content #invite_code input {
+      border: 1px solid #666666;
+      padding: 5px;
+      font-size: 1em;
+      width: 90%;
+      color: #888888; }
     #right_column2 .invite_widget .invite_content p {
       margin: 0;
       padding: 0;
@@ -114,11 +132,29 @@
   text-align: center; }
   #left_column2 .invite_widget .invite_header {
     padding: 10px 10px 0 10px; }
-    #left_column2 .invite_widget .invite_header h2 {
+    #left_column2 .invite_widget .invite_header h3 {
+      font-size: 1.8em;
+      font-family: "Georgia, Times New Roman, serif";
+      font-weight: 100;
       border-bottom: none;
       padding: 0 !important;
       margin: 0 !important;
       color: black !important; }
+  #left_column2 .invite_widget .invite_content .email {
+    display: none; }
+  #left_column2 .invite_widget .invite_content .sharing-show {
+    margin: 10px 0; }
+    #left_column2 .invite_widget .invite_content .sharing-show .twitter, #left_column2 .invite_widget .invite_content .sharing-show .facebook {
+      display: inline-block;
+      vertical-align: middle; }
+    #left_column2 .invite_widget .invite_content .sharing-show .twitter {
+      padding-right: 10px; }
+  #left_column2 .invite_widget .invite_content #invite_code input {
+    border: 1px solid #666666;
+    padding: 5px;
+    font-size: 1em;
+    width: 50%;
+    color: #888888; }
   #left_column2 .invite_widget .invite_content p {
     margin: 10px 0 0 0 !important;
     padding: 0 !important;

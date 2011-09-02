@@ -9,12 +9,32 @@
     .invite_header
       padding: 10px 10px 0 10px
       background-color: $darkblue
-      h4
+      h3
+        font-size: 1.8em
+        font-family: "Georgia, Times New Roman, serif"
+        font-weight: 100
         color: $white
         border-bottom: none
-        padding: 0
+        padding: 0 0 10px 0
         margin: 0
     .invite_content
+      .email
+        display: none
+      .sharing-show
+        margin: 10px 0
+        .twitter, .facebook
+          display: inline-block
+          vertical-align: middle
+        .twitter
+          padding-right: 10px
+      #invite_code
+        input
+          border: 1px solid $darkgrey
+          padding: 5px
+          font-size: 1em
+          width: 90%
+          color: #888
+
       padding: 10px
       p
         margin: 0
@@ -42,12 +62,31 @@
     text-align: center
     .invite_header
       padding: 10px 10px 0 10px
-      h2
+      h3
+        font-size: 1.8em
+        font-family: "Georgia, Times New Roman, serif"
+        font-weight: 100
         border-bottom: none
         padding: 0 !important
         margin: 0 !important
         color: $black !important
     .invite_content
+      .email
+        display: none
+      .sharing-show
+        margin: 10px 0
+        .twitter, .facebook
+          display: inline-block
+          vertical-align: middle
+        .twitter
+          padding-right: 10px
+      #invite_code
+        input
+          border: 1px solid $darkgrey
+          padding: 5px
+          font-size: 1em
+          width: 50%
+          color: #888
       p
         margin: 10px 0 0 0 !important
         padding: 0 !important
