@@ -7,18 +7,23 @@ class ApplicationController < ActionController::Base
 
   if Rails.env.production?
     rescue_from ActiveRecord::RecordNotFound do |e|
-      flash[:error] = "That record does not exist!"
-      redirect_to :back and return if !request.env["HTTP_REFERER"].nil?
-      redirect_to session[:return_to] and return if !session[:return_to].nil?
-      redirect_to root_url
+      flash[:alert] = "That record does not exist!"
+      redirect_to_back_or_default
     end
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_url, :alert => exception.message
+    flash[:alert] = exception.message
+    redirect_to_back_or_default
   end
 
   private
+
+  def redirect_to_back_or_default
+    redirect_to :back and return if !request.env["HTTP_REFERER"].nil?
+    redirect_to session[:return_to] and return if !session[:return_to].nil?
+    redirect_to root_url
+  end
 
   def check_for_email
     if !current_user.nil? &&

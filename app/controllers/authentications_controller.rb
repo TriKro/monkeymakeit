@@ -8,6 +8,7 @@ class AuthenticationsController < ApplicationController
   def destroy
     @authentication = Authentication.find(params[:id])
     @authentication.destroy
-    redirect_to(:back)
+    flash[:alert] = "That record was destroyed!"
+    redirect_to_back_or_default
   end
 end
