@@ -6,7 +6,7 @@ class Story < ActiveRecord::Base
   has_many :subscriptions, :dependent => :delete_all
   has_many :subscribers, :through => :subscriptions, :source => :user
   has_many :invites, :dependent => :destroy
-  has_many :chapters
+  has_many :chapters, :dependent => :destroy
 
   has_friendly_id :title, :use_slug => true
 end
