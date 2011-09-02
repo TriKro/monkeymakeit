@@ -1,0 +1,8 @@
+.invite_widget
+  .invite_header
+    %h2
+      Want a free book?
+  .invite_content
+    %p
+      Invite more friends!
+    = render :partial => "invites/invite_form", :locals => { :invite => invite, :invite_message => invite_message }

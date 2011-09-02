@@ -1,0 +1,75 @@
+@import 'variables'
+
+#right_column2
+  .invite_widget
+    background: #FFF
+    margin: 10px 0
+    border: 3px solid $darkblue
+    @include box-shadow(0, 0, 5px, 0, #666)
+    .invite_header
+      padding: 10px 10px 0 10px
+      background-color: $darkblue
+      h4
+        color: $white
+        border-bottom: none
+        padding: 0
+        margin: 0
+    .invite_content
+      padding: 10px
+      p
+        margin: 0
+        padding: 0
+        font-size: $larger
+        font-family: Arial, sans-serif
+      .field
+        margin: 10px 20px 0 0px
+        label
+          display: none
+        input
+          padding: 3px
+          width: 250px
+          font-size: $largest
+          font-family: $body-font
+          color: $darkgrey
+
+      .actions
+        text-align: center
+        margin: 10px 0 0 0
+
+#left_column2
+  .invite_widget
+    margin: 10px 0 40px 0
+    text-align: center
+    .invite_header
+      padding: 10px 10px 0 10px
+      h2
+        border-bottom: none
+        padding: 0 !important
+        margin: 0 !important
+        color: $black !important
+    .invite_content
+      p
+        margin: 10px 0 0 0 !important
+        padding: 0 !important
+        font-size: $larger
+        font-family: Arial, sans-serif
+        margin-left: 20px !important
+        text-align: center !important
+      p + p
+        text-indent: 0 !important
+      .blue_button
+        margin: 10px
+      .field
+        margin: 10px 20px 0 20px
+        label
+          display: none
+        input
+          padding: 3px
+          width: 250px
+          font-size: $largest
+          font-family: $body-font
+          color: $darkgrey
+
+      .actions
+        text-align: center
+        margin: 10px 0 0 0
