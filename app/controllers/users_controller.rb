@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
 
+  skip_filter :store_location, :only => :add_email
+
   cache_sweeper :user_sweeper
 
   def index
@@ -37,6 +39,20 @@ class UsersController < ApplicationController
       redirect_to(users_url, :notice => 'User was successfully updated.')
     else
       render :action => "edit"
+    end
+  end
+
+  def add_email
+    @user = current_user
+  end
+
+  def update_email
+    @user = current_user
+
+    if @user.update_attributes(params[:user])
+      redirect_to session[:return_to], :notice => 'Your email was successfully added.'
+    else
+      render :action => "add_email"
     end
   end
 

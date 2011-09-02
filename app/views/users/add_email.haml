@@ -1,0 +1,26 @@
+- title "- Add Email"
+- stylesheets 'add_email'
+- scripts 'add_email'
+
+#new_user
+  %h1
+    Awesome, just one more step!
+
+  %p
+    Please add your email address.
+  = form_for @user, :url => update_email_user_path(@user) do |f|
+    - if @user.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(resource.errors.count, "error")
+          prohibited this item from being saved:
+        %ul
+          - resource.errors.full_messages.each do |msg|
+            %li= msg
+
+    = f.text_field :email, :value => "Email Address", :class => "midgrey"
+    = f.submit 'Add Email'
+
+  %p#no_spam_disclaimer
+    %span.red *
+    We will never spam or sell your email address.

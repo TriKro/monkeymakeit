@@ -10,7 +10,11 @@ Monkeymakeit::Application.routes.draw do
   match "/auth/failure" => "sessions#failure", :as => :auth_failure
   match "/create_session" => "sessions#create"
 
-  resources :users
+  resources :users do
+    put :update_email, :on => :member
+  end
+  match '/please_add_your_email' => 'users#add_email', :as => :add_email
+
   resources :authentications, :only => [:index, :destroy]
   resources :stories
   match '/hiccup' => 'stories#show', :id => 'oh-mighty-hiccup'

@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   after_filter :store_location
+  before_filter :check_for_email
 
   rescue_from ActiveRecord::RecordNotFound do |e|
     flash[:error] = "That record does not exist!"
@@ -14,6 +15,17 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def check_for_email
+    if !current_user.nil? &&
+        current_user.email.nil? &&
+        request.get? &&
+        controller_name != "sessions" &&
+        (controller_name != "users" && action_name != "add_email")
+      redirect_to add_email_path
+    end
+  end
+
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
