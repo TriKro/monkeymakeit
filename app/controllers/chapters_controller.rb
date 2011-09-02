@@ -1,4 +1,5 @@
 class ChaptersController < ApplicationController
+  load_and_authorize_resource
 
   before_filter lambda {
     log_page_view('chapter') if request.get?
