@@ -6,14 +6,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    auth = request.env['omniauth.auth']
-    unless @auth = Authentication.find_from_hash(auth)
-      @auth = Authentication.create_from_hash(auth, current_user)
-    end
-    @user = @auth.user
-    session[:user_id] = @user.id # Log the user in
+    user = Authentication.find_or_create_from_hash(request.env['omniauth.auth'], current_user)
+    session[:user_id] = user.id # Log the user in
     flash[:notice] = "Logged in as #{current_user.full_name}"
-    redirect_to subscriptions_path({ :story_id => params[:story_id] }) and return if params[:story_id]
     redirect_to session[:return_to]
   end
 
