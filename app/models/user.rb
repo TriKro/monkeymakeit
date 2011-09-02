@@ -32,7 +32,12 @@ class User < ActiveRecord::Base
     info = hash['user_info']
     users_name = info['name']
     image = info['image'] if !info['image'].blank?
-    user = new( :full_name => users_name, :image => image )
+    if hash['provider'] == 'facebook'
+      email = hash['extra']['user_hash']['email']
+    else
+      email = nil
+    end
+    user = new( :full_name => users_name, :image => image, :email => email )
     user.save( false )
     user
   end
