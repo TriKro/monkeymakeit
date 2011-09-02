@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  validates_uniqueness_of :email
   validates_presence_of :email
   validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,}$/i
 
@@ -30,10 +29,15 @@ class User < ActiveRecord::Base
 
   def self.create_from_hash!(hash)
     info = hash['user_info']
+    puts hash
+    puts info
     users_name = info['name']
     image = info['image'] if !info['image'].blank?
+    puts "got the image"
     if hash['provider'] == 'facebook'
       email = hash['extra']['user_hash']['email']
+      puts "got the email"
+      puts email
     else
       email = nil
     end
