@@ -1,0 +1,13 @@
+#new_user {
+  text-align: center;
+  width: 950px; }
+  #new_user p {
+    margin: 20px 0;
+    color: #666666; }
+  #new_user #user_email {
+    height: 25px;
+    font-size: 1.5em;
+    padding: 5px;
+    color: #e6e6e6; }
+  #new_user .buttons {
+    text-align: right; }
