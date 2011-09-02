@@ -49,7 +49,9 @@
   #registration_thanks #invite #invite_options #sharing .sharing-show {
     margin: 10px 0 0 0; }
     #registration_thanks #invite #invite_options #sharing .sharing-show .twitter {
-      padding-left: 0px; }
+      padding-left: 0px;
+      padding-right: 10px;
+      float: left; }
     #registration_thanks #invite #invite_options #sharing .sharing-show .facebook {
       margin-left: 10px; }
   #registration_thanks #invite #invite_options #invite_code input {
