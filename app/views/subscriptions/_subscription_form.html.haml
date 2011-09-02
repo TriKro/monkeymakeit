@@ -4,34 +4,30 @@
       SUBSCRIBE
 
 - else
-  .signup_content
-    %p
-      Sign up here and I'll email you when it's ready.
+  = form_for(@user, :url => subscriptions_path, :html => { :class => "event_form_email_login" }) do |f|
+    - if @user.errors.any?
+      #error_explanation
+        %h4
+          = pluralize(@user.errors.count, "error")
+          prevented us from being awesome.
+        %ul
+          - @user.errors.full_messages.each do |msg|
+            %li= msg
 
-    = form_for(@user, :url => subscriptions_path, :html => { :class => "event_form_email_login" }) do |f|
-      - if @user.errors.any?
-        #error_explanation
-          %h4
-            = pluralize(@user.errors.count, "error")
-            prevented us from being awesome.
-          %ul
-            - @user.errors.full_messages.each do |msg|
-              %li= msg
+    = hidden_field_tag "story_id", @story.id
 
-      = hidden_field_tag "story_id", @story.id
+    .field
+      = f.label :full_name, "Name:"
+      = f.text_field :full_name, :class => "user_full_name", :value => params[:user].try(:[], :full_name).presence || "Name"
 
-      .field
-        = f.label :full_name, "Name:"
-        = f.text_field :full_name, :class => "user_full_name", :value => params[:user].try(:[], :full_name).presence || "Name"
+    .field
+      = f.label :email, "Email:"
+      = f.text_field :email, :class => "user_email", :value => params[:user].try(:[], :email).presence || "Email"
 
-      .field
-        = f.label :email, "Email:"
-        = f.text_field :email, :class => "user_email", :value => params[:user].try(:[], :email).presence || "Email"
+    .actions
+      = f.submit 'SIGN UP'
+    .clear
 
-      .actions
-        = f.submit 'SIGN UP'
-      .clear
-
-    %p{ :style => "font-size: 12px" }
-      %span.red *
-      We will never spam or sell your email address.
+  %p{ :style => "font-size: 12px" }
+    %span.red *
+    We will never spam or sell your email address.
