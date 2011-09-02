@@ -8,16 +8,17 @@
 
   %body
     %container
-      - if request.request_uri != '/'
+      - if request.env['PATH_INFO'] != '/'
         = render '/layouts/topnav'
 
       %content
         %content_inner
 
-          - if request.request_uri != '/' && can?(:manage, AdminController)
+          - if request.env['PATH_INFO'] != '/' && can?(:manage, AdminController)
             = render 'admin/nav'
 
-          = render :partial => '/layouts/flash', :locals => { :flash => flash }
+          - if request.env['PATH_INFO'] != '/'
+            = render :partial => '/layouts/flash', :locals => { :flash => flash }
 
           = yield
 
