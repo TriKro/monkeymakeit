@@ -10,12 +10,7 @@ class StoriesController < ApplicationController
   end
 
   def show
-    @story = Story.find(params[:id])
-    @user = User.new if !current_user
-    if current_user && current_user.subscribed?(@story)
-      @invite = current_user.invites.find_or_create_by_story_id(@story.id)
-      @invite_message = InviteMessage.new
-    end
+    redirect_to "/stories/#{params[:id]}/chapters/1"
   end
 
   def new

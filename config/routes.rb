@@ -16,7 +16,9 @@ Monkeymakeit::Application.routes.draw do
   match '/please_add_your_email' => 'users#add_email', :as => :add_email
 
   resources :authentications, :only => [:index, :destroy]
-  resources :stories
+  resources :stories do
+    resources :chapters
+  end
   match '/hiccup' => 'stories#show', :id => 'oh-mighty-hiccup'
 
   resources :invites, :path => :thanks do
