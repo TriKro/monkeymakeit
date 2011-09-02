@@ -10,7 +10,7 @@ class SubscriptionsController < ApplicationController
       redirect_to :signin, :alert => "Please use this page to sign in as an author or admin." and return if @user.access == "author" || @user.access == "admin"
       session[:user_id] = @user.id # Log the user in
     end
-    @referral_invite = Invite.find_by_code(session[:referral_code]) if session[:referral_code]
+    @referral_invite = Invite.find_by_code(session[:referral_code]) and session[:referral_code] = nil if session[:referral_code]
     @referral_invite.user.invitees << @user if @referral_invite
     @user.subscribed_stories << @story if !@user.subscribed_stories.find_by_id(@story.id)
     @invite = @user.invites.find_or_create_by_story_id(@story.id)
