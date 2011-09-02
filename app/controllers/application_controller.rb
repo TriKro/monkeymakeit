@@ -5,10 +5,12 @@ class ApplicationController < ActionController::Base
   after_filter :store_location
   before_filter :check_for_email
 
-  if RAILS_ENV == 'production'
+  if Rails.env.production?
     rescue_from ActiveRecord::RecordNotFound do |e|
       flash[:error] = "That record does not exist!"
-      redirect_to :back
+      redirect_to :back and return if !request.env["HTTP_REFERER"].nil?
+      redirect_to session[:return_to] and return if !session[:return_to].nil?
+      redirect_to root_url
     end
   end
 
