@@ -7,6 +7,7 @@
     %th Title
     %th Subtitle
     %th Summary
+    %th # of Subscribers
     - if can? :show, @story
       %th
     - if can? :update, @story
@@ -15,12 +16,13 @@
       %th
   - @stories.each do |story|
     %tr
-      %td= story.author.full_name
-      %td= story.title
+      %td= link_to story.author.full_name, story.author
+      %td= link_to story.title, story
       %td= story.subtitle
       %td= story.summary
+      %td= story.subscribers.count
       - if can? :show, @story
-        %td= link_to 'Show', story
+        %td
       - if can? :update, @story
         %td= link_to 'Edit', edit_story_path(story)
       - if can? :destroy, @story
