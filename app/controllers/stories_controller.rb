@@ -2,8 +2,8 @@ class StoriesController < ApplicationController
   load_and_authorize_resource
 
   before_filter lambda {
-    log_page_view('story')
-  }
+    log_page_view('story') if request.get?
+  }, :only => [:index, :show]
 
   def index
     @stories = Story.all

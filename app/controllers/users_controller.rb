@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   skip_filter :store_location, :only => :add_email
   cache_sweeper :user_sweeper
 
+  before_filter lambda {
+    log_page_view('user') if request.get?
+  }, :only => [:index, :show]
+
   def index
     @users = User.all
   end

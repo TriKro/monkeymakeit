@@ -1,6 +1,5 @@
 class SubscriptionsController < ApplicationController
   load_and_authorize_resource
-
   cache_sweeper :user_sweeper, :subscription_sweeper
 
   def create

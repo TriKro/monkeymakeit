@@ -2,8 +2,12 @@ class SessionsController < ApplicationController
   skip_filter :store_location
   cache_sweeper :user_sweeper
 
+
+  before_filter lambda {
+    log_page_view('sign up') if request.get?
+  }, :only => :new
+
   def new
-    @registration = User.new
   end
 
   def create
