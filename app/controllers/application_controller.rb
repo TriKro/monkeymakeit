@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
   def check_for_email
     if !current_user.nil? &&
-        current_user.email.nil? &&
+        current_user.email.blank? &&
         request.get? &&
         controller_name != "sessions" &&
         (controller_name != "users" && action_name != "add_email")
