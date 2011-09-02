@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   def store_location
-    session[:return_to] = request.url if request.get? and controller_name != "sessions"
+    session[:return_to] = request.url if request.get?
   end
 
 end

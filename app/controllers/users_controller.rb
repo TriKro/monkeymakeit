@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
-
   skip_filter :store_location, :only => :add_email
-
   cache_sweeper :user_sweeper
 
   def index

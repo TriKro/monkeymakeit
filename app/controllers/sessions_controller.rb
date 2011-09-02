@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_filter :store_location
   cache_sweeper :user_sweeper
 
   def new
