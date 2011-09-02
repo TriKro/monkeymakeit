@@ -1,7 +1,4 @@
+- title "- Sign Up or Sign In"
 - stylesheets 'signin'
 
-= link_to("/auth/facebook", :class => "nodec") do
-  .signin_facebook
-
-= link_to("/auth/twitter", :class => "nodec") do
-  .signin_twitter
+= render 'sessions/signup_form'
