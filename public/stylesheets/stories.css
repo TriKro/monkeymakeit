@@ -110,13 +110,13 @@ content {
       padding: 20px 20px 30px 0; }
       #story #left_column2 .story_pic img {
         width: 250px; }
-    #story #left_column2 #art_credit {
+    #story #left_column2 .art_credit {
       position: absolute;
       font-size: 0.9em;
       bottom: 14px;
       left: 60px;
       color: #666666; }
-    #story #left_column2 #first_letter {
+    #story #left_column2 .first_letter {
       font-size: 48px;
       font-weight: 100;
       font-family: "Georgia, Times New Roman, serif";
@@ -130,7 +130,7 @@ content {
       text-align: justify; }
       #story #left_column2 p + p {
         text-indent: 30px; }
-    #story #left_column2 #first_p {
+    #story #left_column2 p.first_p {
       margin-top: 20px; }
     #story #left_column2 .copyright {
       font-size: 0.9em;

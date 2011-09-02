@@ -1,0 +1,38 @@
+- title: Oh, Mighty Hiccup!
+  subtitle: a novel about brothers, hiccups, and the end of time
+  author: scott@omnibucket.com
+  chapters:
+    - index: 1
+      creatives:
+        - creative_type: image
+          filename: cover-hiccup-chapter1.png
+          title: Untitled
+          creator: Tyler Landry
+        - creative_type: text
+          filename: hiccup_1.txt
+
+- title: Doris
+  subtitle: a short story about an albino duck
+  author: scott@omnibucket.com
+  chapters:
+    - index: 1
+      creatives:
+        - creative_type: image
+          filename: image-doris.jpg
+          title: Doris
+          creator: Tyler Landry
+        - creative_type: text
+          filename: doris_1.txt
+
+- title: Life of the Gallows
+  subtitle: a short story about a medieval jester-turned-executioner
+  author: scott@omnibucket.com
+  chapters:
+    - index: 1
+      creatives:
+        - creative_type: image
+          filename: image-life_of_the_gallows.jpg
+          title: Jester
+          creator: Tyler Landry
+        - creative_type: text
+          filename: gallows_1.txt

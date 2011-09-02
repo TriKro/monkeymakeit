@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110831060441) do
+ActiveRecord::Schema.define(:version => 20110902034237) do
 
   create_table "activities", :force => true do |t|
     t.integer   "user_id"
@@ -41,6 +41,23 @@ ActiveRecord::Schema.define(:version => 20110831060441) do
     t.string    "secret"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+  end
+
+  create_table "chapters", :force => true do |t|
+    t.integer  "index"
+    t.integer  "story_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "creatives", :force => true do |t|
+    t.string   "creative_type"
+    t.string   "filename"
+    t.string   "title"
+    t.string   "creator"
+    t.integer  "chapter_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "invites", :force => true do |t|

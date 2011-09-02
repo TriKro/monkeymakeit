@@ -5,9 +5,11 @@ class ApplicationController < ActionController::Base
   after_filter :store_location
   before_filter :check_for_email
 
-  rescue_from ActiveRecord::RecordNotFound do |e|
-    flash[:error] = "That record does not exist!"
-    redirect_to :back
+  if RAILS_ENV == 'production'
+    rescue_from ActiveRecord::RecordNotFound do |e|
+      flash[:error] = "That record does not exist!"
+      redirect_to :back
+    end
   end
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -28,7 +30,7 @@ class ApplicationController < ActionController::Base
 
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
   end
 
   def log_page_view(type)

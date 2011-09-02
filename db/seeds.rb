@@ -32,8 +32,8 @@ auth.update_attributes(:secret => "dZWY2OE8mfOikjBWW6bAeHKSSsOJl0BGU9qkYE3rImA",
                        :provider => "twitter",
                        :user_id => user.id)
 
-user = User.find_or_create_by_email(:email => "scott@omnibucket.com")
-user.update_attributes(:full_name => "Scott Lambridis",
+scott = User.find_or_create_by_email(:email => "scott@omnibucket.com")
+scott.update_attributes(:full_name => "Scott Lambridis",
                        :image => "/images/avatars/image-scott-lambridis.png",
                        :bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time.",
                        :access => "admin")
@@ -41,19 +41,17 @@ user.update_attributes(:full_name => "Scott Lambridis",
 auth = Authentication.find_or_create_by_token(:token => "169349883130377|dd0dec9c68aec02ea07d38b7.1-713411825|XuASGELymbbvxAC01zyIzQmixSM")
 auth.update_attributes(:uid => "713411825",
                        :provider => "facebook",
-                       :user_id => user.id)
+                       :user_id => scott.id)
 
-story = Story.find_or_create_by_title(:title => "Oh, Mighty Hiccup!",
-                                      :subtitle => "a novel about brothers, hiccups, and the end of time")
+Story.destroy_all
+Chapter.destroy_all
+Creative.destroy_all
 
-user.stories << story
-
-story = Story.find_or_create_by_title(:title => "Doris",
-                                      :subtitle => "a short story about an albino duck")
-
-user.stories << story
-
-story = Story.find_or_create_by_title(:title => "Life of the Gallows",
-                                      :subtitle => "a short story about a medieval jester-turned-executioner")
-
-user.stories << story
+YAML::load(File.open("#{Rails.root}/app/views/stories/index.yml")).each do |story|
+  story['author'] = User.find_by_email(story['author'])
+  story['chapters'] = story['chapters'].collect do |chapter|
+    chapter['creatives'] = chapter['creatives'].collect{|c| Creative.create c}
+    Chapter.create(chapter)
+  end
+  Story.create(story)
+end

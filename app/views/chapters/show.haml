@@ -1,20 +1,3 @@
-- # Bullshit cruft until artwork model is in.
-- if @story.title == "Oh, Mighty Hiccup!"
-  - @content = "hiccup"
-  - @art = { :artwork => "/images/stories/cover-hiccup-chapter1.png",
-             :artwork_title => "Untitled",
-             :artist => "Tyler Landry"}
-- elsif @story.title == "Life of the Gallows"
-  - @content = "life_of_the_gallows"
-  - @art = { :artwork => "/images/stories/image-life_of_the_gallows.jpg",
-             :artwork_title => "Jester",
-             :artist => "Tyler Landry"}
-- elsif @story.title == "Doris"
-  - @content = "doris"
-  - @art = { :artwork => "/images/stories/image-doris.jpg",
-             :artwork_title => "Doris",
-             :artist => "Tyler Landry"}
-
 - title "- " + @story.title + " - " + @story.subtitle
 - stylesheets 'stories'
 - scripts 'stories'
@@ -33,16 +16,8 @@
   .clear
 
   #left_column2
-    .story_pic
-      %img{ :src => "#{ @art[:artwork] }" }
-      #art_credit
-        "
-        %b><
-          = @art[:artwork_title]
-        " by
-        = @art[:artist]
-
-    = render "stories/#{ @content }"
+    - @chapter.creatives.each do |creative|
+      = raw creative.render
 
     - if current_user && current_user.subscribed?(@story)
       = render :partial => "invites/invite_widget", :locals => { :invite => @invite, :invite_message => @invite_message }
