@@ -2,12 +2,12 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,}$/i
 
-  has_many :authentications
-  has_many :stories, :foreign_key => "author_id"
-  has_many :subscriptions
+  has_many :authentications, :dependent => :destroy
+  has_many :stories, :foreign_key => "author_id", :dependent => :nullify
+  has_many :subscriptions, :dependent => :delete_all
   has_many :subscribed_stories, :through => :subscriptions, :source => :story
-  has_many :invites
-  has_many :invitees, :class_name => "User", :foreign_key => "inviter_id"
+  has_many :invites, :dependent => :nullify
+  has_many :invitees, :class_name => "User", :foreign_key => "inviter_id", :dependent => :nullify
   belongs_to :inviter, :class_name => "User"
   has_friendly_id :slug_name, :use_slug => true
 
