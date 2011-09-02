@@ -1,5 +1,6 @@
 class ChangeSubscribersSubscriptionsToSubscriptions < ActiveRecord::Migration
   def self.up
+    drop_table :subscriptions if table_exists?("subscriptions")
     rename_table :subscribers_subscriptions, :subscriptions
     add_column :subscriptions, :id, :primary_key
   end

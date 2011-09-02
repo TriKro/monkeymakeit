@@ -1,10 +1,12 @@
 class CreateChapters < ActiveRecord::Migration
   def self.up
-    create_table :chapters do |t|
-      t.integer :index
-      t.integer :story_id
+    if !table_exists?("chapters")
+      create_table :chapters do |t|
+        t.integer :index
+        t.integer :story_id
 
-      t.timestamps
+        t.timestamps
+      end
     end
   end
 
