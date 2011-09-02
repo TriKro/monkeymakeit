@@ -1,5 +1,6 @@
 class Creative < ActiveRecord::Base
   belongs_to :chapter
+  #XXX: Recreated every single deploy. Fix that if you need new associations.
 
   def render
     return render_image if creative_type == 'image'

@@ -43,15 +43,13 @@ auth.update_attributes(:uid => "713411825",
                        :provider => "facebook",
                        :user_id => scott.id)
 
-##Story.destroy_all
-#Chapter.destroy_all
-#Creative.destroy_all
-#
-#YAML::load(File.open("#{Rails.root}/app/views/stories/index.yml")).each do |story|
-#  #story['author'] = User.find_by_email(story['author'])
-#  story['chapters'] = story['chapters'].collect do |chapter|
-#    chapter['creatives'] = chapter['creatives'].collect{|c| Creative.create c}
-#    Chapter.create(chapter)
-#  end
-#  #Story.create(story)
-#end
+Chapter.destroy_all
+Creative.destroy_all
+YAML::load(File.open("#{Rails.root}/app/views/stories/index.yml")).each do |story|
+  story['author'] = User.find_by_email(story['author'])
+  story['chapters'] = story['chapters'].collect do |chapter|
+    chapter['creatives'] = chapter['creatives'].collect{|c| Creative.create c}
+    Chapter.create(chapter)
+  end
+  Story.find_or_create_by_title(story['title']).update_attributes(story)
+end
