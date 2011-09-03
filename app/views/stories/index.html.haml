@@ -7,9 +7,8 @@
     %th Title
     %th Subtitle
     %th Summary
+    %th Chapters
     %th # of Subscribers
-    - if can? :show, @story
-      %th
     - if can? :update, @story
       %th
     - if can? :destroy, @story
@@ -20,9 +19,10 @@
       %td= link_to story.title, story
       %td= story.subtitle
       %td= story.summary
-      %td= story.subscribers.count
-      - if can? :show, @story
-        %td
+      %td{ :style => 'text-align: center;' }
+        = story.chapters.count
+      %td{ :style => 'text-align: center;' }
+        = story.subscribers.count
       - if can? :update, @story
         %td= link_to 'Edit', edit_story_path(story)
       - if can? :destroy, @story
