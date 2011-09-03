@@ -1,5 +1,6 @@
 class ChaptersController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :story
+  load_and_authorize_resource :chapter, :through => :story
 
   before_filter lambda {
     log_page_view('chapter') if request.get?

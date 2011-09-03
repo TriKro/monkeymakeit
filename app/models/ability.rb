@@ -6,7 +6,9 @@ class Ability
 
     can :create, ContactMessage
     can :read, Story
-    can :read, Chapter
+    can :read, Chapter, Chapter do |chapter|
+      !chapter.publishing_date.nil? && chapter.publishing_date <= Time.now
+    end
     can :read, Creative
     can :referral_redirect, Story
     can :show, User
