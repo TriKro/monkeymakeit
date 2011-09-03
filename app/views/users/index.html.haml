@@ -6,7 +6,8 @@
     %th Name
     %th Email
     %th Access
-    %th # Invited
+    %th # of Subscriptions
+    %th # of Invitees
     - if can? :show, @user
       %th
     - if can? :update, @user
@@ -15,12 +16,11 @@
       %th
   - @users.each do |user|
     %tr
-      %td
-        = link_to user.identifier, user
+      %td= link_to user.identifier, user
       %td= user.email
       %td= user.access
-      %td{ :style => "text-align: center;"}
-        = user.invitees.count
+      %td{ :style => "text-align: center;"}= user.subscriptions.count
+      %td{ :style => "text-align: center;"}= user.invitees.count
       - if can? :update, @user
         %td= link_to 'Edit', edit_user_path(user)
       - if can? :destroy, @user
