@@ -2,7 +2,7 @@ class AuthenticationsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @authentications = Authentication.all
+    @authentications = Authentication.order("user_id")
   end
 
   def destroy

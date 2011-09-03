@@ -3,7 +3,6 @@
 %h1 Listing Authentications
 %table
   %tr
-    %th User ID
     %th User
     %th Provider
     %th UID
@@ -12,12 +11,7 @@
   - @authentications.each do |authentication|
     %tr
       %td
-        - if !authentication.user.blank?
-          = link_to authentication.user do
-            - if !authentication.user.full_name.blank?
-              = authentication.user.full_name
-            - else
-              =authentication.user.id
+        = link_to authentication.user.identifier, authentication.user if !authentication.user.nil?
       %td= authentication.provider
       %td= authentication.uid
       - if can? :destroy, @authenticaion
