@@ -9,13 +9,17 @@
           %li= msg
   = hidden_field_tag "story_id", @story.id
   .field
+    = f.label :index
+    %br/
+    = f.number_field :index
+  .field
     = f.label :title
     %br/
     = f.text_field :title
   .field
-    = f.label :index
+    = f.label :publishing_date
     %br/
-    = f.number_field :index
+    = f.datetime_select(:publishing_date)
 
   .actions
     %span.lowbutton
