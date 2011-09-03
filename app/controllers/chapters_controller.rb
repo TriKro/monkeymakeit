@@ -19,4 +19,44 @@ class ChaptersController < ApplicationController
       @invite_message = InviteMessage.new
     end
   end
+
+  def new
+    @story = Story.find(params[:story_id])
+    @chapter = Chapter.new
+  end
+
+  def edit
+    @story = Story.find(params[:story_id])
+    @chapter = @story.chapters.find(params[:id])
+  end
+
+  def update
+    @story = Story.find(params[:story_id])
+    @chapter = @story.chapters.find(params[:id])
+
+    if @chapter.update_attributes(params[:chapter])
+      redirect_to(story_chapters_url(@story), :notice => 'Chapter was successfully updated.')
+    else
+      render :action => "edit"
+    end
+  end
+
+  def create
+    @story = Story.find(params[:story_id])
+    @chapter = Chapter.new(params[:chapter])
+
+    if @story.chapters << @chapter
+      redirect_to(story_chapters_url(@story), :notice => 'Chapter was successfully created.')
+    else
+      render :action => "new"
+    end
+  end
+
+  def destroy
+    @story = Story.find(params[:story_id])
+    @chapter = @story.chapters.find(params[:id])
+    @chapter.destroy
+    redirect_to(story_chapters_url(@story), :notice => 'Chapter was successfully destroyed.')
+  end
+
 end

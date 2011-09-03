@@ -9,13 +9,14 @@
   - @chapters.each do |chapter|
     .chapter
       = link_to [@story, chapter] do
-        %img{ :src => '/images/stories/' + chapter.creatives.images.first.filename, :class => "chapter_image" }
+        - if !chapter.creatives.images.blank?
+          %img{ :src => '/images/stories/' + chapter.creatives.images.first.filename, :class => "chapter_image" }
         %h2.chapter_identifier
           = chapter.identifier
-      -#- if can? :update, @chapter
-        -#%td= link_to 'Edit', edit_chapter_path(chapter)
-      -#- if can? :destroy, @chapter
-      -#  %td= link_to 'Destroy', chapter, :confirm => 'Are you sure?', :method => :delete
+      - if can? :update, @chapter
+        %td= link_to 'Edit', edit_story_chapter_path(@story, chapter)
+      - if can? :destroy, @chapter
+        %td= link_to 'Destroy', [@story, chapter], :confirm => 'Are you sure?', :method => :delete
 
--#- if can? :create, Chapter
-  -#= link_to "Create new chapter", new_chapter_path
+- if can? :create, Chapter
+  = link_to "Create new chapter", new_story_chapter_path(@story)

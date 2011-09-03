@@ -1,0 +1,23 @@
+= form_for([@story, @chapter]) do |f|
+  - if @chapter.errors.any?
+    #error_explanation
+      %h4
+        = pluralize(@chapter.errors.count, "error")
+        prohibited this chapter from being saved:
+      %ul
+        - @chapter.errors.full_messages.each do |msg|
+          %li= msg
+  = hidden_field_tag "story_id", @story.id
+  -#.field
+  -#  = f.label :title
+  -#  %br/
+  -#  = f.text_field :title
+  .field
+    = f.label :index
+    %br/
+    = f.number_field :index
+
+  .actions
+    %span.lowbutton
+      = link_to 'Back', :back if :back
+    = f.submit
