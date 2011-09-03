@@ -11,7 +11,8 @@ class StoriesController < ApplicationController
 
   def show
     story = Story.find(params[:id])
-    redirect_to "/stories/#{story.id}/chapters/#{story.chapters.find_by_index(1).id}"
+    chapter = story.chapters.first
+    redirect_to story_chapter_path(story, chapter)
   end
 
   def new
