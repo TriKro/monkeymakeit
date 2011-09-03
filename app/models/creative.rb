@@ -3,6 +3,9 @@ class Creative < ActiveRecord::Base
   belongs_to :creator, :class_name => "User"
   #XXX: Recreated every single deploy. Fix that if you need new associations.
 
+  scope :images, where(:creative_type => 'image')
+  scope :text, where(:creative_type => 'text')
+
   def render
     return render_image if creative_type == 'image'
     return render_text if creative_type == 'text'

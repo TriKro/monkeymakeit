@@ -19,10 +19,8 @@
       %td= link_to story.title, story
       %td= story.subtitle
       %td= story.summary
-      %td{ :style => 'text-align: center;' }
-        = story.chapters.count
-      %td{ :style => 'text-align: center;' }
-        = story.subscribers.count
+      %td{ :style => 'text-align: center;' }= link_to story.chapters.count, story_chapters_path(story)
+      %td{ :style => 'text-align: center;' }= story.subscribers.count
       - if can? :update, @story
         %td= link_to 'Edit', edit_story_path(story)
       - if can? :destroy, @story

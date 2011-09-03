@@ -5,6 +5,11 @@ class ChaptersController < ApplicationController
     log_page_view('chapter') if request.get?
   }, :only => :show
 
+  def index
+    @story = Story.find(params[:story_id])
+    @chapters = @story.chapters
+  end
+
   def show
     @story = Story.find(params[:story_id])
     @chapter = @story.chapters.find_by_index(1)
