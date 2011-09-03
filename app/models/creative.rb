@@ -1,5 +1,6 @@
 class Creative < ActiveRecord::Base
   belongs_to :chapter
+  belongs_to :creator, :class_name => "User"
   #XXX: Recreated every single deploy. Fix that if you need new associations.
 
   def render

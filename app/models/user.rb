@@ -3,7 +3,9 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,}$/i
 
   has_many :authentications, :dependent => :destroy
+  has_many :creatives, :dependent => :nullify
   has_many :stories, :foreign_key => "author_id", :dependent => :nullify
+  has_many :chapters, :through => :stories
   has_many :subscriptions, :dependent => :delete_all
   has_many :subscribed_stories, :through => :subscriptions, :source => :story
   has_many :invites, :dependent => :nullify
@@ -19,12 +21,26 @@ class User < ActiveRecord::Base
     "\"#{full_name}\" <#{email}>"
   end
 
+  def subscribed?(story)
+    !subscribed_stories.find_by_id(story.id).nil?
+  end
+
   def name_or_email
     full_name.blank? ? email : full_name
   end
 
   def email_or_name
     email.blank? ? full_name : email
+  end
+
+  def identifier
+    return full_name if !full_name.blank?
+    return email if !email.blank?
+    id
+  end
+
+  def slug_name
+    full_name.blank? ? 'Anonymous' : full_name
   end
 
   def self.create_from_hash!(hash)
@@ -49,17 +65,6 @@ class User < ActiveRecord::Base
       user.update_attributes(attribute)
     end
     user
-  end
-
-  def slug_name
-    if full_name.blank?
-      return 'Anonymous'
-    end
-    full_name
-  end
-
-  def subscribed?(story)
-    !subscribed_stories.find_by_id(story.id).nil?
   end
 
 end
