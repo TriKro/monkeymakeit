@@ -4,7 +4,7 @@ class Chapter < ActiveRecord::Base
   has_friendly_id :index
   #XXX: Recreated every single deploy. Fix that if you need new associations.
 
-  named_scope :published, lambda { {:conditions => ["publishing_date <= ?", Time.now]} }
+  scope :published, lambda { {:conditions => ["publishing_date <= ?", Time.now]} }
 
   def identifier
     return title if !title.blank?
