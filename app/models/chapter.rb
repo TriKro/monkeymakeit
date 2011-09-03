@@ -5,6 +5,7 @@ class Chapter < ActiveRecord::Base
   #XXX: Recreated every single deploy. Fix that if you need new associations.
 
   def identifier
+    return title if !title.blank?
     "Chapter " + index.to_s
   end
 end

@@ -8,10 +8,10 @@
         - @chapter.errors.full_messages.each do |msg|
           %li= msg
   = hidden_field_tag "story_id", @story.id
-  -#.field
-  -#  = f.label :title
-  -#  %br/
-  -#  = f.text_field :title
+  .field
+    = f.label :title
+    %br/
+    = f.text_field :title
   .field
     = f.label :index
     %br/
