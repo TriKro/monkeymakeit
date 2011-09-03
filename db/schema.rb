@@ -51,13 +51,13 @@ ActiveRecord::Schema.define(:version => 20110902034237) do
   end
 
   create_table "creatives", :force => true do |t|
-    t.string   "creative_type"
-    t.string   "filename"
-    t.string   "title"
-    t.string   "creator"
-    t.integer  "chapter_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "creative_type"
+    t.string    "filename"
+    t.string    "title"
+    t.string    "creator"
+    t.integer   "chapter_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "invites", :force => true do |t|
@@ -109,15 +109,15 @@ ActiveRecord::Schema.define(:version => 20110902034237) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "inviter_id"
-    t.string   "full_name"
-    t.string   "image"
-    t.string   "access",      :default => "reader"
-    t.text     "bio"
-    t.string   "cached_slug"
+    t.string    "email"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "inviter_id"
+    t.string    "full_name"
+    t.string    "image"
+    t.string    "access",      :default => "reader"
+    t.text      "bio"
+    t.string    "cached_slug"
   end
 
   add_index "users", ["cached_slug"], :name => "index_users_on_cached_slug", :unique => true

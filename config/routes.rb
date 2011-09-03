@@ -17,7 +17,7 @@ Monkeymakeit::Application.routes.draw do
 
   resources :authentications, :only => [:index, :destroy]
   resources :stories do
-    resources :chapters
+    resources :chapters, :path => "chapter"
   end
   match '/hiccup' => 'stories#show', :id => 'oh-mighty-hiccup'
 
