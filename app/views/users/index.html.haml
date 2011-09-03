@@ -16,12 +16,11 @@
   - @users.each do |user|
     %tr
       %td
-        = link_to user.name_or_email, user
+        = link_to user.identifier, user
       %td= user.email
       %td= user.access
-      %td= user.invitees.count
-      - if can? :show, @user
-        %td= link_to 'Show', user
+      %td{ :style => "text-align: center;"}
+        = user.invitees.count
       - if can? :update, @user
         %td= link_to 'Edit', edit_user_path(user)
       - if can? :destroy, @user
