@@ -7,16 +7,17 @@
     = @story.title
     \- Table of Contents
   - @chapters.each do |chapter|
-    .chapter
-      = link_to [@story, chapter] do
-        - if !chapter.creatives.images.blank?
-          %img{ :src => '/images/stories/' + chapter.creatives.images.first.filename, :class => "chapter_image" }
-        %h2.chapter_identifier
-          = chapter.identifier
-      - if can? :update, @chapter
-        %td= link_to 'Edit', edit_story_chapter_path(@story, chapter)
-      - if can? :destroy, @chapter
-        %td= link_to 'Destroy', [@story, chapter], :confirm => 'Are you sure?', :method => :delete
+    - if can? :show, chapter
+      .chapter
+        = link_to [@story, chapter] do
+          - if !chapter.creatives.images.blank?
+            %img{ :src => '/images/stories/' + chapter.creatives.images.first.filename, :class => "chapter_image" }
+          %h2.chapter_identifier
+            = chapter.identifier
+        - if can? :update, @chapter
+          %td= link_to 'Edit', edit_story_chapter_path(@story, chapter)
+        - if can? :destroy, @chapter
+          %td= link_to 'Destroy', [@story, chapter], :confirm => 'Are you sure?', :method => :delete
 
 - if can? :create, Chapter
   = link_to "Create new chapter", new_story_chapter_path(@story)

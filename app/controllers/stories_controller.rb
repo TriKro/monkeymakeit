@@ -10,16 +10,15 @@ class StoriesController < ApplicationController
   end
 
   def show
-    story = Story.find(params[:id])
-    chapter = story.chapters.first
-    redirect_to story_chapter_path(story, chapter)
+    @story = Story.find(params[:id])
+    @chapter = @story.chapters.first
+    redirect_to story_chapter_path(@story, @chapter)
   end
 
   def new
     @story = Story.new
   end
 
-  # GET /stories/1/edit
   def edit
     @story = Story.find(params[:id])
   end
@@ -27,7 +26,7 @@ class StoriesController < ApplicationController
   def create
     @story = Story.new(params[:story])
 
-    if @story.save
+    if current_user.stories << @story
       redirect_to(stories_url, :notice => 'Story was successfully created.')
     else
       render :action => "new"
