@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110904045517) do
+ActiveRecord::Schema.define(:version => 20110904050307) do
 
   create_table "activities", :force => true do |t|
     t.integer   "user_id"
@@ -75,6 +75,13 @@ ActiveRecord::Schema.define(:version => 20110904045517) do
   add_index "invites", ["cached_slug"], :name => "index_invites_on_cached_slug", :unique => true
   add_index "invites", ["code"], :name => "index_invites_on_code", :unique => true
 
+  create_table "referrals", :id => false, :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "invite_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "slugs", :force => true do |t|
     t.string    "name"
     t.integer   "sluggable_id"
@@ -115,7 +122,6 @@ ActiveRecord::Schema.define(:version => 20110904045517) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "inviter_id"
     t.string   "name"
     t.string   "image"
     t.string   "access",      :default => "reader"

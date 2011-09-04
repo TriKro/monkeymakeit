@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   has_many :subscriptions, :dependent => :delete_all
   has_many :subscribed_stories, :through => :subscriptions, :source => :story
   has_many :invites, :dependent => :nullify
-  has_many :invitees, :class_name => "User", :foreign_key => "inviter_id", :dependent => :nullify
-  belongs_to :inviter, :class_name => "User"
+  has_many :referrals, :dependent => :delete_all
+  has_many :accepted_invites, :through => :referrals, :source => :invite
   has_friendly_id :slug_name, :use_slug => true
 
   def first_name
@@ -23,6 +23,19 @@ class User < ActiveRecord::Base
 
   def subscribed?(story)
     !subscribed_stories.find_by_id(story.id).nil?
+  end
+
+
+  def referrals_accepted
+    Referral.find_all_by_invite_id(self.invite_ids)
+  end
+
+  def invitees
+    invitees = []
+    referrals_accepted.each do |referral_accepted|
+      invitees << User.find_by_id(referral_accepted.user_id)
+    end
+    invitees
   end
 
   def name_or_email

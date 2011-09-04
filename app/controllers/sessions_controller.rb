@@ -36,7 +36,7 @@ class SessionsController < ApplicationController
 
     # add referrer if any
     @referral_invite = Invite.find_by_code(session[:referral_code]) and session[:referral_code] = nil if session[:referral_code]
-    @referral_invite.user.invitees << @user if @referral_invite
+    @referral_invite.referrals << Referral.new(:user_id => @user.id) if @referral_invite
 
     # Subscribe the user to the story if there is one and go to invite page.
     if !@story.nil? && @user.subscribed_stories.find_by_id(@story.id).nil?
