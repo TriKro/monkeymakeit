@@ -27,7 +27,7 @@ class UserMailer < ActionMailer::Base
 
   def new_subscriber_email(subscription)
     @story = subscription.story
-    @author = subscription.story.author
+    @author = subscription.story.user
     @subscriber = subscription.user
     @invite = @story.invites.find_or_create_by_user_id(@author.id)
     return if @author.email.nil?
@@ -38,7 +38,7 @@ class UserMailer < ActionMailer::Base
 
   def new_subscription_email(subscription)
     @story = subscription.story
-    @author = subscription.story.author
+    @author = subscription.story.user
     @user = subscription.user
     @invite = @story.invites.find_or_create_by_user_id(@user.id)
     return if @user.email.nil?

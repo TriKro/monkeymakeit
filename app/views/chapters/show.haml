@@ -59,6 +59,6 @@
         %img{ :src => "/images/text/text-abouttheauthor.png", :alt => "About the Author", :title => "About the Author" }
       %author_image
         %span{ :style => "float: left;"}
-          %img{:src => @story.author.image, :width => "100px;", :style => "margin: 0 10px 0 0;"}
+          %img{:src => @story.user.image, :width => "100px;", :style => "margin: 0 10px 0 0;"}
         %p
-          = @story.author.bio
+          = @story.user.bio
