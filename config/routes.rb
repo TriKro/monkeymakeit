@@ -36,7 +36,7 @@ Monkeymakeit::Application.routes.draw do
           :privacy_policy,
           :terms_of_service,
           :about,
-          :cookie
+          :cookie # private; to exclude from logging
   ].each do |static_page|
     match "/#{static_page}" => "static##{static_page}", :as => static_page
   end
@@ -46,8 +46,7 @@ Monkeymakeit::Application.routes.draw do
   match "/contact" => "contact_messages#new", :as => :contact
   match "/thanks_for_your_message" => "contact_messages#thanks", :as => :contact_thanks
 
-  # Team members, bookmark the admin page. Visit it first to be excluded from
-  # logging.
+  # Private
   match '/admin' => 'admin#index'
   match '/set_experiment' => 'admin#set_experiment', :as => :set_experiment
 
