@@ -2,7 +2,7 @@
   subtitle: a novel about brothers, hiccups, and the end of time
   author: scott@omnibucket.com
   chapters:
-    - index: 1
+    - chapter_index: 1
       creatives:
         - creative_type: image
           filename: cover-hiccup-chapter1.png
@@ -15,7 +15,7 @@
   subtitle: a short story about an albino duck
   author: scott@omnibucket.com
   chapters:
-    - index: 1
+    - chapter_index: 1
       creatives:
         - creative_type: image
           filename: image-doris.jpg
@@ -28,7 +28,7 @@
   subtitle: a short story about a medieval jester-turned-executioner
   author: scott@omnibucket.com
   chapters:
-    - index: 1
+    - chapter_index: 1
       creatives:
         - creative_type: image
           filename: image-life_of_the_gallows.jpg

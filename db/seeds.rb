@@ -46,7 +46,8 @@ auth.update_attributes(:uid => "713411825",
 Chapter.destroy_all
 Creative.destroy_all
 YAML::load(File.open("#{Rails.root}/app/views/stories/index.yml")).each do |story|
-  story['author'] = User.find_by_email(story['author'])
+  story['user'] = User.find_by_email(story['author'])
+  story.delete 'author'
   story['chapters'] = story['chapters'].collect do |chapter|
     chapter['creatives'] = chapter['creatives'].collect{|c| Creative.create c}
     Chapter.create(chapter)
