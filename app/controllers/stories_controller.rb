@@ -60,7 +60,7 @@ class StoriesController < ApplicationController
     else
       km.record('referral arrival')
     end
-    flash[:info] = "#{@inviter.full_name} thought you might like this story." if !@inviter.full_name.blank?
+    flash[:info] = "#{@inviter.name} thought you might like this story." if !@inviter.name.blank?
     redirect_to story_path(invite.story)
   end
 

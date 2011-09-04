@@ -18,7 +18,7 @@
       .field
         = text_field_tag "invite_message[recipients]", "Your friend's email address", :class => "grey"
       .field
-        = text_area_tag "invite_message[content]", 'Check out this first draft chapter of "' + invite.story.title + '" by ' + invite.story.author.full_name + '. http://monkeymake.it/i/' + invite.code + ' Pretty cool. Thanks!', :class => "grey"
+        = text_area_tag "invite_message[content]", 'Check out this first draft chapter of "' + invite.story.title + '" by ' + invite.story.author.name + '. http://monkeymake.it/i/' + invite.code + ' Pretty cool. Thanks!', :class => "grey"
       .action
         = submit_tag "SEND", :id => "invite_submit", :class => "grey"
 .clear

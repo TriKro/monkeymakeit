@@ -1,5 +1,5 @@
-- if @user.full_name != NIL
-  = title "- Editing User - " + @user.full_name
+- if @user.name != NIL
+  = title "- Editing User - " + @user.name
 - else
   = title "- Editing User - " + @user.id.to_s
 

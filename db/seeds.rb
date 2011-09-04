@@ -1,7 +1,7 @@
 ActiveRecord::Observer.disable_observers
 
 user = User.find_or_create_by_email(:email => "accounts@tristankromer.com")
-user.update_attributes(:full_name => "Tristan Kromer",
+user.update_attributes(:name => "Tristan Kromer",
                        :image => "http://a2.twimg.com/profile_images/1092489881/24208_1328078796346_1062228442_1001804_2392997_n_normal.jpg",
                        :access => "admin")
 
@@ -17,7 +17,7 @@ auth.update_attributes(:uid => "1062228442",
                        :user_id => user.id)
 
 user = User.find_or_create_by_email(:email => "twitter@akkartik.com")
-user.update_attributes(:full_name => "Kartik Agaram",
+user.update_attributes(:name => "Kartik Agaram",
                        :image => "http://a2.twimg.com/profile_images/42109872/akkartik-sq_normal.JPG",
                        :access => "admin")
 
@@ -33,7 +33,7 @@ auth.update_attributes(:secret => "dZWY2OE8mfOikjBWW6bAeHKSSsOJl0BGU9qkYE3rImA",
                        :user_id => user.id)
 
 scott = User.find_or_create_by_email(:email => "scott@omnibucket.com")
-scott.update_attributes(:full_name => "Scott Lambridis",
+scott.update_attributes(:name => "Scott Lambridis",
                        :image => "/images/avatars/image-scott-lambridis.png",
                        :bio => "My stories have appeared in Storyglossia, the UK's Black Static, and Transfer Magazine. Born and raised in New York, I earned a degree in neurobiology from UVa - which I promptly abandoned for a creative career. I'm completing my MFA at San Francisco State, and working on a book about the scientist who discovered the end of time.",
                        :access => "admin")

@@ -1,22 +1,22 @@
-- if !@user.full_name.blank?
-  = title "- Show User - " + @user.full_name
+- if !@user.name.blank?
+  = title "- Show User - " + @user.name
 - else
   = title "- Show User - " + @user.id.to_s
 
 %p
   %img{ :src => @user.image, :style => "vertical-align: middle;"}
-  = @user.full_name
+  = @user.name
 %p
   %b Access:
   = @user.access
 %p
   %b Inviter:
-  = link_to @user.inviter.full_name, @user.inviter if !@user.inviter.nil?
+  = link_to @user.inviter.name, @user.inviter if !@user.inviter.nil?
 %p
   %b Invitees:
   - @user.invitees.each do |invitee|
-    - if !invitee.full_name.blank?
-      = link_to invitee.full_name, invitee
+    - if !invitee.name.blank?
+      = link_to invitee.name, invitee
     - else
       = link_to "Anonymous", invitee
 %p

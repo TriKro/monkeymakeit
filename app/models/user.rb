@@ -14,11 +14,11 @@ class User < ActiveRecord::Base
   has_friendly_id :slug_name, :use_slug => true
 
   def first_name
-    full_name.sub(/ .*/, '') rescue ''
+    name.sub(/ .*/, '') rescue ''
   end
 
   def email_header
-    "\"#{full_name}\" <#{email}>"
+    "\"#{name}\" <#{email}>"
   end
 
   def subscribed?(story)
@@ -26,21 +26,21 @@ class User < ActiveRecord::Base
   end
 
   def name_or_email
-    full_name.blank? ? email : full_name
+    name.blank? ? email : name
   end
 
   def email_or_name
-    email.blank? ? full_name : email
+    email.blank? ? name : email
   end
 
   def identifier
-    return full_name if !full_name.blank?
+    return name if !name.blank?
     return email if !email.blank?
     id
   end
 
   def slug_name
-    full_name.blank? ? 'Anonymous' : full_name
+    name.blank? ? 'Anonymous' : name
   end
 
   def self.create_from_hash!(hash)
@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
     else
       email = nil
     end
-    user = new( :full_name => users_name, :image => image, :email => email )
+    user = new( :name => users_name, :image => image, :email => email )
     user.save( false )
     user
   end

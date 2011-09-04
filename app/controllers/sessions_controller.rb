@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     # if not and there are user params, find or create.
     # TODO: Would be nice to move this junk to the Authentication model and combine with the find_or_create_from_hash method
     elsif !params[:user].nil? && current_user.nil?
-      @user = User.find_or_create_from_email_and_attributes(params[:user][:email], { :full_name => params[:user][:full_name] })
+      @user = User.find_or_create_from_email_and_attributes(params[:user][:email], { :name => params[:user][:name] })
       redirect_to :action => "new", :flash => { :alert => "When signing in as an author or admin you must use Twitter or Facebook connect." } and return if @user.access == "author" || @user.access == "admin"
       render "new" and return if @user.errors.any?
 
@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
 
     #log the user in
     session[:user_id] = @user.id # Log the user in
-    flash[:notice] = "Logged in as #{current_user.full_name}"
+    flash[:notice] = "Logged in as #{current_user.name_or_email}"
 
     # add referrer if any
     @referral_invite = Invite.find_by_code(session[:referral_code]) and session[:referral_code] = nil if session[:referral_code]

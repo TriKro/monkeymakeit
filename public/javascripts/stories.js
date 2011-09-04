@@ -21,14 +21,14 @@ $(document).ready(function() {
       }
     });
 
-    $('.user_full_name').focus(function() {
+    $('.user_name').focus(function() {
       if ($(this).val() == "Name" ) {
         $(this).addClass('black').removeClass('darkgrey');
         $(this).val('');
       }
     });
 
-    $('.user_full_name').blur(function() {
+    $('.user_name').blur(function() {
       if ($(this).val() == '') {
         $(this).addClass('darkgrey').removeClass('black');
         $(this).val("Name");

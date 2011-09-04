@@ -15,7 +15,7 @@
       %th
   - @stories.each do |story|
     %tr
-      %td= link_to story.author.full_name, story.author if !story.author.nil?
+      %td= link_to story.author.name, story.author if !story.author.nil?
       %td= link_to story.title, story
       %td= story.subtitle
       %td= story.summary
