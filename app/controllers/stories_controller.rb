@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :story
 
   before_filter lambda {
     log_page_view('story') if request.get?

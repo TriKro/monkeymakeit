@@ -14,10 +14,10 @@
             %img{ :src => '/images/stories/' + chapter.creatives.images.first.filename, :class => "chapter_image" }
           %h2.chapter_identifier
             = chapter.identifier
-        - if can? :update, @chapter
+        - if can? :update, chapter
           %td= link_to 'Edit', edit_story_chapter_path(@story, chapter)
-        - if can? :destroy, @chapter
+        - if can? :destroy, chapter
           %td= link_to 'Destroy', [@story, chapter], :confirm => 'Are you sure?', :method => :delete
 
-- if can? :create, Chapter
+- if can? :create, @story => Chapter
   = link_to "Create new chapter", new_story_chapter_path(@story)
