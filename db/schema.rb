@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110903193119) do
+ActiveRecord::Schema.define(:version => 20110904044611) do
 
   create_table "activities", :force => true do |t|
     t.integer   "user_id"
@@ -88,13 +88,13 @@ ActiveRecord::Schema.define(:version => 20110903193119) do
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
   create_table "stories", :force => true do |t|
-    t.string    "title"
-    t.string    "subtitle"
-    t.text      "summary"
-    t.integer   "author_id"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "cached_slug"
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "summary"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "cached_slug"
   end
 
   add_index "stories", ["cached_slug"], :name => "index_stories_on_cached_slug", :unique => true

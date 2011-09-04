@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   has_many :authentications, :dependent => :destroy
   has_many :creatives, :dependent => :nullify
-  has_many :stories, :foreign_key => "author_id", :dependent => :nullify
+  has_many :stories, :dependent => :nullify
   has_many :chapters, :through => :stories
   has_many :subscriptions, :dependent => :delete_all
   has_many :subscribed_stories, :through => :subscriptions, :source => :story

@@ -14,10 +14,10 @@ class Ability
 
     if user.access == "author"
       can :manage, User, :user_id => user.id
-      can [:update, :destroy], Story, :author_id => user.id
+      can [:update, :destroy], Story, :user_id => user.id
       can :create, Story
-      can [:update, :destroy], Chapter, :story => { :author_id => user.id }
-      can :create, Chapter, :story => { :author_id => user.id }
+      can [:update, :destroy], Chapter, :story => { :user_id => user.id }
+      can :create, Chapter, :story => { :user_id => user.id }
       can [:update, :destroy], Creative, :user_id => user.id
       can :create, Creative
     end
