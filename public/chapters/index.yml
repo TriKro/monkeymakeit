@@ -4,9 +4,10 @@
   chapters:
     - chapter_index: 1
       title: (About Joseph)
+      publishing_date: 2011-06-01
       creatives:
         - creative_type: image
-          filename: cover-hiccup-chapter1.png
+          filename: hiccup_1.png
           title: Untitled
           creator: Tyler Landry
         - creative_type: text
@@ -35,6 +36,7 @@
   author: scott@omnibucket.com
   chapters:
     - chapter_index: 1
+      publishing_date: 2011-06-01
       creatives:
         - creative_type: image
           filename: image-doris.jpg
@@ -48,6 +50,7 @@
   author: scott@omnibucket.com
   chapters:
     - chapter_index: 1
+      publishing_date: 2011-06-01
       creatives:
         - creative_type: image
           filename: image-life_of_the_gallows.jpg
