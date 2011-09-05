@@ -1,6 +1,6 @@
 class SubscriptionsController < ApplicationController
   load_and_authorize_resource
-  cache_sweeper :user_sweeper, :subscription_sweeper
+  cache_sweeper :subscription_sweeper, :referral_sweeper
 
   def create
     @user = current_user
