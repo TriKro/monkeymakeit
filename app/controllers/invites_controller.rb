@@ -20,7 +20,7 @@ class InvitesController < ApplicationController
                                  recipient.strip,
                                  'First look at "' + @invite.story.title + '" on MonkeyMake.it',
                                  params[:invite_message][:content])
-        km.record('referral', { 'method' => 'email', 'to' => recipient, 'from' => params[:invite_message][:from] })
+        km.record('referral sent', { 'method' => 'email', 'to' => recipient, 'from' => params[:invite_message][:from] })
       end
       redirect_to @invite, :notice => 'Email sent. Thanks for spreading the word!'
     else
