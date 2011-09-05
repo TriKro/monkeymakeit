@@ -27,7 +27,6 @@ class Ability
     end
 
     can :read, Story
-    can :referral_redirect, Story
     can :index, Chapter
     can :show, Chapter, Chapter do |chapter|
       !chapter.publishing_date.nil? && chapter.publishing_date <= Time.now

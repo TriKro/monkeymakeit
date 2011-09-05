@@ -1,10 +1,8 @@
 Monkeymakeit::Application.routes.draw do
   root :to => 'root#index'
 
-  # Omniauth routes
+  # Session and Omniauth routes
   match "/auth/:provider/callback" => "sessions#create"
-
-  #Session routes
   match "/signin" => "sessions#new", :as => :signin
   match "/signout" => "sessions#destroy", :as => :signout
   match "/auth/failure" => "sessions#failure", :as => :auth_failure
@@ -14,22 +12,20 @@ Monkeymakeit::Application.routes.draw do
     put :update_email, :on => :member
   end
   match '/please_add_your_email' => 'users#add_email', :as => :add_email
-
   resources :authentications, :only => [:index, :destroy]
+
   resources :stories do
     resources :chapters, :path => "chapter"
   end
   match '/hiccup' => 'stories#show', :id => 'oh-mighty-hiccup'
 
-  resources :invites, :path => :thanks do
-    # TODO: Hate the name of this route. Just call it send? Creates bug when I do it.
-    post :send_invites, :on => :collection
-  end
-
   resources :subscriptions, :only => :create
 
-  match "/i/:referral_code" => "stories#referral_redirect", :as => :referral_redirect
-  
+  resources :invites, :path => :thanks do
+    post :send_invites, :on => :collection
+  end
+  match "/i/:referral_code" => "invites#referral_redirect", :as => :referral_redirect
+
   # Static page routes
   [
           :code,

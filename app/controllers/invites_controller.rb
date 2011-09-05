@@ -1,5 +1,6 @@
 class InvitesController < ApplicationController
   load_and_authorize_resource
+  skip_load_and_authorize_resource :only => :referral_redirect
 
   before_filter lambda {
     log_page_view('invite') if request.get?
@@ -27,4 +28,20 @@ class InvitesController < ApplicationController
       render :action => "show"
     end
   end
+
+  def referral_redirect
+    code = params[:referral_code]
+    invite = Invite.find_by_code(code)
+    return redirect_to root_url if invite.nil?
+    session[:referral_code] = code
+    @inviter = invite.user
+    if !@inviter.email_or_name.blank?
+      km.record('referral arrival', { 'from' => @inviter.email_or_name })
+    else
+      km.record('referral arrival')
+    end
+    flash[:info] = "#{@inviter.name} thought you might like this story." if !@inviter.name.blank?
+    redirect_to story_path(invite.story)
+  end
+
 end
