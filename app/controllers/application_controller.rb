@@ -40,7 +40,7 @@ class ApplicationController < ActionController::Base
   end
 
   def log_page_view(type)
-    km.record('viewed page', { 'page type' => type, 'url' => request.url.split("?")[0] })
+    km.record('page view', { 'page type' => type, 'url' => request.url.split("?")[0] })
   end
 
   def store_location
