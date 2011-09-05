@@ -14,9 +14,9 @@ $(document).ready(function() {
       }
     });
 
-    $('#user_email').click(function() {
-      if ($(this).val() == "Email Address" ) {
-        $(this).val('');
-       };
+    $('.edit_user').submit(function() {
+      if ($('#user_email').val() == "Email Address" ) {
+        $('#user_email').val('');
+      }
     });
 });

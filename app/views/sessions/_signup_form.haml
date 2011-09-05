@@ -5,7 +5,7 @@
   .signin_twitter
 
 - if current_user.nil?
-  = form_for(@user, :url => create_session_path, :html => { :class => "event_form_email_login" }) do |f|
+  = form_for(@user, :url => create_session_path) do |f|
     - if @user.errors.any?
       #error_explanation
         %h4
