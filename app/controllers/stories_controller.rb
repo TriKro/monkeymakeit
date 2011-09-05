@@ -1,5 +1,6 @@
 class StoriesController < ApplicationController
   load_and_authorize_resource :story
+  cache_sweeper :story_sweeper
 
   before_filter lambda {
     log_page_view('story') if request.get?
