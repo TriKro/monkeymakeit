@@ -12,10 +12,10 @@
     - if @user.errors.any?
       #error_explanation
         %h2
-          = pluralize(resource.errors.count, "error")
+          = pluralize(@user.errors.count, "error")
           prohibited this item from being saved:
         %ul
-          - resource.errors.full_messages.each do |msg|
+          - @user.errors.full_messages.each do |msg|
             %li= msg
 
     = f.text_field :email, :value => "Email Address", :class => "midgrey"
