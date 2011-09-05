@@ -1,7 +1,7 @@
 %p
   Tweet this story:
-  %a{ :href => 'http://twitter.com/share?url=http://monkeymake.it/i/' + @invite.code + '&text=Checkout%20Oh%20Mighty%20Hiccup%20by%20Scott%20Lambridis%20&count=vertical&via=monkeymakeit&related=trikro:Tristan%20Kromer' }
+  %a{ :href => "http://twitter.com/share?url=http://monkeymake.it/i/#{@invite.code}&text=Checkout%20Oh%20Mighty%20Hiccup%20by%20Scott%20Lambridis%20&count=vertical&via=monkeymakeit&related=trikro:Tristan%20Kromer" }
     Click here to tweet
 
 %p
-  Or share this link: http://monkeymake.it/i/#{ @invite.code }
+  Or share this link: http://monkeymake.it/i/#{@invite.code}
