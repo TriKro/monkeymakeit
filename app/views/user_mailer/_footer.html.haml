@@ -1,7 +1,3 @@
-.footer{ :style => "border-bottom: 1px solid #999" }
-
-%p
-  Powered by
-  = link_to root_path do
-    MonkeyMake.it
-  \- Help New Books Get Published
+= link_to root_url, { :style => "color: #000 !important; text-decoration: none;" } do
+  .footer{ :style => "border-top: 1px solid #E6E6E6; padding-top: 5px; text-align: center;" }
+    %img{ :src => root_url + 'images/email_footer.png' }

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   after_filter :store_location
   before_filter :check_for_email
+  before_filter :mailer_set_url_options
 
   if Rails.env.production?
     rescue_from ActiveRecord::RecordNotFound do |e|
@@ -45,6 +46,10 @@ class ApplicationController < ActionController::Base
 
   def store_location
     session[:return_to] = request.url if request.get?
+  end
+
+  def mailer_set_url_options
+    ActionMailer::Base.default_url_options[:host] = request.host_with_port
   end
 
 end
