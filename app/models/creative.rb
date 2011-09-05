@@ -15,8 +15,7 @@ class Creative < ActiveRecord::Base
     "<div class='story_pic'>
       <img src='/chapters/#{filename}'>
       <div class='art_credit'>
-        &ldquo;<b>#{title}</b>&rdquo;
-        by #{creator}
+        illustration by <b>#{creator}</b>
       </div></div>"
   end
 
