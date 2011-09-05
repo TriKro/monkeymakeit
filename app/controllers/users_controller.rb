@@ -19,7 +19,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
   end
@@ -49,7 +48,7 @@ class UsersController < ApplicationController
   end
 
   def update_email
-    @user = current_user
+    @user = User.find(params[:id])
 
     if @user.update_attributes(params[:user])
       redirect_to session[:return_to], :notice => 'Your email was successfully added.'
