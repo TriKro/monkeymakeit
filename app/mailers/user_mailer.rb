@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
 
-  default :from => "no-reply@monkeymake.it"
+  default :from => 'Monkeys <no-reply@monkeymake.it>'
 
   def email(from, to, subject, message)
     @message = message
@@ -12,7 +12,6 @@ class UserMailer < ActionMailer::Base
   def contact_us(contact_message)
     @contact_message = contact_message
     mail :to => "Monkeys@MonkeyMake.it",
-         :from => "no-reply@monkeymake.it",
          :reply_to => @contact_message.sender,
          :subject => @contact_message.subject
   end
@@ -20,8 +19,7 @@ class UserMailer < ActionMailer::Base
   def welcome_email(recipient, story)
     @recipient = recipient
     @invite = recipient.invites.find_or_create_by_story_id(story.id)
-    mail :from => 'Monkeys <no-reply@MonkeyMake.it>',
-         :to => recipient.email,
+    mail :to => recipient.email,
          :subject => "Welcome to MonkeyMake.it"
   end
 
@@ -31,8 +29,7 @@ class UserMailer < ActionMailer::Base
     @subscriber = subscription.user
     @invite = @story.invites.find_or_create_by_user_id(@author.id)
     return if @author.email.nil?
-    mail :from => 'Monkeys <no-reply@MonkeyMake.it>',
-         :to => @author.email,
+    mail :to => @author.email,
          :subject => 'People like you! They really really do!'
   end
 
@@ -42,9 +39,16 @@ class UserMailer < ActionMailer::Base
     @user = subscription.user
     @invite = @story.invites.find_or_create_by_user_id(@user.id)
     return if @user.email.nil?
-    mail :from => 'Monkeys <no-reply@MonkeyMake.it>',
-         :to => @user.email,
+    mail :to => @user.email,
          :subject => "You've subscribed to " + @story.title
+  end
+
+  def new_chapter_email(user, story, chapter)
+    @user = user
+    @story = story
+    @chapter = chapter
+    mail :to => user.email,
+         :subject => "#{@story.user.name} posted a new chapter"
   end
 
 end
