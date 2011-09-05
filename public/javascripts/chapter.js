@@ -36,4 +36,16 @@ $(document).ready(function() {
          $('.user_name').val('');
       };
     });
+
+    $( ".invite_by_email_form" ).dialog({
+        autoOpen: false,
+        modal: true,
+        title: 'Invite Your Friends',
+        width: 450
+    });
+
+    $('.email_modal_trigger').click(function() {
+      $( ".invite_by_email_form" ).dialog('open');
+    });
+
 });

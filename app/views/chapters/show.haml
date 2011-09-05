@@ -20,6 +20,8 @@
       = raw creative.render
 
     - if current_user && current_user.subscribed?(@story)
+      .hide
+        = render :partial => 'invites/invite_by_email_form', :locals => { :invite_message => @invite_message, :invite => @invite }
       = render :partial => "chapters/invite_widget", :locals => { :invite => @invite, :invite_message => @invite_message }
       = link_to "Previous Chapter", [@story, @chapter.prev_chapter] if !@chapter.prev_chapter.nil?
       = link_to "Next Chapter", [@story, @chapter.next_chapter] if !@chapter.next_chapter.nil?

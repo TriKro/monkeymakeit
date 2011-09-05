@@ -73,6 +73,19 @@
       text-align: center;
       margin: 10px 0 0 0; }
 
+.invite_by_email_form .field input {
+  margin: 0 0 10px 0;
+  padding: 5px;
+  font-size: 1em;
+  width: 400px; }
+.invite_by_email_form .field textarea {
+  padding: 5px;
+  width: 400px;
+  height: 100px;
+  font-size: 1em; }
+.invite_by_email_form .action {
+  margin: 10px 0 0 0; }
+
 #right_column2 .invite_widget {
   background: white;
   margin: 10px 0;
@@ -93,21 +106,31 @@
       margin: 0; }
   #right_column2 .invite_widget .invite_content {
     padding: 10px; }
-    #right_column2 .invite_widget .invite_content .email {
-      display: none; }
-    #right_column2 .invite_widget .invite_content .sharing-show {
+    #right_column2 .invite_widget .invite_content h3 {
+      font-weight: 100; }
+    #right_column2 .invite_widget .invite_content #sharing {
+      display: inline-block; }
+      #right_column2 .invite_widget .invite_content #sharing .email_modal_trigger {
+        font-size: 13px !important;
+        padding: 3px 8px !important;
+        font-weight: 100 !important;
+        float: left; }
+      #right_column2 .invite_widget .invite_content #sharing .sharing-show {
+        float: left;
+        margin: 10px 0; }
+        #right_column2 .invite_widget .invite_content #sharing .sharing-show .twitter, #right_column2 .invite_widget .invite_content #sharing .sharing-show .facebook {
+          display: inline-block;
+          vertical-align: middle; }
+        #right_column2 .invite_widget .invite_content #sharing .sharing-show .twitter {
+          padding-right: 10px; }
+    #right_column2 .invite_widget .invite_content #invite_code {
       margin: 10px 0; }
-      #right_column2 .invite_widget .invite_content .sharing-show .twitter, #right_column2 .invite_widget .invite_content .sharing-show .facebook {
-        display: inline-block;
-        vertical-align: middle; }
-      #right_column2 .invite_widget .invite_content .sharing-show .twitter {
-        padding-right: 10px; }
-    #right_column2 .invite_widget .invite_content #invite_code input {
-      border: 1px solid #666666;
-      padding: 5px;
-      font-size: 1em;
-      width: 90%;
-      color: #888888; }
+      #right_column2 .invite_widget .invite_content #invite_code input {
+        border: 1px solid #666666;
+        padding: 5px;
+        font-size: 1em;
+        width: 90%;
+        color: #888888; }
     #right_column2 .invite_widget .invite_content p {
       margin: 0;
       padding: 0;
@@ -140,21 +163,31 @@
       padding: 0 !important;
       margin: 0 !important;
       color: black !important; }
-  #left_column2 .invite_widget .invite_content .email {
-    display: none; }
-  #left_column2 .invite_widget .invite_content .sharing-show {
+  #left_column2 .invite_widget .invite_content h3 {
+    font-weight: 100; }
+  #left_column2 .invite_widget .invite_content #sharing {
+    display: inline-block; }
+    #left_column2 .invite_widget .invite_content #sharing .email_modal_trigger {
+      font-size: 13px !important;
+      padding: 3px 8px !important;
+      font-weight: 100 !important;
+      float: left; }
+    #left_column2 .invite_widget .invite_content #sharing .sharing-show {
+      float: left;
+      margin: 10px 0; }
+      #left_column2 .invite_widget .invite_content #sharing .sharing-show .twitter, #left_column2 .invite_widget .invite_content #sharing .sharing-show .facebook {
+        display: inline-block;
+        vertical-align: middle; }
+      #left_column2 .invite_widget .invite_content #sharing .sharing-show .twitter {
+        padding-right: 10px; }
+  #left_column2 .invite_widget .invite_content #invite_code {
     margin: 10px 0; }
-    #left_column2 .invite_widget .invite_content .sharing-show .twitter, #left_column2 .invite_widget .invite_content .sharing-show .facebook {
-      display: inline-block;
-      vertical-align: middle; }
-    #left_column2 .invite_widget .invite_content .sharing-show .twitter {
-      padding-right: 10px; }
-  #left_column2 .invite_widget .invite_content #invite_code input {
-    border: 1px solid #666666;
-    padding: 5px;
-    font-size: 1em;
-    width: 50%;
-    color: #888888; }
+    #left_column2 .invite_widget .invite_content #invite_code input {
+      border: 1px solid #666666;
+      padding: 5px;
+      font-size: 1em;
+      width: 50%;
+      color: #888888; }
   #left_column2 .invite_widget .invite_content p {
     margin: 10px 0 0 0 !important;
     padding: 0 !important;

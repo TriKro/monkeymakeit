@@ -1,5 +1,20 @@
 @import 'variables'
 
+.invite_by_email_form
+  .field
+    input
+      margin: 0 0 10px 0
+      padding: 5px
+      font-size: 1em
+      width: 400px
+    textarea
+      padding: 5px
+      width: 400px
+      height: 100px
+      font-size: 1em
+  .action
+    margin: 10px 0 0 0
+
 #right_column2
   .invite_widget
     background: #FFF
@@ -18,16 +33,25 @@
         padding: 0 0 10px 0
         margin: 0
     .invite_content
-      .email
-        display: none
-      .sharing-show
-        margin: 10px 0
-        .twitter, .facebook
-          display: inline-block
-          vertical-align: middle
-        .twitter
-          padding-right: 10px
+      h3
+        font-weight: 100
+      #sharing
+        display: inline-block
+        .email_modal_trigger
+          font-size: 13px !important
+          padding: 3px 8px !important
+          font-weight: 100 !important
+          float: left
+        .sharing-show
+          float: left
+          margin: 10px 0
+          .twitter, .facebook
+            display: inline-block
+            vertical-align: middle
+          .twitter
+            padding-right: 10px
       #invite_code
+        margin: 10px 0
         input
           border: 1px solid $darkgrey
           padding: 5px
@@ -71,16 +95,25 @@
         margin: 0 !important
         color: $black !important
     .invite_content
-      .email
-        display: none
-      .sharing-show
-        margin: 10px 0
-        .twitter, .facebook
-          display: inline-block
-          vertical-align: middle
-        .twitter
-          padding-right: 10px
+      h3
+        font-weight: 100
+      #sharing
+        display: inline-block
+        .email_modal_trigger
+          font-size: 13px !important
+          padding: 3px 8px !important
+          font-weight: 100 !important
+          float: left
+        .sharing-show
+          float: left
+          margin: 10px 0
+          .twitter, .facebook
+            display: inline-block
+            vertical-align: middle
+          .twitter
+            padding-right: 10px
       #invite_code
+        margin: 10px 0
         input
           border: 1px solid $darkgrey
           padding: 5px
