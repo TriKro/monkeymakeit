@@ -56,7 +56,7 @@ class ApplicationController < ActionController::Base
 
     # Set experiments example:
     # session[:experiments]['sign up method'] = { :version => 'facebook', :set => false }
-    sign_up_method = ['facebook', 'twitter', 'twitter and facebook', 'facebook and twitter', 'email', 'facebook, twitter, and email']
+    sign_up_method = ['facebook and twitter', 'email']
     session[:experiments]['sign up method'] = { :version => sign_up_method[rand(sign_up_method.length)], :set => false } if session[:experiments]['sign up method'].nil?
 
     # Check if experiments have been sent to KM. If not, do so.
