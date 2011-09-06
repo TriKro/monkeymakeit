@@ -8,11 +8,13 @@
   %tr
     %th Experiment
     %th Version
-  - if !session[:monkey_experiments].nil?
-    - session[:monkey_experiments].each do |experiment|
+
+  - if !session[:experiments].nil?
+    - session[:experiments].each do |experiment|
       %tr
         %td= experiment[0]
-        %td= experiment[1]
+        %td= experiment[1][:version]
+        %td= experiment[1][:set]
 
 = form_tag(set_experiment_path, :method => "post") do
   .field

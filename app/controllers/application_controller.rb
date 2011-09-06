@@ -53,7 +53,15 @@ class ApplicationController < ActionController::Base
 
   def set_experiments
     # Example:
-    #session[:monkey_experiments] = { 'sign up method' => 'facebook, twitter, and email' }
+    #session[:experiments]['sign up method'] = { :version => 'facebook', :set => false }
+
+    session[:experiments] = {} if session[:experiments].nil?
+    session[:experiments].each do |experiment|
+      if experiment[1][:set] == false
+        km.set(experiment[0], experiment[1][:version])
+        session[:experiments][experiment[0]] = { :version => experiment[1][:version], :set => true }
+      end
+    end
   end
 
 end
