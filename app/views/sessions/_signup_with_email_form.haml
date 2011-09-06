@@ -1,0 +1,28 @@
+- if current_user.nil?
+  = form_for(@user, :url => create_session_path) do |f|
+    - if @user.errors.any?
+      #error_explanation
+        %h4
+          = pluralize(@user.errors.count, "error")
+          prevented us from being awesome.
+        %ul
+          - @user.errors.full_messages.each do |msg|
+            %li= msg
+
+    = hidden_field_tag "story_id", @story.id if !@story.nil?
+
+    .field
+      = f.label :name, "Name:"
+      = f.text_field :name, :class => "user_name", :value => params[:user].try(:[], :name).presence || "Name"
+
+    .field
+      = f.label :email, "Email:"
+      = f.text_field :email, :class => "user_email", :value => params[:user].try(:[], :email).presence || "Email"
+
+    .actions
+      = f.submit 'SIGN UP'
+    .clear
+
+  %p{ :style => "font-size: 12px" }
+    %span.red *
+    We will never spam or sell your email address.

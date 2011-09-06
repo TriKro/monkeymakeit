@@ -53,7 +53,7 @@ class ApplicationController < ActionController::Base
 
   def set_experiments
     # Example:
-    #session[:monkey_experiments] = { 'sign_up_method' => 'facebook only' }
+    #session[:monkey_experiments] = { 'sign up method' => 'facebook, twitter, and email' }
   end
 
 end
