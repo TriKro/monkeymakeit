@@ -45,5 +45,6 @@ Monkeymakeit::Application.routes.draw do
   # Private
   match '/admin' => 'admin#index'
   match '/set_experiment' => 'admin#set_experiment', :as => :set_experiment
+  match '/clear_experiments' => 'admin#clear_experiments', :as => :clear_experiments
 
 end

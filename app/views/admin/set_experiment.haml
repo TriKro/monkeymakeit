@@ -4,14 +4,27 @@
 -# Add a no track cookie to google analytics
 = javascript_tag "_gaq.push(['_setVar', 'monkey_no_track']);"
 
+%table
+  %tr
+    %th Experiment
+    %th Version
+  - if !session[:monkey_experiments].nil?
+    - session[:monkey_experiments].each do |experiment|
+      %tr
+        %td= experiment[0]
+        %td= experiment[1]
 
-Current Experiment:
-= session[:monkey_experiment_id]
 = form_tag(set_experiment_path, :method => "post") do
   .field
-    = label_tag :experiment, "Set experiment:"
-    = number_field_tag :experiment
+    = label_tag :name, "Name:"
+    = text_field_tag :name
+
+  .field
+    = label_tag :version, "Version:"
+    = text_field_tag :version
 
   .actions
     = submit_tag 'SUBMIT'
   .clear
+
+= link_to "Clear all experiments", :clear_experiments

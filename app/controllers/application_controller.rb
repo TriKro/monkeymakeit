@@ -2,9 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
 
+  before_filter :check_for_email, :mailer_set_url_options, :set_experiments
   after_filter :store_location
-  before_filter :check_for_email
-  before_filter :mailer_set_url_options
 
   if Rails.env.production?
     rescue_from ActiveRecord::RecordNotFound do |e|
@@ -50,6 +49,11 @@ class ApplicationController < ActionController::Base
 
   def mailer_set_url_options
     ActionMailer::Base.default_url_options[:host] = request.host_with_port
+  end
+
+  def set_experiments
+    # Example:
+    #session[:monkey_experiments] = { 'sign_up_method' => 'facebook only' }
   end
 
 end

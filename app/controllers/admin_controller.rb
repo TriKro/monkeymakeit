@@ -9,7 +9,13 @@ class AdminController < ApplicationController
   end
 
   def set_experiment
-    session[:monkey_experiment_id] = params[:experiment]
+    session[:monkey_experiments] = { } if session[:monkey_experiments].nil?
+    session[:monkey_experiments][params[:name]] = params[:version]
+  end
+
+  def clear_experiments
+    session[:monkey_experiments] = nil
+    render :action => 'set_experiment'
   end
 
 end
