@@ -28,8 +28,12 @@ class Ability
 
     can :read, Story
     can :index, Chapter
-    can :show, Chapter, Chapter do |chapter|
-      !chapter.publishing_date.nil? && chapter.publishing_date <= Time.now
+    if RAILS_ENV == 'production'
+      can :show, Chapter, Chapter do |chapter|
+        !chapter.publishing_date.nil? && chapter.publishing_date <= Time.now
+      end
+    else
+      can :show, Chapter
     end
     can :read, Creative
     can :show, User
