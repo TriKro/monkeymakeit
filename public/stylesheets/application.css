@@ -127,6 +127,11 @@ table tr td {
 table tr:nth-child(even) {
   background-color: #f2f2f2; }
 
+a {
+  color: #00b7fb; }
+  a:hover {
+    color: #0088ba; }
+
 .bold {
   font-weight: 600; }
 

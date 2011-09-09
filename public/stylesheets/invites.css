@@ -60,3 +60,7 @@
     font-size: 1em;
     width: 50%;
     color: #888888; }
+#registration_thanks #invite .return_link {
+  font-size: 14px;
+  text-align: right;
+  display: block; }

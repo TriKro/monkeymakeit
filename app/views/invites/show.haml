@@ -40,3 +40,7 @@
 
     #invite_options
       = render "invites/invite_form", :invite => @invite, :invite_message => @invite_message
+
+      = link_to @invite.story, :class => "return_link" do
+        &laquo; Back to
+        = @invite.story.title
