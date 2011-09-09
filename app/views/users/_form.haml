@@ -19,10 +19,11 @@
     = f.label :image
     %br/
     = f.text_field :image
-  .field
-    = f.label :access
-    %br/
-    = f.text_field :access
+  - if can? :manage, User
+    .field
+      = f.label :access
+      %br/
+      = f.text_field :access
   .field
     = f.label :bio
     %br/

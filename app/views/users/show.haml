@@ -6,18 +6,19 @@
 %p
   %img{ :src => @user.image, :style => "vertical-align: middle;"}
   = @user.name
-%p
-  %b Access:
-  = @user.access
+- if can? :manage, User
+  %p
+    %b Access:
+    = @user.access
 %p
   %b Subscriptions:
   - @user.subscribed_stories.each do |subscribed_story|
     = link_to subscribed_story.title, subscribed_story
-%p
-  %b Stories:
-  - @user.stories.each do |story|
-    = link_to story.title, story
-
+- if can? :create, Story
+  %p
+    %b Stories:
+    - @user.stories.each do |story|
+      = link_to story.title, story
 - if can? :update, @user
   = link_to 'Edit', edit_user_path(@user)
 &#8226;
