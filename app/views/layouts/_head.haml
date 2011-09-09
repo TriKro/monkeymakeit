@@ -13,7 +13,7 @@
 - if !stylesheets.blank?
   = stylesheet_link_tag stylesheets
 = stylesheet_link_tag 'jquery-ui-custom'
-= javascript_include_tag 'notifications'
+= javascript_include_tag 'notifications', :defaults
 = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'
 = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'
 - scripts = yield :scripts
