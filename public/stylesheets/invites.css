@@ -63,4 +63,5 @@
 #registration_thanks #invite .return_link {
   font-size: 14px;
   text-align: right;
-  display: block; }
+  display: block;
+  margin: 20px 0 0 0; }
