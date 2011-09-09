@@ -18,7 +18,10 @@
           - @user.errors.full_messages.each do |msg|
             %li= msg
 
-    = f.text_field :email, :class => "midgrey"
+    - if @user.email.blank?
+      = f.text_field :email, :class => "midgrey", :value => "Email Address"
+    - else
+      = f.text_field :email, :class => "black"
     = f.submit 'Add Email'
 
   %p#no_spam_disclaimer
