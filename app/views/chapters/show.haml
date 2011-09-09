@@ -23,14 +23,18 @@
       .hide
         = render :partial => 'invites/invite_by_email_form', :locals => { :invite_message => @invite_message, :invite => @invite }
       = render :partial => "chapters/invite_widget", :locals => { :invite => @invite, :invite_message => @invite_message }
-      - if !@chapter.prev_chapter.nil?
-        - if can? :show, @chapter.prev_chapter
-          = link_to [@story, @chapter.prev_chapter] do
-            Previous Chapter
-      - if !@chapter.next_chapter.nil?
-        - if can? :show, @chapter.next_chapter
-          = link_to [@story, @chapter.next_chapter] do
-            Next Chapter
+      .chapter_links
+        - if !@chapter.prev_chapter.nil?
+          - if can? :show, @chapter.prev_chapter
+            = link_to [@story, @chapter.prev_chapter], :style => 'float: left' do
+              &laquo;
+              = @chapter.prev_chapter.identifier
+        - if !@chapter.next_chapter.nil?
+          - if can? :show, @chapter.next_chapter
+            = link_to [@story, @chapter.next_chapter], :style => 'float: right' do
+              = @chapter.next_chapter.identifier
+              &raquo;
+        .clear
 
     - else
       .signup_widget_bottom

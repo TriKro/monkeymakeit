@@ -284,6 +284,8 @@ content {
     #story #left_column2 .story_sharing-bottom {
       margin: 0 0 40px 170px;
       height: 40px; }
+    #story #left_column2 .chapter_links {
+      margin: 0 0 20px 0; }
   #story #right_column2 {
     float: right;
     width: 300px;
