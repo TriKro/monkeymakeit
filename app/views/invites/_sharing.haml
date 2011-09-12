@@ -12,7 +12,7 @@
       _kmq.push(['record', 'start referral', {'method':'twitter'}]);
     });
     twttr.events.bind('tweet', function(event) {
-      _kmq.push(['record', 'referral', {'method':'twitter'}]);
+      _kmq.push(['record', 'referral sent', {'method':'twitter'}]);
     });
     twttr.events.bind('follow', function(event) {
       var followed_user_id = event.data.user_id;
@@ -28,7 +28,7 @@
 
   :javascript
     FB.Event.subscribe('edge.create', function(href, widget) {
-      _kmq.push(['record', 'referral', {'method':'facebook'}]);
+      _kmq.push(['record', 'referral sent', {'method':'facebook'}]);
     });
     FB.Event.subscribe('edge.remove', function(href, widget) {
       _kmq.push(['record', 'destroyed referral', {'method':'facebook'}]);
