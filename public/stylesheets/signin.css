@@ -1,7 +1,22 @@
-.signup_via_email {
+.show_email_signup_form {
   margin: 10px 0 0 0;
   cursor: pointer;
   font-size: 0.8em;
   color: #666666; }
-  .signup_via_email:hover {
+  .show_email_signup_form:hover {
     color: #0088ba; }
+
+.signin_page .blue_button {
+  margin: 10px; }
+.signin_page .field {
+  margin: 10px 20px 0 0px; }
+  .signin_page .field label {
+    display: none; }
+  .signin_page .field input {
+    padding: 3px;
+    width: 250px;
+    font-size: 1.5em;
+    font-family: "Arial, Verdana, sans-serif";
+    color: #666666; }
+.signin_page .actions {
+  margin: 10px 0 0 0; }

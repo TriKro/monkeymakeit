@@ -22,8 +22,12 @@
     .signin_facebook
 
 - elsif session[:experiments]['sign up method'][:version] == 'facebook, twitter, and email'
-  = link_to("/auth/facebook", :class => "nodec") do
-    .signin_facebook
-  = link_to("/auth/twitter", :class => "nodec") do
-    .signin_twitter
-  = render 'sessions/signup_with_email_form'
+  .social_signup
+    = link_to("/auth/facebook", :class => "nodec") do
+      .signin_facebook
+    = link_to("/auth/twitter", :class => "nodec") do
+      .signin_twitter
+  .show_email_signup_form
+    Sign up via email instead?
+  .email_signup_form.hide
+    = render 'sessions/signup_with_email_form'

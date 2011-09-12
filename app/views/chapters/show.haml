@@ -23,6 +23,7 @@
       .hide
         = render :partial => 'invites/invite_by_email_form', :locals => { :invite_message => @invite_message, :invite => @invite }
       = render :partial => "chapters/invite_widget", :locals => { :invite => @invite, :invite_message => @invite_message }
+
       .chapter_links
         - if !@chapter.prev_chapter.nil?
           - if can? :show, @chapter.prev_chapter
@@ -46,11 +47,8 @@
             Sign up here and I'll email you when it's ready.
           = render "subscriptions/subscription_form"
 
-    .darkgrey{ :style => "text-align: center" }
-      %br
+    .darkgrey{ :style => "text-align: center; margin: 20px 0;" }
       You've just read from an early draft. More chapters coming soon. Thanks for reading.
-      %br
-      %br
 
   #right_column2
     - if current_user && current_user.subscribed?(@story)
