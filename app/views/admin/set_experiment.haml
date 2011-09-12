@@ -9,7 +9,7 @@
     %th Experiment
     %th Version
 
-  - if !session[:experiments].nil?
+  - if !session[:experiments].blank?
     - session[:experiments].each do |experiment|
       %tr
         %td= experiment[0]

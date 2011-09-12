@@ -9,7 +9,7 @@ class AdminController < ApplicationController
   end
 
   def set_experiment
-    session[:experiments] = {} if session[:monkey_experiments].nil?
+    session[:experiments] = {} if session[:experiments].nil?
     session[:experiments][params[:name]] = { :version => params[:version], :set => false } if !params[:name].nil?
   end
 
