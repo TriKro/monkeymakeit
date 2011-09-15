@@ -268,7 +268,14 @@ content {
     float: left;
     color: #111111;
     width: 610px;
-    z-index: 3; }
+    z-index: 3;
+    margin-top: 20px; }
+    #story #left_column2 .chapter_heading {
+      margin-bottom: 2em;
+      text-align: center;
+      color: #dc9422; }
+      #story #left_column2 .chapter_heading a {
+        color: #bdbdbd; }
     #story #left_column2 .story_pic {
       position: relative;
       display: inline-block;
@@ -276,7 +283,7 @@ content {
       border: none;
       float: left;
       z-index: 3;
-      padding: 20px 20px 30px 0; }
+      padding: 0 20px 30px 0; }
       #story #left_column2 .story_pic img {
         width: 250px; }
     #story #left_column2 .art_credit {

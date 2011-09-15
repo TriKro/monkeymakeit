@@ -16,8 +16,25 @@
   .clear
 
   #left_column2
-    - @chapter.creatives.each do |creative|
-      = raw creative.render
+    = raw @chapter.creatives[0].render
+
+    .chapter_heading
+      Chapter
+      %b #{@chapter.chapter_index}
+
+      - if @chapter.prev_chapter && can?(:show, @chapter.prev_chapter)
+        %div{:style => 'float: left; margin-left: 5em'}
+          = link_to [@story, @chapter.prev_chapter] do
+            = @chapter.prev_chapter.chapter_index
+      - if @chapter.next_chapter && can?(:show, @chapter.next_chapter)
+        %div{:style => 'float: right; margin-right: 5em'}
+          - if current_user
+            = link_to [@story, @chapter.next_chapter] do
+              = @chapter.next_chapter.chapter_index
+          - else
+            &nbsp;&nbsp;
+
+    = raw @chapter.creatives[1].render
 
     - if current_user && current_user.subscribed?(@story)
       .hide
