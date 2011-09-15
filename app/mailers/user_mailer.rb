@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
 
-  default :from => 'Monkeys <no-reply@monkeymake.it>'
+  default :from => 'Monkeys <monkey@monkeymake.it>'
 
   def email(from, to, subject, message)
     @message = message
