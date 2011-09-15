@@ -1,0 +1,27 @@
+%p
+  - if @user.name.present?
+    Hi #{@user.first_name},
+  - else
+    Hi,
+
+%p
+  I just posted chapter 2 of "Oh, Mighty Hiccup!":
+  http://monkeymake.it#{story_chapter_path @story, @chapter}
+
+%p
+  "She shrieked, grabbed the loose night-shirt over her heart and clenched it like it would save her life." &larr; Tweet this: http://bit.ly/qtAs0G
+
+%p
+  If you like what you see, please invite some friends!
+
+%p
+  Thanks,
+  %br
+    Scott Lambridis
+  %br
+    Creative Writer, Omnibucket Founder
+
+%p
+  P.S. You can start reading from the beginning at http://monkeymake.it/hiccup
+
+= render 'user_mailer/footer'
