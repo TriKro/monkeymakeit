@@ -42,6 +42,10 @@ class User < ActiveRecord::Base
     name.blank? ? email : name
   end
 
+  def name_and_email
+    "#{name} <#{email}>"
+  end
+
   def email_or_name
     email.blank? ? name : email
   end
