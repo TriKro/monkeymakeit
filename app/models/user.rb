@@ -51,8 +51,10 @@ class User < ActiveRecord::Base
   end
 
   def invited_by
-    if !referrals.nil?
+    if !referrals.blank?
       referrals.first.invite.user
+    else
+      nil
     end
   end
 

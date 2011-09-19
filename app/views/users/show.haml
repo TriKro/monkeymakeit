@@ -18,7 +18,7 @@
 
   %p
     %b Invited by
-    = @user.invited_by.name_and_email
+    = @user.invited_by.name_and_email if !@user.invited_by.nil?
 
 %p
   %b Subscriptions:
