@@ -6,10 +6,20 @@
 %p
   %img{ :src => @user.image, :style => "vertical-align: middle;"}
   = @user.name
+
 - if can? :manage, User
   %p
     %b Access:
     = @user.access
+
+  %p
+    %b Email
+    = @user.email
+
+  %p
+    %b Invited by
+    = @user.invited_by.name_and_email
+
 %p
   %b Subscriptions:
   - @user.subscribed_stories.each do |subscribed_story|

@@ -8,8 +8,13 @@
   Great news!
 %p
   = @subscriber.name_and_email
-  just subscribed to your story
-  = @story.title
+  just subscribed to
+  %i
+    = @story.title
+
+  - if !@subscriber.invited_by.nil?
+    They were invited by
+    = @subscriber.invited_by.name_and_email
 
 %p
   That makes

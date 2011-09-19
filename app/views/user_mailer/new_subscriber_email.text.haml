@@ -8,6 +8,11 @@
 
   That makes #{@story.subscribers.count} readers so far!
 
+- if !@subscriber.invited_by.nil?
+  :plain
+    They were invited by  #{@subscriber.invited_by.name_and_email}
+
+:plain
   Time to invite some more!
 
 = render 'user_mailer/sharing_plain'

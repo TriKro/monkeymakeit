@@ -50,6 +50,12 @@ class User < ActiveRecord::Base
     email.blank? ? name : email
   end
 
+  def invited_by
+    if !referrals.nil?
+      referrals.first.invite.user
+    end
+  end
+
   def identifier
     return name if !name.blank?
     return email if !email.blank?
