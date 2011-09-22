@@ -19,8 +19,7 @@
     = raw @chapter.creatives[0].render
 
     .chapter_heading
-      Chapter
-      %b #{@chapter.chapter_index}
+      %b #{@chapter.title}
 
       %div{:style => 'float: left; margin-left: 5em'}
         - if @chapter.prev_chapter && can?(:show, @chapter.prev_chapter)

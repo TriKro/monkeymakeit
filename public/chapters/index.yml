@@ -60,3 +60,18 @@
           creator: Tyler Landry
         - creative_type: text
           filename: gallows_1.txt
+
+- title: Lauren's Story
+  subtitle: A novel about...
+  author: scott@omnibucket.com
+  chapters:
+    - chapter_index: 1
+      title: "Prologue: Gideon"
+      publishing_date: 2011-06-01
+      creatives:
+        - creative_type: image
+          filename: image-life_of_the_gallows.jpg
+          title: Jester
+          creator: Tyler Landry
+        - creative_type: text
+          filename: gideon_1.txt
