@@ -3,7 +3,7 @@
   author: scott@omnibucket.com
   chapters:
     - chapter_index: 1
-      title: (About Joseph)
+      title: Chapter 1
       publishing_date: 2011-06-01
       creatives:
         - creative_type: image
@@ -13,7 +13,7 @@
         - creative_type: text
           filename: hiccup_1.txt
     - chapter_index: 2
-      title: (Mother's arrival)
+      title: Chapter 2
       publishing_date: 2011-09-15
       creatives:
         - creative_type: image
@@ -23,7 +23,7 @@
         - creative_type: text
           filename: hiccup_2.txt
     - chapter_index: 3
-      title: (Brad York's assignment)
+      title: Chapter 3
       publishing_date: 2011-09-22
       creatives:
         - creative_type: image
