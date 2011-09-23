@@ -41,3 +41,10 @@
 
     heroku logs --app monkeymakeit-production
     heroku logs --app monkeymakeit-staging
+
+## Send out emails for a story and chapter
+
+    e.g., rake notifier:run story=oh-mighty-hiccup chapter=2
+    Be sure to test on staging first. Transfer the prod db to staging to make
+    sure it's a valid test, then run it on the staging console, make sure it
+    goes all the way through. Sample email copy.
