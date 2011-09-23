@@ -58,7 +58,7 @@ class ApplicationController < ActionController::Base
     # session[:experiments]['sign up method'] = 'email'
     sign_up_method = ['facebook, twitter, and email', 'email']
     unless session[:experiments]['sign up method']
-      session[:experiments]['sign up method'] = sign_up_method[rand(sign_up_method.length)]
+      session[:experiments]['sign up method'] = sign_up_method[0] #rand(sign_up_method.length)]
       km.set('sign up method', session[:experiments]['sign up method'])
     end
   end

@@ -46,7 +46,7 @@ class SessionsController < ApplicationController
     end
 
     # Done! Go back.
-    redirect_to session[:return_to]
+    redirect_to session[:return_to] || '/'
   end
 
   def destroy
