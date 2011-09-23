@@ -61,16 +61,16 @@
         - creative_type: text
           filename: gallows_1.txt
 
-- title: Lauren's Story
+- title: Oddments of the Carpentered City
   subtitle: A novel about...
-  author: scott@omnibucket.com
+  author: laurenguza@gmail.com
   chapters:
     - chapter_index: 1
       title: "Prologue: Gideon"
       creatives:
         - creative_type: image
-          filename: image-life_of_the_gallows.jpg
-          title: Jester
-          creator: Tyler Landry
+          filename: racetrack.jpg
+          title: Racetrack
+          creator:
         - creative_type: text
           filename: gideon_1.txt
