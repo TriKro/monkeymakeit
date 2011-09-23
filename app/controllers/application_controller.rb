@@ -52,19 +52,14 @@ class ApplicationController < ActionController::Base
   end
 
   def set_experiments
-    session[:experiments] = {} if session[:experiments].nil?
+    session[:experiments] ||= {}
 
     # Set experiments example:
-    # session[:experiments]['sign up method'] = { :version => 'facebook', :set => false }
+    # session[:experiments]['sign up method'] = 'email'
     sign_up_method = ['facebook, twitter, and email', 'email']
-    session[:experiments]['sign up method'] = { :version => sign_up_method[rand(sign_up_method.length)], :set => false } if session[:experiments]['sign up method'].blank?
-
-    # Check if experiments have been sent to KM. If not, do so.
-    session[:experiments].each do |experiment|
-      if experiment[1][:set] == false
-        km.set(experiment[0], experiment[1][:version])
-        session[:experiments][experiment[0]] = { :version => experiment[1][:version], :set => true }
-      end
+    unless session[:experiments]['sign up method']
+      session[:experiments]['sign up method'] = sign_up_method[rand(sign_up_method.length)]
+      km.set('sign up method', session[:experiments]['sign up method'])
     end
   end
 

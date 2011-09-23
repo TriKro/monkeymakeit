@@ -13,8 +13,7 @@
     - session[:experiments].each do |experiment|
       %tr
         %td= experiment[0]
-        %td= experiment[1][:version]
-        %td= experiment[1][:set]
+        %td= experiment[1]
 
 = form_tag(set_experiment_path, :method => "post") do
   .field

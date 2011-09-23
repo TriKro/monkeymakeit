@@ -1,7 +1,7 @@
-- if session[:experiments]['sign up method'].nil? || session[:experiments]['sign up method'][:version] == 'email'
+- if session[:experiments]['sign up method'].nil? || session[:experiments]['sign up method'] == 'email'
   = render 'sessions/signup_with_email_form'
 
-- elsif session[:experiments]['sign up method'][:version] == 'facebook'
+- elsif session[:experiments]['sign up method'] == 'facebook'
   = link_to("/auth/facebook", :class => "nodec") do
     .signin_facebook
 
@@ -9,19 +9,19 @@
   = link_to("/auth/twitter", :class => "nodec") do
     .signin_twitter
 
-- elsif session[:experiments]['sign up method'][:version] == 'facebook and twitter'
+- elsif session[:experiments]['sign up method'] == 'facebook and twitter'
   = link_to("/auth/facebook", :class => "nodec") do
     .signin_facebook
   = link_to("/auth/twitter", :class => "nodec") do
     .signin_twitter
 
-- elsif session[:experiments]['sign up method'][:version] == 'twitter and facebook'
+- elsif session[:experiments]['sign up method'] == 'twitter and facebook'
   = link_to("/auth/twitter", :class => "nodec") do
     .signin_twitter
   = link_to("/auth/facebook", :class => "nodec") do
     .signin_facebook
 
-- elsif session[:experiments]['sign up method'][:version] == 'facebook, twitter, and email'
+- elsif session[:experiments]['sign up method'] == 'facebook, twitter, and email'
   .social_signup
     = link_to("/auth/facebook", :class => "nodec") do
       .signin_facebook
