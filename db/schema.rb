@@ -10,28 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110909014218) do
-
-  create_table "activities", :force => true do |t|
-    t.integer   "user_id"
-    t.string    "activity_type"
-    t.string    "data"
-    t.integer   "target_id"
-    t.string    "target_type"
-    t.integer   "subtarget_id"
-    t.string    "subtarget_type"
-    t.string    "url"
-    t.string    "target_model"
-    t.string    "subtarget_model"
-    t.string    "session_id"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.integer   "user_session_id"
-  end
-
-  add_index "activities", ["subtarget_id", "subtarget_type"], :name => "index_activities_on_subtarget_id_and_subtarget_type"
-  add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
-  add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
+ActiveRecord::Schema.define(:version => 20110924223501) do
 
   create_table "authentications", :force => true do |t|
     t.string    "provider"
@@ -44,12 +23,12 @@ ActiveRecord::Schema.define(:version => 20110909014218) do
   end
 
   create_table "chapters", :force => true do |t|
-    t.integer  "chapter_index"
-    t.integer  "story_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "title"
-    t.datetime "publishing_date"
+    t.integer   "chapter_index"
+    t.integer   "story_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "title"
+    t.timestamp "publishing_date"
   end
 
   create_table "creatives", :force => true do |t|
@@ -76,10 +55,10 @@ ActiveRecord::Schema.define(:version => 20110909014218) do
   add_index "invites", ["code"], :name => "index_invites_on_code", :unique => true
 
   create_table "referrals", :id => false, :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "invite_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "user_id"
+    t.integer   "invite_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "slugs", :force => true do |t|
@@ -95,13 +74,13 @@ ActiveRecord::Schema.define(:version => 20110909014218) do
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
   create_table "stories", :force => true do |t|
-    t.string   "title"
-    t.string   "subtitle"
-    t.text     "summary"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "cached_slug"
+    t.string    "title"
+    t.string    "subtitle"
+    t.text      "summary"
+    t.integer   "user_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "cached_slug"
   end
 
   add_index "stories", ["cached_slug"], :name => "index_stories_on_cached_slug", :unique => true
@@ -111,22 +90,15 @@ ActiveRecord::Schema.define(:version => 20110909014218) do
     t.integer "story_id"
   end
 
-  create_table "user_sessions", :force => true do |t|
-    t.string    "session_id"
-    t.integer   "user_id"
+  create_table "users", :force => true do |t|
+    t.string    "email"
     t.timestamp "created_at"
     t.timestamp "updated_at"
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-    t.string   "image"
-    t.string   "access",      :default => "reader"
-    t.text     "bio"
-    t.string   "cached_slug"
+    t.string    "name"
+    t.string    "image"
+    t.string    "access",      :default => "reader"
+    t.text      "bio"
+    t.string    "cached_slug"
   end
 
   add_index "users", ["cached_slug"], :name => "index_users_on_cached_slug", :unique => true
