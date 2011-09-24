@@ -13,10 +13,9 @@ class Creative < ActiveRecord::Base
 
   def render_image
     "<div class='story_pic'>
-      <img src='/chapters/#{filename}'>
-      <div class='art_credit'>
-        illustration by <b>#{creator}</b>
-      </div></div>"
+      <img src='/chapters/#{filename}'>" +
+      (creator.present? ? "<div class='art_credit'>illustration by <b>#{creator}</b></div>" : "") +
+    "</div>"
   end
 
   def render_text
