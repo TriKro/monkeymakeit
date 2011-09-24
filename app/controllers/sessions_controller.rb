@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     # if not and there are user params, find or create.
     # TODO: Would be nice to move this junk to the Authentication model and combine with the find_or_create_from_hash method
     elsif !params[:user].nil? && current_user.nil?
-      @user = User.find_or_create_from_email_and_attributes(params[:user][:email].downcase, { :name => params[:user][:name] })
+      @user = User.find_or_create_from_email_and_attributes(params[:user][:email].strip.downcase, { :name => params[:user][:name].strip })
       redirect_to :action => "new", :flash => { :alert => "When signing in as an author or admin you must use Twitter or Facebook connect." } and return if @user.access == "author" || @user.access == "admin"
       render "new" and return if @user.errors.any?
 
