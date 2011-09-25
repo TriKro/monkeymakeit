@@ -47,6 +47,7 @@ class UserMailer < ActionMailer::Base
     @user = user
     @story = story
     @chapter = chapter
+    @invite = @story.invites.find_or_create_by_user_id(@user.id)
     mail :to => user.email,
          :from => @story.user.name_and_email,
          :subject => "Chapter #{@chapter.chapter_index} of \"#{@story.title}\" is up!"
