@@ -7,12 +7,16 @@
 
 :plain
 
-  I just posted chapter 2 of "Oh, Mighty Hiccup!":
-  http://monkeymake.it#{story_chapter_path @story, @chapter}
+  Whew, I've been struggling with chapters #{@chapter.chapter_index} and 4.
+  I'll post chapter 4 when we hit 200 readers (we're at 192 now), so if you'd
+  like to read more, please spread the word. It's easy!
 
-  "She shrieked, grabbed the loose night-shirt over her heart and clenched it like it would save her life." <-- Tweet this: http://bit.ly/qtAs0G
+  Just tweet this: http://twitter.com/?status=%22We%27ve+gotta+give+people+hope.+And+since+you%27re+the+bastard+who+took+it+away%2C+it%27s+your+responsibility+to+return+it.%22+http://monkeymake.it/i/#{@user.invites.find_by_story_id(@story.id).code}
+  Just share it on facebook: http://www.facebook.com/plugins/like.php?href=http://monkeymake.it/i/#{@user.invites.find_by_story_id(@story.id).code}
+  Or paste this anywhere: http://monkeymake.it/i/#{@user.invites.find_by_story_id(@story.id).code}
 
-  If you like what you see, please invite some friends!
+  In the meantime, here's chapter #{@chapter.chapter_index} with a brand new
+  illustration: http://monkeymake.it#{story_chapter_path @story, @chapter}
 
   Thanks,
   Scott Lambridis

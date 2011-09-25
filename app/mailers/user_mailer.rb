@@ -48,7 +48,8 @@ class UserMailer < ActionMailer::Base
     @story = story
     @chapter = chapter
     mail :to => user.email,
-         :subject => "Chapter 2 of \"#{@story.title}\" by #{@story.user.name} is up!"
+         :from => @user.name_and_email,
+         :subject => "Chapter #{@chapter.chapter_index} of \"#{@story.title}\" is up!"
   end
 
 end
