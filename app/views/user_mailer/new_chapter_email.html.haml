@@ -7,10 +7,11 @@
 %p
   Whew, I've been struggling with chapters #{@chapter.chapter_index} and 4. I'll post chapter 4 when
   we hit 200 readers (we're at 192 now), so if you'd like to read more, please
-  spread the word. It's easy!
-  = link_to 'Just share it on facebook.', "http://www.facebook.com/plugins/like.php?href=http://monkeymake.it/i/#{@user.invites.find_by_story_id(@story.id).code}"
-  = link_to 'Or tweet this quote.', "http://twitter.com/?status=%22We%27ve+gotta+give+people+hope.+And+since+you%27re+the+bastard+who+took+it+away%2C+it%27s+your+responsibility+to+return+it.%22+http://monkeymake.it/i/#{@user.invites.find_by_story_id(@story.id).code}"
-  Or paste this anywhere:
+  spread the word. It's easy! Just
+  = link_to 'like,', "http://www.facebook.com/plugins/like.php?href=http://monkeymake.it/i/#{@user.invites.find_by_story_id(@story.id).code}"
+  or
+  = link_to 'tweet,', "http://twitter.com/?status=%22We%27ve+gotta+give+people+hope.+And+since+you%27re+the+bastard+who+took+it+away%2C+it%27s+your+responsibility+to+return+it.%22+http://monkeymake.it/i/#{@user.invites.find_by_story_id(@story.id).code}"
+  or share this link:
   = link_to "http://monkeymake.it/i/#{@user.invites.find_by_story_id(@story.id).code}", "http://monkeymake.it/i/#{@user.invites.find_by_story_id(@story.id).code}"
 
 %p
