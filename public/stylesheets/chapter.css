@@ -238,6 +238,45 @@
 content {
   background: #f7f6ed; }
 
+.sign_in_to_read_chapter_modal {
+  border: 10px solid #0088ba !important; }
+  .sign_in_to_read_chapter_modal .ui-dialog-titlebar {
+    display: none; }
+  .sign_in_to_read_chapter_modal #sign_in_to_read_chapter {
+    text-align: center;
+    padding: 20px; }
+    .sign_in_to_read_chapter_modal #sign_in_to_read_chapter h4 {
+      margin: 0 0 40px 0;
+      padding: 0;
+      font-size: 2em;
+      font-family: "Georgia, Times New Roman, serif";
+      font-weight: 100;
+      color: black; }
+    .sign_in_to_read_chapter_modal #sign_in_to_read_chapter p {
+      margin: 0;
+      padding: 0;
+      font-size: 1.2em;
+      font-family: Arial, sans-serif; }
+    .sign_in_to_read_chapter_modal #sign_in_to_read_chapter .blue_button {
+      margin: 10px; }
+    .sign_in_to_read_chapter_modal #sign_in_to_read_chapter .field {
+      margin: 10px 20px 0 0px; }
+      .sign_in_to_read_chapter_modal #sign_in_to_read_chapter .field label[for="user_name"] {
+        display: none; }
+      .sign_in_to_read_chapter_modal #sign_in_to_read_chapter .field input {
+        padding: 3px;
+        width: 250px;
+        font-size: 1.5em;
+        font-family: "Arial, Verdana, sans-serif";
+        color: #666666; }
+      .sign_in_to_read_chapter_modal #sign_in_to_read_chapter .field #user_name {
+        display: none; }
+    .sign_in_to_read_chapter_modal #sign_in_to_read_chapter .actions {
+      text-align: center;
+      margin: 10px 0 20px 0; }
+    .sign_in_to_read_chapter_modal #sign_in_to_read_chapter .no_thanks {
+      margin: 40px 0 20px 0; }
+
 #story {
   width: 950px; }
   #story h1 {

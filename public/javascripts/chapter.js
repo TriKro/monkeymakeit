@@ -54,4 +54,15 @@ $(document).ready(function() {
       $(this).parent().find('.email_signup_form').show();
     })
 
+    $( "#sign_in_to_read_chapter" ).dialog({
+        autoOpen: true,
+        closeOnEscape: false,
+        resizable: false,
+        draggable: false,
+        dialogClass: 'sign_in_to_read_chapter_modal',
+        modal: true,
+        title: 'Sign in (or Sign Up)',
+        width: 600
+    });
+
 });
