@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :chapters, :through => :stories
   has_many :subscriptions, :dependent => :delete_all
   has_many :subscribed_stories, :through => :subscriptions, :source => :story
-  has_many :invites, :dependent => :nullify
+  has_many :invites, :dependent => :delete_all
   has_many :referrals, :dependent => :delete_all
   has_many :accepted_invites, :through => :referrals, :source => :invite
   has_friendly_id :slug_name, :use_slug => true
