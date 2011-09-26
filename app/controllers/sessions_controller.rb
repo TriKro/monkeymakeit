@@ -55,7 +55,11 @@ class SessionsController < ApplicationController
   end
 
   def failure
-    redirect_to session[:return_to], :alert => "Uh oh...something weird just happened. We'll look into it. Please try to sign in again."
+    if session[:return_to]
+      redirect_to session[:return_to], :alert => "Uh oh...something weird just happened. We'll look into it. Please try to sign in again."
+    else
+      redirect_to root_url, :alert => "Uh oh...something weird just happened. We'll look into it. Please try to sign in again."
+    end
   end
 
 end
