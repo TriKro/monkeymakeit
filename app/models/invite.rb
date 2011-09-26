@@ -14,12 +14,7 @@ class Invite < ActiveRecord::Base
 
   def update_code
     return if code.present?
-    # TODO: Hack...something better?
-    if Invite.last.nil?
-      self.code = 101.to_s(34)
-    else
-      self.code = (Invite.last.id+101).to_s(36)
-    end
+    self.code = (Invite.last.id+101).to_s(36)
   end
 
   def slug_name
