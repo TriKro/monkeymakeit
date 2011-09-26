@@ -35,7 +35,7 @@ class InvitesController < ApplicationController
     return redirect_to root_url if invite.nil?
     session[:referral_code] = code
     @inviter = invite.user
-    if !@inviter.email_or_name.blank?
+    if !@inviter.nil? && !@inviter.email_or_name.blank?
       km.record('referral arrival', { 'from' => @inviter.email_or_name })
     else
       km.record('referral arrival')
