@@ -14,7 +14,7 @@ class Invite < ActiveRecord::Base
 
   def update_code
     return if code.present?
-    self.code = (Invite.last.id+101).to_s(36)
+    self.code = (Invite.last(:offset => 1).id+101).to_s(36)
   end
 
   def slug_name
