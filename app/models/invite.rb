@@ -1,3 +1,5 @@
+require 'digest'
+
 class Invite < ActiveRecord::Base
   validates_presence_of :user_id
   validates_presence_of :story_id
@@ -14,7 +16,7 @@ class Invite < ActiveRecord::Base
 
   def update_code
     return if code.present?
-    self.code = (Invite.last(:offset => 1).id+101).to_s(36)
+    self.code = Digest::MD5.hexdigest(self.to_s)[0..5]
   end
 
   def slug_name
