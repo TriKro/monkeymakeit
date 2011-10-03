@@ -74,3 +74,17 @@
           creator:
         - creative_type: text
           filename: gideon_1.txt
+
+- title: The Premonition
+  subtitle: A novel about...
+  author: amyglasenapp@gmail.com
+  chapters:
+    - chapter_index: 1
+      title: 1
+      creatives:
+        - creative_type: image
+          filename: image-life_of_the_gallows.jpg
+          title: Jester
+          creator: Tyler Landry
+        - creative_type: text
+          filename: premonition_1.txt
