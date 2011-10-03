@@ -83,8 +83,6 @@
       title: 1
       creatives:
         - creative_type: image
-          filename: image-life_of_the_gallows.jpg
-          title: Jester
-          creator: Tyler Landry
+          filename: image-hiccup.png
         - creative_type: text
           filename: premonition_1.txt
