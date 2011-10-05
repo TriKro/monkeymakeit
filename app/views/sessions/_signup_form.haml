@@ -12,7 +12,7 @@
   .email_signup_form.hide
     = render 'sessions/signup_with_email_form'
 
-- elsif session[:experiments]['signup method'] == 'twitter and email'
+- elsif session[:experiments]['sign up method'] == 'twitter and email'
   .social_signup
     = link_to social_signin_url(:provider => "twitter", :story_id => story_id ), :class => "nodec" do
       .signin_twitter
