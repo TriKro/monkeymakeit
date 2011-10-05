@@ -1,32 +1,43 @@
+- story_id = @story.id if !@story.nil?
+
 - if session[:experiments]['sign up method'].nil? || session[:experiments]['sign up method'] == 'email'
   = render 'sessions/signup_with_email_form'
 
-- elsif session[:experiments]['sign up method'] == 'facebook'
-  = link_to("/auth/facebook", :class => "nodec") do
-    .signin_facebook
+- elsif session[:experiments]['sign up method'] == 'facebook and email'
+  .social_signup
+    = link_to social_signin_url(:provider => "facebook", :story_id => story_id), :class => "nodec" do
+      .signin_facebook
+  .show_email_signup_form
+    Sign up via email instead?
+  .email_signup_form.hide
+    = render 'sessions/signup_with_email_form'
 
-- elsif session[:experiments]['signup method'] == 'twitter'
-  = link_to("/auth/twitter", :class => "nodec") do
-    .signin_twitter
-
-- elsif session[:experiments]['sign up method'] == 'facebook and twitter'
-  = link_to("/auth/facebook", :class => "nodec") do
-    .signin_facebook
-  = link_to("/auth/twitter", :class => "nodec") do
-    .signin_twitter
-
-- elsif session[:experiments]['sign up method'] == 'twitter and facebook'
-  = link_to("/auth/twitter", :class => "nodec") do
-    .signin_twitter
-  = link_to("/auth/facebook", :class => "nodec") do
-    .signin_facebook
+- elsif session[:experiments]['signup method'] == 'twitter and email'
+  .social_signup
+    = link_to social_signin_url(:provider => "twitter", :story_id => story_id ), :class => "nodec" do
+      .signin_twitter
+  .show_email_signup_form
+    Sign up via email instead?
+  .email_signup_form.hide
+    = render 'sessions/signup_with_email_form'
 
 - elsif session[:experiments]['sign up method'] == 'facebook, twitter, and email'
   .social_signup
-    = link_to("/auth/facebook", :class => "nodec") do
+    = link_to social_signin_url(:provider => "facebook", :story_id => story_id), :class => "nodec" do
       .signin_facebook
-    = link_to("/auth/twitter", :class => "nodec") do
+    = link_to social_signin_url(:provider => "twitter", :story_id => story_id ), :class => "nodec" do
       .signin_twitter
+  .show_email_signup_form
+    Sign up via email instead?
+  .email_signup_form.hide
+    = render 'sessions/signup_with_email_form'
+
+- elsif session[:experiments]['sign up method'] == 'twitter, facebook, and email'
+  .social_signup
+    = link_to social_signin_url(:provider => "twitter", :story_id => story_id ), :class => "nodec" do
+      .signin_twitter
+    = link_to social_signin_url(:provider => "facebook", :story_id => story_id), :class => "nodec" do
+      .signin_facebook
   .show_email_signup_form
     Sign up via email instead?
   .email_signup_form.hide

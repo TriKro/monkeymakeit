@@ -12,7 +12,12 @@ class SessionsController < ApplicationController
 
   def create
     hash = request.env['omniauth.auth']
-    @story = Story.find_by_id(params[:story_id])
+    if params[:story_id]
+      @story = Story.find_by_id(params[:story_id])
+    elsif session[:story_id_cache]
+      @story = Story.find_by_id(session[:story_id_cache])
+      session[:story_id_cache] = nil
+    end
 
     # If there's a hash, you came from omniauth.
     if !hash.nil?
@@ -60,6 +65,11 @@ class SessionsController < ApplicationController
     else
       redirect_to root_url, :alert => "Uh oh...something weird just happened. We'll look into it. Please try to sign in again."
     end
+  end
+
+  def social_signin
+    session[:story_id_cache] = params[:story_id]
+    redirect_to "/auth/" + params[:provider]
   end
 
 end

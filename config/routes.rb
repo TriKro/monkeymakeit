@@ -7,6 +7,7 @@ Monkeymakeit::Application.routes.draw do
   match "/signout" => "sessions#destroy", :as => :signout
   match "/auth/failure" => "sessions#failure", :as => :auth_failure
   match "/create_session" => "sessions#create"
+  match "/signin_with_:provider" => "sessions#social_signin", :as => :social_signin
 
   resources :users do
     put :update_email, :on => :member
