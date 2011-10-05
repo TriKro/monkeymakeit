@@ -20,6 +20,7 @@
       = f.text_field :email, :class => "user_email", :value => params[:user].try(:[], :email).presence || "Email"
 
     .actions
+      = f.submit 'SIGN IN', :class => "grey"
       = f.submit 'SIGN UP'
     .clear
 
