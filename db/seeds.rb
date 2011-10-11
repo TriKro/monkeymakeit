@@ -43,6 +43,12 @@ auth.update_attributes(:uid => "713411825",
                        :provider => "facebook",
                        :user_id => scott.id)
 
+lauren = User.find_or_create_by_email(:email => "laurenguza@gmail.com")
+lauren.update_attributes(:name => "Lauren Guza",
+                         :image => "/images/avatars/image-lauren_guza.jpg",
+                         :bio => "I grew up in the foothills just outside Los Angeles, graduated from Middlebury College with a degree in English and creative writing, and then spent several years working in inner-city schools with the Teach for America, 826 Valencia, and KIPP organizations. I'm now completing work on an MFA at San Francisco State. My writing has been published in Colorado Review, Spain from a Backpack, Hunger and Thirst, and LA Inside.",
+                       :access => "reader")
+
 dayna = User.find_or_create_by_email(:email => "dayna_ingram@yahoo.com")
 dayna.update_attributes(:name => "Dayna Ingram",
                        :image => "/images/avatars/image-dayna-ingram.jpg",
