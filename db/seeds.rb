@@ -43,6 +43,12 @@ auth.update_attributes(:uid => "713411825",
                        :provider => "facebook",
                        :user_id => scott.id)
 
+dayna = User.find_or_create_by_email(:email => "dayna_ingram@yahoo.com")
+dayna.update_attributes(:name => "Dayna Ingram",
+                       :image => "/images/avatars/image-dayna-ingram.jpg",
+                       :bio => "Dayna Ingram is a student and writer living and working in the Bay Area. Her short stories have appeared in Livermore Street and Collective Fallout. Her first zombie novel, <em>&ldquo;Eat Your Heart Out&rdquo;</em>, will be released this November from BrazenHead, an imprint of Lethe Press. Find out more at <a href='http://thedingram.blogspot.com'>thedingram.blogspot.com</a>.",
+                       :access => "reader")
+
 Chapter.destroy_all
 Creative.destroy_all
 YAML::load(File.open("#{Rails.root}/public/chapters/index.yml")).each do |story|

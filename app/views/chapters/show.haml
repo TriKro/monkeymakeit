@@ -97,4 +97,4 @@
         %span{ :style => "float: left;"}
           %img{:src => @story.user.image, :width => "100px;", :style => "margin: 0 10px 0 0;"}
         %p
-          = @story.user.bio
+          = raw @story.user.bio

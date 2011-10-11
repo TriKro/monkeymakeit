@@ -86,3 +86,15 @@
           filename: image-hiccup.png
         - creative_type: text
           filename: premonition_1.txt
+
+- title: All Good Children
+  subtitle: A dystopian novel with lesbians
+  author: dayna_ingram@yahoo.com
+  chapters:
+    - chapter_index: 1
+      title: Jordan
+      creatives:
+        - creative_type: image
+          filename: all_good_children_1.jpg
+        - creative_type: text
+          filename: all_good_children_1.txt
