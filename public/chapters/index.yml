@@ -34,6 +34,7 @@
           filename: hiccup_3.txt
     - chapter_index: 4
       title: Chapter 4
+      publishing_date: 2011-10-29
       creatives:
         - creative_type: image
           filename: hiccup_4.png
