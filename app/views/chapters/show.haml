@@ -22,7 +22,7 @@
   .clear
 
   #left_column2
-    = raw @chapter.creatives[0].render
+    = raw @creatives[0].render
 
     .chapter_heading
       %b #{@chapter.title}
@@ -43,7 +43,7 @@
         - else
           &nbsp;&nbsp;
 
-    = raw @chapter.creatives[1].render
+    = raw @creatives[1].render
 
     - if current_user && current_user.subscribed?(@story)
       .hide
