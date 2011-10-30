@@ -3,7 +3,7 @@
 - scripts 'chapter'
 - fonts 'http://fonts.googleapis.com/css?family=Reenie+Beanie&v2'
 
-- if current_user.nil? && @chapter.chapter_index != 1
+- if RAILS_ENV == 'production' && current_user.nil? && @chapter.chapter_index != 1
   #sign_in_to_read_chapter
     %h4
       Please sign in to read this chapter!
