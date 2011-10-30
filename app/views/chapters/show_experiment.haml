@@ -12,66 +12,66 @@
       = link_to "No thanks, just show me chapter 1.", story_chapter_path(@story, @story.chapters.first)
 
 #story
+  #left_column2
+    = raw @chapter.creatives[0].render
 
+    %h1
+      = @story.title
+    %h2
+      = @story.subtitle
+    %h4
+      %span{ :style => 'color: #666; font-weight: 500' }
+        by
+      = @story.user.name
 
-  = raw @chapter.creatives[0].render
+    .chapter_heading
+      %b #{@chapter.title}
 
-  %h1
-    = @story.title
-  %h2
-    = @story.subtitle
-  %h2
-    by
-    = @story.user.name
-
-  .chapter_heading
-    %b #{@chapter.title}
-
-    %div{:style => 'float: left; margin-left: 5em'}
-      - if @chapter.prev_chapter && can?(:show, @chapter.prev_chapter)
-        = link_to [@story, @chapter.prev_chapter] do
-          = @chapter.prev_chapter.chapter_index
-      - else
-        &nbsp;&nbsp;
-    %div{:style => 'float: right; margin-right: 5em'}
-      - if @chapter.next_chapter && can?(:show, @chapter.next_chapter)
-        - if current_user
-          = link_to [@story, @chapter.next_chapter] do
-            = @chapter.next_chapter.chapter_index
+      %div{:style => 'float: left; margin-left: 5em'}
+        - if @chapter.prev_chapter && can?(:show, @chapter.prev_chapter)
+          = link_to [@story, @chapter.prev_chapter] do
+            = @chapter.prev_chapter.chapter_index
         - else
           &nbsp;&nbsp;
-      - else
-        &nbsp;&nbsp;
+      %div{:style => 'float: right; margin-right: 5em; clear: both;'}
+        - if @chapter.next_chapter && can?(:show, @chapter.next_chapter)
+          - if current_user
+            = link_to [@story, @chapter.next_chapter] do
+              = @chapter.next_chapter.chapter_index
+          - else
+            &nbsp;&nbsp;
+        - else
+          &nbsp;&nbsp;
 
-  = raw @chapter.creatives[1].render
+    = raw @chapter.creatives[1].render
 
-  - if current_user && current_user.subscribed?(@story)
-    .hide
-      = render :partial => 'invites/invite_by_email_form', :locals => { :invite_message => @invite_message, :invite => @invite }
-    = render :partial => "chapters/invite_widget", :locals => { :invite => @invite, :invite_message => @invite_message }
+    - if current_user && current_user.subscribed?(@story)
+      .hide
+        = render :partial => 'invites/invite_by_email_form', :locals => { :invite_message => @invite_message, :invite => @invite }
+      = render :partial => "chapters/invite_widget", :locals => { :invite => @invite, :invite_message => @invite_message }
 
-    .chapter_links
-      - if !@chapter.prev_chapter.nil?
-        - if can? :show, @chapter.prev_chapter
-          = link_to [@story, @chapter.prev_chapter], :style => 'float: left' do
-            &laquo;
-            = @chapter.prev_chapter.identifier
-      - if !@chapter.next_chapter.nil?
-        - if can? :show, @chapter.next_chapter
-          = link_to [@story, @chapter.next_chapter], :style => 'float: right' do
-            = @chapter.next_chapter.identifier
-            &raquo;
-      .clear
+      .chapter_links
+        - if !@chapter.prev_chapter.nil?
+          - if can? :show, @chapter.prev_chapter
+            = link_to [@story, @chapter.prev_chapter], :style => 'float: left' do
+              &laquo;
+              = @chapter.prev_chapter.identifier
+        - if !@chapter.next_chapter.nil?
+          - if can? :show, @chapter.next_chapter
+            = link_to [@story, @chapter.next_chapter], :style => 'float: right' do
+              = @chapter.next_chapter.identifier
+              &raquo;
+        .clear
 
-  - else
-    .signup_widget_bottom
-      .signup_header
-        %h2
-          Want to read the next chapter?
-      .signup_content
-        %p
-          Sign up here and I'll email you when it's ready.
-        = render "subscriptions/subscription_form"
+    - else
+      .signup_widget_bottom
+        .signup_header
+          %h2
+            Want to read the next chapter?
+        .signup_content
+          %p
+            Sign up here and I'll email you when it's ready.
+          = render "subscriptions/subscription_form"
 
-  .darkgrey{ :style => "text-align: center; margin: 20px 0;" }
-    You've just read from an early draft. More chapters coming soon. Thanks for reading.
+    .darkgrey{ :style => "text-align: center; margin: 20px 0;" }
+      You've just read from an early draft. More chapters coming soon. Thanks for reading.
