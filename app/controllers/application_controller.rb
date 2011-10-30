@@ -61,6 +61,13 @@ class ApplicationController < ActionController::Base
       session[:experiments]['sign up method'] = sign_up_method[rand(sign_up_method.length)]
       km.set('sign up method', session[:experiments]['sign up method'])
     end
+
+    chapter_layout = ['right column','no right column']
+    unless session[:experiments]['chapter layout']
+      session[:experiments]['chapter layout'] = chapter_layout[rand(chapter_layout.length)]
+      km.set('chapter layout', session[:experiments]['chapter layout'])
+    end
+
   end
 
 end
