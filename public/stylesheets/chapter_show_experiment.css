@@ -290,19 +290,17 @@ content {
     font-weight: 100;
     color: black; }
   #story h2 {
-    margin: 10px 0 10px 40px;
+    margin: 10px 2px 10px 40px;
     padding: 0;
     font-size: 1.8em;
     font-family: "Georgia, Times New Roman, serif";
-    color: #7a7a7a;
-    display: inline-block; }
+    color: #7a7a7a; }
   #story h4 {
     margin: 10px 0 20px 80px;
     padding: 0;
     font-size: 1.2em;
     font-family: "Georgia, Times New Roman, serif";
-    color: #7a7a7a;
-    display: inline-block; }
+    color: #7a7a7a; }
   #story .chapter_heading {
     margin-bottom: 2em;
     text-align: center;
