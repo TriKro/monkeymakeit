@@ -66,3 +66,12 @@ YAML::load(File.open("#{Rails.root}/public/chapters/index.yml")).each do |story|
   end
   Story.find_or_create_by_title(story['title']).update_attributes(story)
 end
+
+# hacky automation for doris
+doris = Story.find('doris')
+(2..20).each do |chapter_index|
+  chapter = Chapter.create :chapter_index => chapter_index, :story => doris
+  chapter.creatives << Creative.create(:creative_type => 'image', :filename => 'image-doris.jpg')
+  chapter.creatives << Creative.create(:creative_type => 'text', :filename => "doris_#{chapter_index}.txt")
+  chapter.save
+end
