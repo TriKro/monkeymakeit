@@ -62,10 +62,9 @@ class ApplicationController < ActionController::Base
       km.set('sign up method', session[:experiments]['sign up method'])
     end
 
-    chapter_layout = ['right column','no right column']
-    unless session[:experiments]['chapter layout']
-      session[:experiments]['chapter layout'] = chapter_layout[rand(chapter_layout.length)]
-      km.set('chapter layout', session[:experiments]['chapter layout'])
+    if session[:experiments]['chapter layout']
+      session[:experiments]['chapter layout'] = nil
+      km.set('chapter layout', nil)
     end
 
   end

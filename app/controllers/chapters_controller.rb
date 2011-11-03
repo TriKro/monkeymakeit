@@ -21,7 +21,6 @@ class ChaptersController < ApplicationController
       @invite = current_user.invites.find_or_create_by_story_id(@story.id)
       @invite_message = InviteMessage.new
     end
-    render 'show_experiment' if session[:experiments]['chapter layout'] == 'no right column'
   end
 
   def new
