@@ -3,14 +3,6 @@
 - scripts 'chapter'
 - fonts 'http://fonts.googleapis.com/css?family=Reenie+Beanie&v2'
 
-- if RAILS_ENV == 'production' && current_user.nil? && @chapter.chapter_index != 1
-  #sign_in_to_read_chapter
-    %h4
-      Please sign in to read this chapter!
-    = render "subscriptions/subscription_form"
-    .no_thanks
-      = link_to "No thanks, just show me chapter 1.", story_chapter_path(@story, @story.chapters.first)
-
 #story
   #left_column1
     %h1
@@ -27,41 +19,28 @@
     .chapter_heading
       %b #{@chapter.title}
 
-      %div{:style => 'float: left; margin-left: 5em'}
-        - if @chapter.prev_chapter && can?(:show, @chapter.prev_chapter)
-          = link_to [@story, @chapter.prev_chapter] do
-            = @chapter.prev_chapter.chapter_index
-        - else
-          &nbsp;&nbsp;
-      %div{:style => 'float: right; margin-right: 5em'}
-        - if @chapter.next_chapter && can?(:show, @chapter.next_chapter)
-          - if current_user
-            = link_to [@story, @chapter.next_chapter] do
-              = @chapter.next_chapter.chapter_index
-          - else
-            &nbsp;&nbsp;
-        - else
-          &nbsp;&nbsp;
-
     = raw @creatives[1].render
-
-    - if current_user && current_user.subscribed?(@story)
-      .hide
-        = render :partial => 'invites/invite_by_email_form', :locals => { :invite_message => @invite_message, :invite => @invite }
-      = render :partial => "chapters/invite_widget", :locals => { :invite => @invite, :invite_message => @invite_message }
 
       .chapter_links
         - if !@chapter.prev_chapter.nil?
-          - if can? :show, @chapter.prev_chapter
-            = link_to [@story, @chapter.prev_chapter], :style => 'float: left' do
-              &laquo;
-              = @chapter.prev_chapter.identifier
+          = link_to [@story, @chapter.prev_chapter], :style => 'float: left' do
+            &laquo;
+            = @chapter.prev_chapter.identifier
         - if !@chapter.next_chapter.nil?
-          - if can? :show, @chapter.next_chapter
-            = link_to [@story, @chapter.next_chapter], :style => 'float: right' do
-              = @chapter.next_chapter.identifier
-              &raquo;
+          = link_to [@story, @chapter.next_chapter], :style => 'float: left' do
+            &laquo;
+            = @chapter.next_chapter.identifier
         .clear
+
+    - if !@chapter.next_chapter.nil?
+      .signup_widget_bottom
+        .signup_header
+          %h2
+            = @chapter.user.first_name
+        .signup_content
+          %p
+            Sign up here and I'll email you when it's ready.
+          = render "subscriptions/subscription_form"
 
     - else
       .signup_widget_bottom
