@@ -1,0 +1,14 @@
+%p
+  = @contact_message.sender_email
+  sent this message:
+
+%p
+  = @contact_message.content
+
+%p
+  \-=-
+
+%p
+  Sent via the MonkeyMake.it chapter feedback form.
+
+= render 'user_mailer/footer'

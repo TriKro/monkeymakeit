@@ -17,6 +17,7 @@ class ChaptersController < ApplicationController
     @chapter = @story.chapters.find(params[:id])
     @creatives = @chapter.creatives.sort_by(&:id)
     @user = User.new unless current_user
+    @feedback_message = FeedbackMessage.new
     if current_user && current_user.subscribed?(@story)
       @invite = current_user.invites.find_or_create_by_story_id(@story.id)
       @invite_message = InviteMessage.new

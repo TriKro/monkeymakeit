@@ -235,6 +235,33 @@
 .signin_page .actions {
   margin: 10px 0 0 0; }
 
+.feedback_widget {
+  font-family: Arial;
+  text-align: center;
+  color: #666666; }
+  .feedback_widget h3 {
+    font-size: 1.7em; }
+  .feedback_widget h4 {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 10px 0 10px 0; }
+  .feedback_widget #new_feedback_message {
+    width: 400px;
+    text-align: center;
+    display: inline-block; }
+    .feedback_widget #new_feedback_message .label {
+      margin: 20px 0 10px 0;
+      font-size: 1.5em;
+      color: #666666;
+      text-align: left; }
+      .feedback_widget #new_feedback_message .label .optional {
+        font-size: 0.7em; }
+    .feedback_widget #new_feedback_message .field input, .feedback_widget #new_feedback_message .field textarea {
+      margin: 0 0 10px 0;
+      font-size: 1.5em;
+      color: black;
+      width: 400px; }
+
 content {
   background: #f7f6ed; }
 

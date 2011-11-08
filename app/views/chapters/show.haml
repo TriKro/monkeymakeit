@@ -3,6 +3,14 @@
 - scripts 'chapter'
 - fonts 'http://fonts.googleapis.com/css?family=Reenie+Beanie&v2'
 
+- if RAILS_ENV == 'production' && current_user.nil? && @chapter.chapter_index != 1
+  #sign_in_to_read_chapter
+    %h4
+      Please sign in to read this chapter!
+    = render "subscriptions/subscription_form"
+    .no_thanks
+      = link_to "No thanks, just show me chapter 1.", story_chapter_path(@story, @story.chapters.first)
+
 #story
   #left_column1
     %h1
@@ -21,32 +29,14 @@
 
     = raw @creatives[1].render
 
-      .chapter_links
-        - if !@chapter.prev_chapter.nil?
-          = link_to [@story, @chapter.prev_chapter], :style => 'float: left' do
-            &laquo;
-            = @chapter.prev_chapter.identifier
-        - if !@chapter.next_chapter.nil?
-          = link_to [@story, @chapter.next_chapter], :style => 'float: left' do
-            &laquo;
-            = @chapter.next_chapter.identifier
-        .clear
-
     - if !@chapter.next_chapter.nil?
-      .signup_widget_bottom
-        .signup_header
-          %h2
-            = @chapter.user.first_name
-        .signup_content
-          %p
-            Sign up here and I'll email you when it's ready.
-          = render "subscriptions/subscription_form"
+      = render "contact_messages/feedback_form"
 
     - else
       .signup_widget_bottom
         .signup_header
           %h2
-            Want to read the next chapter?
+            You've reached the last chapter. Want to read more?
         .signup_content
           %p
             Sign up here and I'll email you when it's ready.
@@ -56,18 +46,6 @@
       You've just read from an early draft. More chapters coming soon. Thanks for reading.
 
   #right_column2
-    - if current_user && current_user.subscribed?(@story)
-      = render :partial => "chapters/invite_widget", :locals => { :invite => @invite, :invite_message => @invite_message }
-
-    - else
-      .signup_widget
-        .signup_header
-          %h4
-            %img{ :src => "/images/text/text-next_chapter.png", :alt => "Next Chapter", :title => "Sign Up now!" }
-        .signup_content
-          %p
-            Sign up here and I'll email you when it's ready.
-          = render "subscriptions/subscription_form"
 
     #about_author
       %h4

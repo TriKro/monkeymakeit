@@ -43,6 +43,10 @@ Monkeymakeit::Application.routes.draw do
   match "/contact" => "contact_messages#new", :as => :contact
   match "/thanks_for_your_message" => "contact_messages#thanks", :as => :contact_thanks
 
+
+  # Feedback message routes
+  resources :feedback_messages, :only => [:create]
+
   # Private
   match '/admin' => 'admin#index'
   match '/set_experiment' => 'admin#set_experiment', :as => :set_experiment

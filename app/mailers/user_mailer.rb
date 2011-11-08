@@ -16,6 +16,12 @@ class UserMailer < ActionMailer::Base
          :subject => @contact_message.subject
   end
 
+  def chapter_feedback(contact_message)
+    @contact_message = contact_message
+    mail :to => "Monkeys@MonkeyMake.it",
+         :subject => @contact_message.subject
+  end
+
   def welcome_email(recipient, story)
     @recipient = recipient
     @invite = recipient.invites.find_or_create_by_story_id(story.id)
