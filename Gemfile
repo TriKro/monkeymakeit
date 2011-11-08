@@ -7,7 +7,7 @@ gem 'hoptoad_notifier'
 gem 'jquery-rails'
 gem 'json'
 gem 'omniauth-twitter'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', :git => "git://github.com/mkdynamic/omniauth-facebook.git"
 gem 'rails',               '3.0.4'
 gem 'rake',                '0.8.7'
 gem 'rspec'

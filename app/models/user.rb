@@ -76,7 +76,7 @@ class User < ActiveRecord::Base
   end
 
   def self.create_from_hash!(hash)
-    info = hash['user_info']
+    info = hash['info']
     users_name = info['name']
     image = info['image'] if !info['image'].blank?
     if hash['provider'] == 'facebook'

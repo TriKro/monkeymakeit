@@ -6,6 +6,13 @@ GIT
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
 
+GIT
+  remote: git://github.com/mkdynamic/omniauth-facebook.git
+  revision: 0959ab1962f7ad83248c3e87827695e6777049fc
+  specs:
+    omniauth-facebook (1.0.0.rc1)
+      omniauth-oauth2 (~> 1.0.0.rc2)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -101,8 +108,6 @@ GEM
     omniauth (1.0.0)
       hashie (~> 1.2)
       rack
-    omniauth-facebook (0.0.0)
-      omniauth-oauth2 (~> 1.0.0.pr2)
     omniauth-oauth (1.0.0)
       oauth
       omniauth (~> 1.0)
@@ -191,7 +196,7 @@ DEPENDENCIES
   jquery-rails
   json
   no_peeping_toms!
-  omniauth-facebook
+  omniauth-facebook!
   omniauth-twitter
   rails (= 3.0.4)
   rake (= 0.8.7)
