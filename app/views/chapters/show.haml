@@ -37,10 +37,10 @@
         .signup_header
           %h2
             You've reached the last chapter. Want to read more?
-        .signup_content
-          %p
-            Sign up here and I'll email you when it's ready.
-          = render "subscriptions/subscription_form"
+          %br
+          %h2
+            %a{ :href => 'mailto:scott@monkeymake.it' }
+              Email the author
 
       .darkgrey{ :style => "text-align: center; margin: 20px 0;" }
         You've just read from an early draft. More chapters coming soon. Thanks for reading.
