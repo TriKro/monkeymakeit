@@ -1,6 +1,11 @@
 .feedback_widget
+  .darkgrey{ :style => "text-align: center; margin: 20px 0; font-size: 1.2em" }
+    You're reading a rough draft.
+
   %h3
-    To read the next chapter, give feedback:
+    To read the next chapter,
+    %br
+    tell the author what you think so far:
 
   %h4
     (Authors love feedback)
@@ -16,22 +21,22 @@
             - @feedback_message.errors.full_messages.each do |msg|
               %li= msg
       = hidden_field(:chapter, :id)
-      .label
-        Email
-        %span.optional
-          (optional to hear back from the author)
-      .field
-        = f.text_field :sender_email, :size => "40"
 
       .label
-        Feedback
-        %span.optional
-          (honest feedback is always appreciated)
+        Comments (required)
       .field
         = f.text_area :content, :size => "35x10"
 
+      .label
+        Email
+        %span.optional
+          (if you'd like to hear back from the author)
+      .field
+        = f.text_field :sender_email, :size => "40"
+
       .actions
         = f.submit("Send and Read Next Chapter")
-
-.darkgrey{ :style => "text-align: center; margin: 20px 0;" }
-  You've just read from an early draft.
+        %br
+        %br
+        %br
+        %br

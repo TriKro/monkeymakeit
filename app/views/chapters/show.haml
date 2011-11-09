@@ -3,13 +3,13 @@
 - scripts 'chapter'
 - fonts 'http://fonts.googleapis.com/css?family=Reenie+Beanie&v2'
 
-- if RAILS_ENV == 'production' && current_user.nil? && @chapter.chapter_index != 1
-  #sign_in_to_read_chapter
-    %h4
-      Please sign in to read this chapter!
-    = render "subscriptions/subscription_form"
-    .no_thanks
-      = link_to "No thanks, just show me chapter 1.", story_chapter_path(@story, @story.chapters.first)
+-#- if RAILS_ENV == 'production' && current_user.nil? && @chapter.chapter_index != 1
+-#  #sign_in_to_read_chapter
+-#    %h4
+-#      Please sign in to read this chapter!
+-#    = render "subscriptions/subscription_form"
+-#    .no_thanks
+-#      = link_to "No thanks, just show me chapter 1.", story_chapter_path(@story, @story.chapters.first)
 
 #story
   #left_column1
@@ -30,7 +30,12 @@
     = raw @creatives[1].render
 
     - if !@chapter.next_chapter.nil?
-      = render "contact_messages/feedback_form"
+      -#= render "contact_messages/feedback_form"
+
+      .signup_widget_bottom
+
+        = link_to story_chapter_path(@story, @chapter.next_chapter), :class => "blue_button", :style => "text-align: center;" do
+          NEXT CHAPTER
 
     - else
       .signup_widget_bottom
