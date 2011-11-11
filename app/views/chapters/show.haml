@@ -30,12 +30,12 @@
     = raw @creatives[1].render
 
     - if !@chapter.next_chapter.nil?
-      -#= render "contact_messages/feedback_form"
+      = render "contact_messages/feedback_form"
 
-      .signup_widget_bottom
-
-        = link_to story_chapter_path(@story, @chapter.next_chapter), :class => "blue_button", :style => "text-align: center;" do
-          NEXT CHAPTER
+      -#.signup_widget_bottom
+      -#
+      -#  = link_to story_chapter_path(@story, @chapter.next_chapter), :class => "blue_button", :style => "text-align: center;" do
+      -#    NEXT CHAPTER
 
     - else
       .signup_widget_bottom
